@@ -47,28 +47,29 @@ const Home: React.FC = () => {
 
   // Animation variants for text
   const letterVariants = {
-    hidden: { opacity: 0, y: 50 },
+    hidden: { opacity: 0, y: 20, scale: 0.9 },
     visible: (i: number) => ({
       opacity: 1,
       y: 0,
+      scale: 1,
       transition: {
-        delay: i * 0.1,
-        duration: 0.8,
-        ease: [0.25, 0.46, 0.45, 0.94]
+        delay: i * 0.03,
+        duration: 0.4,
+        ease: [0.4, 0, 0.2, 1]
       }
     })
   }
 
   const wordVariants = {
-    hidden: { opacity: 0, scale: 0.8, rotateX: -90 },
+    hidden: { opacity: 0, scale: 0.8, rotateX: -45 },
     visible: (i: number) => ({
       opacity: 1,
       scale: 1,
       rotateX: 0,
       transition: {
-        delay: i * 0.2,
-        duration: 1,
-        ease: [0.25, 0.46, 0.45, 0.94]
+        delay: i * 0.1,
+        duration: 0.5,
+        ease: [0.4, 0, 0.2, 1]
       }
     })
   }
@@ -142,7 +143,7 @@ const Home: React.FC = () => {
                 <motion.p
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 2 }}
+                  transition={{ duration: 0.5, delay: 0.8 }}
                   className="text-lg sm:text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-6 sm:mb-8 leading-relaxed px-4"
                 >
                   Join 2000+ Pakistani CS students from 50+ universities. Connect, learn, and grow together in Pakistan's largest computer science community.
@@ -152,7 +153,7 @@ const Home: React.FC = () => {
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 2.5 }}
+                  transition={{ duration: 0.5, delay: 1.2 }}
                   className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-8 max-w-4xl mx-auto mb-8 sm:mb-12 px-4"
                 >
                   {[
@@ -163,17 +164,21 @@ const Home: React.FC = () => {
                   ].map((stat, index) => (
                     <motion.div
                       key={index}
-                      initial={{ opacity: 0, scale: 0.5 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ duration: 0.6, delay: 3 + index * 0.1 }}
+                      initial={{ opacity: 0, scale: 0.8, y: 20 }}
+                      animate={{ opacity: 1, scale: 1, y: 0 }}
+                      transition={{ 
+                        duration: 0.4, 
+                        delay: 1.5 + index * 0.1,
+                        ease: [0.4, 0, 0.2, 1]
+                      }}
                       className="text-center"
                     >
                       <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2">
                         <CountUpNumber 
                           end={stat.number} 
                           suffix={stat.suffix}
-                          duration={2.5}
-                          delay={index * 0.2}
+                          duration={1.5}
+                          delay={index * 0.1}
                           className="tabular-nums"
                         />
                       </div>
@@ -188,10 +193,10 @@ const Home: React.FC = () => {
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 3.5 }}
+                  transition={{ duration: 0.5, delay: 2 }}
                   className="flex flex-col sm:flex-row gap-4 justify-center items-center px-4 max-w-md sm:max-w-none mx-auto"
                 >
-                  <Link to="/contact" className="w-full sm:w-auto">
+                  <Link to="/join" className="w-full sm:w-auto">
                     <motion.button
                       whileHover={{ 
                         scale: 1.05,

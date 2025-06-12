@@ -54,14 +54,14 @@ const Footer: React.FC = () => {
         { name: 'About Us', path: '/about' },
         { name: 'Team', path: '/team' },
         { name: 'Blog', path: '/blog' },
-        { name: 'Contact', path: '/contact' }
+        { name: 'Join Us', path: '/join' }
       ]
     },
     {
       title: 'Resources',
       links: [
         { name: 'Podcasts', path: '/podcasts' },
-        { name: 'Join Us', path: '/join' },
+        { name: 'FAQ', path: '/faq' },
         { name: 'UniCalc Tool', path: 'https://unicalc.vercel.app' },
         { name: 'FastMock Tool', path: 'https://fastmock.vercel.app' }
       ]
@@ -128,7 +128,7 @@ const Footer: React.FC = () => {
               </div>
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed mb-6 max-w-sm mx-auto md:mx-0">
-              A student-led community connecting <AnimatedCounter value={2000} suffix="+" /> CS/IT students from <AnimatedCounter value={50} suffix="+" /> universities across Pakistan.
+              A student-led community connecting 2,000+ CS/IT students from 50+ universities across Pakistan.
             </p>
           </div>
 

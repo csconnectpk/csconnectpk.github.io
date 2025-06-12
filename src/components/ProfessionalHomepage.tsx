@@ -219,82 +219,82 @@ const platformStats = [
   { platform: 'YouTube', members: '160+', icon: YouTubeIcon },
 ];
 
-// Student reviews for the slider
+// Student reviews for the slider - Real testimonials from CS Connect Pakistan members
 const studentReviews = [
   {
-    name: 'Ahmad Ali',
-    university: 'FAST University',
-    review: 'CS Connect Pakistan helped me land my first internship at a tech company. The mentorship and networking opportunities are invaluable.'
+    name: 'Muhammad Mansoor Ali',
+    university: 'FAST Islamabad',
+    review: 'CS Connect has been incredibly helpful for me as an aspiring CS student. It guided me in IT fields, entry test prep, and discussions with seniors. I was a RWP board topper but had very little CS knowledge. I\'m glad to be here, learning every day.'
   },
   {
-    name: 'Fatima Khan',
-    university: 'NUST University',
-    review: 'The Python programming course was excellent! Clear explanations and practical projects helped me build real skills.'
+    name: 'Mehreen',
+    university: 'Entry Test Student',
+    review: 'This has been like a daily tech magazine for me. Being a pre-med student, I had no idea about CS but this community made it easy to explore the field and solve my problems. Super thankful for the cooperative environment.'
   },
   {
-    name: 'Hassan Ahmed',
-    university: 'GIKI University',
-    review: 'The Discord community is amazing! I got help with complex algorithms and made friends who share the same passion for coding.'
+    name: 'Eisha',
+    university: 'Entry Test Student',
+    review: 'This community\'s insights and seniors\' experiences helped shape my career. Especially during entry test season their mentorship really made a difference. I\'m a noob person but I\'ve learned so much. Thanks CS Connect — best support for students like me.'
   },
   {
-    name: 'Ayesha Malik',
-    university: 'LUMS University',
-    review: 'The entry test preparation sessions were incredibly helpful. Scored well in my university entrance exam thanks to CS Connect!'
+    name: 'Khadija',
+    university: 'Entry Test Student',
+    review: 'This community changed my life not just in studies but spiritually too. The advice, Islamic opinions, and motivation helped me learn to balance both deen and dunya. May Allah bless your efforts. ❤️'
   },
   {
-    name: 'Ali Raza',
-    university: 'COMSATS University',
-    review: 'UniCalc and FastMock tools saved me so much time during my final exams. These utilities are genuinely useful!'
+    name: 'Bareerah',
+    university: 'COMSATS Lahore',
+    review: 'This community gave me access to seniors in the industry. Their support helped clear my doubts and gave me confidence to move forward professionally.'
   },
   {
-    name: 'Sara Chaudhry',
-    university: 'ITU University',
-    review: 'Being part of this community opened doors to amazing opportunities. The podcast interviews are really inspiring!'
+    name: 'Rida Fatima',
+    university: 'UET',
+    review: 'I got the chance to interact with so many talented people. This community helped me realize how vast CS is and how many opportunities are out there. More power to the admins.'
   },
   {
-    name: 'Muhammad Usman',
-    university: 'UET Lahore',
-    review: 'The collaborative projects and study groups helped me understand complex data structures and algorithms better.'
+    name: 'Hassaan Amin',
+    university: 'FAST Islamabad',
+    review: 'It helped me a lot especially in finding good people, making connections, and networking. So many things I discovered just by being part of it.'
   },
   {
-    name: 'Zainab Hassan',
-    university: 'PUCIT',
-    review: 'Monthly webinars with industry professionals gave me insights into the latest tech trends and career paths.'
+    name: 'Waleed Ahmed',
+    university: 'Virtual University of Pakistan',
+    review: 'This community helped me with technical issues, guidance, motivation, and discipline. I got to connect with students from different universities which will help in the long run.'
   },
   {
-    name: 'Omar Sheikh',
-    university: 'BNU',
-    review: 'The career guidance sessions and resume reviews helped me prepare for interviews at top tech companies.'
+    name: 'Faizan Naeem',
+    university: 'GCU Lahore',
+    review: 'This community helped me in many ways. My communication skills improved and I got the chance to learn from elder seniors. Maybe tone down the sarcasm sometimes. We could also add some financial guidance just a suggestion.'
   },
   {
-    name: 'Mahnoor Ahmed',
-    university: 'LSE',
-    review: 'The supportive community environment made my journey from beginner to intermediate programmer much smoother.'
+    name: 'Amna Rajput',
+    university: 'Entry Test Student',
+    review: 'It opened my mind and showed me how little I knew about everything. Grateful to be a part of it.'
   },
   {
-    name: 'Hamza Malik',
-    university: 'SZABIST',
-    review: 'Participating in the coding competitions organized by CS Connect boosted my problem-solving confidence significantly.'
+    name: 'Murtaza',
+    university: 'COMSATS Lahore',
+    review: 'I needed help with assignments and presentations and they helped properly. Great experience.'
   },
   {
-    name: 'Khadija Tariq',
-    university: 'Karachi University',
-    review: 'The mentorship program connected me with senior developers who guided me through my first open-source contributions.'
+    name: 'Madiha Zaeem Dar',
+    university: 'ITU',
+    review: 'I\'m new here but even in this short time I can see how helpful and kind everyone is. Excited to explore and grow with this community.'
   },
   {
-    name: 'Bilal Khan',
-    university: 'Air University',
-    review: 'The resource sharing and study materials helped me excel in my computer graphics and machine learning courses.'
+    name: 'Abdul Hadi',
+    university: 'Govt. College Peshawar',
+    review: 'It helped me clear my vision and decide which field of Computer Science I want to study. Simple but important help.'
   },
   {
-    name: 'Amna Siddique',
-    university: 'NED University',
-    review: 'The job referral network within CS Connect helped me get interviews at leading software companies in Pakistan.'
+    name: 'Azka Waqas',
+    university: 'Entry Test Student',
+    review: 'I\'m an intermediate student with no guidance. Being introverted made it worse. This group helped a lot. I love how only authentic info is shared. Notes are helpful and seniors guide us positively. I\'m thankful to the creators.'
   },
   {
-    name: 'Talha Riaz',
-    university: 'IQRA University',
-    review: 'The coding bootcamp sessions on web development were game-changers for my full-stack development skills.'
+    name: 'Subayyal Saad',
+    university: 'Entry Test Student',
+    review: 'Helpful anyway'
   }
 ];
 

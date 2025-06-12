@@ -17,7 +17,7 @@ const SmartNavbar: React.FC<SmartNavbarProps> = ({ className = '' }) => {
     { name: 'Team', path: '/team' },
     { name: 'Podcasts', path: '/podcasts' },
     { name: 'Blog', path: '/blog' },
-    { name: 'Contact', path: '/contact' }
+    { name: 'FAQ', path: '/faq' }
   ]
 
   const isActive = (path: string) => location.pathname === path
