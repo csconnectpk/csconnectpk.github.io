@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { Mail, Send, CheckCircle, AlertCircle, User, GraduationCap, Hash, MessageCircle, Users, Heart, Star, ArrowRight, Sparkles, Target, Globe } from 'lucide-react'
+import CountUpNumber from '../components/CountUpNumber'
 
 const Contact: React.FC = () => {
   const [result, setResult] = useState("")
@@ -165,17 +166,20 @@ const Contact: React.FC = () => {
             {/* Stats */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.7 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.6 }}
               className="grid grid-cols-3 gap-8 max-w-2xl mx-auto"
             >
               {[
-                { number: '2000+', label: 'Students Connected' },
-                { number: '50+', label: 'Universities Represented' },
-                { number: '300+', label: 'Career Placements' }
+                { number: 2000, suffix: '+', label: 'Students Connected' },
+                { number: 50, suffix: '+', label: 'Universities Represented' },
+                { number: 300, suffix: '+', label: 'Career Placements' }
               ].map((stat, index) => (
                 <div key={index} className="text-center">
-                  <div className="text-2xl md:text-3xl font-bold text-white mb-1">{stat.number}</div>
+                  <div className="text-2xl md:text-3xl font-bold text-white mb-1">
+                    <CountUpNumber end={stat.number} suffix={stat.suffix} duration={2.5} delay={index * 0.2} />
+                  </div>
                   <div className="text-sm text-gray-400">{stat.label}</div>
                 </div>
               ))}
@@ -260,19 +264,27 @@ const Contact: React.FC = () => {
                 <div className="space-y-4">
                   <div className="flex justify-between items-center py-3 border-b border-gray-700">
                     <span>Students Helped</span>
-                    <span className="font-bold">2000+</span>
+                    <span className="font-bold">
+                      <CountUpNumber end={2000} suffix="+" duration={2} />
+                    </span>
                   </div>
                   <div className="flex justify-between items-center py-3 border-b border-gray-700">
                     <span>Universities Connected</span>
-                    <span className="font-bold">50+</span>
+                    <span className="font-bold">
+                      <CountUpNumber end={50} suffix="+" duration={2} delay={0.2} />
+                    </span>
                   </div>
                   <div className="flex justify-between items-center py-3 border-b border-gray-700">
                     <span>Career Placements</span>
-                    <span className="font-bold">300+</span>
+                    <span className="font-bold">
+                      <CountUpNumber end={300} suffix="+" duration={2} delay={0.4} />
+                    </span>
                   </div>
                   <div className="flex justify-between items-center py-3">
                     <span>Years of Impact</span>
-                    <span className="font-bold">3+</span>
+                    <span className="font-bold">
+                      <CountUpNumber end={3} suffix="+" duration={2} delay={0.6} />
+                    </span>
                   </div>
                 </div>
               </div>

@@ -6,6 +6,7 @@ import {
   Camera, Globe, Calendar, Clock, ChevronRight
 } from 'lucide-react'
 import AnimatedCounter from '../components/AnimatedCounter'
+import CountUpNumber from '../components/CountUpNumber'
 
 // Social Media Icons Components
 const WhatsAppIcon = ({ className = "w-6 h-6" }) => (
@@ -84,7 +85,8 @@ const Join: React.FC = () => {
   const socialMedia = [
     {
       name: 'WhatsApp',
-      members: '1,200+',
+      members: 1200,
+      suffix: '+',
       description: 'Main community hub for daily discussions and opportunities',
       icon: WhatsAppIcon,
       color: 'bg-green-500',
@@ -93,7 +95,8 @@ const Join: React.FC = () => {
     },
     {
       name: 'Discord',
-      members: '800+',
+      members: 800,
+      suffix: '+',
       description: 'Technical discussions, study groups, and voice chats',
       icon: DiscordIcon,
       color: 'bg-indigo-500',
@@ -102,7 +105,8 @@ const Join: React.FC = () => {
     },
     {
       name: 'YouTube',
-      members: '5K+',
+      members: 5000,
+      suffix: '+',
       description: 'Podcasts, tutorials, and tech talks',
       icon: Youtube,
       color: 'bg-red-500',
@@ -111,7 +115,8 @@ const Join: React.FC = () => {
     },
     {
       name: 'LinkedIn',
-      members: '3K+',
+      members: 3000,
+      suffix: '+',
       description: 'Professional networking and career updates',
       icon: Linkedin,
       color: 'bg-blue-600',
@@ -120,7 +125,8 @@ const Join: React.FC = () => {
     },
     {
       name: 'Instagram',
-      members: '2K+',
+      members: 2000,
+      suffix: '+',
       description: 'Behind the scenes and community highlights',
       icon: Instagram,
       color: 'bg-pink-500',
@@ -362,7 +368,7 @@ const Join: React.FC = () => {
                 
                 <div className="text-center mb-4">
                   <span className="text-2xl font-bold text-gray-800">
-                    {platform.members}
+                    <CountUpNumber end={platform.members} suffix={platform.suffix} duration={2.5} />
                   </span>
                   <span className="text-gray-600 ml-1">members</span>
                 </div>

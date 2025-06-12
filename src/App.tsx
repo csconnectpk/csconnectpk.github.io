@@ -1,6 +1,6 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import Navigation from './components/Navigation'
+import SmartNavbar from './components/SmartNavbar'
 import Footer from './components/Footer'
 import Home from './pages/Home'
 import About from './pages/About'
@@ -71,7 +71,7 @@ const App: React.FC = () => {
     <ErrorBoundary>
       <Router>
         <div className="min-h-screen text-black">
-          <Navigation />
+          <SmartNavbar />
           
           <main>
             <Routes>

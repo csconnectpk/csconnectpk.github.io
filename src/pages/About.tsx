@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Target, Users, Globe, Calendar, MessageCircle, GraduationCap, Rocket } from 'lucide-react'
 import AnimatedCounter from '../components/AnimatedCounter'
+import CountUpNumber from '../components/CountUpNumber'
 
 const About: React.FC = () => {
   useEffect(() => {
@@ -318,19 +319,27 @@ const About: React.FC = () => {
             className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12"
           >
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-white mb-2">1,600+</div>
+              <div className="text-3xl md:text-4xl font-bold text-white mb-2">
+                <CountUpNumber end={1600} suffix="+" duration={2.5} delay={0.2} />
+              </div>
               <div className="text-gray-400 text-sm">Active Members</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-white mb-2">50+</div>
+              <div className="text-3xl md:text-4xl font-bold text-white mb-2">
+                <CountUpNumber end={50} suffix="+" duration={2.5} delay={0.4} />
+              </div>
               <div className="text-gray-400 text-sm">Universities</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-white mb-2">200+</div>
+              <div className="text-3xl md:text-4xl font-bold text-white mb-2">
+                <CountUpNumber end={200} suffix="+" duration={2.5} delay={0.6} />
+              </div>
               <div className="text-gray-400 text-sm">Expert Sessions</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-white mb-2">100%</div>
+              <div className="text-3xl md:text-4xl font-bold text-white mb-2">
+                <CountUpNumber end={100} suffix="%" duration={2.5} delay={0.8} />
+              </div>
               <div className="text-gray-400 text-sm">Free Forever</div>
             </div>
           </motion.div>
@@ -399,7 +408,7 @@ const About: React.FC = () => {
               Our <span className="text-gray-600">Journey</span>
             </h2>
             <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              From a simple idea to a thriving community of <AnimatedCounter value={2000} suffix="+" /> students
+              From a simple idea to a thriving community of <CountUpNumber end={2000} suffix="+" duration={2} className="font-bold text-black" /> students
             </p>
           </motion.div>
 
@@ -472,7 +481,7 @@ const About: React.FC = () => {
                 <p className="text-gray-600 text-sm md:text-base leading-relaxed mb-4">{initiative.description}</p>
                 <div className="flex items-center justify-between">
                   <div className="text-2xl font-bold text-black">
-                    <AnimatedCounter value={initiative.stats.value} suffix={initiative.stats.suffix} />
+                    <CountUpNumber end={initiative.stats.value} suffix={initiative.stats.suffix} duration={2.5} />
                   </div>
                   <div className="text-xs text-gray-500 uppercase tracking-wider">Active</div>
                 </div>
@@ -495,7 +504,7 @@ const About: React.FC = () => {
               Ready to <span className="text-gray-300">Join Us?</span>
             </h2>
             <p className="text-base md:text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed mb-8">
-              Become part of Pakistan's largest CS student community and connect with <AnimatedCounter value={2000} suffix="+" /> like-minded peers
+              Become part of Pakistan's largest CS student community and connect with <CountUpNumber end={2000} suffix="+" duration={2} className="font-bold text-white" /> like-minded peers
             </p>
             <motion.button
               whileHover={{ scale: 1.05 }}

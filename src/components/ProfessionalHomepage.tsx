@@ -250,6 +250,51 @@ const studentReviews = [
     name: 'Sara Chaudhry',
     university: 'ITU University',
     review: 'Being part of this community opened doors to amazing opportunities. The podcast interviews are really inspiring!'
+  },
+  {
+    name: 'Muhammad Usman',
+    university: 'UET Lahore',
+    review: 'The collaborative projects and study groups helped me understand complex data structures and algorithms better.'
+  },
+  {
+    name: 'Zainab Hassan',
+    university: 'PUCIT',
+    review: 'Monthly webinars with industry professionals gave me insights into the latest tech trends and career paths.'
+  },
+  {
+    name: 'Omar Sheikh',
+    university: 'BNU',
+    review: 'The career guidance sessions and resume reviews helped me prepare for interviews at top tech companies.'
+  },
+  {
+    name: 'Mahnoor Ahmed',
+    university: 'LSE',
+    review: 'The supportive community environment made my journey from beginner to intermediate programmer much smoother.'
+  },
+  {
+    name: 'Hamza Malik',
+    university: 'SZABIST',
+    review: 'Participating in the coding competitions organized by CS Connect boosted my problem-solving confidence significantly.'
+  },
+  {
+    name: 'Khadija Tariq',
+    university: 'Karachi University',
+    review: 'The mentorship program connected me with senior developers who guided me through my first open-source contributions.'
+  },
+  {
+    name: 'Bilal Khan',
+    university: 'Air University',
+    review: 'The resource sharing and study materials helped me excel in my computer graphics and machine learning courses.'
+  },
+  {
+    name: 'Amna Siddique',
+    university: 'NED University',
+    review: 'The job referral network within CS Connect helped me get interviews at leading software companies in Pakistan.'
+  },
+  {
+    name: 'Talha Riaz',
+    university: 'IQRA University',
+    review: 'The coding bootcamp sessions on web development were game-changers for my full-stack development skills.'
   }
 ];
 
