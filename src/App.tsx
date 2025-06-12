@@ -7,6 +7,7 @@ import About from './pages/About'
 import Team from './pages/Team'
 import Blog from './pages/Blog'
 import Podcasts from './pages/Podcasts'
+import FAQ from './pages/FAQ'
 import Contact from './pages/Contact'
 import Join from './pages/Join'
 import Demo from './pages/Demo'
@@ -79,6 +80,7 @@ const App: React.FC = () => {
               <Route path="/team" element={<Team />} />
               <Route path="/blog" element={<Blog />} />
               <Route path="/podcasts" element={<Podcasts />} />
+              <Route path="/faq" element={<FAQ />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/join" element={<Join />} />
               <Route path="/demo" element={<Demo />} />

@@ -318,9 +318,9 @@ const Join: React.FC = () => {
         </div>
       </section>
 
-      {/* Social Media Platforms */}
-      <section className="py-20 md:py-32 bg-white">
-        <div className="max-w-7xl mx-auto px-4 md:px-6">
+      {/* Join Our Community */}
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
+        <div className="max-w-6xl mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -328,16 +328,16 @@ const Join: React.FC = () => {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className="text-2xl md:text-4xl font-bold mb-6 text-black">
-              Connect With Us <span className="text-gray-600">Everywhere</span>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-black">
+              Join Our <span className="text-gray-600">Community</span>
             </h2>
-            <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto">
-              Join our thriving community across multiple platforms and stay connected with fellow CS students
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Connect with Pakistan's largest CS student community across multiple platforms
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-            {socialMedia.slice(0, 5).map((platform, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {socialMedia.map((platform, index) => (
               <motion.a
                 key={platform.name}
                 href={platform.link}
@@ -347,27 +347,35 @@ const Join: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                whileHover={{ scale: 1.05, y: -5 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-gray-50 rounded-2xl p-6 border border-gray-100 hover:border-black/20 transition-all duration-300 hover:shadow-lg group"
+                whileHover={{ y: -5, scale: 1.02 }}
+                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 group"
               >
-                <div className="flex items-center justify-between mb-4">
-                  <div className={`w-12 h-12 ${platform.color} ${platform.hoverColor} rounded-lg flex items-center justify-center transition-colors`}>
-                    <platform.icon className="w-6 h-6 text-white" />
+                <div className="flex items-center justify-center mb-6">
+                  <div className={`w-16 h-16 ${platform.color} ${platform.hoverColor} rounded-full flex items-center justify-center text-white transition-colors duration-300 group-hover:scale-110`}>
+                    <platform.icon className="w-8 h-8" />
                   </div>
-                  <span className="text-sm font-bold text-gray-600">{platform.members}</span>
                 </div>
                 
-                <h3 className="text-xl font-bold text-black mb-2 group-hover:text-gray-700 transition-colors">
+                <h3 className="text-xl font-bold text-black mb-2 text-center">
                   {platform.name}
                 </h3>
-                <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                
+                <div className="text-center mb-4">
+                  <span className="text-2xl font-bold text-gray-800">
+                    {platform.members}
+                  </span>
+                  <span className="text-gray-600 ml-1">members</span>
+                </div>
+                
+                <p className="text-gray-600 text-center leading-relaxed">
                   {platform.description}
                 </p>
                 
-                <div className="flex items-center text-black font-medium group-hover:text-gray-700 transition-colors">
-                  <span>Join Community</span>
-                  <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                <div className="mt-6 text-center">
+                  <span className="inline-flex items-center text-sm font-semibold text-gray-700 group-hover:text-black transition-colors">
+                    Join Now
+                    <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                  </span>
                 </div>
               </motion.a>
             ))}

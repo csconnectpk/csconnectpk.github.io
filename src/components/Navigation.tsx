@@ -16,8 +16,20 @@ const BrainIcon: React.FC<{ className?: string }> = ({ className = "w-6 h-6" }) 
 
 const Navigation: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false)
-  const [isScrolled, setIsScrolled] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
   const location = useLocation()
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 100)
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  useEffect(() => {
+    setIsOpen(false)
+  }, [location])
 
   const navItems = [
     { name: 'Home', path: '/' },
@@ -25,268 +37,202 @@ const Navigation: React.FC = () => {
     { name: 'Team', path: '/team' },
     { name: 'Podcasts', path: '/podcasts' },
     { name: 'Blog', path: '/blog' },
-    { name: 'Contact', path: '/contact' },
+    { name: 'FAQ', path: '/faq' }
   ]
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 100)
-    }
-
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
 
   const isActive = (path: string) => location.pathname === path
 
-  // Determine if we're on homepage
-  const isHomepage = location.pathname === '/'
-
   return (
     <>
-      {/* Full Navbar - Always visible at top */}
-      <motion.div
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ 
-          opacity: isScrolled ? 0 : 1,
-          y: isScrolled ? -20 : 0
+      {/* Desktop Navigation */}
+      <motion.nav
+        initial={false}
+        animate={{
+          width: scrolled ? '80%' : '100%',
+          maxWidth: scrolled ? '900px' : '100%',
+          borderRadius: scrolled ? '50px' : '0px',
+          backgroundColor: scrolled ? 'rgba(255, 255, 255, 0.1)' : 'rgba(255, 255, 255, 1)',
+          backdropFilter: scrolled ? 'blur(20px)' : 'blur(0px)',
+          boxShadow: scrolled 
+            ? '0 8px 32px rgba(0, 0, 0, 0.1)' 
+            : '0 1px 3px rgba(0, 0, 0, 0.1)',
+          border: scrolled ? '1px solid rgba(255, 255, 255, 0.2)' : '1px solid rgba(0, 0, 0, 0.1)',
+          y: scrolled ? 20 : 0,
+          x: scrolled ? '0%' : '0%'
         }}
-        transition={{ duration: 0.3, ease: "easeInOut" }}
-        className={`fixed w-full z-40 ${isScrolled ? 'pointer-events-none' : ''}`}
+        transition={{ 
+          duration: 0.6, 
+          ease: [0.16, 1, 0.3, 1],
+          type: "tween"
+        }}
+        className={`fixed top-0 z-50 hidden lg:block ${
+          scrolled 
+            ? 'left-1/2 -translate-x-1/2' 
+            : 'left-0 right-0'
+        }`}
       >
-        <div className={`${isHomepage ? 'bg-transparent pt-8 pb-4' : 'bg-white/80 backdrop-blur-lg shadow-lg py-4'}`}>
-          <div className="max-w-5xl mx-auto px-4">
-            <div className="flex items-center justify-between">
-              {/* Logo and branding */}
-              <motion.div
-                initial={{ opacity: 0, x: -50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-              >
-                <Link to="/" className="flex items-center space-x-4 group">
-                  <motion.div
-                    whileHover={{ scale: 1.1, rotate: 5 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="relative"
-                  >
-                    <div className={`w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 ${
-                      isHomepage 
-                        ? 'bg-gradient-to-br from-white/20 to-white/10 border-white/30' 
-                        : 'bg-gradient-to-br from-gray-900 to-gray-800 border-gray-700'
-                    } backdrop-blur-lg border rounded-2xl flex items-center justify-center shadow-2xl`}>
-                      <BrainIcon className={`w-6 h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 ${
-                        isHomepage ? 'text-white' : 'text-white'
-                      }`} />
-                    </div>
-                  </motion.div>
-                  <motion.div
-                    whileHover={{ x: 3 }}
-                    className="flex flex-col"
-                  >
-                    <span className={`text-xl md:text-2xl lg:text-3xl font-bold transition-all duration-300 leading-tight ${
-                      isHomepage ? 'text-white' : 'text-gray-900'
-                    } group-hover:opacity-80`}>
-                      CS Connect Pakistan
-                    </span>
-                    <span className={`text-xs md:text-sm font-medium ${
-                      isHomepage ? 'text-white/70' : 'text-gray-600'
-                    }`}>
-                      Connecting Pakistani Geeks
-                    </span>
-                  </motion.div>
-                </Link>
-              </motion.div>
+        <div className={`${scrolled ? 'px-6 py-3' : 'max-w-7xl mx-auto px-6 py-4'}`}>
+          <div className="flex items-center justify-between">
+            {/* Logo */}
+            <motion.div
+              animate={{
+                scale: scrolled ? 0.9 : 1
+              }}
+              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <Link to="/" className="flex items-center space-x-3">
+                <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
+                  <span className="text-white font-bold text-sm">CS</span>
+                </div>
+                <span className={`font-bold text-lg transition-colors duration-600 ${
+                  scrolled ? 'text-black' : 'text-black'
+                }`}>
+                  CS Connect Pakistan
+                </span>
+              </Link>
+            </motion.div>
 
-              {/* Desktop Navigation and Join Button */}
-              <div className="hidden lg:flex items-center space-x-8">
-                <div className="flex items-center space-x-2">
-                  {navItems.slice(1).map((item) => (
+            {/* Navigation Items */}
+            <div className="flex items-center space-x-1">
+              {navItems.map((item) => (
+                <Link
+                  key={item.name}
+                  to={item.path}
+                  className={`relative px-4 py-2 text-sm font-medium transition-all duration-300 rounded-full ${
+                    isActive(item.path)
+                      ? scrolled 
+                        ? 'text-white bg-black' 
+                        : 'text-white bg-black'
+                      : scrolled
+                        ? 'text-black hover:text-gray-600 hover:bg-white/20'
+                        : 'text-gray-700 hover:text-black hover:bg-gray-100'
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              ))}
+              
+              {/* Join Us Button */}
+              <Link to="/contact">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className={`ml-2 px-6 py-2 rounded-full font-medium transition-all duration-300 ${
+                    scrolled
+                      ? 'bg-black text-white hover:bg-gray-800'
+                      : 'bg-black text-white hover:bg-gray-800'
+                  }`}
+                >
+                  Join Us
+                </motion.button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </motion.nav>
+
+      {/* Mobile Navigation */}
+      <motion.nav
+        initial={false}
+        animate={{
+          backgroundColor: scrolled ? 'rgba(255, 255, 255, 0.95)' : 'rgba(255, 255, 255, 1)',
+          backdropFilter: scrolled ? 'blur(20px)' : 'blur(0px)',
+          boxShadow: scrolled 
+            ? '0 4px 24px rgba(0, 0, 0, 0.1)' 
+            : '0 1px 3px rgba(0, 0, 0, 0.1)'
+        }}
+        transition={{ duration: 0.3 }}
+        className="fixed top-0 left-0 right-0 z-50 lg:hidden border-b border-gray-200/50"
+      >
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="flex items-center justify-between h-16">
+            {/* Logo */}
+            <Link to="/" className="flex items-center space-x-2">
+              <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
+                <span className="text-white font-bold text-sm">CS</span>
+              </div>
+              <span className="font-bold text-lg text-black">CS Connect</span>
+            </Link>
+
+            {/* Mobile Menu Button */}
+            <div className="flex items-center justify-center w-10 h-10">
+              <motion.button
+                whileTap={{ scale: 0.95 }}
+                onClick={() => setIsOpen(!isOpen)}
+                className="p-2 rounded-lg text-black hover:bg-gray-100 transition-colors duration-200"
+              >
+                {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              </motion.button>
+            </div>
+          </div>
+        </div>
+
+        {/* Mobile Menu */}
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.3 }}
+              className="bg-white/95 backdrop-blur-lg border-t border-gray-200 shadow-lg"
+            >
+              <div className="px-4 py-4 space-y-3">
+                {navItems.map((item, index) => (
+                  <motion.div
+                    key={item.name}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.3, delay: index * 0.1 }}
+                  >
                     <Link
-                      key={item.name}
                       to={item.path}
-                      className={`relative px-4 py-2 rounded-2xl transition-all duration-300 font-medium text-sm ${
+                      className={`block px-4 py-3 rounded-lg text-base font-medium transition-colors duration-200 ${
                         isActive(item.path)
-                          ? isHomepage
-                            ? 'text-white bg-white/20 backdrop-blur-sm'
-                            : 'text-gray-900 bg-gray-200/80 backdrop-blur-sm'
-                          : isHomepage
-                            ? 'text-white/90 hover:text-white hover:bg-white/10 backdrop-blur-sm'
-                            : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100/80 backdrop-blur-sm'
+                          ? 'bg-black text-white'
+                          : 'text-gray-800 hover:bg-gray-50 hover:text-black'
                       }`}
+                      onClick={() => setIsOpen(false)}
                     >
                       {item.name}
                     </Link>
-                  ))}
-                </div>
+                  </motion.div>
+                ))}
                 
+                {/* Mobile Join Us Button */}
                 <motion.div
-                  initial={{ opacity: 0, x: 30 }}
+                  initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.8, delay: 0.4 }}
+                  transition={{ duration: 0.3, delay: navItems.length * 0.1 }}
+                  className="pt-4 border-t border-gray-200"
                 >
-                  <Link to="/join">
+                  <Link to="/contact" onClick={() => setIsOpen(false)}>
                     <motion.button
-                      whileHover={{ 
-                        scale: 1.05, 
-                        boxShadow: "0 12px 32px rgba(0, 0, 0, 0.2)",
-                        y: -2 
-                      }}
+                      whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
-                      className="px-6 py-3 rounded-xl font-medium transition-all duration-300 text-sm shadow-lg group bg-black text-white hover:bg-gray-800 backdrop-blur-sm"
+                      className="w-full bg-black text-white py-3 rounded-lg font-medium hover:bg-gray-800 transition-all duration-200"
                     >
-                      <span className="group-hover:translate-x-0.5 transition-transform duration-200 inline-block">
-                        Join Us
-                      </span>
+                      Join Us
                     </motion.button>
                   </Link>
                 </motion.div>
               </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </motion.nav>
 
-              {/* Mobile menu button */}
-              <div className="lg:hidden">
-                <button
-                  onClick={() => setIsOpen(!isOpen)}
-                  className={`p-3 rounded-2xl ${
-                    isHomepage
-                      ? 'bg-white/20 text-white border-white/30'
-                      : 'bg-gray-100 text-gray-900 border-gray-200'
-                  } backdrop-blur-sm border shadow-lg`}
-                >
-                  {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-                </button>
-              </div>
-            </div>
-
-            {/* Mobile navigation */}
-            <AnimatePresence>
-              {isOpen && (
-                <motion.div
-                  initial={{ opacity: 0, height: 0 }}
-                  animate={{ opacity: 1, height: "auto" }}
-                  exit={{ opacity: 0, height: 0 }}
-                  className={`lg:hidden mt-4 rounded-2xl ${
-                    isHomepage
-                      ? 'bg-white/25 border-white/30'
-                      : 'bg-white/90 border-gray-200'
-                  } backdrop-blur-xl border`}
-                >
-                  <div className="py-4 space-y-2 px-4">
-                    {navItems.map((item) => (
-                      <Link
-                        key={item.name}
-                        to={item.path}
-                        className={`block px-4 py-3 rounded-2xl font-medium transition-all backdrop-blur-sm ${
-                          isActive(item.path)
-                            ? isHomepage
-                              ? 'text-white bg-white/30'
-                              : 'text-gray-900 bg-gray-200/80'
-                            : isHomepage
-                              ? 'text-white/90 hover:bg-white/20'
-                              : 'text-gray-700 hover:bg-gray-100/80'
-                        }`}
-                        onClick={() => setIsOpen(false)}
-                      >
-                        {item.name}
-                      </Link>
-                    ))}
-                    <Link
-                      to="/join"
-                      className="block px-4 py-3 rounded-2xl font-medium transition-all backdrop-blur-sm bg-black text-white hover:bg-gray-800 text-center"
-                      onClick={() => setIsOpen(false)}
-                    >
-                      Join Us
-                    </Link>
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
-        </div>
-      </motion.div>
-
-      {/* Compact Scrolled Navbar - Only buttons */}
+      {/* Mobile Menu Overlay */}
       <AnimatePresence>
-        {isScrolled && (
+        {isOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -50, scale: 0.9 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: -50, scale: 0.9 }}
-            transition={{ duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50"
-          >
-            <div className="bg-white/25 backdrop-blur-lg border border-white/20 rounded-2xl px-4 py-2 shadow-2xl">
-              {/* Desktop compact nav */}
-              <div className="hidden md:flex items-center space-x-2">
-                {navItems.map((item) => (
-                  <Link
-                    key={item.name}
-                    to={item.path}
-                    className={`relative px-3 py-2 rounded-xl transition-all duration-300 font-medium text-sm ${
-                      isActive(item.path)
-                        ? 'text-black bg-white/40 backdrop-blur-sm'
-                        : 'text-black/80 hover:text-black hover:bg-white/25 backdrop-blur-sm'
-                    }`}
-                  >
-                    {item.name}
-                  </Link>
-                ))}
-                <Link to="/join">
-                  <motion.button
-                    whileHover={{ scale: 1.05, y: -1 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="px-4 py-2 rounded-xl font-medium transition-all duration-300 text-sm bg-black text-white hover:bg-gray-800 backdrop-blur-sm ml-2"
-                  >
-                    Join Us
-                  </motion.button>
-                </Link>
-              </div>
-
-              {/* Mobile compact nav */}
-              <div className="md:hidden">
-                <button
-                  onClick={() => setIsOpen(!isOpen)}
-                  className="p-2 rounded-xl bg-white/25 text-black backdrop-blur-sm"
-                >
-                  {isOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
-                </button>
-
-                <AnimatePresence>
-                  {isOpen && (
-                    <motion.div
-                      initial={{ opacity: 0, scale: 0.9, y: -10 }}
-                      animate={{ opacity: 1, scale: 1, y: 0 }}
-                      exit={{ opacity: 0, scale: 0.9, y: -10 }}
-                      className="absolute top-full left-0 right-0 mt-2 bg-white/25 backdrop-blur-xl border border-white/20 rounded-xl overflow-hidden"
-                    >
-                      <div className="py-2 space-y-1 px-2">
-                        {navItems.map((item) => (
-                          <Link
-                            key={item.name}
-                            to={item.path}
-                            className={`block px-3 py-2 rounded-lg font-medium transition-all text-sm ${
-                              isActive(item.path)
-                                ? 'text-black bg-white/40'
-                                : 'text-black/80 hover:bg-white/25'
-                            }`}
-                            onClick={() => setIsOpen(false)}
-                          >
-                            {item.name}
-                          </Link>
-                        ))}
-                        <Link
-                          to="/join"
-                          className="block px-3 py-2 rounded-lg font-medium transition-all text-sm bg-black text-white hover:bg-gray-800 text-center"
-                          onClick={() => setIsOpen(false)}
-                        >
-                          Join Us
-                        </Link>
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-            </div>
-          </motion.div>
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40 lg:hidden"
+            onClick={() => setIsOpen(false)}
+          />
         )}
       </AnimatePresence>
     </>
