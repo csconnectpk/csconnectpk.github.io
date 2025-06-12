@@ -128,17 +128,11 @@ const Navigation: React.FC = () => {
                     <motion.button
                       whileHover={{ 
                         scale: 1.05, 
-                        boxShadow: isHomepage 
-                          ? "0 12px 32px rgba(255, 255, 255, 0.2)"
-                          : "0 12px 32px rgba(0, 0, 0, 0.1)",
+                        boxShadow: "0 12px 32px rgba(0, 0, 0, 0.2)",
                         y: -2 
                       }}
                       whileTap={{ scale: 0.98 }}
-                      className={`px-6 py-3 rounded-xl font-medium transition-all duration-300 text-sm shadow-lg group ${
-                        isHomepage
-                          ? 'bg-white/20 text-white border border-white/30 hover:bg-white/30'
-                          : 'bg-gray-900 text-white hover:bg-gray-800'
-                      } backdrop-blur-sm`}
+                      className="px-6 py-3 rounded-xl font-medium transition-all duration-300 text-sm shadow-lg group bg-black text-white hover:bg-gray-800 backdrop-blur-sm"
                     >
                       <span className="group-hover:translate-x-0.5 transition-transform duration-200 inline-block">
                         Join Us
@@ -172,7 +166,7 @@ const Navigation: React.FC = () => {
                   exit={{ opacity: 0, height: 0 }}
                   className={`lg:hidden mt-4 rounded-2xl ${
                     isHomepage
-                      ? 'bg-white/20 border-white/30'
+                      ? 'bg-white/25 border-white/30'
                       : 'bg-white/90 border-gray-200'
                   } backdrop-blur-xl border`}
                 >
@@ -197,11 +191,7 @@ const Navigation: React.FC = () => {
                     ))}
                     <Link
                       to="/join"
-                      className={`block px-4 py-3 rounded-2xl font-medium transition-all backdrop-blur-sm ${
-                        isHomepage
-                          ? 'bg-white/30 text-white hover:bg-white/40'
-                          : 'bg-gray-900 text-white hover:bg-gray-800'
-                      } text-center`}
+                      className="block px-4 py-3 rounded-2xl font-medium transition-all backdrop-blur-sm bg-black text-white hover:bg-gray-800 text-center"
                       onClick={() => setIsOpen(false)}
                     >
                       Join Us
@@ -224,7 +214,7 @@ const Navigation: React.FC = () => {
             transition={{ duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
             className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50"
           >
-            <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl px-4 py-2 shadow-2xl">
+            <div className="bg-white/25 backdrop-blur-lg border border-white/20 rounded-2xl px-4 py-2 shadow-2xl">
               {/* Desktop compact nav */}
               <div className="hidden md:flex items-center space-x-2">
                 {navItems.map((item) => (
@@ -233,8 +223,8 @@ const Navigation: React.FC = () => {
                     to={item.path}
                     className={`relative px-3 py-2 rounded-xl transition-all duration-300 font-medium text-sm ${
                       isActive(item.path)
-                        ? 'text-white bg-white/30 backdrop-blur-sm'
-                        : 'text-white/90 hover:text-white hover:bg-white/20 backdrop-blur-sm'
+                        ? 'text-black bg-white/40 backdrop-blur-sm'
+                        : 'text-black/80 hover:text-black hover:bg-white/25 backdrop-blur-sm'
                     }`}
                   >
                     {item.name}
@@ -244,7 +234,7 @@ const Navigation: React.FC = () => {
                   <motion.button
                     whileHover={{ scale: 1.05, y: -1 }}
                     whileTap={{ scale: 0.95 }}
-                    className="px-4 py-2 rounded-xl font-medium transition-all duration-300 text-sm bg-white/30 text-white hover:bg-white/40 backdrop-blur-sm ml-2"
+                    className="px-4 py-2 rounded-xl font-medium transition-all duration-300 text-sm bg-black text-white hover:bg-gray-800 backdrop-blur-sm ml-2"
                   >
                     Join Us
                   </motion.button>
@@ -255,7 +245,7 @@ const Navigation: React.FC = () => {
               <div className="md:hidden">
                 <button
                   onClick={() => setIsOpen(!isOpen)}
-                  className="p-2 rounded-xl bg-white/20 text-white backdrop-blur-sm"
+                  className="p-2 rounded-xl bg-white/25 text-black backdrop-blur-sm"
                 >
                   {isOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
                 </button>
@@ -266,7 +256,7 @@ const Navigation: React.FC = () => {
                       initial={{ opacity: 0, scale: 0.9, y: -10 }}
                       animate={{ opacity: 1, scale: 1, y: 0 }}
                       exit={{ opacity: 0, scale: 0.9, y: -10 }}
-                      className="absolute top-full left-0 right-0 mt-2 bg-white/10 backdrop-blur-xl border border-white/20 rounded-xl overflow-hidden"
+                      className="absolute top-full left-0 right-0 mt-2 bg-white/25 backdrop-blur-xl border border-white/20 rounded-xl overflow-hidden"
                     >
                       <div className="py-2 space-y-1 px-2">
                         {navItems.map((item) => (
@@ -275,8 +265,8 @@ const Navigation: React.FC = () => {
                             to={item.path}
                             className={`block px-3 py-2 rounded-lg font-medium transition-all text-sm ${
                               isActive(item.path)
-                                ? 'text-white bg-white/30'
-                                : 'text-white/90 hover:bg-white/20'
+                                ? 'text-black bg-white/40'
+                                : 'text-black/80 hover:bg-white/25'
                             }`}
                             onClick={() => setIsOpen(false)}
                           >
@@ -285,7 +275,7 @@ const Navigation: React.FC = () => {
                         ))}
                         <Link
                           to="/join"
-                          className="block px-3 py-2 rounded-lg font-medium transition-all text-sm bg-white/30 text-white hover:bg-white/40 text-center"
+                          className="block px-3 py-2 rounded-lg font-medium transition-all text-sm bg-black text-white hover:bg-gray-800 text-center"
                           onClick={() => setIsOpen(false)}
                         >
                           Join Us
