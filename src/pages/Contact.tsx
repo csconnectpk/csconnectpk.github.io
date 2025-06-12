@@ -1,343 +1,277 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
-import { MessageSquare, Users, Globe, ExternalLink } from 'lucide-react'
-import { FaWhatsapp, FaDiscord, FaInstagram, FaYoutube, FaLinkedin } from 'react-icons/fa'
-import AnimatedCounter from '../components/AnimatedCounter'
+import { Mail, MapPin, Phone, Send, CheckCircle, AlertCircle } from 'lucide-react'
 
 const Contact: React.FC = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+  const [result, setResult] = useState("")
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
-  const socialPlatforms = [
-    {
-      name: 'WhatsApp Group',
-      handle: 'CS Connect Pakistan',
-      memberCount: 2000,
-      memberSuffix: '+',
-      memberLabel: 'Members',
-      description: 'Main community hub for daily discussions, networking, and sharing opportunities',
-      icon: FaWhatsapp,
-      color: 'bg-green-500',
-      hoverColor: 'hover:bg-green-600',
-      link: '#'
-    },
-    {
-      name: 'Discord Server',
-      handle: 'CS Connect Pakistan',
-      memberCount: 400,
-      memberSuffix: '+',
-      memberLabel: 'Members',
-      description: 'Technical discussions, study groups, voice chats, and collaborative projects',
-      icon: FaDiscord,
-      color: 'bg-indigo-500',
-      hoverColor: 'hover:bg-indigo-600',
-      link: '#'
-    },
-    {
-      name: 'Instagram',
-      handle: '@csconnectpakistan',
-      memberCount: 150,
-      memberSuffix: '+',
-      memberLabel: 'Followers',
-      description: 'Community highlights, success stories, and event updates',
-      icon: FaInstagram,
-      color: 'bg-gradient-to-br from-purple-500 to-pink-500',
-      hoverColor: 'hover:from-purple-600 hover:to-pink-600',
-      link: 'https://instagram.com/csconnectpakistan'
-    },
-    {
-      name: 'YouTube',
-      handle: 'CS Connect Pakistan',
-      memberCount: 160,
-      memberSuffix: '+',
-      memberLabel: 'Subscribers',
-      description: 'Educational content, podcast episodes, and tech tutorials',
-      icon: FaYoutube,
-      color: 'bg-red-500',
-      hoverColor: 'hover:bg-red-600',
-      link: 'https://youtube.com/@csconnectpakistan'
-    },
-    {
-      name: 'LinkedIn',
-      handle: 'CS Connect Pakistan',
-      memberCount: 70,
-      memberSuffix: '+',
-      memberLabel: 'Followers',
-      description: 'Career opportunities, industry insights, and professional networking',
-      icon: FaLinkedin,
-      color: 'bg-blue-600',
-      hoverColor: 'hover:bg-blue-700',
-      link: 'https://linkedin.com/company/csconnectpakistan'
-    },
-  ]
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
+  const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+    setIsSubmitting(true)
+    setResult("Sending....")
+    
+    const formData = new FormData(event.target as HTMLFormElement)
+    formData.append("access_key", "6e8b6992-223d-4d0e-9a2e-4d015c0fa15d")
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      })
+
+      const data = await response.json()
+
+      if (data.success) {
+        setResult("Form Submitted Successfully")
+        ;(event.target as HTMLFormElement).reset()
+      } else {
+        console.log("Error", data)
+        setResult(data.message || "Something went wrong. Please try again.")
+      }
+    } catch (error) {
+      console.error("Error:", error)
+      setResult("Network error. Please check your connection and try again.")
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
 
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      className="pt-20 md:pt-24 lg:pt-28"
-    >
-      {/* Hero Section */}
-      <section className="py-20 md:py-32 bg-black text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:50px_50px]" />
-        </div>
-
-        <div className="max-w-7xl mx-auto px-4 md:px-6 text-center relative z-10">
+    <div className="min-h-screen pt-20 bg-gray-50">
+      {/* Header */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
+            className="text-center"
           >
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full mb-8"
-            >
-              <MessageSquare className="w-4 h-4 mr-2" />
-              <span className="text-sm font-medium">Connect With Us</span>
-            </motion.div>
-
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              Let's <span className="text-gray-300">Connect</span>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
+              Get in <span className="text-blue-600">Touch</span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed mb-8">
-              We're all over the place! Find us wherever you like to hang out online
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Have questions? Want to collaborate? We'd love to hear from you.
             </p>
-
-            {/* Community Stats */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="flex flex-wrap justify-center gap-8 mb-8"
-            >
-              <div className="text-center">
-                <div className="text-2xl font-bold">
-                  <AnimatedCounter value={2000} suffix="+" />
-                </div>
-                <div className="text-gray-400 text-sm">Community Members</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold">
-                  <AnimatedCounter value={50} suffix="+" />
-                </div>
-                <div className="text-gray-400 text-sm">Universities</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold">
-                  <AnimatedCounter value={4} />
-                </div>
-                <div className="text-gray-400 text-sm">Podcast Episodes</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold">
-                  <AnimatedCounter value={5} />
-                </div>
-                <div className="text-gray-400 text-sm">Platforms</div>
-              </div>
-            </motion.div>
           </motion.div>
         </div>
       </section>
 
-      {/* Social Media Platforms */}
-      <section className="py-20 md:py-32 bg-white">
-        <div className="max-w-7xl mx-auto px-4 md:px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-2xl md:text-4xl font-bold mb-6 text-black">
-              Where to <span className="text-gray-600">Find Us</span>
-            </h2>
-            <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto">
-              We're pretty much everywhere! Jump into whichever platform you're most comfortable with.
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            {socialPlatforms.map((platform, index) => (
-              <motion.a
-                key={platform.name}
-                href={platform.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                whileHover={{ y: -8, scale: 1.02 }}
-                className="group relative overflow-hidden bg-gradient-to-br from-white to-gray-50 border border-gray-200 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500"
-              >
-                {/* Animated background gradient */}
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-50 via-blue-50 to-indigo-50 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                
-                {/* Content */}
-                <div className="relative p-8">
-                  <div className="flex items-start justify-between mb-6">
-                    <div className={`w-16 h-16 ${platform.color} ${platform.hoverColor} rounded-2xl flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:rotate-3 shadow-lg`}>
-                      <platform.icon className="w-8 h-8 text-white" />
-                    </div>
-                    <motion.div
-                      initial={{ rotate: 0 }}
-                      whileHover={{ rotate: 45 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <ExternalLink className="w-5 h-5 text-gray-400 group-hover:text-gray-600 transition-colors duration-300" />
-                    </motion.div>
-                  </div>
-
-                  <h3 className="text-2xl font-bold text-black mb-3 group-hover:text-gray-800 transition-colors duration-300">
-                    {platform.name}
-                  </h3>
-                  <p className="text-gray-700 font-semibold mb-2 text-lg">{platform.handle}</p>
-                  <div className="inline-flex items-center px-3 py-1 bg-gray-100 group-hover:bg-white rounded-full mb-4 transition-colors duration-300">
-                    <Users className="w-4 h-4 text-gray-600 mr-2" />
-                    <span className="text-sm font-medium text-gray-700">
-                      <AnimatedCounter value={platform.memberCount} suffix={platform.memberSuffix} /> {platform.memberLabel}
-                    </span>
-                  </div>
-                  <p className="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
-                    {platform.description}
-                  </p>
+      {/* Contact Section */}
+      <section className="py-16">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            {/* Contact Form */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="bg-white p-8 rounded-2xl shadow-lg"
+            >
+              <h2 className="text-3xl font-bold mb-6 text-gray-900">Send us a message</h2>
+              <form onSubmit={onSubmit} className="space-y-6">
+                <div>
+                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                    Full Name *
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    disabled={isSubmitting}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                    placeholder="Enter your full name"
+                  />
                 </div>
 
-                {/* Hover effect border */}
-                <div className="absolute inset-0 rounded-3xl border-2 border-transparent group-hover:border-gray-200 transition-colors duration-300" />
-              </motion.a>
-            ))}
-          </div>
-        </div>
-      </section>
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                    Email Address *
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    disabled={isSubmitting}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                    placeholder="Enter your email address"
+                  />
+                </div>
 
-      {/* Community Guidelines */}
-      <section className="py-20 md:py-32 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 md:px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-2xl md:text-4xl font-bold mb-6 text-black">
-              Community <span className="text-gray-600">Guidelines</span>
-            </h2>
-            <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto">
-              To maintain a positive and productive environment for everyone
-            </p>
-          </motion.div>
+                <div>
+                  <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
+                    Subject
+                  </label>
+                  <input
+                    type="text"
+                    id="subject"
+                    name="subject"
+                    disabled={isSubmitting}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                    placeholder="What's this about?"
+                  />
+                </div>
 
-          <div className="overflow-hidden">
-            <motion.div
-              animate={{ x: [0, -100] }}
-              transition={{ 
-                duration: 8,
-                repeat: Infinity,
-                ease: "linear"
-              }}
-              className="flex gap-6 w-max"
-            >
-              {[
-                {
-                  title: 'Be Respectful',
-                  description: 'Treat all community members with respect and kindness'
-                },
-                {
-                  title: 'Stay On Topic',
-                  description: 'Keep discussions relevant to CS, tech, and career development'
-                },
-                {
-                  title: 'Help Others',
-                  description: 'Share knowledge and help fellow students grow'
-                },
-                {
-                  title: 'No Spam',
-                  description: 'Avoid promotional content and irrelevant messages'
-                },
-                {
-                  title: 'Ask Questions',
-                  description: 'Don\'t hesitate to ask for help - we\'re all here to learn'
-                },
-                {
-                  title: 'Share Resources',
-                  description: 'Found something cool? Share it with the community'
-                },
-                {
-                  title: 'Be Patient',
-                  description: 'Everyone is at different learning stages - be supportive'
-                },
-                {
-                  title: 'No Hate Speech',
-                  description: 'Zero tolerance for discrimination or offensive content'
-                }
-              ].concat([
-                {
-                  title: 'Be Respectful',
-                  description: 'Treat all community members with respect and kindness'
-                },
-                {
-                  title: 'Stay On Topic',
-                  description: 'Keep discussions relevant to CS, tech, and career development'
-                },
-                {
-                  title: 'Help Others',
-                  description: 'Share knowledge and help fellow students grow'
-                },
-                {
-                  title: 'No Spam',
-                  description: 'Avoid promotional content and irrelevant messages'
-                }
-              ]).map((guideline, index) => (
-                <div
-                  key={`${guideline.title}-${index}`}
-                  className="bg-white p-6 rounded-2xl border border-gray-200 text-center flex-shrink-0 w-64"
+                <div>
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                    Message *
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows={6}
+                    required
+                    disabled={isSubmitting}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 resize-none disabled:opacity-50 disabled:cursor-not-allowed"
+                    placeholder="Tell us more about your inquiry..."
+                  />
+                </div>
+
+                <motion.button
+                  type="submit"
+                  disabled={isSubmitting}
+                  whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
+                  whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
+                  className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 rounded-lg font-medium flex items-center justify-center space-x-2 hover:from-blue-700 hover:to-purple-700 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  <h3 className="text-lg font-bold text-black mb-3">{guideline.title}</h3>
-                  <p className="text-gray-600 text-sm">{guideline.description}</p>
+                  {isSubmitting ? (
+                    <>
+                      <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                      <span>Sending...</span>
+                    </>
+                  ) : (
+                    <>
+                      <Send className="w-5 h-5" />
+                      <span>Send Message</span>
+                    </>
+                  )}
+                </motion.button>
+
+                {/* Status Message */}
+                {result && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className={`flex items-center space-x-2 p-4 rounded-lg ${
+                      result.includes('Successfully') 
+                        ? 'bg-green-50 text-green-700 border border-green-200' 
+                        : 'bg-red-50 text-red-700 border border-red-200'
+                    }`}
+                  >
+                    {result.includes('Successfully') ? (
+                      <CheckCircle className="w-5 h-5 flex-shrink-0" />
+                    ) : (
+                      <AlertCircle className="w-5 h-5 flex-shrink-0" />
+                    )}
+                    <span className="text-sm font-medium">{result}</span>
+                  </motion.div>
+                )}
+              </form>
+            </motion.div>
+
+            {/* Contact Information */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="space-y-8"
+            >
+              <div>
+                <h2 className="text-3xl font-bold mb-6 text-gray-900">Let's connect</h2>
+                <p className="text-lg text-gray-600 mb-8">
+                  We're here to help Pakistani CS students succeed. Whether you have questions about our community, 
+                  want to share your story, or need guidance on your tech journey, we'd love to hear from you.
+                </p>
+              </div>
+
+              {/* Contact Details */}
+              <div className="space-y-6">
+                <motion.div
+                  whileHover={{ x: 5 }}
+                  className="flex items-center space-x-4 p-4 bg-white rounded-lg shadow-md"
+                >
+                  <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                    <Mail className="w-6 h-6 text-blue-600" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-gray-900">Email Us</h3>
+                    <p className="text-gray-600">contact@csconnectpakistan.com</p>
+                  </div>
+                </motion.div>
+
+                <motion.div
+                  whileHover={{ x: 5 }}
+                  className="flex items-center space-x-4 p-4 bg-white rounded-lg shadow-md"
+                >
+                  <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
+                    <Phone className="w-6 h-6 text-green-600" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-gray-900">WhatsApp</h3>
+                    <p className="text-gray-600">+92 300 1234567</p>
+                  </div>
+                </motion.div>
+
+                <motion.div
+                  whileHover={{ x: 5 }}
+                  className="flex items-center space-x-4 p-4 bg-white rounded-lg shadow-md"
+                >
+                  <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
+                    <MapPin className="w-6 h-6 text-purple-600" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-gray-900">Location</h3>
+                    <p className="text-gray-600">Karachi, Lahore, Islamabad, Pakistan</p>
+                  </div>
+                </motion.div>
+              </div>
+
+              {/* Response Time */}
+              <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-6 rounded-xl border border-blue-100">
+                <h3 className="font-semibold text-gray-900 mb-2">Response Time</h3>
+                <p className="text-gray-600">
+                  We typically respond within 24 hours. For urgent matters, reach out to us on WhatsApp.
+                </p>
+              </div>
+
+              {/* Social Links */}
+              <div>
+                <h3 className="font-semibold text-gray-900 mb-4">Follow Us</h3>
+                <div className="flex space-x-4">
+                  {[
+                    { name: 'WhatsApp', color: 'bg-green-500', href: 'https://whatsapp.com/channel/0029VaF5kJwEawdmcFLmJP1a' },
+                    { name: 'Instagram', color: 'bg-pink-500', href: 'https://instagram.com/csconnectpakistan' },
+                    { name: 'LinkedIn', color: 'bg-blue-600', href: 'https://linkedin.com/company/csconnectpakistan' },
+                    { name: 'YouTube', color: 'bg-red-500', href: 'https://youtube.com/@csconnectpakistan' }
+                  ].map((social) => (
+                    <motion.a
+                      key={social.name}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.95 }}
+                      className={`w-10 h-10 ${social.color} rounded-lg flex items-center justify-center text-white font-semibold text-sm`}
+                    >
+                      {social.name[0]}
+                    </motion.a>
+                  ))}
                 </div>
-              ))}
+              </div>
             </motion.div>
           </div>
         </div>
       </section>
-
-      {/* Call to Action */}
-      <section className="py-20 md:py-32 bg-black text-white">
-        <div className="max-w-7xl mx-auto px-4 md:px-6 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Jump In!
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-12 leading-relaxed">
-              The WhatsApp group is usually the best place to start - that's where most of us hang out daily
-            </p>
-            
-            <motion.a
-              href="#"
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center bg-white text-black px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition-all duration-300"
-            >
-              <FaWhatsapp className="w-5 h-5 mr-2" />
-              Join the WhatsApp Group
-            </motion.a>
-          </motion.div>
-        </div>
-      </section>
-    </motion.div>
+    </div>
   )
 }
 
