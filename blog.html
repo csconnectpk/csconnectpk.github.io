@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Agency</title>
+    <meta name="description" content="Stay updated with the latest insights on technology trends, design tips, and digital innovation from our expert team.">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body class="font-inter bg-white text-black overflow-x-hidden">
+    
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-lg border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0">
+                    <a href="index.html" class="text-2xl font-bold tracking-tight text-black hover:text-gray-600 transition-colors duration-300">Agency</a>
+                </div>
+                
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-center space-x-8">
+                        <a href="about.html" class="text-sm font-medium text-black hover:text-gray-600 transition-colors duration-300">About Us</a>
+                        <a href="clients.html" class="text-sm font-medium text-black hover:text-gray-600 transition-colors duration-300">Our Clients</a>
+                        <a href="team.html" class="text-sm font-medium text-black hover:text-gray-600 transition-colors duration-300">Our Team</a>
+                        <a href="testimonials.html" class="text-sm font-medium text-black hover:text-gray-600 transition-colors duration-300">Testimonials</a>
+                        <a href="pricing.html" class="text-sm font-medium text-black hover:text-gray-600 transition-colors duration-300">Pricing</a>
+                        <a href="blog.html" class="text-sm font-medium text-black border-b-2 border-black">Blog</a>
+                        <a href="contact.html" class="bg-black text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-gray-800 transition-colors duration-300">Contact</a>
+                    </div>
+                </div>
+                
+                <div class="md:hidden">
+                    <button id="mobile-menu-toggle" class="text-black hover:text-gray-600 transition-colors duration-300">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-5xl md:text-6xl font-bold mb-8 leading-tight opacity-0 animate-fade-in-up">
+                Insights & Innovation
+            </h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed opacity-0 animate-fade-in-up animation-delay-200">
+                Stay ahead of the curve with expert insights on technology trends, design principles, and digital transformation strategies.
+            </p>
+        </div>
+    </section>
+
+    <!-- Featured Article -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-3xl overflow-hidden shadow-lg opacity-0 animate-fade-in-scale">
+                <div class="lg:flex">
+                    <div class="lg:w-1/2">
+                        <div class="h-64 lg:h-full bg-gradient-to-br from-purple-400 via-pink-400 to-blue-400 flex items-center justify-center">
+                            <span class="text-white text-lg font-medium">Featured Article Image</span>
+                        </div>
+                    </div>
+                    <div class="lg:w-1/2 p-8 lg:p-12">
+                        <div class="flex items-center mb-4">
+                            <span class="bg-black text-white px-3 py-1 rounded-full text-sm font-medium">Featured</span>
+                            <span class="ml-4 text-gray-500 text-sm">December 15, 2024</span>
+                        </div>
+                        <h2 class="text-3xl lg:text-4xl font-bold mb-6 leading-tight">
+                            Top 5 UI Trends for 2025: Designing for the Future
+                        </h2>
+                        <p class="text-gray-600 text-lg mb-6 leading-relaxed">
+                            Explore the cutting-edge UI design trends that will define user experiences in 2025. From immersive 3D interfaces to AI-powered personalization, discover how to stay ahead in the rapidly evolving digital landscape.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 bg-gray-200 rounded-full mr-3 flex items-center justify-center">
+                                    <span class="text-gray-500 text-sm">OS</span>
+                                </div>
+                                <div>
+                                    <p class="font-medium">Omar Sheikh</p>
+                                    <p class="text-gray-500 text-sm">Chief Design Officer</p>
+                                </div>
+                            </div>
+                            <a href="#" class="text-black font-medium hover:text-gray-600 transition-colors duration-300 inline-flex items-center group">
+                                Read Article
+                                <svg class="ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Articles Grid -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-8">Latest Articles</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Expert insights and practical advice from our team of technology and design professionals.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Article 1 -->
+                <article class="blog-card bg-white rounded-2xl overflow-hidden shadow-lg stagger-animation opacity-0" data-animation="animate-fade-in-up">
+                    <div class="h-64 bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center">
+                        <span class="text-white text-lg font-medium">AI Innovation</span>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center mb-4">
+                            <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm font-medium">Technology</span>
+                            <span class="ml-4 text-gray-500 text-sm">December 12, 2024</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 leading-tight">
+                            How AI is Transforming Pakistani Businesses: A Complete Guide
+                        </h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            Artificial Intelligence is revolutionizing the business landscape in Pakistan. From automating customer service to predictive analytics, discover how local companies are leveraging AI to gain competitive advantages and drive growth in emerging markets.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 bg-gray-200 rounded-full mr-3 flex items-center justify-center">
+                                    <span class="text-gray-500 text-xs">SK</span>
+                                </div>
+                                <span class="text-sm text-gray-700">Sara Khan</span>
+                            </div>
+                            <a href="#" class="text-black font-medium hover:text-gray-600 transition-colors duration-300">
+                                Read More →
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 2 -->
+                <article class="blog-card bg-white rounded-2xl overflow-hidden shadow-lg stagger-animation opacity-0" data-animation="animate-fade-in-up">
+                    <div class="h-64 bg-gradient-to-br from-green-400 to-blue-500 flex items-center justify-center">
+                        <span class="text-white text-lg font-medium">Brand Identity</span>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center mb-4">
+                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-medium">Design</span>
+                            <span class="ml-4 text-gray-500 text-sm">December 10, 2024</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 leading-tight">
+                            The Power of Branding in Tech: Building Trust in Digital Age
+                        </h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            In an increasingly digital world, strong branding is more crucial than ever for tech companies. Learn how to build authentic brand identities that resonate with Pakistani consumers and establish lasting trust in competitive markets.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 bg-gray-200 rounded-full mr-3 flex items-center justify-center">
+                                    <span class="text-gray-500 text-xs">OS</span>
+                                </div>
+                                <span class="text-sm text-gray-700">Omar Sheikh</span>
+                            </div>
+                            <a href="#" class="text-black font-medium hover:text-gray-600 transition-colors duration-300">
+                                Read More →
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 3 -->
+                <article class="blog-card bg-white rounded-2xl overflow-hidden shadow-lg stagger-animation opacity-0" data-animation="animate-fade-in-up">
+                    <div class="h-64 bg-gradient-to-br from-purple-400 to-pink-500 flex items-center justify-center">
+                        <span class="text-white text-lg font-medium">SEO Strategy</span>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center mb-4">
+                            <span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm font-medium">Marketing</span>
+                            <span class="ml-4 text-gray-500 text-sm">December 8, 2024</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 leading-tight">
+                            SEO Strategies for Local Markets: Dominating Pakistani Search Results
+                        </h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            Master local SEO techniques specifically tailored for Pakistani businesses. From Urdu keyword optimization to local citation building, discover proven strategies to improve your search rankings and attract more qualified leads.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 bg-gray-200 rounded-full mr-3 flex items-center justify-center">
+                                    <span class="text-gray-500 text-xs">SH</span>
+                                </div>
+                                <span class="text-sm text-gray-700">Sana Hussain</span>
+                            </div>
+                            <a href="#" class="text-black font-medium hover:text-gray-600 transition-colors duration-300">
+                                Read More →
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 4 -->
+                <article class="blog-card bg-white rounded-2xl overflow-hidden shadow-lg stagger-animation opacity-0" data-animation="animate-fade-in-up">
+                    <div class="h-64 bg-gradient-to-br from-yellow-400 to-orange-500 flex items-center justify-center">
+                        <span class="text-white text-lg font-medium">Future Tech</span>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center mb-4">
+                            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm font-medium">Innovation</span>
+                            <span class="ml-4 text-gray-500 text-sm">December 5, 2024</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 leading-tight">
+                            Future of Metaverse Development: Opportunities for Pakistani Developers
+                        </h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            The metaverse represents the next frontier of digital interaction. Explore emerging opportunities for Pakistani developers and businesses in virtual worlds, NFT marketplaces, and immersive experiences that are reshaping global digital commerce.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 bg-gray-200 rounded-full mr-3 flex items-center justify-center">
+                                    <span class="text-gray-500 text-xs">AR</span>
+                                </div>
+                                <span class="text-sm text-gray-700">Ahmed Raza</span>
+                            </div>
+                            <a href="#" class="text-black font-medium hover:text-gray-600 transition-colors duration-300">
+                                Read More →
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-24 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-8">Stay Updated</h2>
+            <p class="text-xl text-gray-600 mb-12 max-w-2xl mx-auto">
+                Get the latest insights on technology trends, design tips, and digital innovation delivered directly to your inbox.
+            </p>
+            
+            <form class="max-w-md mx-auto">
+                <div class="flex">
+                    <input type="email" placeholder="Enter your email address" 
+                           class="flex-1 px-6 py-4 rounded-l-full border-2 border-black focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent">
+                    <button type="submit" 
+                            class="bg-black text-white px-8 py-4 rounded-r-full font-medium hover:bg-gray-800 transition-all duration-300 transform hover:scale-105">
+                        Subscribe
+                    </button>
+                </div>
+                <p class="text-gray-500 text-sm mt-4">
+                    No spam, unsubscribe at any time. We respect your privacy.
+                </p>
+            </form>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-8">Explore by Category</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Dive deeper into specific topics that matter to your business and professional growth.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <a href="#" class="group bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8 text-center hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-blue-500 rounded-full mx-auto mb-6 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Technology</h3>
+                    <p class="text-gray-600 text-sm">AI, Blockchain, and emerging tech trends</p>
+                    <p class="text-blue-600 font-medium mt-4">12 Articles</p>
+                </a>
+                
+                <a href="#" class="group bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-8 text-center hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-green-500 rounded-full mx-auto mb-6 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17v4a2 2 0 002 2h4m-6-6V9a2 2 0 012-2h2m0 0V5a2 2 0 012-2h2m0 0V3"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Design</h3>
+                    <p class="text-gray-600 text-sm">UI/UX principles and creative insights</p>
+                    <p class="text-green-600 font-medium mt-4">8 Articles</p>
+                </a>
+                
+                <a href="#" class="group bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl p-8 text-center hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-purple-500 rounded-full mx-auto mb-6 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Business</h3>
+                    <p class="text-gray-600 text-sm">Strategy and growth insights</p>
+                    <p class="text-purple-600 font-medium mt-4">6 Articles</p>
+                </a>
+                
+                <a href="#" class="group bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl p-8 text-center hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-orange-500 rounded-full mx-auto mb-6 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Marketing</h3>
+                    <p class="text-gray-600 text-sm">Digital marketing and SEO strategies</p>
+                    <p class="text-orange-600 font-medium mt-4">9 Articles</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 bg-black text-white">
+        <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl md:text-5xl font-bold mb-8">Ready to Transform Your Business?</h2>
+            <p class="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
+                Apply these insights to your own projects or let our expert team help you implement cutting-edge solutions.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="contact.html" class="bg-white text-black px-8 py-4 rounded-full text-lg font-medium hover:bg-gray-100 transition-all duration-300 transform hover:scale-105">
+                    Start Your Project
+                </a>
+                <a href="about.html" class="border-2 border-white text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-white hover:text-black transition-all duration-300 transform hover:scale-105">
+                    Learn About Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="col-span-1 md:col-span-2">
+                    <a href="index.html" class="text-2xl font-bold text-black mb-4 block">Agency</a>
+                    <p class="text-gray-600 mb-6 max-w-md">
+                        Transforming bold visions into brand impact through innovative technology and creative excellence.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Solutions</h3>
+                    <ul class="space-y-2">
+                        <li><a href="solutions/web-development.html" class="text-gray-600 hover:text-black transition-colors duration-300">Web Development</a></li>
+                        <li><a href="solutions/ai.html" class="text-gray-600 hover:text-black transition-colors duration-300">Artificial Intelligence</a></li>
+                        <li><a href="solutions/app-development.html" class="text-gray-600 hover:text-black transition-colors duration-300">App Development</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Company</h3>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="text-gray-600 hover:text-black transition-colors duration-300">About Us</a></li>
+                        <li><a href="team.html" class="text-gray-600 hover:text-black transition-colors duration-300">Our Team</a></li>
+                        <li><a href="contact.html" class="text-gray-600 hover:text-black transition-colors duration-300">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-100 mt-12 pt-8 text-center">
+                <p class="text-gray-600 text-sm">© 2024 Agency. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html> 

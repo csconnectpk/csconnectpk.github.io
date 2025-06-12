@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Plans - Agency</title>
+    <meta name="description" content="Transparent pricing for our digital services. Choose from Basic, Pro, or Enterprise packages designed for Pakistani businesses.">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body class="font-inter bg-white text-black overflow-x-hidden">
+    
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-lg border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0">
+                    <a href="index.html" class="text-2xl font-bold tracking-tight text-black hover:text-gray-600 transition-colors duration-300">Agency</a>
+                </div>
+                
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-center space-x-8">
+                        <a href="about.html" class="text-sm font-medium text-black hover:text-gray-600 transition-colors duration-300">About Us</a>
+                        <a href="clients.html" class="text-sm font-medium text-black hover:text-gray-600 transition-colors duration-300">Our Clients</a>
+                        <a href="team.html" class="text-sm font-medium text-black hover:text-gray-600 transition-colors duration-300">Our Team</a>
+                        <a href="testimonials.html" class="text-sm font-medium text-black hover:text-gray-600 transition-colors duration-300">Testimonials</a>
+                        <a href="pricing.html" class="text-sm font-medium text-black border-b-2 border-black">Pricing</a>
+                        <a href="blog.html" class="text-sm font-medium text-black hover:text-gray-600 transition-colors duration-300">Blog</a>
+                        <a href="contact.html" class="bg-black text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-gray-800 transition-colors duration-300">Contact</a>
+                    </div>
+                </div>
+                
+                <div class="md:hidden">
+                    <button id="mobile-menu-toggle" class="text-black hover:text-gray-600 transition-colors duration-300">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-5xl md:text-6xl font-bold mb-8 leading-tight fade-in-scroll">
+                Simple, Transparent Pricing
+            </h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed fade-in-scroll">
+                Choose the perfect plan for your business. All packages are designed specifically for Pakistani enterprises with transparent pricing and no hidden fees.
+            </p>
+        </div>
+    </section>
+
+    <!-- Pricing Cards -->
+    <section class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                
+                <!-- Basic Plan -->
+                <div class="pricing-card bg-white rounded-2xl p-8 relative">
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-bold mb-4">Basic</h3>
+                        <div class="mb-4">
+                            <span class="text-4xl font-bold">PKR 50,000</span>
+                            <span class="text-gray-600">/project</span>
+                        </div>
+                        <p class="text-gray-600">Perfect for startups and small businesses</p>
+                    </div>
+                    
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Responsive Website Design</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Basic SEO Optimization</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>5 Pages Included</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Contact Form Integration</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>3 Months Support</span>
+                        </li>
+                        <li class="flex items-center text-gray-400">
+                            <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                            <span>E-commerce Integration</span>
+                        </li>
+                        <li class="flex items-center text-gray-400">
+                            <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                            <span>Advanced Analytics</span>
+                        </li>
+                    </ul>
+                    
+                    <a href="contact.html" class="block w-full text-center bg-black text-white py-3 rounded-full font-medium hover:bg-gray-800 transition-colors duration-300">
+                        Get Started
+                    </a>
+                </div>
+
+                <!-- Pro Plan (Featured) -->
+                <div class="pricing-card featured bg-white rounded-2xl p-8 relative border-2 border-black">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                        <span class="bg-black text-white px-6 py-2 rounded-full text-sm font-medium">Most Popular</span>
+                    </div>
+                    
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-bold mb-4">Pro</h3>
+                        <div class="mb-4">
+                            <span class="text-4xl font-bold">PKR 150,000</span>
+                            <span class="text-gray-600">/project</span>
+                        </div>
+                        <p class="text-gray-600">Ideal for growing businesses and enterprises</p>
+                    </div>
+                    
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Everything in Basic</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>E-commerce Integration</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Mobile App Development</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Digital Marketing Strategy</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Advanced Analytics</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>6 Months Support</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Priority Support</span>
+                        </li>
+                    </ul>
+                    
+                    <a href="contact.html" class="block w-full text-center bg-black text-white py-3 rounded-full font-medium hover:bg-gray-800 transition-colors duration-300">
+                        Get Started
+                    </a>
+                </div>
+
+                <!-- Enterprise Plan -->
+                <div class="pricing-card bg-white rounded-2xl p-8 relative">
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-bold mb-4">Enterprise</h3>
+                        <div class="mb-4">
+                            <span class="text-4xl font-bold">PKR 300,000+</span>
+                            <span class="text-gray-600">/project</span>
+                        </div>
+                        <p class="text-gray-600">Custom solutions for large enterprises</p>
+                    </div>
+                    
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Everything in Pro</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Custom AI Solutions</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Blockchain Development</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>ERP/CRM Integration</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Dedicated Project Manager</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>12 Months Support</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>24/7 Premium Support</span>
+                        </li>
+                    </ul>
+                    
+                    <a href="contact.html" class="block w-full text-center bg-black text-white py-3 rounded-full font-medium hover:bg-gray-800 transition-colors duration-300">
+                        Contact Sales
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Services -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-8">Additional Services</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Flexible add-ons to enhance your package and meet specific business requirements.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center p-6 border border-gray-200 rounded-xl hover:shadow-lg transition-all duration-300">
+                    <div class="w-12 h-12 bg-black rounded-lg mx-auto mb-4 flex items-center justify-center">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">SEO Audit</h3>
+                    <p class="text-gray-600 mb-4">PKR 15,000</p>
+                    <p class="text-sm text-gray-500">Comprehensive website analysis and optimization recommendations</p>
+                </div>
+                
+                <div class="text-center p-6 border border-gray-200 rounded-xl hover:shadow-lg transition-all duration-300">
+                    <div class="w-12 h-12 bg-black rounded-lg mx-auto mb-4 flex items-center justify-center">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4V2a1 1 0 011-1h8a1 1 0 011 1v2m-9 3v10a2 2 0 002 2h6a2 2 0 002-2V7H7zm3 3h4m-4 3h4m-4 3h4"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Content Writing</h3>
+                    <p class="text-gray-600 mb-4">PKR 5,000/page</p>
+                    <p class="text-sm text-gray-500">Professional copywriting for website pages and marketing materials</p>
+                </div>
+                
+                <div class="text-center p-6 border border-gray-200 rounded-xl hover:shadow-lg transition-all duration-300">
+                    <div class="w-12 h-12 bg-black rounded-lg mx-auto mb-4 flex items-center justify-center">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Photography</h3>
+                    <p class="text-gray-600 mb-4">PKR 25,000/day</p>
+                    <p class="text-sm text-gray-500">Professional product and corporate photography services</p>
+                </div>
+                
+                <div class="text-center p-6 border border-gray-200 rounded-xl hover:shadow-lg transition-all duration-300">
+                    <div class="w-12 h-12 bg-black rounded-lg mx-auto mb-4 flex items-center justify-center">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Maintenance</h3>
+                    <p class="text-gray-600 mb-4">PKR 10,000/month</p>
+                    <p class="text-sm text-gray-500">Ongoing website maintenance, updates, and security monitoring</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-24 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-8">Frequently Asked Questions</h2>
+                <p class="text-xl text-gray-600">
+                    Common questions about our pricing and services.
+                </p>
+            </div>
+            
+            <div class="space-y-8">
+                <div class="bg-white rounded-xl p-6">
+                    <h3 class="text-lg font-semibold mb-3">Do you offer payment plans?</h3>
+                    <p class="text-gray-600">Yes, we offer flexible payment plans for all our packages. You can pay 50% upfront and the remaining 50% upon project completion.</p>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6">
+                    <h3 class="text-lg font-semibold mb-3">What's included in the support period?</h3>
+                    <p class="text-gray-600">Our support includes bug fixes, minor updates, security patches, and technical assistance via email and phone during business hours.</p>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6">
+                    <h3 class="text-lg font-semibold mb-3">Can I upgrade my package later?</h3>
+                    <p class="text-gray-600">Absolutely! You can upgrade your package at any time. We'll credit your previous investment toward the higher-tier package.</p>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6">
+                    <h3 class="text-lg font-semibold mb-3">Do you work with businesses outside Pakistan?</h3>
+                    <p class="text-gray-600">While we specialize in Pakistani businesses, we also work with international clients. Pricing may vary based on project scope and location.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 bg-black text-white">
+        <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl md:text-5xl font-bold mb-8">Ready to get started?</h2>
+            <p class="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
+                Choose your plan and let's begin transforming your business with cutting-edge digital solutions.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="contact.html" class="bg-white text-black px-8 py-4 rounded-full text-lg font-medium hover:bg-gray-100 transition-all duration-300 transform hover:scale-105">
+                    Start Your Project
+                </a>
+                <a href="tel:+92-XXX-XXXXXXX" class="border-2 border-white text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-white hover:text-black transition-all duration-300 transform hover:scale-105">
+                    Call Us Now
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="col-span-1 md:col-span-2">
+                    <a href="index.html" class="text-2xl font-bold text-black mb-4 block">Agency</a>
+                    <p class="text-gray-600 mb-6 max-w-md">
+                        Transforming bold visions into brand impact through innovative technology and creative excellence.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Solutions</h3>
+                    <ul class="space-y-2">
+                        <li><a href="solutions/web-development.html" class="text-gray-600 hover:text-black transition-colors duration-300">Web Development</a></li>
+                        <li><a href="solutions/ai.html" class="text-gray-600 hover:text-black transition-colors duration-300">Artificial Intelligence</a></li>
+                        <li><a href="solutions/app-development.html" class="text-gray-600 hover:text-black transition-colors duration-300">App Development</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Company</h3>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="text-gray-600 hover:text-black transition-colors duration-300">About Us</a></li>
+                        <li><a href="team.html" class="text-gray-600 hover:text-black transition-colors duration-300">Our Team</a></li>
+                        <li><a href="contact.html" class="text-gray-600 hover:text-black transition-colors duration-300">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-100 mt-12 pt-8 text-center">
+                <p class="text-gray-600 text-sm">© 2024 Agency. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html> 
