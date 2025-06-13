@@ -759,10 +759,10 @@ const ProfessionalHomepage: React.FC = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-5xl font-bold mb-6 text-black">
-              Student <span className="text-gray-600">Voices</span>
+              What Our <span className="text-gray-600">Community Says</span>
             </h2>
             <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              How CS Connect Pakistan has helped fellow students in their journey
+              Real testimonials from CS Connect Pakistan members about their experience
             </p>
           </motion.div>
 
