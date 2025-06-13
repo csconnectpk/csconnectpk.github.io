@@ -2,18 +2,16 @@ import React from 'react'
 import CountUpNumber from './CountUpNumber'
 
 interface AnimatedCounterProps {
-  value: number | string
-  suffix?: string
-  prefix?: string
-  duration?: number
-  className?: string
+  value: number | string;
+  suffix?: string;
+  duration?: number;
+  className?: string;
 }
 
 const AnimatedCounter: React.FC<AnimatedCounterProps> = ({ 
   value, 
-  suffix = "", 
-  prefix = "",
-  duration = 2,
+  suffix = "",
+  duration = 2.5,
   className = ""
 }) => {
   // Extract numeric value from string if needed
@@ -34,7 +32,6 @@ const AnimatedCounter: React.FC<AnimatedCounterProps> = ({
     <CountUpNumber
       end={numericValue}
       suffix={finalSuffix}
-      prefix={prefix}
       duration={duration}
       className={className}
     />

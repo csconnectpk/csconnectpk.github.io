@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import AnimatedCounter from './AnimatedCounter'
 
 // Brain Icon Component for Logo
 const BrainIcon: React.FC<{ className?: string }> = ({ className = "w-6 h-6" }) => (

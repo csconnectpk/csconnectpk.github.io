@@ -2,29 +2,31 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/png" href="/logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Quirky Duck - Professional software agency in Pakistan delivering quality web development, mobile apps, and digital solutions at competitive prices." />
-    <meta name="keywords" content="software agency, pakistan, web development, mobile apps, quirky duck, digital solutions, professional development" />
-    <meta name="author" content="Quirky Duck" />
+    <meta name="description" content="CS Connect Pakistan - Pakistan's largest computer science student community connecting 2,000+ students from 50+ universities. Join for networking, mentorship, and career opportunities." />
+    <meta name="keywords" content="CS Connect Pakistan, computer science, student community, pakistan, networking, mentorship, programming, coding, tech community, university students" />
+    <meta name="author" content="CS Connect Pakistan" />
     
     <!-- Apple Web App Meta Tags -->
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-    <meta name="apple-mobile-web-app-title" content="Quirky Duck" />
+    <meta name="apple-mobile-web-app-title" content="CS Connect Pakistan" />
     
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Quirky Duck - Professional Software Agency" />
-    <meta property="og:description" content="Quality software development services in Pakistan at competitive prices." />
+    <meta property="og:title" content="CS Connect Pakistan - Premier CS Student Community" />
+    <meta property="og:description" content="Join Pakistan's largest CS student community with 2,000+ members from 50+ universities. Get networking, mentorship, and career opportunities." />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://quirky-duck-agency.vercel.app" />
+    <meta property="og:url" content="https://csconnect.pk" />
+    <meta property="og:image" content="/logo.png" />
     
-    <!-- Twitter Card Meta Tags -->
+    <!-- Social Media Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Quirky Dock" />
-    <meta name="twitter:description" content="Professional Software Agency - Quality development services in Pakistan." />
+    <meta name="twitter:title" content="CS Connect Pakistan" />
+    <meta name="twitter:description" content="Pakistan's premier CS student community - Join for networking and career growth." />
+    <meta name="twitter:image" content="/logo.png" />
     
-    <title>Quirky Duck - Professional Software Agency</title>
+    <title>CS Connect Pakistan - Premier CS Student Community</title>
     
     <!-- Preload Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -49,15 +51,83 @@
       ::-webkit-scrollbar-thumb:hover {
         background: rgba(0, 0, 0, 0.5);
       }
+      
+      /* Loading Animation */
+      .loading-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        transition: opacity 0.5s ease-out;
+      }
+      
+      .loading-screen.hidden {
+        opacity: 0;
+        pointer-events: none;
+      }
+      
+      .loading-logo {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 20px;
+        animation: pulse 2s infinite;
+      }
+      
+      @keyframes pulse {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.1); }
+      }
+      
+      .loading-text {
+        font-family: 'Inter', sans-serif;
+        font-size: 24px;
+        font-weight: 600;
+        color: #ffffff;
+        margin-bottom: 10px;
+      }
+      
+      .loading-subtext {
+        font-family: 'Inter', sans-serif;
+        font-size: 14px;
+        color: #888;
+      }
     </style>
-    <script type="module" crossorigin src="/assets/index-B_xxKAeK.js"></script>
+    <script type="module" crossorigin src="/assets/index-Di-dYHrx.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/vendor-BStAX1aO.js">
-    <link rel="modulepreload" crossorigin href="/assets/three-B96ISNSA.js">
-    <link rel="modulepreload" crossorigin href="/assets/animations-BGD_SXPG.js">
-    <link rel="stylesheet" crossorigin href="/assets/index-dgK5sNd8.css">
+    <link rel="modulepreload" crossorigin href="/assets/three-BnWlz03g.js">
+    <link rel="modulepreload" crossorigin href="/assets/animations-CnWJzs-I.js">
+    <link rel="stylesheet" crossorigin href="/assets/index-C7yklcZb.css">
   </head>
   <body>
-    <div id="root"></div>
-
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+      <img src="/logo.png" alt="CS Connect Pakistan" class="loading-logo" />
+      <div class="loading-text">CS Connect Pakistan</div>
+      <div class="loading-subtext">Loading...</div>
+    </div>
+    
+    <div id="root"></div>
+    
+    <script>
+      // Hide loading screen when page loads
+      window.addEventListener('load', function() {
+        const loadingScreen = document.getElementById('loading-screen');
+        if (loadingScreen) {
+          setTimeout(() => {
+            loadingScreen.classList.add('hidden');
+            setTimeout(() => {
+              loadingScreen.remove();
+            }, 500);
+          }, 1000);
+        }
+      });
+    </script>
   </body>
 </html> 

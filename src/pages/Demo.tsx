@@ -96,7 +96,6 @@ const Demo: React.FC = () => {
                 end={1250000} 
                 className="text-5xl font-bold text-white block mb-3"
                 duration={3}
-                separator=","
               />
               <p className="text-gray-400 uppercase tracking-wider">Total Views</p>
             </div>
@@ -104,7 +103,6 @@ const Demo: React.FC = () => {
               <CountUpNumber 
                 end={99.9} 
                 suffix="%" 
-                decimals={1}
                 className="text-5xl font-bold text-white block mb-3"
                 duration={2.5}
               />
@@ -223,11 +221,9 @@ const Demo: React.FC = () => {
           >
             <div className="text-center">
               <CountUpNumber 
-                prefix="$"
                 end={2500000} 
                 className="text-6xl font-bold text-gray-900 block mb-3"
                 duration={3.5}
-                separator=","
               />
               <p className="text-gray-600 uppercase tracking-wider">Revenue Generated</p>
             </div>

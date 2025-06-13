@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
-import { ArrowRight, Star, Code, Users, Globe, BookOpen } from 'lucide-react'
+import { ArrowRight, Code, Users, Globe, BookOpen } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import CountUpNumber from '../components/CountUpNumber'
 import SmartNavbar from '../components/SmartNavbar'

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { Play, Clock, Calendar, User, Headphones, Mail, Youtube, Users, Mic } from 'lucide-react'
+import { Play, Calendar, Mail, Youtube, Users, Mic } from 'lucide-react'
 
 const Podcasts: React.FC = () => {
   useEffect(() => {

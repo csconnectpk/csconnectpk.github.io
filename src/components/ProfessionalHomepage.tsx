@@ -1,21 +1,15 @@
-import React, { useEffect, Suspense, useRef } from 'react';
-import { motion, useInView, useScroll, useTransform } from 'framer-motion';
+import React, { useEffect, Suspense } from 'react';
+import { motion, useScroll, useTransform, useInView } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { 
   Users, 
-  BookOpen, 
   Mic, 
+  GraduationCap, 
   Globe, 
-  GraduationCap,
-  ArrowRight,
-  Trophy,
+  BookOpen, 
   Briefcase,
-  MessageCircle,
-  Instagram,
-  Youtube,
-  ExternalLink,
+  ArrowRight,
   Sparkles,
-  Linkedin,
   User
 } from 'lucide-react';
 

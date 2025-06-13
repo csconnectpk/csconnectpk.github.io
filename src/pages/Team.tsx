@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { Linkedin, Github, Mail, Users, Rocket, Heart } from 'lucide-react'
+import { Mail, Users, Rocket, Heart } from 'lucide-react'
 
 // GitHub Icon Component
 const GitHubIcon: React.FC<{ className?: string }> = ({ className = "w-5 h-5" }) => (

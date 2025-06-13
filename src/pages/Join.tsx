@@ -1,13 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { 
-  Users, MessageSquare, BookOpen, Award, TrendingUp, Star, Check, ArrowRight, 
-  Heart, Target, Youtube, Instagram, Linkedin, Code, Mic, Palette, 
-  Camera, Globe, Calendar, Clock, ChevronRight,
+  Users, MessageSquare, Award, Check, ArrowRight, 
   Mail, Send, CheckCircle, AlertCircle, User, GraduationCap, Hash, Sparkles
 } from 'lucide-react'
-import AnimatedCounter from '../components/AnimatedCounter'
-import CountUpNumber from '../components/CountUpNumber'
+
 
 // Actual Social Media Icons Components - Simple Outlined Style
 const WhatsAppIcon = ({ className = "w-6 h-6" }) => (
@@ -47,40 +44,12 @@ const YouTubeIcon = ({ className = "w-6 h-6" }) => (
 )
 
 const Join: React.FC = () => {
-  const [selectedRole, setSelectedRole] = useState('Campus Ambassador')
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    university: '',
-    graduationYear: '',
-    role: 'Campus Ambassador',
-    experience: '',
-    motivation: '',
-    skills: [] as string[]
-  })
   const [isSubmitting, setIsSubmitting] = useState(false)
-  const [isSubmitted, setIsSubmitted] = useState(false)
   const [result, setResult] = useState("")
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    })
-  }
-
-  const handleSkillToggle = (skill: string) => {
-    setFormData(prev => ({
-      ...prev,
-      skills: prev.skills.includes(skill)
-        ? prev.skills.filter(s => s !== skill)
-        : [...prev.skills, skill]
-    }))
-  }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -166,119 +135,7 @@ const Join: React.FC = () => {
     }
   ]
 
-  const roles = [
-    {
-      title: 'Campus Ambassador',
-      description: 'Represent CS Connect Pakistan at your university',
-      responsibilities: ['Organize meetups', 'Recruit new members', 'Share opportunities', 'Host events'],
-      icon: Users,
-      color: 'bg-blue-500',
-      skills: ['Leadership', 'Communication', 'Event Planning']
-    },
-    {
-      title: 'Podcast Host',
-      description: 'Host our weekly podcast and interview guests',
-      responsibilities: ['Conduct interviews', 'Research topics', 'Prepare questions', 'Engage audience'],
-      icon: Mic,
-      color: 'bg-purple-500',
-      skills: ['Public Speaking', 'Research', 'Communication']
-    },
-    {
-      title: 'Content Creator',
-      description: 'Create engaging content for our social media',
-      responsibilities: ['Write blog posts', 'Create graphics', 'Make videos', 'Manage social media'],
-      icon: Camera,
-      color: 'bg-green-500',
-      skills: ['Writing', 'Design', 'Video Editing']
-    },
-    {
-      title: 'Web Developer',
-      description: 'Help build and maintain our website and platform',
-      responsibilities: ['Frontend development', 'Backend development', 'Bug fixes', 'New features'],
-      icon: Code,
-      color: 'bg-orange-500',
-      skills: ['React', 'Node.js', 'TypeScript', 'MongoDB']
-    },
-    {
-      title: 'Designer',
-      description: 'Create visual designs for our brand and content',
-      responsibilities: ['UI/UX design', 'Brand graphics', 'Social media assets', 'Website design'],
-      icon: Palette,
-      color: 'bg-pink-500',
-      skills: ['Figma', 'Photoshop', 'Illustrator', 'UI/UX']
-    },
-    {
-      title: 'Community Manager',
-      description: 'Manage our online communities and engagement',
-      responsibilities: ['Moderate discussions', 'Engage members', 'Plan activities', 'Handle support'],
-      icon: MessageSquare,
-      color: 'bg-indigo-500',
-      skills: ['Communication', 'Moderation', 'Community Building']
-    }
-  ]
 
-  const achievements = [
-    {
-      icon: Users,
-      title: 'Growing Community',
-      description: 'Join our rapidly expanding network of CS students',
-      color: 'bg-blue-500'
-    },
-    {
-      icon: Award,
-      title: 'Recognition & Skills',
-      description: 'Build your portfolio while gaining real experience',
-      color: 'bg-purple-500'
-    },
-    {
-      icon: TrendingUp,
-      title: 'Career Growth',
-      description: 'Network with industry professionals and alumni',
-      color: 'bg-green-500'
-    },
-    {
-      icon: Heart,
-      title: 'Make an Impact',
-      description: 'Help fellow students succeed in their CS journey',
-      color: 'bg-red-500'
-    }
-  ]
-
-  const universities = [
-    'FAST-NUCES', 'NUST', 'GIKI', 'LUMS', 'COMSATS', 'ITU', 'PUCIT', 'UET', 
-    'IBA Karachi', 'NUST H-12', 'UCP', 'Habib University', 'PIEAS', 'Air University',
-    'Bahria University', 'SZABIST', 'IMS Sciences', 'Other'
-  ]
-
-  const allSkills = [
-    'React', 'Node.js', 'Python', 'Java', 'Machine Learning', 'UI/UX Design',
-    'Content Writing', 'Video Editing', 'Public Speaking', 'Event Planning',
-    'Social Media Marketing', 'Graphic Design', 'Project Management', 'Leadership'
-  ]
-
-  const testimonials = [
-    {
-      name: 'Fatima Ahmed',
-      university: 'FAST NUCES',
-      role: 'Campus Ambassador',
-      message: 'Being a campus ambassador has been incredible! I\'ve organized 3 successful meetups and connected with amazing people.',
-      image: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400'
-    },
-    {
-      name: 'Ahmad Hassan',
-      university: 'LUMS',
-      role: 'Podcast Host',
-      message: 'Hosting the podcast improved my communication skills tremendously. I\'ve interviewed 10+ industry professionals!',
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400'
-    },
-    {
-      name: 'Sara Khan',
-      university: 'NUST',
-      role: 'Web Developer',
-      message: 'Contributing to the platform helped me land my first internship. The real-world experience is invaluable.',
-      image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400'
-    }
-  ]
 
   return (
     <div className="min-h-screen bg-white">
