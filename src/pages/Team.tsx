@@ -25,73 +25,69 @@ const Team: React.FC = () => {
     {
       name: 'Azan Waseem',
       role: 'Founder & Community Lead',
-      university: 'FAST NUCES Islamabad',
-      year: '3rd Year CS',
       bio: 'Started CS Connect Pakistan from his dorm room because he believed Pakistani CS students deserved a space to connect and grow together.',
-      skills: ['Community Building', 'Leadership', 'Event Management'],
-      github: 'https://github.com/azanwaseem',
-      linkedin: 'https://linkedin.com/in/azanwaseem',
-      highlight: 'The one who started it all'
+      github: 'azanwaseem',
+      linkedin: 'azanwaseem'
     },
     {
       name: 'Siraj Qazi',
       role: 'Technical Mentor & Advisor',
-      university: 'Industry Professional',
-      year: 'Software Engineer',
       bio: 'Senior developer who guides our community with real-world industry insights and helps students navigate their tech careers.',
-      skills: ['Software Development', 'Mentorship', 'Career Guidance'],
-      github: 'https://github.com/sirajqazi',
-      linkedin: 'https://linkedin.com/in/sirajqazi',
-      highlight: 'Our industry connection'
+      github: 'sirajqazi',
+      linkedin: 'sirajqazi'
     },
     {
       name: 'Talha Asghar',
       role: 'Content & Strategy Lead',
-      university: 'FAST NUCES',
-      year: '4th Year CS',
       bio: 'Manages our content strategy and helps shape the direction of our community initiatives. Always thinking about what students actually need.',
-      skills: ['Content Strategy', 'Project Management', 'Community Growth'],
-      github: 'https://github.com/talhaasghar',
-      linkedin: 'https://linkedin.com/in/talhaasghar',
-      highlight: 'The strategist behind our growth'
+      github: 'talhaasghar',
+      linkedin: 'talhaasghar'
     },
     {
       name: 'Khawaja Owais',
       role: 'Operations & Outreach',
-      university: 'NUST Islamabad',
-      year: '3rd Year CS',
       bio: 'Handles our day-to-day operations and university outreach. He makes sure every student feels welcome in our community.',
-      skills: ['Operations', 'University Relations', 'Student Outreach'],
-      github: 'https://github.com/khawajaowais',
-      linkedin: 'https://linkedin.com/in/khawajaowais',
-      highlight: 'Our connection to universities'
+      github: 'khawajaowais',
+      linkedin: 'khawajaowais'
     }
   ]
 
   const openRoles = [
     {
-      title: 'Social Media Manager',
-      description: 'Help us grow our Instagram, LinkedIn, and YouTube presence. Perfect for someone creative who understands student culture.',
-      time: '5-10 hours/week',
-      skills: ['Content Creation', 'Social Media', 'Design']
+      title: 'Vibe Coders',
+      description: 'Build cool projects and contribute to our tech initiatives. Perfect for developers who love creating impactful solutions.',
+      time: 'Flexible',
+      skills: ['Programming', 'Problem Solving', 'Creativity']
+    },
+    {
+      title: 'Creative Strategists',
+      description: 'Shape our brand direction and creative campaigns. Help us connect with students through innovative strategies.',
+      time: '5-8 hours/week',
+      skills: ['Strategy', 'Creativity', 'Brand Thinking']
+    },
+    {
+      title: 'Video Editors',
+      description: 'Create engaging video content for our social media and educational initiatives.',
+      time: '3-6 hours/week',
+      skills: ['Video Editing', 'Storytelling', 'Creative Vision']
+    },
+    {
+      title: 'Graphic Designers',
+      description: 'Design visual content that represents our community and engages Pakistani CS students.',
+      time: '4-7 hours/week',
+      skills: ['Design', 'Visual Communication', 'Brand Identity']
+    },
+    {
+      title: 'Content Writers',
+      description: 'Write compelling content for blogs, social media, and community communications.',
+      time: '3-5 hours/week',
+      skills: ['Writing', 'Communication', 'Storytelling']
     },
     {
       title: 'University Ambassadors',
-      description: 'Represent CS Connect Pakistan at your university. Help us connect with more students and organize local meetups.',
+      description: 'Represent CS Connect Pakistan at your university and help us reach more students.',
       time: 'Flexible',
-      skills: ['Communication', 'Event Planning', 'Networking']
-    },
-    {
-      title: 'Technical Content Writer',
-      description: 'Write blogs about programming, career advice, and student life. Share your knowledge with the community.',
-      time: '3-5 hours/week',
-      skills: ['Technical Writing', 'Programming', 'Communication']
-    },
-    {
-      title: 'Event Coordinator',
-      description: 'Help organize our webinars, workshops, and community events. Great for someone who loves bringing people together.',
-      time: '5-8 hours/week',
-      skills: ['Event Planning', 'Coordination', 'Communication']
+      skills: ['Communication', 'Networking', 'Leadership']
     }
   ]
 
@@ -100,10 +96,10 @@ const Team: React.FC = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="pt-20 md:pt-24 lg:pt-28"
+      className=""
     >
       {/* Hero Section */}
-      <section className="py-20 md:py-32 bg-black text-white relative overflow-hidden">
+      <section className="py-20 md:py-32 bg-black text-white relative overflow-hidden pt-16">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:50px_50px]" />
         </div>
@@ -225,24 +221,25 @@ const Team: React.FC = () => {
       </section>
 
       {/* Core Team Section */}
-      <section className="py-20 md:py-32">
-        <div className="max-w-7xl mx-auto px-4 md:px-6">
+      <section className="py-20 md:py-32 bg-white">
+        <div className="max-w-6xl mx-auto px-4 md:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-16"
+            className="text-center mb-20"
           >
             <h2 className="text-3xl md:text-5xl font-bold mb-6 text-black">
-              Meet the <span className="text-gray-600">Core Team</span>
+              Meet the <span className="text-gray-600">People Behind It</span>
             </h2>
-            <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              The students who turned an idea into Pakistan's largest CS community
+            <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              Every great community starts with a few passionate individuals who decide to take action. 
+              Here are the students who turned a simple idea into something that connects thousands of CS students across Pakistan.
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="space-y-16">
             {coreTeam.map((member, index) => (
               <motion.div
                 key={index}
@@ -250,56 +247,64 @@ const Team: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                whileHover={{ y: -5 }}
-                className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:border-black/20 hover:shadow-xl transition-all duration-300"
+                className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-12`}
               >
-                <div className="flex items-start gap-4 mb-6">
-                  <div className="w-16 h-16 bg-gray-100 rounded-2xl flex items-center justify-center flex-shrink-0">
-                    <span className="text-2xl font-bold text-gray-600">
+                <div className="flex-1 text-center lg:text-left">
+                  <div className="mb-6">
+                    <h3 className="text-2xl lg:text-3xl font-bold text-black mb-2">{member.name}</h3>
+                    <p className="text-lg text-gray-600 font-medium mb-4">{member.role}</p>
+                    <p className="text-gray-700 leading-relaxed text-lg">{member.bio}</p>
+                  </div>
+                  
+                  <div className="flex gap-4 justify-center lg:justify-start">
+                    <a
+                      href={`https://linkedin.com/in/${member.linkedin}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                    >
+                      <LinkedInIcon className="w-4 h-4" />
+                      <span>LinkedIn</span>
+                    </a>
+                    <a
+                      href={`https://github.com/${member.github}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-900 transition-colors"
+                    >
+                      <GitHubIcon className="w-4 h-4" />
+                      <span>GitHub</span>
+                    </a>
+                  </div>
+                </div>
+                
+                <div className="flex-shrink-0">
+                  <div className="w-32 h-32 lg:w-40 lg:h-40 bg-gradient-to-br from-gray-100 to-gray-200 rounded-3xl flex items-center justify-center shadow-lg">
+                    <span className="text-4xl lg:text-5xl font-bold text-gray-600">
                       {member.name.split(' ').map(n => n[0]).join('')}
                     </span>
                   </div>
-                  <div className="flex-1">
-                    <h3 className="text-xl font-bold text-black mb-1">{member.name}</h3>
-                    <p className="text-gray-600 font-medium mb-1">{member.role}</p>
-                    <p className="text-sm text-gray-500 mb-2">{member.university} • {member.year}</p>
-                    <p className="text-xs text-blue-600 font-medium bg-blue-50 px-2 py-1 rounded-full inline-block">
-                      {member.highlight}
-                    </p>
-                  </div>
-                </div>
-                
-                <p className="text-gray-600 leading-relaxed mb-6">{member.bio}</p>
-                
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {member.skills.map((skill) => (
-                    <span key={skill} className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full">
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-                
-                <div className="flex gap-3">
-                  <a
-                    href={member.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-2 bg-blue-100 text-blue-600 rounded-lg hover:bg-blue-200 transition-colors"
-                  >
-                                          <LinkedInIcon className="w-5 h-5" />
-                  </a>
-                  <a
-                    href={member.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-2 bg-gray-100 text-gray-600 rounded-lg hover:bg-gray-200 transition-colors"
-                  >
-                    <GitHubIcon className="w-5 h-5" />
-                  </a>
                 </div>
               </motion.div>
             ))}
           </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="mt-20 text-center bg-gray-50 p-8 lg:p-12 rounded-3xl"
+          >
+            <h3 className="text-2xl lg:text-3xl font-bold mb-6 text-black">
+              By the Tech Students, For the Tech Students of Pakistan
+            </h3>
+            <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              We are not a corporate initiative or a funded startup. We are students just like you who saw a problem 
+              and decided to solve it. Our mission is simple: connect every CS and IT student in Pakistan with 
+              opportunities, mentorship, and a community that truly understands their journey.
+            </p>
+          </motion.div>
         </div>
       </section>
 

@@ -69,8 +69,8 @@ const Footer: React.FC = () => {
     {
       title: 'Connect',
       links: [
-        { name: 'WhatsApp Group', path: 'https://chat.whatsapp.com/your-group-link' },
-        { name: 'Discord Server', path: 'https://discord.gg/your-server' },
+        { name: 'WhatsApp Group', path: 'https://chat.whatsapp.com/JwQrKjYblcU6C2Rz4k3jIi' },
+        { name: 'Discord Server', path: 'https://discord.gg/U8mNhUq4Qm' },
         { name: 'YouTube Channel', path: 'https://youtube.com/@csconnectpakistan' },
         { name: 'LinkedIn', path: 'https://linkedin.com/company/csconnectpakistan' },
         { name: 'Instagram', path: 'https://instagram.com/csconnectpakistan' }
@@ -82,32 +82,32 @@ const Footer: React.FC = () => {
     { 
       name: 'WhatsApp', 
       icon: WhatsAppIcon, 
-      url: 'https://chat.whatsapp.com/your-group-link',
-      color: 'hover:text-white'
+      url: 'https://chat.whatsapp.com/JwQrKjYblcU6C2Rz4k3jIi',
+      color: 'hover:text-green-400'
     },
     { 
       name: 'Discord', 
       icon: DiscordIcon, 
-      url: 'https://discord.gg/your-server',
-      color: 'hover:text-white'
+      url: 'https://discord.gg/U8mNhUq4Qm',
+      color: 'hover:text-indigo-400'
     },
     { 
       name: 'YouTube', 
       icon: YouTubeIcon, 
       url: 'https://youtube.com/@csconnectpakistan',
-      color: 'hover:text-white'
+      color: 'hover:text-red-400'
     },
     { 
       name: 'LinkedIn', 
       icon: LinkedInIcon, 
       url: 'https://linkedin.com/company/csconnectpakistan',
-      color: 'hover:text-white'
+      color: 'hover:text-blue-400'
     },
     { 
       name: 'Instagram', 
       icon: InstagramIcon, 
       url: 'https://instagram.com/csconnectpakistan',
-      color: 'hover:text-white'
+      color: 'hover:text-pink-400'
     }
   ];
 
@@ -128,7 +128,7 @@ const Footer: React.FC = () => {
               </div>
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed mb-6 max-w-sm mx-auto md:mx-0">
-              A student-led community connecting 2,000+ CS/IT students from 50+ universities across Pakistan.
+              By the tech students, for the tech students of Pakistan.
             </p>
           </div>
 

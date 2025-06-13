@@ -116,7 +116,7 @@ const Join: React.FC = () => {
       icon: WhatsAppIcon,
       color: 'bg-green-500',
       hoverColor: 'hover:bg-green-600',
-      link: 'https://chat.whatsapp.com/your-group-link'
+      link: 'https://chat.whatsapp.com/JwQrKjYblcU6C2Rz4k3jIi'
     },
     {
       name: 'Discord',
@@ -126,7 +126,7 @@ const Join: React.FC = () => {
       icon: DiscordIcon,
       color: 'bg-indigo-500',
       hoverColor: 'hover:bg-indigo-600',
-      link: 'https://discord.gg/your-server'
+      link: 'https://discord.gg/U8mNhUq4Qm'
     },
     {
       name: 'YouTube',
@@ -275,9 +275,9 @@ const Join: React.FC = () => {
   ]
 
   return (
-    <div className="min-h-screen pt-20 lg:pt-28 bg-white">
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="py-20 bg-black text-white relative overflow-hidden">
+      <section className="py-20 bg-black text-white relative overflow-hidden pt-16">
         {/* Background Effects */}
         <div className="absolute inset-0">
           <motion.div 
@@ -335,27 +335,27 @@ const Join: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-12 leading-relaxed"
             >
-              Join <CountUpNumber end={2000} suffix="+" duration={2} className="font-bold text-white" /> students from <CountUpNumber end={50} suffix="+" duration={2} className="font-bold text-white" /> universities across Pakistan. 
-              Start your tech journey today.
+              Join thousands of CS students from universities across Pakistan. 
+              Connect, learn, and build your future in tech together.
             </motion.p>
 
-            {/* Stats */}
+            {/* Values */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="grid grid-cols-3 gap-8 max-w-2xl mx-auto"
+              className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto"
             >
               {[
-                { number: 2000, suffix: '+', label: 'Active Members' },
-                { number: 50, suffix: '+', label: 'Universities' },
-                { number: 100, suffix: '%', label: 'Free Access' }
-              ].map((stat, index) => (
+                { label: 'Student-Led Community', description: 'By students, for students' },
+                { label: 'All Universities Welcome', description: 'From FAST to local colleges' },
+                { label: 'Completely Free', description: 'No fees, no barriers' }
+              ].map((value, index) => (
                 <div key={index} className="text-center">
-                  <div className="text-2xl md:text-3xl font-bold text-white mb-1">
-                    <CountUpNumber end={stat.number} suffix={stat.suffix} duration={2} delay={index * 0.1} />
+                  <div className="text-lg md:text-xl font-bold text-white mb-2">
+                    {value.label}
                   </div>
-                  <div className="text-sm text-gray-400">{stat.label}</div>
+                  <div className="text-sm text-gray-400">{value.description}</div>
                 </div>
               ))}
             </motion.div>
@@ -374,45 +374,71 @@ const Join: React.FC = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-black">
-              Join Our <span className="text-gray-600">Community</span>
+              Where We <span className="text-gray-600">Connect</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Connect with Pakistan's largest CS student community across multiple platforms
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              CS Connect Pakistan exists across multiple platforms, each serving a unique purpose in our community ecosystem. 
+              We believe in meeting students where they already are, making it easy for everyone to participate and contribute.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {socialMedia.map((platform, index) => {
-              const IconComponent = platform.icon
-              return (
-                <motion.a
-                  key={index}
-                  href={platform.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  whileHover={{ y: -5, scale: 1.02 }}
-                  className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 group"
-                >
-                  <div className={`w-12 h-12 ${platform.color} ${platform.hoverColor} rounded-xl flex items-center justify-center mb-4 transition-colors duration-300`}>
-                    <IconComponent className="w-6 h-6 text-white" />
-                  </div>
-                  <h3 className="text-xl font-bold text-black mb-2">{platform.name}</h3>
-                  <div className="text-2xl font-bold text-gray-600 mb-3">
-                    <CountUpNumber end={platform.members} suffix={platform.suffix} duration={2} delay={index * 0.1} />
-                  </div>
-                  <p className="text-gray-600 text-sm leading-relaxed mb-4">{platform.description}</p>
-                  <div className="flex items-center text-blue-600 group-hover:text-blue-700 transition-colors duration-300">
-                    <span className="text-sm font-medium">Join Now</span>
-                    <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
-                  </div>
-                </motion.a>
-              )
-            })}
-          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="bg-white rounded-3xl p-8 lg:p-12 shadow-lg mb-12"
+          >
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <h3 className="text-2xl lg:text-3xl font-bold mb-6 text-black">
+                  Our Digital Home Across Pakistan
+                </h3>
+                <div className="space-y-6 text-gray-700 leading-relaxed">
+                  <p>
+                    What started as a simple WhatsApp group has evolved into a comprehensive digital ecosystem 
+                    that serves thousands of CS students across Pakistan. Each platform we use has been carefully 
+                    chosen to serve specific needs of our community.
+                  </p>
+                  <p>
+                    From quick daily discussions on WhatsApp to in-depth technical conversations on Discord, 
+                    from professional networking on LinkedIn to educational content on YouTube, we ensure 
+                    that every student finds their preferred way to engage and learn.
+                  </p>
+                </div>
+              </div>
+              
+              <div className="space-y-6">
+                {socialMedia.map((platform, index) => {
+                  const IconComponent = platform.icon
+                  return (
+                    <motion.a
+                      key={index}
+                      href={platform.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      initial={{ opacity: 0, x: 30 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.6, delay: index * 0.1 }}
+                      className="flex items-center p-4 bg-gray-50 rounded-xl hover:bg-gray-100 transition-all duration-300 group"
+                    >
+                      <div className={`w-12 h-12 ${platform.color} rounded-lg flex items-center justify-center mr-4 flex-shrink-0`}>
+                        <IconComponent className="w-6 h-6 text-white" />
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="font-semibold text-black group-hover:text-gray-700 transition-colors">
+                          {platform.name}
+                        </h4>
+                        <p className="text-sm text-gray-600">{platform.description}</p>
+                      </div>
+                      <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-gray-600 group-hover:translate-x-1 transition-all" />
+                    </motion.a>
+                  )
+                })}
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 
@@ -584,69 +610,138 @@ const Join: React.FC = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-black">
-              Why Choose <span className="text-gray-600">CS Connect?</span>
+              Why Join <span className="text-gray-600">CS Connect Pakistan?</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We're more than just a community - we're your gateway to success in tech
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              We're not just another student group. We're a movement of Pakistani CS students who believe in 
+              collective growth, shared knowledge, and building each other up in the tech industry.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                icon: Users,
-                title: 'Network with Peers',
-                description: 'Connect with 2000+ like-minded students from top universities across Pakistan',
-                color: 'bg-blue-500'
-              },
-              {
-                icon: BookOpen,
-                title: 'Learn & Grow',
-                description: 'Access study materials, tutorials, and guidance from seniors and industry experts',
-                color: 'bg-green-500'
-              },
-              {
-                icon: Award,
-                title: 'Career Opportunities',
-                description: 'Get exclusive internship and job opportunities shared within our community',
-                color: 'bg-purple-500'
-              },
-              {
-                icon: MessageSquare,
-                title: 'Mentorship',
-                description: 'Get personalized guidance from successful seniors and industry professionals',
-                color: 'bg-orange-500'
-              },
-              {
-                icon: Target,
-                title: 'Skill Development',
-                description: 'Participate in coding competitions, workshops, and skill-building sessions',
-                color: 'bg-red-500'
-              },
-              {
-                icon: Globe,
-                title: 'Community Support',
-                description: 'Be part of a supportive environment where everyone helps each other succeed',
-                color: 'bg-indigo-500'
-              }
-            ].map((feature, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                whileHover={{ y: -5 }}
-                className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300"
-              >
-                <div className={`w-12 h-12 ${feature.color} rounded-xl flex items-center justify-center mb-4`}>
-                  <feature.icon className="w-6 h-6 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-black mb-3">{feature.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{feature.description}</p>
-              </motion.div>
-            ))}
+          <div className="grid lg:grid-cols-2 gap-12 mb-16">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="bg-white rounded-3xl p-8 lg:p-10 shadow-lg"
+            >
+              <h3 className="text-2xl font-bold mb-6 text-black flex items-center">
+                <Users className="w-8 h-8 mr-3 text-blue-600" />
+                Community & Networking
+              </h3>
+              <div className="space-y-4 text-gray-700 leading-relaxed">
+                <p>
+                  Being part of CS Connect Pakistan means you're never alone in your journey. Whether you're 
+                  struggling with a difficult algorithm, looking for project partners, or need advice on career 
+                  decisions, there's always someone ready to help.
+                </p>
+                <p className="font-medium text-black">What you get:</p>
+                <ul className="space-y-2 ml-4">
+                  <li className="flex items-start">
+                    <Check className="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
+                    <span>Direct access to students from top universities across Pakistan</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Check className="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
+                    <span>Study groups and collaborative learning opportunities</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Check className="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
+                    <span>Peer-to-peer mentorship and knowledge sharing</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Check className="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
+                    <span>Lifelong friendships with like-minded individuals</span>
+                  </li>
+                </ul>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="bg-white rounded-3xl p-8 lg:p-10 shadow-lg"
+            >
+              <h3 className="text-2xl font-bold mb-6 text-black flex items-center">
+                <Award className="w-8 h-8 mr-3 text-purple-600" />
+                Career & Growth
+              </h3>
+              <div className="space-y-4 text-gray-700 leading-relaxed">
+                <p>
+                  Your career in tech doesn't start after graduation—it starts now. CS Connect Pakistan provides 
+                  you with the resources, connections, and opportunities to build a strong foundation for your 
+                  professional journey.
+                </p>
+                <p className="font-medium text-black">Career benefits:</p>
+                <ul className="space-y-2 ml-4">
+                  <li className="flex items-start">
+                    <Check className="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
+                    <span>Exclusive internship and job opportunities shared within the community</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Check className="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
+                    <span>Interview preparation sessions and mock interviews</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Check className="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
+                    <span>Resume reviews and portfolio building guidance</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Check className="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
+                    <span>Direct connections with industry professionals and alumni</span>
+                  </li>
+                </ul>
+              </div>
+            </motion.div>
           </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="bg-black text-white rounded-3xl p-8 lg:p-12"
+          >
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <h3 className="text-2xl lg:text-3xl font-bold mb-6">
+                  Learning & Skill Development
+                </h3>
+                <div className="space-y-4 text-gray-300 leading-relaxed">
+                  <p>
+                    The tech industry evolves rapidly, and staying updated can be challenging when you're studying alone. 
+                    Our community ensures you're always learning the latest technologies and best practices.
+                  </p>
+                  <p>
+                    From beginner-friendly tutorials to advanced technical discussions, from coding competitions 
+                    to project collaborations, we provide multiple avenues for continuous learning and growth.
+                  </p>
+                </div>
+              </div>
+              
+              <div className="space-y-4">
+                <h4 className="text-xl font-semibold mb-4 text-white">Learning opportunities:</h4>
+                <div className="grid grid-cols-1 gap-3">
+                  {[
+                    'Weekly coding challenges and competitions',
+                    'Technical workshops and webinars',
+                    'Open source project collaborations',
+                    'Study materials and resource sharing',
+                    'Peer code reviews and feedback',
+                    'Industry trend discussions and insights'
+                  ].map((item, index) => (
+                    <div key={index} className="flex items-center">
+                      <div className="w-2 h-2 bg-white rounded-full mr-3 flex-shrink-0"></div>
+                      <span className="text-gray-300">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
     </div>

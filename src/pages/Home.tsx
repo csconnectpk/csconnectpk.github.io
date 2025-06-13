@@ -102,18 +102,18 @@ const Home: React.FC = () => {
   return (
     <>
       <SmartNavbar />
-      <div className="min-h-screen pt-24 sm:pt-28 lg:pt-32">
+      <div className="min-h-screen">
         {/* Hero Section */}
-        <section className="relative min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white overflow-hidden">
+        <section className="relative min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white overflow-hidden pt-16">
           {/* Background Effects */}
           <div className="absolute inset-0">
             <motion.div 
               style={{ y: y1 }}
-              className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl"
+              className="absolute top-1/4 left-1/4 w-96 h-96 bg-white/5 rounded-full blur-3xl"
             />
             <motion.div 
               style={{ y: y2 }}
-              className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl"
+              className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gray-300/10 rounded-full blur-3xl"
             />
           </div>
 
@@ -155,7 +155,7 @@ const Home: React.FC = () => {
                           initial="hidden"
                           animate="visible"
                           variants={wordVariants}
-                          className="inline-block mr-2 sm:mr-4 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent"
+                          className="inline-block mr-2 sm:mr-4 text-white"
                           style={{ perspective: "1000px" }}
                         >
                           {word}
@@ -228,7 +228,7 @@ const Home: React.FC = () => {
                         boxShadow: "0 10px 30px rgba(59, 130, 246, 0.3)"
                       }}
                       whileTap={{ scale: 0.95 }}
-                      className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-base sm:text-lg hover:from-blue-700 hover:to-purple-700 transition-all shadow-xl group"
+                      className="w-full bg-black text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-base sm:text-lg hover:bg-gray-800 transition-all shadow-xl group"
                     >
                       <span className="flex items-center justify-center gap-2">
                         Join Community
@@ -314,7 +314,7 @@ const Home: React.FC = () => {
               className="text-center mb-16"
             >
               <h2 className="text-3xl md:text-5xl font-bold mb-6">
-                Why CS Students <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Love Us</span>
+                Why CS Students <span className="text-gray-600">Love Us</span>
               </h2>
               <p className="text-xl text-gray-600 max-w-4xl mx-auto">
                 More than just a community - we're your partner in building an amazing tech career
@@ -359,7 +359,7 @@ const Home: React.FC = () => {
               className="text-center"
             >
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                What Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">Community Says</span>
+                What Our <span className="text-gray-600">Community Says</span>
               </h2>
               <p className="text-xl text-gray-400 max-w-3xl mx-auto">
                 Real stories from real students who've transformed their careers with CS Connect Pakistan
@@ -428,7 +428,7 @@ const Home: React.FC = () => {
                   className="min-w-[400px] bg-white/5 backdrop-blur-lg rounded-2xl p-6 border border-white/10"
                 >
                   <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full flex items-center justify-center mr-4">
+                    <div className="w-12 h-12 bg-gray-600 rounded-full flex items-center justify-center mr-4">
                       <span className="text-white font-bold text-lg">{testimonial.name[0]}</span>
                     </div>
                     <div>
@@ -490,7 +490,7 @@ const Home: React.FC = () => {
         </section>
 
         {/* Final CTA */}
-        <section className="py-20 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white">
+        <section className="py-20 bg-black text-white">
           <div className="max-w-4xl mx-auto text-center px-4">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -501,7 +501,7 @@ const Home: React.FC = () => {
               <h2 className="text-3xl md:text-5xl font-bold mb-6">
                 Ready to Transform Your CS Journey?
               </h2>
-              <p className="text-xl mb-8 text-blue-100">
+              <p className="text-xl mb-8 text-gray-300">
                 Join thousands of Pakistani CS students who are already building their dream careers with us.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -516,13 +516,15 @@ const Home: React.FC = () => {
                 </Link>
                 <div className="flex gap-4 justify-center">
                   {[
-                    { name: 'WhatsApp', icon: WhatsAppIcon, href: '#' },
-                    { name: 'Discord', icon: DiscordIcon, href: '#' },
-                    { name: 'Instagram', icon: InstagramIcon, href: '#' }
+                    { name: 'WhatsApp', icon: WhatsAppIcon, href: 'https://chat.whatsapp.com/JwQrKjYblcU6C2Rz4k3jIi' },
+                    { name: 'Discord', icon: DiscordIcon, href: 'https://discord.gg/U8mNhUq4Qm' },
+                    { name: 'Instagram', icon: InstagramIcon, href: 'https://instagram.com/csconnectpakistan' }
                   ].map((platform) => (
                     <motion.a
                       key={platform.name}
                       href={platform.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.9 }}
                       className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-all"

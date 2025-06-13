@@ -34,7 +34,7 @@ const Portfolio: React.FC = () => {
     },
     {
       title: "Expert Sessions",
-      description: "AI & DevOps masterclass with FAST lecturer Sami Ullah Shah",
+      description: "AI masterclass with FAST lecturer Sami Ullah Shah",
       image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600",
       stats: "200+ Attendees",
       icon: Mic,
@@ -85,10 +85,10 @@ const Portfolio: React.FC = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="pt-20 md:pt-24 lg:pt-28"
+      className=""
     >
       {/* Hero Section */}
-      <section className="py-20 md:py-32 bg-black text-white relative overflow-hidden">
+      <section className="py-20 md:py-32 bg-black text-white relative overflow-hidden pt-16">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:50px_50px]" />
         </div>

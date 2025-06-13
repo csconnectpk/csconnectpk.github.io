@@ -35,7 +35,7 @@ const About: React.FC = () => {
     {
       date: 'June 2025',
       title: 'Expert Sessions',
-      description: 'Hosted AI & DevOps masterclass with FAST lecturer Sami Ullah Shah, attracting 200+ attendees.'
+      description: 'Hosted AI masterclass with FAST lecturer Sami Ullah Shah, attracting 200+ attendees.'
     },
     {
       date: 'Present',
@@ -88,10 +88,10 @@ const About: React.FC = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="min-h-screen pt-20"
+      className="min-h-screen"
     >
       {/* Hero Section */}
-      <section className="py-16 md:py-24 bg-black text-white relative overflow-hidden">
+      <section className="py-16 md:py-24 bg-black text-white relative overflow-hidden pt-16">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:50px_50px]" />
         </div>

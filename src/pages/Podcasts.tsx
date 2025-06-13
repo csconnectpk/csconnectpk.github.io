@@ -10,58 +10,38 @@ const Podcasts: React.FC = () => {
   const recentPodcasts = [
     {
       id: 1,
-      title: "Breaking into Tech: A Journey from FAST to Silicon Valley",
-      description: "Join us as we chat with Ali Hassan, a FAST graduate who now works at Google. He shares his journey, challenges, and advice for Pakistani CS students looking to work at top tech companies.",
-      host: "Ahmed Khan",
-      guest: "Ali Hassan (Software Engineer at Google)",
-      duration: "45 min",
-      uploadDate: "December 20, 2024",
-      image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=400&h=250&fit=crop",
-      listeners: "2.1k",
-      featured: true
+      title: "How to Do CS Without Losing Inner Peace in a Fast-Paced World",
+      host: "Azan Waseem",
+      guest: "Sami Ullah Shah",
+      uploadDate: "June 15, 2025"
     },
     {
       id: 2,
-      title: "Mastering Data Structures & Algorithms for Pakistani Students",
-      description: "A comprehensive deep dive into DSA concepts with practical examples. Perfect for students preparing for technical interviews at Pakistani and international companies.",
-      host: "Fatima Malik",
-      guest: "Dr. Sami Ullah (Professor at NUST)",
-      duration: "52 min", 
-      uploadDate: "December 15, 2024",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop",
-      listeners: "1.8k",
-      featured: false
+      title: "Nauman Anwar: FAST, Telecom, Harvard, Business & Energy",
+      host: "Azan Waseem", 
+      guest: "Nauman Anwar",
+      uploadDate: "May 20, 2025"
     },
     {
       id: 3,
-      title: "Building Startups in Pakistan's Tech Ecosystem",
-      description: "Exploring the challenges and opportunities of building tech startups in Pakistan with successful entrepreneurs who've been through the journey.",
-      host: "Zara Ahmed",
-      guest: "Muhammad Owais (Founder, TechStart Pakistan)",
-      duration: "38 min",
-      uploadDate: "December 10, 2024", 
-      image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=400&h=250&fit=crop",
-      listeners: "1.5k",
-      featured: false
+      title: "From Pakistan to Ireland: The Journey of a Senior SWE",
+      host: "Azan Waseem",
+      guest: "Kashif Umair Liaqat",
+      uploadDate: "April 28, 2025"
     },
     {
       id: 4,
-      title: "Women in Tech Pakistan: Breaking Barriers and Building Futures",
-      description: "Inspiring stories from Pakistani women making their mark in technology, from engineers to entrepreneurs, and their advice for the next generation.",
-      host: "Sara Khan",
-      guest: "Ayesha Tariq (VP Engineering at Careem)",
-      duration: "41 min",
-      uploadDate: "December 5, 2024",
-      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=250&fit=crop",
-      listeners: "2.3k",
-      featured: false
+      title: "Should CS Undergrads Pursue a Master's?",
+      host: "Talha Asghar",
+      guest: "Hamza Azhar",
+      uploadDate: "March 10, 2025"
     }
   ]
 
   return (
-    <div className="min-h-screen pt-20 bg-white">
+    <div className="min-h-screen bg-white">
       {/* Header */}
-      <section className="py-16 bg-black text-white">
+      <section className="py-16 bg-black text-white pt-16">
         <div className="max-w-6xl mx-auto px-4 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -262,46 +242,17 @@ const Podcasts: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className={`bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group ${
-                  podcast.featured ? 'ring-2 ring-black' : ''
-                }`}
+                className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group cursor-pointer"
               >
-                {/* Podcast Image */}
-                <div className="relative h-48 overflow-hidden">
-                  <img
-                    src={podcast.image}
-                    alt={podcast.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                  <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <motion.div
-                      whileHover={{ scale: 1.1 }}
-                      className="w-16 h-16 bg-white rounded-full flex items-center justify-center cursor-pointer"
-                    >
-                      <Play className="w-8 h-8 text-black ml-1" />
-                    </motion.div>
-                  </div>
-                  {podcast.featured && (
-                    <div className="absolute top-4 left-4 bg-black text-white px-3 py-1 rounded-full text-sm font-semibold">
-                      Featured
-                    </div>
-                  )}
-                </div>
-
-                {/* Podcast Content */}
-                <div className="p-6">
-                  <h3 className="text-xl font-bold mb-3 text-black group-hover:text-gray-700 transition-colors line-clamp-2">
+                <div className="p-8">
+                  <h3 className="text-xl lg:text-2xl font-bold mb-4 text-black group-hover:text-gray-700 transition-colors leading-tight">
                     {podcast.title}
                   </h3>
 
-                  <p className="text-gray-600 mb-4 leading-relaxed text-sm line-clamp-3">
-                    {podcast.description}
-                  </p>
-
                   {/* Host and Guest */}
-                  <div className="space-y-2 mb-4">
+                  <div className="space-y-2 mb-6">
                     <div className="flex items-center text-sm text-gray-700">
-                      <User className="w-4 h-4 mr-2" />
+                      <Mic className="w-4 h-4 mr-2" />
                       <span className="font-medium">Host:</span>
                       <span className="ml-1">{podcast.host}</span>
                     </div>
@@ -312,31 +263,19 @@ const Podcasts: React.FC = () => {
                     </div>
                   </div>
 
-                  {/* Metadata */}
-                  <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
-                    <div className="flex items-center">
-                      <Calendar className="w-4 h-4 mr-1" />
-                      <span>{podcast.uploadDate}</span>
-                    </div>
-                    <div className="flex items-center space-x-4">
-                      <div className="flex items-center">
-                        <Clock className="w-4 h-4 mr-1" />
-                        <span>{podcast.duration}</span>
-                      </div>
-                      <div className="flex items-center">
-                        <Headphones className="w-4 h-4 mr-1" />
-                        <span>{podcast.listeners}</span>
-                      </div>
-                    </div>
+                  {/* Upload Date */}
+                  <div className="flex items-center text-sm text-gray-500 mb-6">
+                    <Calendar className="w-4 h-4 mr-2" />
+                    <span>{podcast.uploadDate}</span>
                   </div>
 
                   {/* Listen Button */}
                   <motion.button
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="w-full bg-black text-white py-3 rounded-lg font-medium flex items-center justify-center space-x-2 hover:bg-gray-800 transition-all"
+                    className="inline-flex items-center bg-black text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-all duration-200 group/btn"
                   >
-                    <Play className="w-5 h-5" />
+                    <Play className="w-5 h-5 mr-2" />
                     <span>Listen Now</span>
                   </motion.button>
                 </div>

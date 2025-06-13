@@ -357,11 +357,11 @@ const ProfessionalHomepage: React.FC = () => {
           <Spline3DScene />
         </div>
 
-        {/* Enhanced 3D Floating Elements */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* Enhanced 3D Floating Elements - Hidden on mobile for better performance */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none hidden md:block">
           {/* Animated geometric shapes */}
           <motion.div
-            className="absolute top-20 left-20 w-16 h-16 border border-white/20 rounded-xl bg-white/10 backdrop-blur-sm hidden lg:block"
+            className="absolute top-20 left-20 w-16 h-16 border border-white/20 rounded-xl bg-white/10 backdrop-blur-sm"
             animate={{
               y: [0, -20, 0],
               rotateZ: [0, 5, -5, 0],
@@ -375,7 +375,7 @@ const ProfessionalHomepage: React.FC = () => {
           />
           
           <motion.div
-            className="absolute top-40 right-32 w-12 h-12 bg-white/10 rounded-full backdrop-blur-sm hidden lg:block"
+            className="absolute top-40 right-32 w-12 h-12 bg-white/10 rounded-full backdrop-blur-sm"
             animate={{
               x: [0, 15, -15, 0],
               y: [0, -10, 0],
@@ -391,7 +391,7 @@ const ProfessionalHomepage: React.FC = () => {
           />
 
           <motion.div
-            className="absolute bottom-40 left-24 w-10 h-10 border border-white/20 bg-white/10 backdrop-blur-sm hidden lg:block"
+            className="absolute bottom-40 left-24 w-10 h-10 border border-white/20 bg-white/10 backdrop-blur-sm"
             style={{ clipPath: 'polygon(50% 0%, 0% 100%, 100% 100%)' }}
             animate={{
               rotateZ: [0, 360],
@@ -410,7 +410,7 @@ const ProfessionalHomepage: React.FC = () => {
           {Array.from({ length: 6 }).map((_, i) => (
             <motion.div
               key={i}
-              className="absolute w-2 h-2 bg-white/20 rounded-full hidden lg:block"
+              className="absolute w-2 h-2 bg-white/20 rounded-full"
               style={{
                 left: `${20 + i * 15}%`,
                 top: `${30 + i * 10}%`,
@@ -445,13 +445,13 @@ const ProfessionalHomepage: React.FC = () => {
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.8 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
             className="mb-12"
           >
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 1.0 }}
+              transition={{ duration: 0.4, delay: 0.3 }}
               className="inline-flex items-center px-4 md:px-6 py-2 md:py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full mb-6 md:mb-8"
             >
               <Sparkles className="w-4 h-4 md:w-5 md:h-5 mr-2 md:mr-3 text-blue-300" />
@@ -510,9 +510,9 @@ const ProfessionalHomepage: React.FC = () => {
               transition={{ duration: 0.6, delay: 1.0 }}
               className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 max-w-2xl mx-auto leading-relaxed mb-6"
             >
-              What started as a simple WhatsApp group is now Pakistan's largest CS student community.
+              By the tech students, for the tech students of Pakistan.
               <br className="hidden md:block" />
-              Built by students, for students - connecting <AnimatedCounter value={2000} suffix="+" /> CS minds across <AnimatedCounter value={50} suffix="+" /> universities.
+              What started as a simple WhatsApp group is now connecting CS minds across universities nationwide.
             </motion.p>
 
             {/* Quick stats */}
@@ -524,15 +524,15 @@ const ProfessionalHomepage: React.FC = () => {
             >
               <div className="flex items-center bg-white/5 backdrop-blur-sm px-3 md:px-4 py-2 md:py-3 rounded-full border border-white/10">
                 <Users className="w-3 h-3 md:w-4 md:h-4 mr-1 md:mr-2 flex-shrink-0" />
-                <span className="whitespace-nowrap"><AnimatedCounter value={2000} suffix="+" /> Members</span>
+                <span className="whitespace-nowrap">Active Community</span>
               </div>
               <div className="flex items-center bg-white/5 backdrop-blur-sm px-3 md:px-4 py-2 md:py-3 rounded-full border border-white/10">
                 <GraduationCap className="w-3 h-3 md:w-4 md:h-4 mr-1 md:mr-2 flex-shrink-0" />
-                <span className="whitespace-nowrap"><AnimatedCounter value={50} suffix="+" /> Universities</span>
+                <span className="whitespace-nowrap">All Universities</span>
               </div>
               <div className="flex items-center bg-white/5 backdrop-blur-sm px-3 md:px-4 py-2 md:py-3 rounded-full border border-white/10">
                 <Mic className="w-3 h-3 md:w-4 md:h-4 mr-1 md:mr-2 flex-shrink-0" />
-                <span className="whitespace-nowrap"><AnimatedCounter value={4} /> Podcasts</span>
+                <span className="whitespace-nowrap">Weekly Podcasts</span>
               </div>
             </motion.div>
           </motion.div>
