@@ -284,7 +284,7 @@ const Services: React.FC = () => {
                   whileTap={{ scale: 0.95 }}
                   className="bg-black text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-800 transition-all duration-300"
                 >
-                  Join WhatsApp Group
+                  Join WhatsApp Community
                 </motion.button>
                 <motion.a
                   href="https://csconnect.pk"

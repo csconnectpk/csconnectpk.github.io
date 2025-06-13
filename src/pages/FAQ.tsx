@@ -40,7 +40,7 @@ const FAQ: React.FC = () => {
     },
     {
       question: "Do you help with job placements?",
-      answer: "While we don't directly place students in jobs, we provide extensive career support including: sharing job and internship opportunities, connecting students with industry professionals, resume and interview preparation guidance, referrals through our alumni network, and career counseling sessions. Many of our members have successfully landed jobs at top companies through community connections."
+      answer: "While we don't directly place students in jobs and haven't facilitated any placements yet, we provide extensive career support including: sharing job and internship opportunities, connecting students with industry professionals, resume and interview preparation guidance, referrals through our alumni network, and career counseling sessions. We're focused on building the foundation and resources to support our members' career journeys."
     },
     {
       question: "What universities are part of your community?",
@@ -65,9 +65,9 @@ const FAQ: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen pt-20 bg-white">
+    <div className="min-h-screen bg-black">
       {/* Header */}
-      <section className="py-16 bg-black text-white">
+      <section className="py-20 bg-black text-white pt-28">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -85,7 +85,7 @@ const FAQ: React.FC = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16">
+      <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4">
           <div className="space-y-4">
             {faqs.map((faq, index) => (

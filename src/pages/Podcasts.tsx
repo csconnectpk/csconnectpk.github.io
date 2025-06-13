@@ -39,9 +39,9 @@ const Podcasts: React.FC = () => {
   ]
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-black">
       {/* Header */}
-      <section className="py-16 bg-black text-white pt-16">
+      <section className="py-20 bg-black text-white pt-28">
         <div className="max-w-6xl mx-auto px-4 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

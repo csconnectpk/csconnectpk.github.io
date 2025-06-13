@@ -20,7 +20,7 @@ const About: React.FC = () => {
     {
       date: 'Late 2024',
       title: 'The Beginning',
-      description: 'Azan Waseem founded CS Connect Pakistan as a simple WhatsApp group to bridge IT and CS students across Pakistan.'
+      description: 'Azan Waseem founded CS Connect Pakistan as a simple WhatsApp community to bridge IT and CS students across Pakistan.'
     },
     {
       date: 'Early 2025',
@@ -128,16 +128,14 @@ const About: React.FC = () => {
               <div className="space-y-6 text-gray-600 leading-relaxed">
                 <p className="text-base md:text-lg">
                   Back in late 2024, <strong className="text-black">Azan Waseem</strong> from FAST Islamabad 
-                  started a WhatsApp group because he noticed CS students across Pakistan weren't really connected. 
-                  It was just meant to be a simple group where students could help each other out.
+                  started a WhatsApp community because he noticed CS students across Pakistan weren't really connected. 
+                  It was just meant to be a simple community where students could help each other out.
                 </p>
+                
                 <p className="text-base md:text-lg">
                   Fast forward to today - we've got more than <strong className="text-black"><AnimatedCounter value={2000} suffix="+" /> students</strong> from{' '}
-                  <strong className="text-black"><AnimatedCounter value={50} suffix="+" /> universities</strong> (FAST, NUST, GIKI, LUMS, COMSATS, 
-                  ITU, PUCIT and tons more) hanging out across WhatsApp, Discord, Instagram, YouTube, and this website.
-                </p>
-                <p className="text-base md:text-lg">
-                  What we love most is that it's still just students helping students. Senior guys like 
+                  <strong className="text-black"><AnimatedCounter value={50} suffix="+" /> universities</strong> including FAST, NUST, GIKI, LUMS, COMSATS, 
+                  ITU, PUCIT and tons more hanging out across WhatsApp, Discord, Instagram, YouTube, and this website. What we love most is that it's still just students helping students. Senior guys like 
                   Talha A. Khawaja, Muhammad Owais, and Siraj Qazi jump in to share their experiences, 
                   and we all learn from each other. No fancy corporate stuff - just genuine student community.
                 </p>

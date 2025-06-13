@@ -275,9 +275,9 @@ Here are some tips that can help you live a life that is free of piracy:
   }
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-black">
       {/* Header */}
-      <section className="py-16 bg-black text-white pt-16">
+      <section className="py-20 bg-black text-white pt-28">
         <div className="max-w-6xl mx-auto px-4 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -288,7 +288,7 @@ Here are some tips that can help you live a life that is free of piracy:
               CS Connect <span className="text-gray-300">Blog</span>
             </h1>
             <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-              Insights, guides, and stories from Pakistan's computer science community
+              Insights, tutorials, and stories from the Pakistani tech community
             </p>
           </motion.div>
         </div>
@@ -327,40 +327,40 @@ Here are some tips that can help you live a life that is free of piracy:
                     {post.category}
                   </span>
                 </div>
-                
-                <h3 className="text-2xl lg:text-3xl font-bold mb-4 text-black group-hover:text-gray-700 transition-colors">
-                  {post.title}
-                </h3>
-                
-                <p className="text-gray-600 mb-6 leading-relaxed">
-                  {post.excerpt}
-                </p>
 
-                {/* Meta Info */}
-                <div className="flex flex-wrap items-center gap-4 text-sm text-gray-500 mb-6">
-                  <div className="flex items-center">
-                    <User className="w-4 h-4 mr-2" />
-                    <span>{post.author}</span>
-                  </div>
-                  <div className="flex items-center">
-                    <Calendar className="w-4 h-4 mr-2" />
-                    <span>{post.date}</span>
-                  </div>
-                  <div className="flex items-center">
-                    <Clock className="w-4 h-4 mr-2" />
-                    <span>{post.readTime}</span>
-                  </div>
-                </div>
+                  <h3 className="text-2xl lg:text-3xl font-bold mb-4 text-black group-hover:text-gray-700 transition-colors">
+                    {post.title}
+                  </h3>
+                  
+                  <p className="text-gray-600 mb-6 leading-relaxed">
+                    {post.excerpt}
+                  </p>
 
-                {/* Read More Button */}
-                <motion.button
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="inline-flex items-center bg-black text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-all duration-200 group/btn"
-                >
-                  <span>Read Full Article</span>
-                  <ArrowRight className="w-5 h-5 ml-2 group-hover/btn:translate-x-1 transition-transform" />
-                </motion.button>
+                  {/* Meta Info */}
+                  <div className="flex flex-wrap items-center gap-4 text-sm text-gray-500 mb-6">
+                    <div className="flex items-center">
+                      <User className="w-4 h-4 mr-2" />
+                      <span>{post.author}</span>
+                    </div>
+                    <div className="flex items-center">
+                      <Calendar className="w-4 h-4 mr-2" />
+                      <span>{post.date}</span>
+                    </div>
+                    <div className="flex items-center">
+                      <Clock className="w-4 h-4 mr-2" />
+                      <span>{post.readTime}</span>
+                    </div>
+                  </div>
+
+                  {/* Read More Button */}
+                  <motion.button
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="inline-flex items-center bg-black text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-all duration-200 group/btn"
+                  >
+                    <span>Read Full Article</span>
+                    <ArrowRight className="w-5 h-5 ml-2 group-hover/btn:translate-x-1 transition-transform" />
+                  </motion.button>
               </div>
             </motion.div>
           </div>
@@ -400,10 +400,10 @@ Here are some tips that can help you live a life that is free of piracy:
                 <div className="p-8">
                   <div className="mb-4">
                     <span className="inline-block px-3 py-1 bg-black text-white rounded-full text-sm font-semibold">
-                      {post.category}
+                    {post.category}
                     </span>
-                  </div>
-                  
+                </div>
+
                   <h3 className="text-xl lg:text-2xl font-bold mb-4 text-black group-hover:text-gray-700 transition-colors leading-tight">
                     {post.title}
                   </h3>
@@ -418,13 +418,13 @@ Here are some tips that can help you live a life that is free of piracy:
                       <User className="w-4 h-4 mr-2" />
                       <span>{post.author}</span>
                     </div>
-                    <div className="flex items-center">
+                      <div className="flex items-center">
                       <Calendar className="w-4 h-4 mr-2" />
-                      <span>{post.date}</span>
-                    </div>
-                    <div className="flex items-center">
+                        <span>{post.date}</span>
+                      </div>
+                      <div className="flex items-center">
                       <Clock className="w-4 h-4 mr-2" />
-                      <span>{post.readTime}</span>
+                        <span>{post.readTime}</span>
                     </div>
                   </div>
 

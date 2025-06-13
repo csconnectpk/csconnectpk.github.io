@@ -279,7 +279,7 @@ const Portfolio: React.FC = () => {
                 whileTap={{ scale: 0.95 }}
                 className="bg-white text-black px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition-all duration-300"
               >
-                Join WhatsApp Group
+                Join WhatsApp Community
               </motion.button>
               <motion.a
                 href="https://csconnect.pk"

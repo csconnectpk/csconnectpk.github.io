@@ -24,31 +24,37 @@ const Team: React.FC = () => {
   const coreTeam = [
     {
       name: 'Azan Waseem',
-      role: 'Founder & Community Lead',
-      bio: 'Started CS Connect Pakistan from his dorm room because he believed Pakistani CS students deserved a space to connect and grow together.',
-      github: 'azanwaseem',
-      linkedin: 'azanwaseem'
+      role: 'Community Lead',
+      bio: 'CS student at FAST Islamabad and community lead with main roles in development, podcasting, and leading the community. Built Pakistan\'s largest CS community from a simple WhatsApp community.',
+      github: 'azannw',
+      linkedin: 'azanw'
+    },
+    {
+      name: 'Maryam Ahmed',
+      role: 'Design Lead',
+      bio: 'The creative force behind CS Connect Pakistan who leads all designing initiatives and handles graphics for our community. A crucial person who brings visual identity to our brand and ensures professional design standards.',
+      linkedin: 'maryam-a-24114733a'
     },
     {
       name: 'Siraj Qazi',
-      role: 'Technical Mentor & Advisor',
-      bio: 'Senior developer who guides our community with real-world industry insights and helps students navigate their tech careers.',
-      github: 'sirajqazi',
-      linkedin: 'sirajqazi'
+      role: 'Technical Mentor',
+      bio: 'EE graduate from NUST working as a Data Scientist with Seeloz. Serves as technical mentor and advisor for the community, helping students navigate career transitions.',
+      github: 'qazi0',
+      linkedin: 'siraj-qazi'
     },
     {
       name: 'Talha Asghar',
-      role: 'Content & Strategy Lead',
-      bio: 'Manages our content strategy and helps shape the direction of our community initiatives. Always thinking about what students actually need.',
-      github: 'talhaasghar',
-      linkedin: 'talhaasghar'
+      role: 'Technical Advisor',
+      bio: 'MS graduate from NUST working as a Backend Engineer. Technical advisor and senior who helps with technical guidance and mentorship for community members.',
+      github: 'iamtalhaasghar',
+      linkedin: 'iamtalhaasghar'
     },
     {
       name: 'Khawaja Owais',
-      role: 'Operations & Outreach',
-      bio: 'Handles our day-to-day operations and university outreach. He makes sure every student feels welcome in our community.',
-      github: 'khawajaowais',
-      linkedin: 'khawajaowais'
+      role: 'Community Manager',
+      bio: 'Data Science graduate from FAST who helps in managing community operations and activities. Focuses on maintaining engagement and supporting student initiatives.',
+      github: 'the-muhammad-owais',
+      linkedin: 'the-muhammad-owais'
     }
   ]
 
@@ -177,7 +183,7 @@ const Team: React.FC = () => {
               <h3 className="text-xl font-bold text-black mb-4">The Initiative</h3>
               <p className="text-gray-600 leading-relaxed">
                 Instead of waiting for someone else to solve it, we decided to take action. 
-                Started with a simple WhatsApp group and grew it into Pakistan's largest CS student community.
+                Started with a simple WhatsApp community and grew it into Pakistan's largest CS student community.
               </p>
             </motion.div>
 

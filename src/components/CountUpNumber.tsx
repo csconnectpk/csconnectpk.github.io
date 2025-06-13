@@ -12,7 +12,7 @@ interface CountUpNumberProps {
 const CountUpNumber: React.FC<CountUpNumberProps> = ({ 
   end, 
   suffix = '', 
-  duration = 2.5, 
+  duration = 1.2, 
   className = '',
   delay = 0
 }) => {
