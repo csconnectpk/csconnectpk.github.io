@@ -72,6 +72,7 @@ const CountUpNumber: React.FC<CountUpNumberProps> = ({
         ease: [0.25, 0.46, 0.45, 0.94]
       }}
       className={className}
+      style={{ display: 'inline-block' }}
     >
       <motion.span
         key={count}
