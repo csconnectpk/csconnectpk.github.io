@@ -2,14 +2,14 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="./logo.png" />
+    <link rel="icon" type="image/png" href="/ccweb/logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="CS Connect Pakistan - Pakistan's largest computer science student community connecting 2,000+ students from 50+ universities. Join for networking, mentorship, and career opportunities." />
     <meta name="keywords" content="CS Connect Pakistan, computer science, student community, pakistan, networking, mentorship, programming, coding, tech community, university students" />
     <meta name="author" content="CS Connect Pakistan" />
     
     <!-- Preload Logo -->
-    <link rel="preload" as="image" href="./logo.png" />
+    <link rel="preload" as="image" href="/ccweb/logo.png" />
     
     <!-- Apple Web App Meta Tags -->
     <meta name="mobile-web-app-capable" content="yes" />
@@ -21,13 +21,13 @@
     <meta property="og:description" content="Join Pakistan's largest CS student community with 2,000+ members from 50+ universities. Get networking, mentorship, and career opportunities." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://azannw.github.io/ccweb/" />
-    <meta property="og:image" content="./logo.png" />
+    <meta property="og:image" content="https://azannw.github.io/ccweb/logo.png" />
     
     <!-- Social Media Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="CS Connect Pakistan" />
     <meta name="twitter:description" content="Pakistan's premier CS student community - Join for networking and career growth." />
-    <meta name="twitter:image" content="./logo.png" />
+    <meta name="twitter:image" content="https://azannw.github.io/ccweb/logo.png" />
     
     <title>CS Connect Pakistan - Premier CS Student Community</title>
     
@@ -35,6 +35,29 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- GitHub Pages SPA Script -->
+    <script type="text/javascript">
+      // Single Page Apps for GitHub Pages
+      // https://github.com/rafgraph/spa-github-pages
+      // This script checks to see if a redirect is present in the query string,
+      // converts it back to the correct url and adds it to the
+      // browser's history using window.history.replaceState(...),
+      // which won't cause the browser to attempt to load the new url.
+      // When the single page app is loaded further down in this file,
+      // the correct url will be waiting in the browser's history for
+      // the single page app to route accordingly.
+      (function(l) {
+        if (l.search[1] === '/' ) {
+          var decoded = l.search.slice(1).split('&').map(function(s) { 
+            return s.replace(/~and~/g, '&')
+          }).join('?');
+          window.history.replaceState(null, null,
+              l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      }(window.location))
+    </script>
     
     <style>
       /* Custom scrollbar */
@@ -102,16 +125,16 @@
         color: #888;
       }
     </style>
-    <script type="module" crossorigin src="/ccweb/assets/index-CDd70LhA.js"></script>
-    <link rel="modulepreload" crossorigin href="/ccweb/assets/vendor-BStAX1aO.js">
-    <link rel="modulepreload" crossorigin href="/ccweb/assets/three-BnWlz03g.js">
-    <link rel="modulepreload" crossorigin href="/ccweb/assets/animations-CnWJzs-I.js">
-    <link rel="stylesheet" crossorigin href="/ccweb/assets/index-aJFQddou.css">
+    <script type="module" crossorigin src="/ccweb/assets/index-CbZz3Mx4.js"></script>
+    <link rel="modulepreload" crossorigin href="/ccweb/assets/vendor-BbRkqVGq.js">
+    <link rel="modulepreload" crossorigin href="/ccweb/assets/three-CHNaqIn8.js">
+    <link rel="modulepreload" crossorigin href="/ccweb/assets/animations-BApdEItB.js">
+    <link rel="stylesheet" crossorigin href="/ccweb/assets/index-B1hSkXNp.css">
   </head>
   <body>
     <!-- Loading Screen -->
     <div id="loading-screen" class="loading-screen">
-      <img src="./logo.png" alt="CS Connect Pakistan" class="loading-logo" onerror="this.onerror=null; this.src='./logo.svg';" />
+      <img src="/ccweb/logo.png" alt="CS Connect Pakistan" class="loading-logo" onerror="this.onerror=null; this.src='/ccweb/logo.svg';" />
       <div class="loading-text">CS Connect Pakistan</div>
       <div class="loading-subtext">Loading...</div>
     </div>

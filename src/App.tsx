@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { HashRouter as Router, Routes, Route } from 'react-router-dom'
 import SmartNavbar from './components/SmartNavbar'
 import Footer from './components/Footer'
 import Home from './pages/Home'
@@ -87,7 +87,7 @@ const App: React.FC = () => {
 
   return (
     <ErrorBoundary>
-      <Router basename="/ccweb">
+      <Router>
         <div className="min-h-screen text-black">
           <SmartNavbar />
           

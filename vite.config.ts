@@ -9,6 +9,7 @@ const __dirname = path.dirname(__filename)
 export default defineConfig({
   base: '/ccweb/', // GitHub Pages base path (repository name)
   plugins: [react()],
+  publicDir: 'public', // Ensure public directory is processed
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
@@ -29,6 +30,8 @@ export default defineConfig({
     },
     assetsDir: 'assets',
     emptyOutDir: true,
-    sourcemap: true
+    sourcemap: false,
+    target: 'es2015',
+    copyPublicDir: true // Ensure public files are copied
   }
 })
