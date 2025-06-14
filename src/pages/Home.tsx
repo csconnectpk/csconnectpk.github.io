@@ -4,6 +4,7 @@ import { ArrowRight, Code, Users, Globe, BookOpen } from "lucide-react";
 import { Link } from "react-router-dom";
 import CountUpNumber from "../components/CountUpNumber";
 import { FaWhatsapp, FaDiscord, FaInstagram, FaYoutube } from "react-icons/fa";
+import { platform } from "os";
 
 const platforms = [
     {
@@ -12,6 +13,7 @@ const platforms = [
         description: "Main community hub",
         icon: FaWhatsapp,
         color: "bg-green-500",
+        link: "https://chat.whatsapp.com/DFsM316EMVe2H0yiR74EqE",
     },
     {
         name: "Discord",
@@ -19,6 +21,7 @@ const platforms = [
         description: "Real-time discussions",
         icon: FaDiscord,
         color: "bg-indigo-500",
+        link: "https://discord.gg/gWyvnmSRRF",
     },
     {
         name: "Instagram",
@@ -26,6 +29,7 @@ const platforms = [
         description: "Community highlights",
         icon: FaInstagram,
         color: "bg-pink-500",
+        link: "https://www.instagram.com/csconnectpk",
     },
     {
         name: "YouTube",
@@ -33,6 +37,7 @@ const platforms = [
         description: "Educational content",
         icon: FaYoutube,
         color: "bg-red-500",
+        link: "https://www.youtube.com/@csconnectpk",
     },
 ];
 
@@ -619,11 +624,13 @@ const Home: React.FC = () => {
 
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                         {platforms.map((platform, index) => (
-                            <motion.div
+                            <motion.a
                                 key={index}
                                 initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
+                                href={platform.link}
+                                target="_blank"
                                 transition={{
                                     duration: 0.6,
                                     delay: index * 0.1,
@@ -645,7 +652,7 @@ const Home: React.FC = () => {
                                 <p className="text-gray-600 text-sm">
                                     {platform.description}
                                 </p>
-                            </motion.div>
+                            </motion.a>
                         ))}
                     </div>
                 </div>
@@ -677,26 +684,10 @@ const Home: React.FC = () => {
                                 </motion.button>
                             </Link>
                             <div className="flex gap-4 justify-center">
-                                {[
-                                    {
-                                        name: "WhatsApp",
-                                        icon: FaWhatsapp,
-                                        href: "https://chat.whatsapp.com/JwQrKjYblcU6C2Rz4k3jIi",
-                                    },
-                                    {
-                                        name: "Discord",
-                                        icon: FaDiscord,
-                                        href: "https://discord.gg/U8mNhUq4Qm",
-                                    },
-                                    {
-                                        name: "Instagram",
-                                        icon: FaInstagram,
-                                        href: "https://instagram.com/csconnectpakistan",
-                                    },
-                                ].map((platform) => (
+                                {platforms.map((platform) => (
                                     <motion.a
                                         key={platform.name}
-                                        href={platform.href}
+                                        href={platform.link}
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         whileHover={{ scale: 1.1 }}
