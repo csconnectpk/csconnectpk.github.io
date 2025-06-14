@@ -12,6 +12,7 @@ const platforms = [
         description: "Main community hub",
         icon: FaWhatsapp,
         color: "bg-green-500",
+        Hovercolor: 'hover:text-green-400',
         link: "https://chat.whatsapp.com/DFsM316EMVe2H0yiR74EqE",
     },
     {
@@ -20,6 +21,7 @@ const platforms = [
         description: "Real-time discussions",
         icon: FaDiscord,
         color: "bg-indigo-500",
+        Hovercolor: 'hover:text-indigo-400',
         link: "https://discord.gg/gWyvnmSRRF",
     },
     {
@@ -28,6 +30,7 @@ const platforms = [
         description: "Community highlights",
         icon: FaInstagram,
         color: "bg-pink-500",
+        Hovercolor: 'hover:text-pink-400',
         link: "https://www.instagram.com/csconnectpk",
     },
     {
@@ -36,6 +39,8 @@ const platforms = [
         description: "Educational content",
         icon: FaYoutube,
         color: "bg-red-500",
+        Hovercolor: 'hover:text-red-400',
+
         link: "https://www.youtube.com/@csconnectpk",
     },
     {
@@ -44,6 +49,7 @@ const platforms = [
         description: "Professional networking",
         icon: FaLinkedin,
         color: "bg-blue-700",
+        HoverColor: 'hover:text-blue-400',
         link: "https://www.linkedin.com/company/csconnectpk/",
     },
 ];
