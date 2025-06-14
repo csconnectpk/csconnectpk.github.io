@@ -3,43 +3,10 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, Code, Users, Globe, BookOpen } from "lucide-react";
 import { Link } from "react-router-dom";
 import CountUpNumber from "../components/CountUpNumber";
-import { FaWhatsapp, FaDiscord, FaInstagram, FaYoutube } from "react-icons/fa";
 import { platform } from "os";
+import { FaWhatsapp, FaDiscord, FaInstagram, FaYoutube } from "react-icons/fa";
+import { platforms } from "../socialMediaLinks";
 
-const platforms = [
-    {
-        name: "WhatsApp",
-        members: "2000+",
-        description: "Main community hub",
-        icon: FaWhatsapp,
-        color: "bg-green-500",
-        link: "https://chat.whatsapp.com/DFsM316EMVe2H0yiR74EqE",
-    },
-    {
-        name: "Discord",
-        members: "400+",
-        description: "Real-time discussions",
-        icon: FaDiscord,
-        color: "bg-indigo-500",
-        link: "https://discord.gg/gWyvnmSRRF",
-    },
-    {
-        name: "Instagram",
-        members: "150+",
-        description: "Community highlights",
-        icon: FaInstagram,
-        color: "bg-pink-500",
-        link: "https://www.instagram.com/csconnectpk",
-    },
-    {
-        name: "YouTube",
-        members: "160+",
-        description: "Educational content",
-        icon: FaYoutube,
-        color: "bg-red-500",
-        link: "https://www.youtube.com/@csconnectpk",
-    },
-];
 
 const Home: React.FC = () => {
     const { scrollY } = useScroll();
