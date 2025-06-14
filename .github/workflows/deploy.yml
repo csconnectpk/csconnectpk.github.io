@@ -25,9 +25,6 @@ jobs:
       
     - name: Build for GitHub Pages
       run: npm run build
-      env:
-        NODE_ENV: production
-        GITHUB_PAGES: true
         
     - name: Verify build output
       run: |

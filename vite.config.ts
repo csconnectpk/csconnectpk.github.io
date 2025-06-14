@@ -7,8 +7,8 @@ const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
 export default defineConfig({
-  // Use environment variable for base path, defaulting to root
-  base: process.env.NODE_ENV === 'production' && process.env.GITHUB_PAGES ? '/ccweb/' : '/',
+  // Set base path for GitHub Pages deployment
+  base: '/ccweb/',
   plugins: [react()],
   publicDir: 'public', // Ensure public directory is processed
   resolve: {
