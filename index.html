@@ -8,6 +8,9 @@
     <meta name="keywords" content="CS Connect Pakistan, computer science, student community, pakistan, networking, mentorship, programming, coding, tech community, university students" />
     <meta name="author" content="CS Connect Pakistan" />
     
+    <!-- Preload Logo -->
+    <link rel="preload" as="image" href="/logo.png" />
+    
     <!-- Apple Web App Meta Tags -->
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -103,7 +106,7 @@
   <body>
     <!-- Loading Screen -->
     <div id="loading-screen" class="loading-screen">
-      <img src="/logo.png" alt="CS Connect Pakistan" class="loading-logo" />
+      <img src="/logo.png" alt="CS Connect Pakistan" class="loading-logo" onerror="this.onerror=null; this.src='/logo.svg';" />
       <div class="loading-text">CS Connect Pakistan</div>
       <div class="loading-subtext">Loading...</div>
     </div>
