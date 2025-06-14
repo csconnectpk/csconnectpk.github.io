@@ -7,7 +7,7 @@ const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
 export default defineConfig({
-  base: '/', // Changed from './' to '/' for Vercel deployment
+  base: '/ccweb/', // GitHub Pages base path (repository name)
   plugins: [react()],
   resolve: {
     alias: {
