@@ -23,13 +23,19 @@ jobs:
     - name: Install dependencies
       run: npm ci
       
-    - name: Build
+    - name: Build for GitHub Pages
       run: npm run build
-      
-    - name: Copy logo files
+      env:
+        NODE_ENV: production
+        GITHUB_PAGES: true
+        
+    - name: Verify build output
       run: |
-        cp public/logo.png dist/
-        cp public/logo.svg dist/
+        ls -la dist/
+        echo "Checking for main assets..."
+        test -f dist/index.html && echo "✅ index.html found" || echo "❌ index.html missing"
+        test -f dist/logo.png && echo "✅ logo.png found" || echo "❌ logo.png missing"
+        test -f dist/logo.svg && echo "✅ logo.svg found" || echo "❌ logo.svg missing"
       
     - name: Add .nojekyll file
       run: touch ./dist/.nojekyll

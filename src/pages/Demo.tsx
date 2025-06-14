@@ -1,13 +1,21 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import SmartNavbar from '../components/SmartNavbar'
 import CountUpNumber, { StudentCount, FollowerCount, PercentageCount } from '../components/CountUpNumber'
 
 const Demo: React.FC = () => {
   return (
-    <div className="min-h-screen">
-      {/* Smart Navbar */}
-      <SmartNavbar />
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white">
+      {/* Hero Section */}
+      <section className="pt-20 pb-16">
+        <div className="max-w-4xl mx-auto px-4 text-center">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6">
+            Component <span className="text-gray-300">Demo</span>
+          </h1>
+          <p className="text-xl text-gray-400 mb-12">
+            Background-aware navbar and animated counters
+          </p>
+        </div>
+      </section>
 
       {/* Hero Section - Light Background */}
       <section className="min-h-screen bg-gradient-to-br from-white to-gray-50 flex items-center justify-center">

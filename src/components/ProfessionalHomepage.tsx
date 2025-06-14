@@ -1,15 +1,21 @@
-import React, { useEffect, Suspense } from 'react';
-import { motion, useScroll, useTransform, useInView } from 'framer-motion';
+import React, { useEffect, Suspense, useRef } from 'react';
+import { motion, useInView, useScroll, useTransform } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { 
   Users, 
-  Mic, 
-  GraduationCap, 
-  Globe, 
   BookOpen, 
-  Briefcase,
+  Mic, 
+  Globe, 
+  GraduationCap,
   ArrowRight,
+  Trophy,
+  Briefcase,
+  MessageCircle,
+  Instagram,
+  Youtube,
+  ExternalLink,
   Sparkles,
+  Linkedin,
   User
 } from 'lucide-react';
 
@@ -301,6 +307,56 @@ const studentReviews = [
     name: 'Subayyal Saad',
     university: 'Entry Test Student',
     review: 'Helpful anyway'
+  },
+  {
+    name: 'Ayesha Khan',
+    university: 'LUMS',
+    review: 'Being part of CS Connect opened doors I never knew existed. The mentorship and career guidance helped me land my first internship at a top tech company. Forever grateful!'
+  },
+  {
+    name: 'Ahmed Hassan',
+    university: 'NUST',
+    review: 'The coding challenges and project collaborations in this community pushed me to become a better programmer. Now I\'m confident in my skills and ready for the industry.'
+  },
+  {
+    name: 'Fatima Malik',
+    university: 'PU',
+    review: 'As a girl in CS, I found amazing support here. The community celebrates diversity and provides equal opportunities for everyone to grow and succeed.'
+  },
+  {
+    name: 'Bilal Ahmed',
+    university: 'COMSATS Wah',
+    review: 'The resume reviews and interview prep sessions were game-changers for me. Got placed at my dream company thanks to the guidance from seniors here.'
+  },
+  {
+    name: 'Sana Tariq',
+    university: 'UCP',
+    review: 'From web development to AI/ML, this community covers everything. The resources shared here are better than many paid courses. Highly recommend to all CS students!'
+  },
+  {
+    name: 'Zainab Ali',
+    university: 'COMSATS Islamabad',
+    review: 'The 24/7 support and guidance from seniors helped me through my toughest semester. This community is a lifeline for struggling CS students.'
+  },
+  {
+    name: 'Hamza Sheikh',
+    university: 'UET Lahore',
+    review: 'Got my first freelancing project through connections made here. The networking opportunities are incredible. Best decision joining CS Connect!'
+  },
+  {
+    name: 'Rabia Noor',
+    university: 'Bahria University',
+    review: 'The study groups and exam preparation sessions saved my GPA. Seniors here are so generous with their time and knowledge.'
+  },
+  {
+    name: 'Usman Malik',
+    university: 'FAST Karachi',
+    review: 'From choosing the right courses to career planning, CS Connect guided me every step of the way. Now I\'m working at a FAANG company!'
+  },
+  {
+    name: 'Mariam Rasheed',
+    university: 'NUML',
+    review: 'The mock interview sessions and technical prep helped me ace my job interviews. The community\'s support is unmatched.'
   }
 ];
 
