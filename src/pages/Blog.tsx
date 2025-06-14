@@ -1,20 +1,30 @@
-import React, { useEffect, useState } from 'react'
-import { motion } from 'framer-motion'
-import { Clock, Calendar, User, ArrowRight, X, Share2, Linkedin } from 'lucide-react'
+import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import {
+    Clock,
+    Calendar,
+    User,
+    ArrowRight,
+    X,
+    Share2,
+    Linkedin,
+} from "lucide-react";
+import { platforms } from "../socialMediaLinks";
 
 const Blog: React.FC = () => {
-  const [selectedArticle, setSelectedArticle] = useState<any>(null)
+    const [selectedArticle, setSelectedArticle] = useState<any>(null);
 
-  useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
-  const blogPosts = [
-    {
-      id: 1,
-      title: "FAST & CS: Why is FAST so famous for its CS?",
-      excerpt: "I first heard about FAST when I was in my second year of college. It was my biology teacher who mentioned it casually in class. He talked about FAST and GIKI, and at that time both names were completely new to me. I remember telling him, 'Sir, this is very interesting stuff and our field is kinda boring.' I didn't know what computer science really was, but something about that conversation stuck with me.",
-      fullContent: `I first heard about FAST when I was in my second year of college. It was my biology teacher who mentioned it casually in class. He talked about FAST and GIKI, and at that time both names were completely new to me. I remember telling him, "Sir, this is very interesting stuff and our field is kinda boring." I didn't know what computer science really was, but something about that conversation stuck with me.
+    const blogPosts = [
+        {
+            id: 1,
+            title: "FAST & CS: Why is FAST so famous for its CS?",
+            excerpt:
+                "I first heard about FAST when I was in my second year of college. It was my biology teacher who mentioned it casually in class. He talked about FAST and GIKI, and at that time both names were completely new to me. I remember telling him, 'Sir, this is very interesting stuff and our field is kinda boring.' I didn't know what computer science really was, but something about that conversation stuck with me.",
+            fullContent: `I first heard about FAST when I was in my second year of college. It was my biology teacher who mentioned it casually in class. He talked about FAST and GIKI, and at that time both names were completely new to me. I remember telling him, "Sir, this is very interesting stuff and our field is kinda boring." I didn't know what computer science really was, but something about that conversation stuck with me.
 
 After that day, whenever someone mentioned computer science, FAST would almost always come up. People spoke about it like it was the gold standard. Everyone had something to say about how strong FAST's computer science program is, and I started to wonder what made it so special.
 
@@ -37,19 +47,20 @@ Today, even after so many years, the name still stands strong. The Foundation fo
 If you've ever wondered why people talk about FAST with such respect, this is why. It's not about hype. It's about the results. The students, the alumni, the grind, the culture. All of it comes together to create something that's honestly hard to describe unless you've experienced it yourself.
 
 And maybe that's what makes FAST so different.`,
-      author: "Azan Waseem",
-      linkedin: "azan-waseem",
-      date: "May 22, 2025",
-      readTime: "12 min read",
-      category: "University Guide",
-      featured: true,
-      slug: "fast-cs-famous"
-    },
-    {
-      id: 2,
-      title: "Transitioning from Pre-Medical to FAST",
-      excerpt: "How a Pre-Med Student Can Get Into FAST for Computing Programs? If you are a pre-medical student thinking about switching to Computer Science at FAST, the first thing you need to do is pause and ask yourself one simple question: Do I really want to do this? Because this decision changes everything.",
-      fullContent: `How a Pre-Med Student Can Get Into FAST for Computing Programs?
+            author: "Azan Waseem",
+            linkedin: "azan-waseem",
+            date: "May 22, 2025",
+            readTime: "12 min read",
+            category: "University Guide",
+            featured: true,
+            slug: "fast-cs-famous",
+        },
+        {
+            id: 2,
+            title: "Transitioning from Pre-Medical to FAST",
+            excerpt:
+                "How a Pre-Med Student Can Get Into FAST for Computing Programs? If you are a pre-medical student thinking about switching to Computer Science at FAST, the first thing you need to do is pause and ask yourself one simple question: Do I really want to do this? Because this decision changes everything.",
+            fullContent: `How a Pre-Med Student Can Get Into FAST for Computing Programs?
 
 If you are a pre-medical student thinking about switching to Computer Science at FAST, the first thing you need to do is pause and ask yourself one simple question: Do I really want to do this?
 
@@ -108,19 +119,20 @@ Final Advice
 In the end, remember this. Just because you did not study maths in college does not mean you cannot succeed in CS. You are not behind. You are just coming from a different starting point. What matters now is how committed you are and how well you manage your time and energy.
 
 The road is not easy, but it is clear. Stay consistent. Practice with purpose. Use the right resources. Believe that you can catch up. And once you do, you will not just pass the test. You will walk into FAST with confidence, knowing you earned your seat in one of the top CS programs in Pakistan.`,
-      author: "Azan Waseem",
-      linkedin: "azan-waseem",
-      date: "May 01, 2025", 
-      readTime: "8 min read",
-      category: "Pre-Med & Entry Test",
-      featured: false,
-      slug: "pre-med-to-fast"
-    },
-    {
-      id: 3,
-      title: "Signal as alternative of WhatsApp",
-      excerpt: "A comprehensive comparison of Signal and WhatsApp for secure messaging. Signal offers several advantages over WhatsApp in terms of privacy and security: End-to-end encryption by default for all communications, open-source code that can be audited by security experts, minimal data collection and storage, no ties to large tech companies, and independent security audits.",
-      fullContent: `A comprehensive comparison of Signal and WhatsApp for secure messaging:
+            author: "Azan Waseem",
+            linkedin: "azan-waseem",
+            date: "May 01, 2025",
+            readTime: "8 min read",
+            category: "Pre-Med & Entry Test",
+            featured: false,
+            slug: "pre-med-to-fast",
+        },
+        {
+            id: 3,
+            title: "Signal as alternative of WhatsApp",
+            excerpt:
+                "A comprehensive comparison of Signal and WhatsApp for secure messaging. Signal offers several advantages over WhatsApp in terms of privacy and security: End-to-end encryption by default for all communications, open-source code that can be audited by security experts, minimal data collection and storage, no ties to large tech companies, and independent security audits.",
+            fullContent: `A comprehensive comparison of Signal and WhatsApp for secure messaging:
 
 Privacy and security features
 
@@ -160,19 +172,20 @@ Additional benefits of using Signal:
 - Commitment to privacy
 
 By switching to Signal, you're not only protecting your own privacy but also contributing to a more secure messaging ecosystem.`,
-      author: "Talha Asghar",
-      linkedin: "talha-asghar",
-      date: "March 21, 2025",
-      readTime: "5 min read", 
-      category: "Privacy & Messaging",
-      featured: false,
-      slug: "signal-whatsapp-alternative"
-    },
-    {
-      id: 4,
-      title: "Why piracy should be avoided?",
-      excerpt: "Is it moral to pirate stuff? I have been wondering about this question since early 2020. I never encouraged piracy (may be I did unintentionally and I seek Allah's forgiveness) even before 2020 but I used to pirate books and software prior to that myself (May Allah forgive me for this as well). But once I got familiarised with open source and linux world I started to question my past.",
-      fullContent: `Is it moral to pirate stuff?
+            author: "Talha Asghar",
+            linkedin: "talha-asghar",
+            date: "March 21, 2025",
+            readTime: "5 min read",
+            category: "Privacy & Messaging",
+            featured: false,
+            slug: "signal-whatsapp-alternative",
+        },
+        {
+            id: 4,
+            title: "Why piracy should be avoided?",
+            excerpt:
+                "Is it moral to pirate stuff? I have been wondering about this question since early 2020. I never encouraged piracy (may be I did unintentionally and I seek Allah's forgiveness) even before 2020 but I used to pirate books and software prior to that myself (May Allah forgive me for this as well). But once I got familiarised with open source and linux world I started to question my past.",
+            fullContent: `Is it moral to pirate stuff?
 
 I have been wondering about this question since early 2020. I never encouraged piracy (may be I did unintentionally and I seek Allah's forgiveness) even before 2020 but I used to pirate books and software prior to that myself (May Allah forgive me for this as well). But once I got familiarised with open source and linux world I started to question my past.
 
@@ -231,334 +244,353 @@ Here are some tips that can help you live a life that is free of piracy:
 - Try to find books with Creative Commons license. These are the books that author has explicitly given permission for to use for free. There are many types of Creative Commons licenses some even allow commercial use. Learn about these licenses.
 - For tutorials there are tons of MOOC (Massive Open Online Courses) sites that offer free quality content with some limitation. For example you might have to pay if you want to get a certificate but content itself would be free. YouTube is also a great platform to learn new stuff.
 - When purchasing an item especially digital ones .i.e. softwares & ebooks ask explicitly from the author whether he is transferring ownerships rights to you or not? This will save you from a lot of problems down the line in future.`,
-      author: "Talha Asghar",
-      linkedin: "talha-asghar",
-      date: "February 23, 2025",
-      readTime: "10 min read",
-      category: "Free and Open Source Software", 
-      featured: false,
-      slug: "avoid-piracy"
-    }
-  ]
+            author: "Talha Asghar",
+            linkedin: "talha-asghar",
+            date: "February 23, 2025",
+            readTime: "10 min read",
+            category: "Free and Open Source Software",
+            featured: false,
+            slug: "avoid-piracy",
+        },
+    ];
 
-  const openArticle = (article: any) => {
-    setSelectedArticle(article)
-    document.body.style.overflow = 'hidden'
-  }
+    const openArticle = (article: any) => {
+        setSelectedArticle(article);
+        document.body.style.overflow = "hidden";
+    };
 
-  const closeArticle = () => {
-    setSelectedArticle(null)
-    document.body.style.overflow = 'unset'
-  }
+    const closeArticle = () => {
+        setSelectedArticle(null);
+        document.body.style.overflow = "unset";
+    };
 
-  const shareArticle = (article: any, platform: string) => {
-    const url = `${window.location.origin}/blog/${article.slug}`
-    const text = `Check out this article: ${article.title}`
-    
-    switch (platform) {
-      case 'whatsapp':
-        window.open(`https://wa.me/?text=${encodeURIComponent(text + ' ' + url)}`, '_blank')
-        break
-      case 'facebook':
-        window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`, '_blank')
-        break
-      case 'twitter':
-        window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`, '_blank')
-        break
-      case 'linkedin':
-        window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`, '_blank')
-        break
-      default:
-        navigator.clipboard.writeText(url)
-        alert('Link copied to clipboard!')
-    }
-  }
+    const shareArticle = (article: any, platform: string) => {
+        const url = `${window.location.origin}/blog/${article.slug}`;
+        const text = `Check out this article: ${article.title}`;
 
-  return (
-    <div className="min-h-screen bg-black">
-      {/* Header */}
-      <section className="py-20 bg-black text-white pt-28">
-        <div className="max-w-6xl mx-auto px-4 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              CS Connect <span className="text-gray-300">Blog</span>
-            </h1>
-            <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-              Insights, tutorials, and stories from the Pakistani tech community
-            </p>
-          </motion.div>
-        </div>
-      </section>
+        switch (platform) {
+            case "whatsapp":
+                window.open(
+                    `https://wa.me/?text=${encodeURIComponent(
+                        text + " " + url
+                    )}`,
+                    "_blank"
+                );
+                break;
+            case "facebook":
+                window.open(
+                    `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
+                        url
+                    )}`,
+                    "_blank"
+                );
+                break;
+            case "twitter":
+                window.open(
+                    `https://twitter.com/intent/tweet?text=${encodeURIComponent(
+                        text
+                    )}&url=${encodeURIComponent(url)}`,
+                    "_blank"
+                );
+                break;
+            case "linkedin":
+                window.open(
+                    `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
+                        url
+                    )}`,
+                    "_blank"
+                );
+                break;
+            default:
+                navigator.clipboard.writeText(url);
+                alert("Link copied to clipboard!");
+        }
+    };
 
-      {/* Featured Post */}
-      {blogPosts.filter(post => post.featured).map((post) => (
-        <section key={post.id} className="py-16 bg-white">
-          <div className="max-w-6xl mx-auto px-4">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="text-center mb-12"
-            >
-              <span className="inline-block px-4 py-2 bg-black text-white rounded-full text-sm font-semibold mb-4">
-                Featured Article
-              </span>
-              <h2 className="text-2xl md:text-3xl font-bold text-black mb-4">
-                Latest from our community
-              </h2>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-all duration-300 group cursor-pointer"
-              onClick={() => openArticle(post)}
-            >
-              <div className="p-8 lg:p-12">
-                <div className="mb-4">
-                  <span className="inline-block px-3 py-1 bg-black text-white rounded-full text-sm font-semibold">
-                    {post.category}
-                  </span>
+    return (
+        <div className="min-h-screen bg-black">
+            {/* Header */}
+            <section className="py-20 bg-black text-white pt-28">
+                <div className="max-w-6xl mx-auto px-4 text-center">
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8 }}
+                    >
+                        <h1 className="text-4xl md:text-5xl font-bold mb-6">
+                            CS Connect{" "}
+                            <span className="text-gray-300">Blog</span>
+                        </h1>
+                        <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+                            Insights, tutorials, and stories from the Pakistani
+                            tech community
+                        </p>
+                    </motion.div>
                 </div>
+            </section>
 
-                  <h3 className="text-2xl lg:text-3xl font-bold mb-4 text-black group-hover:text-gray-700 transition-colors">
-                    {post.title}
-                  </h3>
-                  
-                  <p className="text-gray-600 mb-6 leading-relaxed">
-                    {post.excerpt}
-                  </p>
+            {/* Featured Post */}
+            {blogPosts
+                .filter((post) => post.featured)
+                .map((post) => (
+                    <section key={post.id} className="py-16 bg-white">
+                        <div className="max-w-6xl mx-auto px-4">
+                            <motion.div
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.8 }}
+                                className="text-center mb-12"
+                            >
+                                <span className="inline-block px-4 py-2 bg-black text-white rounded-full text-sm font-semibold mb-4">
+                                    Featured Article
+                                </span>
+                                <h2 className="text-2xl md:text-3xl font-bold text-black mb-4">
+                                    Latest from our community
+                                </h2>
+                            </motion.div>
 
-                  {/* Meta Info */}
-                  <div className="flex flex-wrap items-center gap-4 text-sm text-gray-500 mb-6">
-                    <div className="flex items-center">
-                      <User className="w-4 h-4 mr-2" />
-                      <span>{post.author}</span>
+                            <motion.div
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.8, delay: 0.2 }}
+                                className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-all duration-300 group cursor-pointer"
+                                onClick={() => openArticle(post)}
+                            >
+                                <div className="p-8 lg:p-12">
+                                    <div className="mb-4">
+                                        <span className="inline-block px-3 py-1 bg-black text-white rounded-full text-sm font-semibold">
+                                            {post.category}
+                                        </span>
+                                    </div>
+
+                                    <h3 className="text-2xl lg:text-3xl font-bold mb-4 text-black group-hover:text-gray-700 transition-colors">
+                                        {post.title}
+                                    </h3>
+
+                                    <p className="text-gray-600 mb-6 leading-relaxed">
+                                        {post.excerpt}
+                                    </p>
+
+                                    {/* Meta Info */}
+                                    <div className="flex flex-wrap items-center gap-4 text-sm text-gray-500 mb-6">
+                                        <div className="flex items-center">
+                                            <User className="w-4 h-4 mr-2" />
+                                            <span>{post.author}</span>
+                                        </div>
+                                        <div className="flex items-center">
+                                            <Calendar className="w-4 h-4 mr-2" />
+                                            <span>{post.date}</span>
+                                        </div>
+                                        <div className="flex items-center">
+                                            <Clock className="w-4 h-4 mr-2" />
+                                            <span>{post.readTime}</span>
+                                        </div>
+                                    </div>
+
+                                    {/* Read More Button */}
+                                    <motion.button
+                                        whileHover={{ scale: 1.02 }}
+                                        whileTap={{ scale: 0.98 }}
+                                        className="inline-flex items-center bg-black text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-all duration-200 group/btn"
+                                    >
+                                        <span>Read Full Article</span>
+                                        <ArrowRight className="w-5 h-5 ml-2 group-hover/btn:translate-x-1 transition-transform" />
+                                    </motion.button>
+                                </div>
+                            </motion.div>
+                        </div>
+                    </section>
+                ))}
+
+            {/* All Blog Posts */}
+            <section className="py-16 bg-gray-50">
+                <div className="max-w-6xl mx-auto px-4">
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8 }}
+                        className="text-center mb-12"
+                    >
+                        <h2 className="text-2xl md:text-3xl font-bold text-black mb-4">
+                            All Articles
+                        </h2>
+                        <p className="text-gray-600 max-w-2xl mx-auto">
+                            Explore our collection of guides, tutorials, and
+                            insights
+                        </p>
+                    </motion.div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        {blogPosts
+                            .filter((post) => !post.featured)
+                            .map((post, index) => (
+                                <motion.div
+                                    key={post.id}
+                                    initial={{ opacity: 0, y: 30 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{
+                                        duration: 0.6,
+                                        delay: index * 0.1,
+                                    }}
+                                    whileHover={{ y: -5 }}
+                                    className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-all duration-300 group cursor-pointer"
+                                    onClick={() => openArticle(post)}
+                                >
+                                    <div className="p-8">
+                                        <div className="mb-4">
+                                            <span className="inline-block px-3 py-1 bg-black text-white rounded-full text-sm font-semibold">
+                                                {post.category}
+                                            </span>
+                                        </div>
+
+                                        <h3 className="text-xl lg:text-2xl font-bold mb-4 text-black group-hover:text-gray-700 transition-colors leading-tight">
+                                            {post.title}
+                                        </h3>
+
+                                        <p className="text-gray-600 mb-6 leading-relaxed">
+                                            {post.excerpt}
+                                        </p>
+
+                                        {/* Meta Info */}
+                                        <div className="flex flex-wrap items-center gap-4 text-sm text-gray-500 mb-6">
+                                            <div className="flex items-center">
+                                                <User className="w-4 h-4 mr-2" />
+                                                <span>{post.author}</span>
+                                            </div>
+                                            <div className="flex items-center">
+                                                <Calendar className="w-4 h-4 mr-2" />
+                                                <span>{post.date}</span>
+                                            </div>
+                                            <div className="flex items-center">
+                                                <Clock className="w-4 h-4 mr-2" />
+                                                <span>{post.readTime}</span>
+                                            </div>
+                                        </div>
+
+                                        {/* Read More Button */}
+                                        <motion.button
+                                            whileHover={{ scale: 1.02 }}
+                                            whileTap={{ scale: 0.98 }}
+                                            className="inline-flex items-center bg-black text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-all duration-200 group/btn"
+                                        >
+                                            <span>Read Full Article</span>
+                                            <ArrowRight className="w-5 h-5 ml-2 group-hover/btn:translate-x-1 transition-transform" />
+                                        </motion.button>
+                                    </div>
+                                </motion.div>
+                            ))}
                     </div>
-                    <div className="flex items-center">
-                      <Calendar className="w-4 h-4 mr-2" />
-                      <span>{post.date}</span>
-                    </div>
-                    <div className="flex items-center">
-                      <Clock className="w-4 h-4 mr-2" />
-                      <span>{post.readTime}</span>
-                    </div>
-                  </div>
-
-                  {/* Read More Button */}
-                  <motion.button
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    className="inline-flex items-center bg-black text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-all duration-200 group/btn"
-                  >
-                    <span>Read Full Article</span>
-                    <ArrowRight className="w-5 h-5 ml-2 group-hover/btn:translate-x-1 transition-transform" />
-                  </motion.button>
-              </div>
-            </motion.div>
-          </div>
-        </section>
-      ))}
-
-      {/* All Blog Posts */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-2xl md:text-3xl font-bold text-black mb-4">
-              All Articles
-            </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Explore our collection of guides, tutorials, and insights
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {blogPosts.filter(post => !post.featured).map((post, index) => (
-              <motion.div
-                key={post.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                whileHover={{ y: -5 }}
-                className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-all duration-300 group cursor-pointer"
-                onClick={() => openArticle(post)}
-              >
-                <div className="p-8">
-                  <div className="mb-4">
-                    <span className="inline-block px-3 py-1 bg-black text-white rounded-full text-sm font-semibold">
-                    {post.category}
-                    </span>
                 </div>
+            </section>
 
-                  <h3 className="text-xl lg:text-2xl font-bold mb-4 text-black group-hover:text-gray-700 transition-colors leading-tight">
-                    {post.title}
-                  </h3>
-                  
-                  <p className="text-gray-600 mb-6 leading-relaxed">
-                    {post.excerpt}
-                  </p>
+            {/* Article Modal */}
+            {selectedArticle && (
+                <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 0.9 }}
+                        className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden"
+                    >
+                        {/* Modal Header */}
+                        <div className="p-6 border-b border-gray-200 flex items-center justify-between">
+                            <div>
+                                <span className="inline-block px-3 py-1 bg-black text-white rounded-full text-sm font-semibold mb-2">
+                                    {selectedArticle.category}
+                                </span>
+                                <h2 className="text-2xl font-bold text-black">
+                                    {selectedArticle.title}
+                                </h2>
+                                <div className="flex items-center gap-4 text-sm text-gray-500 mt-2">
+                                    <div className="flex items-center">
+                                        <User className="w-4 h-4 mr-1" />
+                                        <span>{selectedArticle.author}</span>
+                                    </div>
+                                    {selectedArticle.linkedin && (
+                                        <a
+                                            href={`https://linkedin.com/in/${selectedArticle.linkedin}`}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="flex items-center hover:text-blue-600 transition-colors"
+                                        >
+                                            <Linkedin className="w-4 h-4 mr-1" />
+                                            <span>LinkedIn</span>
+                                        </a>
+                                    )}
+                                    <div className="flex items-center">
+                                        <Calendar className="w-4 h-4 mr-1" />
+                                        <span>{selectedArticle.date}</span>
+                                    </div>
+                                    <div className="flex items-center">
+                                        <Clock className="w-4 h-4 mr-1" />
+                                        <span>{selectedArticle.readTime}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <button
+                                onClick={closeArticle}
+                                className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+                            >
+                                <X className="w-6 h-6" />
+                            </button>
+                        </div>
 
-                  {/* Meta Info */}
-                  <div className="flex flex-wrap items-center gap-4 text-sm text-gray-500 mb-6">
-                    <div className="flex items-center">
-                      <User className="w-4 h-4 mr-2" />
-                      <span>{post.author}</span>
-                    </div>
-                      <div className="flex items-center">
-                      <Calendar className="w-4 h-4 mr-2" />
-                        <span>{post.date}</span>
-                      </div>
-                      <div className="flex items-center">
-                      <Clock className="w-4 h-4 mr-2" />
-                        <span>{post.readTime}</span>
-                    </div>
-                  </div>
+                        {/* Modal Content */}
+                        <div className="p-6 overflow-y-auto max-h-[calc(90vh-200px)]">
+                            <div className="prose prose-lg max-w-none">
+                                {selectedArticle.fullContent
+                                    .split("\n\n")
+                                    .map((paragraph: string, index: number) => (
+                                        <p
+                                            key={index}
+                                            className="mb-4 text-gray-700 leading-relaxed"
+                                        >
+                                            {paragraph}
+                                        </p>
+                                    ))}
+                            </div>
 
-                  {/* Read More Button */}
-                  <motion.button
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    className="inline-flex items-center bg-black text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-all duration-200 group/btn"
-                  >
-                    <span>Read Full Article</span>
-                    <ArrowRight className="w-5 h-5 ml-2 group-hover/btn:translate-x-1 transition-transform" />
-                  </motion.button>
+                            {/* Share Section */}
+                            <div className="mt-8 pt-6 border-t border-gray-200">
+                                <div className="flex items-center justify-between">
+                                    <h4 className="text-lg font-semibold text-gray-900">
+                                        Share this article
+                                    </h4>
+                                    <div className="flex gap-3">
+                                        {platforms.map(({ name, icon: Icon, Hovercolor }) => (
+                                            <button
+                                                key={name}
+                                                onClick={() =>
+                                                    shareArticle(selectedArticle, name.toLowerCase())
+                                                }
+                                                className={`p-2 bg-black text-white rounded-lg transition-colors ${Hovercolor}`}
+                                                title={`Share on ${name}`}
+                                            >
+                                                <Icon className="w-5 h-5" />
+                                            </button>
+                                        ))}
+
+                                        {/* Copy Link Button */}
+                                        <button
+                                            onClick={() => shareArticle(selectedArticle, "copy")}
+                                            className="p-2 bg-black text-white rounded-lg transition-colors hover:text-gray-400"
+                                            title="Copy Link"
+                                        >
+                                            <Share2 className="w-5 h-5" />
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </motion.div>
                 </div>
-              </motion.div>
-            ))}
-          </div>
+            )}
         </div>
-      </section>
+    );
+};
 
-      {/* Article Modal */}
-      {selectedArticle && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.9 }}
-            className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden"
-          >
-            {/* Modal Header */}
-            <div className="p-6 border-b border-gray-200 flex items-center justify-between">
-              <div>
-                <span className="inline-block px-3 py-1 bg-black text-white rounded-full text-sm font-semibold mb-2">
-                  {selectedArticle.category}
-                </span>
-                <h2 className="text-2xl font-bold text-black">{selectedArticle.title}</h2>
-                                 <div className="flex items-center gap-4 text-sm text-gray-500 mt-2">
-                   <div className="flex items-center">
-                     <User className="w-4 h-4 mr-1" />
-                     <span>{selectedArticle.author}</span>
-                   </div>
-                   {selectedArticle.linkedin && (
-                     <a 
-                       href={`https://linkedin.com/in/${selectedArticle.linkedin}`}
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       className="flex items-center hover:text-blue-600 transition-colors"
-                     >
-                       <Linkedin className="w-4 h-4 mr-1" />
-                       <span>LinkedIn</span>
-                     </a>
-                   )}
-                   <div className="flex items-center">
-                     <Calendar className="w-4 h-4 mr-1" />
-                     <span>{selectedArticle.date}</span>
-                   </div>
-                   <div className="flex items-center">
-                     <Clock className="w-4 h-4 mr-1" />
-                     <span>{selectedArticle.readTime}</span>
-                   </div>
-                 </div>
-              </div>
-              <button
-                onClick={closeArticle}
-                className="p-2 hover:bg-gray-100 rounded-full transition-colors"
-              >
-                <X className="w-6 h-6" />
-              </button>
-            </div>
-
-                         {/* Modal Content */}
-             <div className="p-6 overflow-y-auto max-h-[calc(90vh-200px)]">
-               <div className="prose prose-lg max-w-none">
-                 {selectedArticle.fullContent.split('\n\n').map((paragraph: string, index: number) => (
-                   <p key={index} className="mb-4 text-gray-700 leading-relaxed">
-                     {paragraph}
-                   </p>
-                 ))}
-               </div>
-               
-               {/* Share Section */}
-               <div className="mt-8 pt-6 border-t border-gray-200">
-                 <div className="flex items-center justify-between">
-                   <h4 className="text-lg font-semibold text-gray-900">Share this article</h4>
-                   <div className="flex gap-3">
-                     <button
-                       onClick={() => shareArticle(selectedArticle, 'whatsapp')}
-                       className="p-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors"
-                       title="Share on WhatsApp"
-                     >
-                       <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.465 3.63"/>
-                       </svg>
-                     </button>
-                     <button
-                       onClick={() => shareArticle(selectedArticle, 'facebook')}
-                       className="p-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
-                       title="Share on Facebook"
-                     >
-                       <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                         <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                       </svg>
-                     </button>
-                     <button
-                       onClick={() => shareArticle(selectedArticle, 'twitter')}
-                       className="p-2 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors"
-                       title="Share on Twitter"
-                     >
-                       <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                         <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
-                       </svg>
-                     </button>
-                     <button
-                       onClick={() => shareArticle(selectedArticle, 'linkedin')}
-                       className="p-2 bg-blue-700 text-white rounded-lg hover:bg-blue-800 transition-colors"
-                       title="Share on LinkedIn"
-                     >
-                       <Linkedin className="w-5 h-5" />
-                     </button>
-                     <button
-                       onClick={() => shareArticle(selectedArticle, 'copy')}
-                       className="p-2 bg-gray-500 text-white rounded-lg hover:bg-gray-600 transition-colors"
-                       title="Copy Link"
-                     >
-                       <Share2 className="w-5 h-5" />
-                     </button>
-                   </div>
-                 </div>
-               </div>
-             </div>
-          </motion.div>
-        </div>
-      )}
-    </div>
-  )
-}
-
-export default Blog 
+export default Blog;
