@@ -1,5 +1,5 @@
 import React from 'react'
-import { HashRouter as Router, Routes, Route, HashRouter } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import SmartNavbar from './components/SmartNavbar'
 import Footer from './components/Footer'
 import Home from './pages/Home'
@@ -10,6 +10,7 @@ import Podcasts from './pages/Podcasts'
 import FAQ from './pages/FAQ'
 import Join from './pages/Join'
 import Demo from './pages/Demo'
+import NotFound from './pages/NotFound'
 
 // Error Boundary Component
 class ErrorBoundary extends React.Component<
@@ -51,38 +52,60 @@ class ErrorBoundary extends React.Component<
   }
 }
 
+// Loading component
+const LoadingPage: React.FC = () => (
+  <div className="min-h-screen flex items-center justify-center">
+    <div className="text-center">
+      <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-black mx-auto mb-4"></div>
+      <p className="text-gray-600">Loading...</p>
+    </div>
+  </div>
+)
+
 const App: React.FC = () => {
   // Add error logging
   React.useEffect(() => {
     console.log('App component mounted successfully')
     
     // Global error handler
-    window.addEventListener('error', (event) => {
+    const handleError = (event: ErrorEvent) => {
       console.error('Global error:', event.error)
-    })
+    }
 
-    window.addEventListener('unhandledrejection', (event) => {
+    const handleUnhandledRejection = (event: PromiseRejectionEvent) => {
       console.error('Unhandled promise rejection:', event.reason)
-    })
+    }
+
+    window.addEventListener('error', handleError)
+    window.addEventListener('unhandledrejection', handleUnhandledRejection)
+
+    return () => {
+      window.removeEventListener('error', handleError)
+      window.removeEventListener('unhandledrejection', handleUnhandledRejection)
+    }
   }, [])
 
   return (
     <ErrorBoundary>
-      <Router>
+      <Router basename="/ccweb">
         <div className="min-h-screen text-black">
           <SmartNavbar />
           
           <main>
-            <HashRouter>
-              <Route path="/" element={<Home />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/team" element={<Team />} />
-              <Route path="/blog" element={<Blog />} />
-              <Route path="/podcasts" element={<Podcasts />} />
-              <Route path="/faq" element={<FAQ />} />
-              <Route path="/join" element={<Join />} />
-              <Route path="/demo" element={<Demo />} />
-            </HashRouter>
+            <React.Suspense fallback={<LoadingPage />}>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/team" element={<Team />} />
+                <Route path="/blog" element={<Blog />} />
+                <Route path="/podcasts" element={<Podcasts />} />
+                <Route path="/faq" element={<FAQ />} />
+                <Route path="/join" element={<Join />} />
+                <Route path="/demo" element={<Demo />} />
+                {/* Fallback route for any unmatched paths */}
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </React.Suspense>
           </main>
           
           <Footer />
