@@ -47,7 +47,7 @@ const Podcasts: React.FC = () => {
     return (
         <div className="min-h-screen bg-black">
             {/* Header */}
-            <section className="py-20 bg-black text-white pt-28">
+            <section className="py-20 bg-black text-white pt-20">
                 <div className="max-w-6xl mx-auto px-4 text-center">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
@@ -334,15 +334,15 @@ const Podcasts: React.FC = () => {
 
                                     {/* Listen Button */}
                                     <motion.a
-                                      href={podcast.link}
-                                      target="_blank"
-                                      rel="noopener noreferrer"
-                                      whileHover={{ scale: 1.02 }}
-                                      whileTap={{ scale: 0.98 }}
-                                      className="inline-flex items-center bg-black text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-all duration-200 group/btn"
+                                        href={podcast.link}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        whileHover={{ scale: 1.02 }}
+                                        whileTap={{ scale: 0.98 }}
+                                        className="inline-flex items-center bg-black text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-all duration-200 group/btn"
                                     >
-                                      <Play className="w-5 h-5 mr-2" />
-                                      <span>Listen Now</span>
+                                        <Play className="w-5 h-5 mr-2" />
+                                        <span>Listen Now</span>
                                     </motion.a>
                                 </div>
                             </motion.div>

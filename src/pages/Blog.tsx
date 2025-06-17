@@ -310,7 +310,7 @@ Here are some tips that can help you live a life that is free of piracy:
     return (
         <div className="min-h-screen bg-black">
             {/* Header */}
-            <section className="py-20 bg-black text-white pt-28">
+            <section className="py-20 bg-black text-white pt-20">
                 <div className="max-w-6xl mx-auto px-4 text-center">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
@@ -561,22 +561,36 @@ Here are some tips that can help you live a life that is free of piracy:
                                         Share this article
                                     </h4>
                                     <div className="flex gap-3">
-                                        {platforms.map(({ name, icon: Icon, Hovercolor }) => (
-                                            <button
-                                                key={name}
-                                                onClick={() =>
-                                                    shareArticle(selectedArticle, name.toLowerCase())
-                                                }
-                                                className={`p-2 bg-black text-white rounded-lg transition-colors ${Hovercolor}`}
-                                                title={`Share on ${name}`}
-                                            >
-                                                <Icon className="w-5 h-5" />
-                                            </button>
-                                        ))}
+                                        {platforms.map(
+                                            ({
+                                                name,
+                                                icon: Icon,
+                                                Hovercolor,
+                                            }) => (
+                                                <button
+                                                    key={name}
+                                                    onClick={() =>
+                                                        shareArticle(
+                                                            selectedArticle,
+                                                            name.toLowerCase()
+                                                        )
+                                                    }
+                                                    className={`p-2 bg-black text-white rounded-lg transition-colors ${Hovercolor}`}
+                                                    title={`Share on ${name}`}
+                                                >
+                                                    <Icon className="w-5 h-5" />
+                                                </button>
+                                            )
+                                        )}
 
                                         {/* Copy Link Button */}
                                         <button
-                                            onClick={() => shareArticle(selectedArticle, "copy")}
+                                            onClick={() =>
+                                                shareArticle(
+                                                    selectedArticle,
+                                                    "copy"
+                                                )
+                                            }
                                             className="p-2 bg-black text-white rounded-lg transition-colors hover:text-gray-400"
                                             title="Copy Link"
                                         >

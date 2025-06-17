@@ -115,7 +115,7 @@ const Team: React.FC = () => {
             className=""
         >
             {/* Hero Section */}
-            <section className="py-20 md:py-32 bg-black text-white relative overflow-hidden pt-16">
+            <section className="py-20 md:py-32 bg-black text-white relative overflow-hidden">
                 <div className="absolute inset-0 opacity-10">
                     <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:50px_50px]" />
                 </div>

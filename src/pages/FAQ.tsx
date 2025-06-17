@@ -69,7 +69,8 @@ const FAQ: React.FC = () => {
     return (
         <div className="min-h-screen bg-black">
             {/* Header */}
-            <section className="py-20 bg-black text-white pt-28">
+            {/* Header */}
+            <section className="py-20 bg-black text-white pt-20">
                 <div className="max-w-4xl mx-auto px-4 text-center">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
