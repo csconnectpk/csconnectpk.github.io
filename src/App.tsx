@@ -1,5 +1,10 @@
 import React from "react";
-import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import {
+    HashRouter as Router,
+    Routes,
+    Route,
+    Navigate,
+} from "react-router-dom";
 import SmartNavbar from "./components/SmartNavbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
@@ -70,11 +75,9 @@ const LoadingPage: React.FC = () => (
 );
 
 const App: React.FC = () => {
-    // Add error logging
     React.useEffect(() => {
         console.log("App component mounted successfully");
 
-        // Global error handler
         const handleError = (event: ErrorEvent) => {
             console.error("Global error:", event.error);
         };
@@ -100,11 +103,14 @@ const App: React.FC = () => {
             <Router>
                 <div className="min-h-screen text-black">
                     <SmartNavbar />
-
                     <main>
                         <React.Suspense fallback={<LoadingPage />}>
                             <Routes>
-                                <Route path="/" element={<Home />} />
+                                <Route
+                                    path="/"
+                                    element={<Navigate to="/home" replace />}
+                                />
+                                <Route path="/home" element={<Home />} />
                                 <Route path="/about" element={<About />} />
                                 <Route path="/team" element={<Team />} />
                                 <Route path="/blog" element={<Blog />} />
@@ -115,12 +121,10 @@ const App: React.FC = () => {
                                 <Route path="/faq" element={<FAQ />} />
                                 <Route path="/join" element={<Join />} />
                                 <Route path="/demo" element={<Demo />} />
-                                {/* Fallback route for any unmatched paths */}
                                 <Route path="*" element={<NotFound />} />
                             </Routes>
                         </React.Suspense>
                     </main>
-
                     <Footer />
                 </div>
             </Router>
