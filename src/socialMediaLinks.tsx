@@ -54,4 +54,10 @@ const platforms = [
     },
 ];
 
-export { platforms };
+let whatsappLink = platforms[0].link;
+let discordLink = platforms[1].link;
+let instagramLink = platforms[2].link;
+let youtubeLink = platforms[3].link;
+let linkedinLink = platforms[4].link;
+
+export { platforms, whatsappLink, discordLink, instagramLink, youtubeLink, linkedinLink };

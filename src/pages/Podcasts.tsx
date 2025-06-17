@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Play, Calendar, Mail, Youtube, Users, Mic } from 'lucide-react'
+import { youtubeLink } from '../socialMediaLinks'
 
 const Podcasts: React.FC = () => {
   useEffect(() => {
@@ -153,7 +154,7 @@ const Podcasts: React.FC = () => {
                 csconnectpakistan@gmail.com
               </motion.a>
               <motion.a
-                href="https://youtube.com/@csconnectpakistan"
+                href={youtubeLink}
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
@@ -299,7 +300,7 @@ const Podcasts: React.FC = () => {
               Subscribe to our YouTube channel and get notified whenever we release new episodes
             </p>
             <motion.a
-              href="https://youtube.com/@csconnectpakistan"
+              href={youtubeLink }
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
