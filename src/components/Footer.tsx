@@ -83,6 +83,10 @@ const Footer: React.FC = () => {
                     path: "https://discord.gg/U8mNhUq4Qm",
                 },
                 {
+                    name: "Instagram",
+                    path: "https://instagram.com/csconnectpakistan",
+                },
+                {
                     name: "YouTube Channel",
                     path: "https://youtube.com/@csconnectpakistan",
                 },
@@ -90,13 +94,12 @@ const Footer: React.FC = () => {
                     name: "LinkedIn",
                     path: "https://linkedin.com/company/csconnectpakistan",
                 },
-                {
-                    name: "Instagram",
-                    path: "https://instagram.com/csconnectpakistan",
-                },
             ],
         },
     ];
+    footerSections[2].links.forEach((link, index) => {
+        link.path = platforms[index].link;
+    });
 
     let socialLinks = platforms;
 
@@ -112,7 +115,12 @@ const Footer: React.FC = () => {
                             className="inline-flex md:flex items-center space-x-3 mb-4"
                         >
                             <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center">
-                                <BrainIcon className="w-6 h-6 text-black" />
+                                {/* <BrainIcon className="w-6 h-6 text-black" /> */}
+                                <img
+                                    src="black_logo.png"
+                                    className="w-6 h-6 text-black"
+                                    alt=""
+                                />
                             </div>
                             <div>
                                 <h2 className="text-xl font-bold text-white">
