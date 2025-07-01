@@ -114,10 +114,10 @@ const Footer: React.FC = () => {
                             to="/"
                             className="inline-flex md:flex items-center space-x-3 mb-4"
                         >
-                            <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center">
+                            <div className="w-10 h-10 bg-black rounded-lg flex items-center justify-center">
                                 {/* <BrainIcon className="w-6 h-6 text-black" /> */}
                                 <img
-                                    src="black_logo.png"
+                                    src="white_logo.png"
                                     className="w-6 h-6 text-black"
                                     alt=""
                                 />

@@ -650,7 +650,7 @@ const Home: React.FC = () => {
                                     Join Our Community
                                 </motion.button>
                             </Link>
-                            <div className="flex gap-4 justify-center">
+                            {/* <div className="flex gap-4 justify-center">
                                 {platforms.map((platform) => (
                                     <motion.a
                                         key={platform.name}
@@ -664,7 +664,7 @@ const Home: React.FC = () => {
                                         <platform.icon className="w-5 h-5 text-white" />
                                     </motion.a>
                                 ))}
-                            </div>
+                            </div> */}
                         </div>
                     </motion.div>
                 </div>
