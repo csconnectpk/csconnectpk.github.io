@@ -1,144 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/ccweb/logo.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="CS Connect Pakistan - Pakistan's largest student-led computer science community. Connect, learn, and grow with CS students from top universities." />
-    <meta name="keywords" content="CS Connect Pakistan, Computer Science, Pakistani Students, Programming, Tech Community, NUST, LUMS, FAST, University" />
-    <meta name="author" content="CS Connect Pakistan" />
-    
-    <!-- Mobile Web App -->
-    <meta name="mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-    <meta name="apple-mobile-web-app-title" content="CS Connect Pakistan" />
-    
-    <!-- Open Graph -->
-    <meta property="og:title" content="CS Connect Pakistan - Premier CS Student Community" />
-    <meta property="og:description" content="Join Pakistan's largest CS student community with 2,000+ members from 50+ universities." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://azannw.github.io/ccweb/" />
-    <meta property="og:image" content="https://azannw.github.io/ccweb/logo.png" />
-    
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="CS Connect Pakistan" />
-    <meta name="twitter:description" content="Pakistan's premier CS student community - Join for networking and career growth." />
-    <meta name="twitter:image" content="https://azannw.github.io/ccweb/logo.png" />
-    
-    <title>CS Connect Pakistan - Pakistan's Premier CS Student Community</title>
-    
-    <!-- Preload Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    
-    <style>
-      /* Loading screen */
-      .loading-screen {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        z-index: 9999;
-        transition: opacity 0.5s ease-out;
-      }
-      
-      .loading-screen.hidden {
-        opacity: 0;
-        pointer-events: none;
-      }
-      
-      .loading-logo {
-        width: 80px;
-        height: 80px;
-        margin-bottom: 20px;
-        animation: pulse 2s infinite;
-      }
-      
-      @keyframes pulse {
-        0%, 100% { transform: scale(1); }
-        50% { transform: scale(1.1); }
-      }
-      
-      .loading-text {
-        font-family: 'Inter', sans-serif;
-        font-size: 24px;
-        font-weight: 600;
-        color: #ffffff;
-        margin-bottom: 10px;
-      }
-      
-      .loading-subtext {
-        font-family: 'Inter', sans-serif;
-        font-size: 14px;
-        color: #888;
-      }
-      
-      /* Custom scrollbar */
-      ::-webkit-scrollbar {
-        width: 8px;
-      }
-      
-      ::-webkit-scrollbar-track {
-        background: rgba(0, 0, 0, 0.1);
-      }
-      
-      ::-webkit-scrollbar-thumb {
-        background: rgba(0, 0, 0, 0.3);
-        border-radius: 4px;
-      }
-      
-      ::-webkit-scrollbar-thumb:hover {
-        background: rgba(0, 0, 0, 0.5);
-      }
-    </style>
-    <script type="module" crossorigin src="/ccweb/assets/index-BA9MTOHp.js"></script>
-    <link rel="modulepreload" crossorigin href="/ccweb/assets/vendor-DomL0yj5.js">
-    <link rel="modulepreload" crossorigin href="/ccweb/assets/three-CWz8T7B_.js">
-    <link rel="modulepreload" crossorigin href="/ccweb/assets/animations-Bfru7xD3.js">
-    <link rel="stylesheet" crossorigin href="/ccweb/assets/index-CfpDFMil.css">
-  </head>
-  <body>
-    <!-- Loading Screen -->
-    <div id="loading-screen" class="loading-screen">
-      <img src="/ccweb/logo.png" alt="CS Connect Pakistan" class="loading-logo" onerror="this.onerror=null; this.src='/logo.svg';" />
-      <div class="loading-text">CS Connect Pakistan</div>
-      <div class="loading-subtext">Loading...</div>
-    </div>
-    
-    <div id="root"></div>
-    
-    <script>
-      // Hide loading screen when React app loads
-      window.addEventListener('load', function() {
-        const loadingScreen = document.getElementById('loading-screen');
-        if (loadingScreen) {
-          setTimeout(() => {
-            loadingScreen.classList.add('hidden');
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="icon" type="image/svg+xml" href="/ccweb/logo.svg" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="CS Connect Pakistan - Pakistan's largest student-led computer science community. Connect, learn, and grow with CS students from top universities."
+        />
+        <meta
+            name="keywords"
+            content="CS Connect Pakistan, Computer Science, Pakistani Students, Programming, Tech Community, NUST, LUMS, FAST, University"
+        />
+        <meta name="author" content="CS Connect Pakistan" />
+
+        <!-- Mobile Web App -->
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta
+            name="apple-mobile-web-app-status-bar-style"
+            content="black-translucent"
+        />
+        <meta name="apple-mobile-web-app-title" content="CS Connect Pakistan" />
+
+        <!-- Open Graph -->
+        <meta
+            property="og:title"
+            content="CS Connect Pakistan - Premier CS Student Community"
+        />
+        <meta
+            property="og:description"
+            content="Join Pakistan's largest CS student community with 2,000+ members from 50+ universities."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://azannw.github.io/ccweb/" />
+        <meta
+            property="og:image"
+            content="https://azannw.github.io/ccweb/logo.png"
+        />
+
+        <!-- Twitter -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="CS Connect Pakistan" />
+        <meta
+            name="twitter:description"
+            content="Pakistan's premier CS student community - Join for networking and career growth."
+        />
+        <meta
+            name="twitter:image"
+            content="https://azannw.github.io/ccweb/logo.png"
+        />
+
+        <title>
+            CS Connect Pakistan - Pakistan's Premier CS Student Community
+        </title>
+
+        <!-- Preload Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+            rel="stylesheet"
+        />
+
+        <style>
+            /* Loading screen */
+            .loading-screen {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                z-index: 9999;
+                transition: opacity 0.5s ease-out;
+            }
+
+            .loading-screen.hidden {
+                opacity: 0;
+                pointer-events: none;
+            }
+
+            .loading-logo {
+                width: 80px;
+                height: 80px;
+                margin-bottom: 20px;
+                animation: pulse 2s infinite;
+            }
+
+            @keyframes pulse {
+                0%,
+                100% {
+                    transform: scale(1);
+                }
+                50% {
+                    transform: scale(1.1);
+                }
+            }
+
+            .loading-text {
+                font-family: "Inter", sans-serif;
+                font-size: 24px;
+                font-weight: 600;
+                color: #ffffff;
+                margin-bottom: 10px;
+            }
+
+            .loading-subtext {
+                font-family: "Inter", sans-serif;
+                font-size: 14px;
+                color: #888;
+            }
+
+            /* Custom scrollbar */
+            ::-webkit-scrollbar {
+                width: 8px;
+            }
+
+            ::-webkit-scrollbar-track {
+                background: rgba(0, 0, 0, 0.1);
+            }
+
+            ::-webkit-scrollbar-thumb {
+                background: rgba(0, 0, 0, 0.3);
+                border-radius: 4px;
+            }
+
+            ::-webkit-scrollbar-thumb:hover {
+                background: rgba(0, 0, 0, 0.5);
+            }
+        </style>
+      <script type="module" crossorigin src="/ccweb/assets/index-BA9MTOHp.js"></script>
+      <link rel="modulepreload" crossorigin href="/ccweb/assets/vendor-DomL0yj5.js">
+      <link rel="modulepreload" crossorigin href="/ccweb/assets/three-CWz8T7B_.js">
+      <link rel="modulepreload" crossorigin href="/ccweb/assets/animations-Bfru7xD3.js">
+      <link rel="stylesheet" crossorigin href="/ccweb/assets/index-CfpDFMil.css">
+    </head>
+    <body>
+        <!-- Loading Screen -->
+        <div id="loading-screen" class="loading-screen">
+            <img
+                src="/ccweb/assets/logo-B1MrPNQF.png"
+                alt="CS Connect Pakistan"
+                class="loading-logo"
+                onerror="this.onerror=null; this.src='/logo.svg';"
+            />
+            <div class="loading-text">CS Connect Pakistan</div>
+            <div class="loading-subtext">Loading...</div>
+        </div>
+
+        <div id="root"></div>
+
+        <script>
+            // Hide loading screen when React app loads
+            window.addEventListener("load", function () {
+                const loadingScreen = document.getElementById("loading-screen");
+                if (loadingScreen) {
+                    setTimeout(() => {
+                        loadingScreen.classList.add("hidden");
+                        setTimeout(() => {
+                            loadingScreen.remove();
+                        }, 500);
+                    }, 1000);
+                }
+            });
+
+            // Fallback - hide loading screen after 5 seconds
             setTimeout(() => {
-              loadingScreen.remove();
-            }, 500);
-          }, 1000);
-        }
-      });
-      
-      // Fallback - hide loading screen after 5 seconds
-      setTimeout(() => {
-        const loadingScreen = document.getElementById('loading-screen');
-        if (loadingScreen && !loadingScreen.classList.contains('hidden')) {
-          loadingScreen.classList.add('hidden');
-          setTimeout(() => {
-            loadingScreen.remove();
-          }, 500);
-        }
-      }, 5000);
-    </script>
-  </body>
-</html> 
+                const loadingScreen = document.getElementById("loading-screen");
+                if (
+                    loadingScreen &&
+                    !loadingScreen.classList.contains("hidden")
+                ) {
+                    loadingScreen.classList.add("hidden");
+                    setTimeout(() => {
+                        loadingScreen.remove();
+                    }, 500);
+                }
+            }, 5000);
+        </script>
+    </body>
+</html>
