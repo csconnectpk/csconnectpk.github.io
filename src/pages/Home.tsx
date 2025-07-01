@@ -83,191 +83,231 @@ const Home: React.FC = () => {
 
     return (
         <div className="min-h-screen">
-            {/* Hero Section */}
-            <section className="relative min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white overflow-hidden pt-16">
-                {/* Background Effects */}
+            {/* Modern Hero Section */}
+            <section className="relative min-h-screen bg-gradient-to-br from-slate-950 via-indigo-950 to-slate-950 text-white overflow-hidden">
+                {/* Animated Background Pattern */}
                 <div className="absolute inset-0">
+                    {/* Gradient Mesh */}
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(120,119,198,0.3),transparent_50%)] animate-pulse"></div>
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(59,130,246,0.2),transparent_50%)]"></div>
+                    
+                    {/* Floating Geometric Shapes */}
                     <motion.div
-                        style={{ y: y1 }}
-                        className="absolute top-1/4 left-1/4 w-96 h-96 bg-white/5 rounded-full blur-3xl"
+                        className="absolute top-20 left-10 w-32 h-32 border border-blue-400/20 rounded-lg rotate-45"
+                        animate={{
+                            y: [0, -20, 0],
+                            rotate: [45, 75, 45],
+                        }}
+                        transition={{
+                            duration: 8,
+                            repeat: Infinity,
+                            ease: "easeInOut",
+                        }}
                     />
                     <motion.div
-                        style={{ y: y2 }}
-                        className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gray-300/10 rounded-full blur-3xl"
+                        className="absolute top-40 right-20 w-24 h-24 border border-purple-400/20 rounded-full"
+                        animate={{
+                            scale: [1, 1.2, 1],
+                            opacity: [0.3, 0.6, 0.3],
+                        }}
+                        transition={{
+                            duration: 6,
+                            repeat: Infinity,
+                            ease: "easeInOut",
+                            delay: 2,
+                        }}
+                    />
+                    <motion.div
+                        className="absolute bottom-32 left-1/4 w-20 h-20 bg-gradient-to-r from-cyan-400/10 to-blue-400/10 rounded-lg"
+                        animate={{
+                            x: [0, 30, 0],
+                            y: [0, -15, 0],
+                            rotate: [0, 180, 360],
+                        }}
+                        transition={{
+                            duration: 10,
+                            repeat: Infinity,
+                            ease: "linear",
+                        }}
                     />
                 </div>
 
-                <div className="relative z-10 h-full flex items-center pt-8 sm:pt-12 lg:pt-16">
-                    {/* Hero Content */}
-                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+                {/* Hero Content */}
+                <div className="relative z-10 flex items-center justify-center min-h-screen px-4 sm:px-6 lg:px-8 pt-20">
+                    <div className="max-w-6xl mx-auto text-center">
+                        {/* Status Badge */}
                         <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6 }}
+                            className="mb-8"
+                        >
+                            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-xl border border-white/10 rounded-full text-sm text-gray-300">
+                                <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                                Pakistan's Largest CS Community
+                            </div>
+                        </motion.div>
+
+                        {/* Main Heading */}
+                        <motion.h1
                             initial={{ opacity: 0, y: 50 }}
                             animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 1 }}
-                            className="text-center"
+                            transition={{ duration: 1, delay: 0.2 }}
+                            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[1.1] mb-8 px-4"
                         >
-                            {/* Animated Main Title with Advanced Micro-animations */}
-                            <div className="mb-8">
-                                <motion.h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight mb-4 sm:mb-6">
-                                    {/* First Line - Letter by Letter Animation */}
-                                    <div className="block mb-2 sm:mb-4">
-                                        {"Where Pakistani CS Students"
-                                            .split("")
-                                            .map((char, i) => (
-                                                <motion.span
-                                                    key={i}
-                                                    custom={i}
-                                                    initial="hidden"
-                                                    animate="visible"
-                                                    variants={letterVariants}
-                                                    className="inline-block"
-                                                    style={{
-                                                        display:
-                                                            char === " "
-                                                                ? "inline"
-                                                                : "inline-block",
-                                                    }}
-                                                >
-                                                    {char === " "
-                                                        ? "\u00A0"
-                                                        : char}
-                                                </motion.span>
-                                            ))}
-                                    </div>
-
-                                    {/* Second Line - Word by Word with 3D Effect */}
-                                    <div className="block">
-                                        {["Connect", "&", "Grow"].map(
-                                            (word, i) => (
-                                                <motion.span
-                                                    key={i}
-                                                    custom={i}
-                                                    initial="hidden"
-                                                    animate="visible"
-                                                    variants={wordVariants}
-                                                    className="inline-block mr-2 sm:mr-4 text-white"
-                                                    style={{
-                                                        perspective: "1000px",
-                                                    }}
-                                                >
-                                                    {word}
-                                                </motion.span>
-                                            )
-                                        )}
-                                    </div>
-                                </motion.h1>
-                            </div>
-
-                            <motion.p
-                                initial={{ opacity: 0, y: 30 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.5, delay: 0.8 }}
-                                className="text-lg sm:text-xl md:text-2xl text-gray-400 max-w-4xl mx-auto mb-6 sm:mb-8 leading-relaxed px-4"
+                            <motion.span 
+                                initial={{ opacity: 0, x: -50 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ duration: 0.8, delay: 0.4 }}
+                                className="block mb-2"
                             >
-                                Join thousands of Pakistani CS students from top
-                                universities. Connect, learn, and grow together
-                                in Pakistan's largest computer science
-                                community.
-                            </motion.p>
-
-                            {/* Animated Stats with Counter */}
-                            <motion.div
-                                initial={{ opacity: 0, y: 30 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.5, delay: 1.2 }}
-                                className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-8 max-w-4xl mx-auto mb-8 sm:mb-12 px-4"
+                                Build Your
+                            </motion.span>
+                            <motion.span 
+                                initial={{ opacity: 0, scale: 0.8 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                transition={{ duration: 0.8, delay: 0.6 }}
+                                className="block bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent"
                             >
-                                {[
-                                    {
-                                        number: 2000,
-                                        suffix: "+",
-                                        label: "Students",
-                                    },
-                                    {
-                                        number: 50,
-                                        suffix: "+",
-                                        label: "Universities",
-                                    },
-                                    {
-                                        number: 25,
-                                        suffix: "+",
-                                        label: "Podcasts",
-                                    },
-                                    {
-                                        number: 100,
-                                        suffix: "+",
-                                        label: "Resources",
-                                    },
-                                ].map((stat, index) => (
+                                Tech Future
+                            </motion.span>
+                            <motion.span 
+                                initial={{ opacity: 0, x: 50 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ duration: 0.8, delay: 0.8 }}
+                                className="block mt-2"
+                            >
+                                with Pakistan's Top CS Community
+                            </motion.span>
+                        </motion.h1>
+
+                        {/* Subtitle */}
+                        <motion.p
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, delay: 1 }}
+                            className="text-lg sm:text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-16 leading-relaxed px-6"
+                        >
+                            Where CS students from FAST, NUST, LUMS, and 50+ universities share knowledge, 
+                            land internships, and build careers together. Real connections, real growth.
+                        </motion.p>
+
+                        {/* Interactive Stats Grid */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 40 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, delay: 0.8 }}
+                            className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-16 max-w-5xl mx-auto px-4"
+                        >
+                            {[
+                                { 
+                                    number: 2000, 
+                                    suffix: "+", 
+                                    label: "CS Students", 
+                                    color: "from-blue-400 to-cyan-400" 
+                                },
+                                { 
+                                    number: 50, 
+                                    suffix: "+", 
+                                    label: "Universities", 
+                                    color: "from-purple-400 to-pink-400" 
+                                },
+                                { 
+                                    number: 300, 
+                                    suffix: "+", 
+                                    label: "Job Placements", 
+                                    color: "from-green-400 to-blue-400" 
+                                },
+                                { 
+                                    number: 150, 
+                                    suffix: "+", 
+                                    label: "Study Resources", 
+                                    color: "from-orange-400 to-red-400" 
+                                },
+                            ].map((stat, index) => (
+                                <motion.div
+                                    key={index}
+                                    initial={{ opacity: 0, scale: 0.5, y: 50 }}
+                                    animate={{ opacity: 1, scale: 1, y: 0 }}
+                                    transition={{
+                                        duration: 0.8,
+                                        delay: 1 + index * 0.15,
+                                        type: "spring",
+                                        bounce: 0.4
+                                    }}
+                                    whileHover={{ 
+                                        scale: 1.05,
+                                        y: -8,
+                                        boxShadow: "0 25px 50px rgba(0,0,0,0.3)",
+                                        rotate: [0, 1, -1, 0]
+                                    }}
+                                    className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 text-center group cursor-pointer hover:bg-white/10 transition-all duration-300 hover:border-white/20"
+                                >
                                     <motion.div
-                                        key={index}
-                                        initial={{
-                                            opacity: 0,
-                                            scale: 0.8,
-                                            y: 20,
-                                        }}
-                                        animate={{ opacity: 1, scale: 1, y: 0 }}
-                                        transition={{
-                                            duration: 0.4,
-                                            delay: 1.5 + index * 0.1,
-                                            ease: [0.4, 0, 0.2, 1],
-                                        }}
-                                        className="text-center"
+                                        initial={{ scale: 0 }}
+                                        animate={{ scale: 1 }}
+                                        transition={{ delay: 1.2 + index * 0.15, duration: 0.5, type: "spring" }}
+                                        className={`text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r ${stat.color} bg-clip-text text-transparent mb-3`}
                                     >
-                                        <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2">
-                                            <CountUpNumber
-                                                end={stat.number}
-                                                suffix={stat.suffix}
-                                                duration={0.8}
-                                                delay={index * 0.1}
-                                                className="tabular-nums"
-                                            />
-                                        </div>
-                                        <div className="text-sm sm:text-base md:text-lg text-gray-500 font-medium">
-                                            {stat.label}
-                                        </div>
+                                        <CountUpNumber
+                                            end={stat.number}
+                                            suffix={stat.suffix}
+                                            duration={2}
+                                            delay={1.4 + index * 0.15}
+                                        />
                                     </motion.div>
-                                ))}
-                            </motion.div>
+                                    <div className="text-sm sm:text-base text-gray-400 font-medium group-hover:text-gray-300 transition-colors duration-300">
+                                        {stat.label}
+                                    </div>
+                                </motion.div>
+                            ))}
+                        </motion.div>
 
-                            {/* CTA Buttons with Enhanced Animations */}
-                            <motion.div
-                                initial={{ opacity: 0, y: 30 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.5, delay: 2 }}
-                                className="flex flex-col sm:flex-row gap-4 justify-center items-center px-4 max-w-md sm:max-w-none mx-auto"
-                            >
-                                <Link to="/join" className="w-full sm:w-auto">
-                                    <motion.button
-                                        whileHover={{
-                                            scale: 1.05,
-                                            boxShadow:
-                                                "0 10px 30px rgba(59, 130, 246, 0.3)",
-                                        }}
-                                        whileTap={{ scale: 0.95 }}
-                                        className="w-full bg-black text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-base sm:text-lg hover:bg-gray-800 transition-all shadow-xl group"
-                                    >
-                                        <span className="flex items-center justify-center gap-2">
-                                            Join Community
-                                            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                                        </span>
-                                    </motion.button>
-                                </Link>
-
-                                <Link to="/blog" className="w-full sm:w-auto">
-                                    <motion.button
-                                        whileHover={{
-                                            scale: 1.05,
-                                            backgroundColor:
-                                                "rgba(255, 255, 255, 0.2)",
-                                        }}
-                                        whileTap={{ scale: 0.95 }}
-                                        className="w-full bg-white/10 backdrop-blur-sm text-white border border-white/20 px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-base sm:text-lg hover:bg-white/20 transition-all"
-                                    >
-                                        Explore Resources
-                                    </motion.button>
-                                </Link>
-                            </motion.div>
+                        {/* Call-to-Action Buttons */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 40 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, delay: 1.8 }}
+                            className="flex flex-col sm:flex-row gap-6 justify-center items-center px-4"
+                        >
+                            <Link to="/join">
+                                <motion.button
+                                    initial={{ opacity: 0, scale: 0.8 }}
+                                    animate={{ opacity: 1, scale: 1 }}
+                                    transition={{ duration: 0.6, delay: 2 }}
+                                    whileHover={{ 
+                                        scale: 1.05,
+                                        boxShadow: "0 20px 40px rgba(59, 130, 246, 0.4)",
+                                        y: -2
+                                    }}
+                                    whileTap={{ scale: 0.95 }}
+                                    className="group relative px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold rounded-full transition-all duration-300 shadow-xl overflow-hidden"
+                                >
+                                    <span className="relative z-10 flex items-center gap-2">
+                                        Join 2000+ Students
+                                        <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                                    </span>
+                                    <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                </motion.button>
+                            </Link>
+                            
+                            <Link to="/blog">
+                                <motion.button
+                                    initial={{ opacity: 0, scale: 0.8 }}
+                                    animate={{ opacity: 1, scale: 1 }}
+                                    transition={{ duration: 0.6, delay: 2.2 }}
+                                    whileHover={{ 
+                                        scale: 1.05,
+                                        backgroundColor: "rgba(255, 255, 255, 0.15)",
+                                        borderColor: "rgba(255, 255, 255, 0.3)",
+                                        y: -2
+                                    }}
+                                    whileTap={{ scale: 0.95 }}
+                                    className="px-8 py-4 bg-white/5 backdrop-blur-xl border border-white/20 text-white font-semibold rounded-full hover:bg-white/10 transition-all duration-300"
+                                >
+                                    Browse Resources
+                                </motion.button>
+                            </Link>
                         </motion.div>
                     </div>
                 </div>
