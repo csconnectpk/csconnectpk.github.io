@@ -31,7 +31,7 @@ const SmartNavbar: React.FC<SmartNavbarProps> = ({ className = "" }) => {
                         to="/"
                         className="flex items-center space-x-2 sm:space-x-3 flex-shrink-0"
                     >
-                        <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-green-600 to-green-800 flex items-center justify-center">
+                        <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-black to-gray-800 flex items-center justify-center">
                           <img
                             src="logo.png" // Update the path to the correct location of your image
                             alt="Logo"
@@ -42,7 +42,7 @@ const SmartNavbar: React.FC<SmartNavbarProps> = ({ className = "" }) => {
                             <span className="font-bold text-base sm:text-lg text-gray-900">
                                 CS Connect
                             </span>
-                            <span className="text-xs sm:text-sm text-green-600 font-medium">
+                            <span className="text-xs sm:text-sm text-black-600 font-medium">
                                 Pakistan
                             </span>
                         </div>
@@ -57,7 +57,7 @@ const SmartNavbar: React.FC<SmartNavbarProps> = ({ className = "" }) => {
                                 className={`px-3 py-2 text-sm font-medium transition-colors duration-200 ${
                                     isActive(item.path)
                                         ? "text-green-600 border-b-2 border-green-600"
-                                        : "text-gray-700 hover:text-green-600"
+                                        : "text-black-700 hover:text-gray-600"
                                 }`}
                             >
                                 {item.name}
@@ -66,7 +66,7 @@ const SmartNavbar: React.FC<SmartNavbarProps> = ({ className = "" }) => {
 
                         {/* Join Us Button */}
                         <Link to="/join">
-                            <button className="bg-green-600 text-white px-4 lg:px-6 py-2 rounded-lg font-medium hover:bg-green-700 transition-colors duration-200 text-sm">
+                            <button className="bg-black text-white px-4 lg:px-6 py-2 rounded-lg font-medium hover:bg-gray-700 transition-colors duration-200 text-sm">
                                 Join Us
                             </button>
                         </Link>
