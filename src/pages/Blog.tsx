@@ -277,68 +277,73 @@ const Blog: React.FC = () => {
 
             {/* Article Modal */}
             {selectedArticle && (
-                <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
-                    <div className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden animate-in fade-in zoom-in duration-300">
+                <div className="fixed inset-0 bg-black bg-opacity-50 z-[60] flex items-center justify-center p-3 sm:p-4 lg:p-6">
+                    <div className="bg-white rounded-2xl w-full max-w-4xl max-h-[95vh] sm:max-h-[90vh] overflow-hidden shadow-2xl relative">
                         {/* Modal Header */}
-                        <div className="p-4 sm:p-6 border-b border-gray-200 flex items-center justify-between">
-                            <div className="flex-1 mr-4">
-                                <span className="inline-block px-3 py-1 bg-blue-600 text-white rounded-full text-sm font-semibold mb-2">
-                                    {selectedArticle.category}
-                                </span>
-                                <h2 className="text-xl sm:text-2xl font-bold text-gray-900 leading-tight">
-                                    {selectedArticle.title}
-                                </h2>
-                                <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-sm text-gray-500 mt-2">
-                                    <div className="flex items-center">
-                                        <User className="w-4 h-4 mr-1" />
-                                        <span>{selectedArticle.author}</span>
+                        <div className="p-4 sm:p-6 border-b border-gray-200 flex-shrink-0">
+                            <div className="flex items-start justify-between">
+                                <div className="flex-1 mr-3 sm:mr-4">
+                                    <span className="inline-block px-3 py-1 bg-blue-600 text-white rounded-full text-xs sm:text-sm font-semibold mb-2 sm:mb-3">
+                                        {selectedArticle.category}
+                                    </span>
+                                    <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 leading-tight mb-2 sm:mb-3">
+                                        {selectedArticle.title}
+                                    </h2>
+                                    <div className="flex flex-wrap items-center gap-2 sm:gap-3 text-xs sm:text-sm text-gray-500">
+                                        <div className="flex items-center">
+                                            <User className="w-3 h-3 sm:w-4 sm:h-4 mr-1" />
+                                            <span>{selectedArticle.author}</span>
+                                        </div>
+                                        {selectedArticle.linkedin && (
+                                            <a
+                                                href={`https://linkedin.com/in/${selectedArticle.linkedin}`}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="text-blue-600 hover:text-blue-700 flex items-center transition-colors duration-300"
+                                            >
+                                                <ExternalLink className="w-3 h-3 mr-1" />
+                                                LinkedIn
+                                            </a>
+                                        )}
                                     </div>
-                                    {selectedArticle.linkedin && (
-                                        <a
-                                            href={`https://linkedin.com/in/${selectedArticle.linkedin}`}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="text-blue-600 hover:text-blue-700 flex items-center transition-colors duration-300"
-                                        >
-                                            <ExternalLink className="w-3 h-3 mr-1" />
-                                            LinkedIn
-                                        </a>
-                                    )}
                                 </div>
+                                <button
+                                    onClick={closeArticle}
+                                    className="p-2 hover:bg-gray-100 rounded-lg transition-colors duration-300 min-w-[36px] min-h-[36px] sm:min-w-[40px] sm:min-h-[40px] flex items-center justify-center flex-shrink-0"
+                                    aria-label="Close article"
+                                >
+                                    <X className="w-4 h-4 sm:w-5 sm:h-5 text-gray-500" />
+                                </button>
                             </div>
-                            <button
-                                onClick={closeArticle}
-                                className="p-2 hover:bg-gray-100 rounded-lg transition-colors duration-300 min-w-[40px] min-h-[40px] flex items-center justify-center"
-                            >
-                                <X className="w-5 h-5 text-gray-500" />
-                            </button>
                         </div>
 
                         {/* Modal Content */}
-                        <div className="p-4 sm:p-6 overflow-y-auto max-h-[70vh]">
-                            <div className="prose prose-gray max-w-none">
-                                <p className="text-base sm:text-lg text-gray-600 leading-relaxed mb-6">
-                                    {selectedArticle.excerpt}
-                                </p>
-                                
-                                <div className="bg-blue-50 border border-blue-200/60 rounded-xl p-4 sm:p-6 mb-6">
-                                    <h3 className="font-bold text-blue-900 mb-2">Coming Soon!</h3>
-                                    <p className="text-blue-800 text-sm sm:text-base">
-                                        This article is currently being written by our community experts. 
-                                        Join our WhatsApp community to get notified when it's published!
+                        <div className="flex-1 overflow-y-auto" style={{ maxHeight: 'calc(95vh - 200px)' }}>
+                            <div className="p-4 sm:p-6">
+                                <div className="max-w-none">
+                                    <p className="text-sm sm:text-base lg:text-lg text-gray-600 leading-relaxed mb-4 sm:mb-6">
+                                        {selectedArticle.excerpt}
                                     </p>
-                                </div>
+                                    
+                                    <div className="bg-blue-50 border border-blue-200/60 rounded-xl p-4 sm:p-6 mb-4 sm:mb-6">
+                                        <h3 className="font-bold text-blue-900 mb-2 text-sm sm:text-base">Coming Soon!</h3>
+                                        <p className="text-blue-800 text-xs sm:text-sm lg:text-base leading-relaxed">
+                                            This article is currently being written by our community experts. 
+                                            Join our WhatsApp community to get notified when it's published!
+                                        </p>
+                                    </div>
 
-                                {/* Article metadata */}
-                                <div className="border-t border-gray-200 pt-4 sm:pt-6 mt-6 sm:mt-8">
-                                    <div className="flex flex-wrap items-center gap-4 text-sm text-gray-500">
-                                        <div className="flex items-center">
-                                            <Calendar className="w-4 h-4 mr-2" />
-                                            <span>{selectedArticle.date}</span>
-                                        </div>
-                                        <div className="flex items-center">
-                                            <Clock className="w-4 h-4 mr-2" />
-                                            <span>{selectedArticle.readTime}</span>
+                                    {/* Article metadata */}
+                                    <div className="border-t border-gray-200 pt-4 sm:pt-6 mt-4 sm:mt-6">
+                                        <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-xs sm:text-sm text-gray-500">
+                                            <div className="flex items-center">
+                                                <Calendar className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
+                                                <span>{selectedArticle.date}</span>
+                                            </div>
+                                            <div className="flex items-center">
+                                                <Clock className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
+                                                <span>{selectedArticle.readTime}</span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -346,17 +351,17 @@ const Blog: React.FC = () => {
                         </div>
 
                         {/* Modal Footer */}
-                        <div className="p-4 sm:p-6 border-t border-gray-200 bg-gray-50">
-                            <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-                                <div className="text-sm text-gray-600">
+                        <div className="p-4 sm:p-6 border-t border-gray-200 bg-gray-50 flex-shrink-0">
+                            <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
+                                <div className="text-xs sm:text-sm text-gray-600 text-center sm:text-left">
                                     Share this article:
                                 </div>
-                                <div className="flex items-center space-x-3">
+                                <div className="flex items-center justify-center sm:justify-end space-x-2 sm:space-x-3">
                                     <button
                                         onClick={() =>
                                             shareArticle(selectedArticle, "whatsapp")
                                         }
-                                        className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors duration-300 text-sm font-semibold"
+                                        className="px-3 py-2 sm:px-4 sm:py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors duration-300 text-xs sm:text-sm font-semibold min-h-[36px] flex items-center justify-center"
                                     >
                                         WhatsApp
                                     </button>
@@ -364,7 +369,7 @@ const Blog: React.FC = () => {
                                         onClick={() =>
                                             shareArticle(selectedArticle, "linkedin")
                                         }
-                                        className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-300 text-sm font-semibold"
+                                        className="px-3 py-2 sm:px-4 sm:py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-300 text-xs sm:text-sm font-semibold min-h-[36px] flex items-center justify-center"
                                     >
                                         LinkedIn
                                     </button>
@@ -372,7 +377,7 @@ const Blog: React.FC = () => {
                                         onClick={() =>
                                             shareArticle(selectedArticle, "twitter")
                                         }
-                                        className="px-4 py-2 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors duration-300 text-sm font-semibold"
+                                        className="px-3 py-2 sm:px-4 sm:py-2 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors duration-300 text-xs sm:text-sm font-semibold min-h-[36px] flex items-center justify-center"
                                     >
                                         Twitter
                                     </button>
