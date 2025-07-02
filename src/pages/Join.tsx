@@ -13,6 +13,7 @@ import {
     GraduationCap,
     Hash,
     Sparkles,
+    BookOpen,
 } from "lucide-react";
 import { platforms } from "../socialMediaLinks";
 
@@ -69,24 +70,78 @@ const Join: React.FC = () => {
                 <div className="absolute inset-0 bg-gradient-to-b from-gray-50/30 via-white to-white" />
                 <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
                 
-                <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 sm:pt-28 lg:pt-32 pb-12 sm:pb-16 lg:pb-20 text-center">
-                    <div className="inline-flex items-center px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200/60 mb-4 sm:mb-6 shadow-sm">
-                        <Users className="w-3 h-3 sm:w-4 sm:h-4 text-green-600 mr-2" />
-                        <span className="text-xs sm:text-sm font-semibold text-green-700 tracking-wide">Join Our Community</span>
+                {/* Content */}
+                <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 sm:pt-28 lg:pt-36 pb-12 sm:pb-16 lg:pb-20">
+                    <div className="text-center max-w-6xl mx-auto">
+                        
+                        {/* Badge */}
+                        <div className="inline-flex items-center px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200/60 mb-6 sm:mb-8 shadow-sm">
+                            <Users className="w-3 h-3 sm:w-4 sm:h-4 text-green-600 mr-2" />
+                            <span className="text-xs sm:text-sm font-bold text-green-700 tracking-wide">Join Our Community</span>
+                        </div>
+
+                        {/* MUCH LARGER main heading */}
+                        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black mb-6 sm:mb-8 lg:mb-10 leading-tight text-gray-900 tracking-tight">
+                            Connect with CS Students
+                            <br />
+                            <span className="relative inline-block ml-3">
+                                <span className="text-blue-600">Across Pakistan</span>
+                                <div className="absolute -bottom-1 sm:-bottom-1.5 left-0 right-0 h-1 sm:h-1.5 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full" />
+                            </span>
+                        </h1>
+
+                        {/* Better subtitle */}
+                        <p className="text-base sm:text-lg lg:text-xl text-gray-600 mb-8 sm:mb-10 lg:mb-12 leading-relaxed max-w-4xl mx-auto font-medium">
+                            Join a growing community of CS students from universities across Pakistan. Learn together, share knowledge, and support each other's journey in tech.
+                        </p>
+
+                        {/* Buttons */}
+                        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-8 sm:mb-10 lg:mb-12">
+                            <a href="#platforms">
+                                <button className="group flex items-center bg-blue-600 text-white px-6 py-3 sm:px-7 sm:py-4 lg:px-8 lg:py-4 rounded-xl font-semibold text-sm sm:text-base lg:text-lg hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 w-full sm:w-auto min-w-[200px] sm:min-w-0">
+                                    <Users className="mr-2 w-4 h-4 sm:w-4 sm:h-4 lg:w-5 lg:h-5 group-hover:scale-110 transition-transform duration-300" />
+                                    View Platforms
+                                </button>
+                            </a>
+                            
+                            <a href="/about">
+                                <button className="group flex items-center border-2 border-gray-300 text-gray-700 px-4 py-2 sm:px-5 sm:py-3 rounded-lg font-semibold text-xs sm:text-sm hover:border-blue-600 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 w-full sm:w-auto max-w-[180px] sm:max-w-none">
+                                    <BookOpen className="mr-1.5 w-3 h-3 sm:w-4 sm:h-4 group-hover:scale-110 transition-transform duration-300" />
+                                    Our Story
+                                </button>
+                            </a>
+                        </div>
+
+                        {/* Stats Section */}
+                        <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-2xl mx-auto">
+                            <div className="text-center p-3 sm:p-4 lg:p-6">
+                                <div className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-black text-gray-900 mb-1 sm:mb-2">
+                                    2,000+
+                                </div>
+                                <div className="text-gray-700 font-semibold text-xs sm:text-sm lg:text-base">
+                                    Students
+                                </div>
+                            </div>
+                            
+                            <div className="text-center p-3 sm:p-4 lg:p-6">
+                                <div className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-black text-gray-900 mb-1 sm:mb-2">
+                                    50+
+                                </div>
+                                <div className="text-gray-700 font-semibold text-xs sm:text-sm lg:text-base">
+                                    Universities
+                                </div>
+                            </div>
+
+                            <div className="col-span-2 lg:col-span-1 text-center p-3 sm:p-4 lg:p-6">
+                                <div className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-black text-gray-900 mb-1 sm:mb-2">
+                                    100%
+                                </div>
+                                <div className="text-gray-700 font-semibold text-xs sm:text-sm lg:text-base">
+                                    Free to Join
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    
-                    <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-gray-900 mb-4 sm:mb-6 leading-tight tracking-tight">
-                        <span className="block mb-1 sm:mb-2">Connect with CS Students</span>
-                        <span className="relative inline-block">
-                            <span className="text-blue-600">Across Pakistan</span>
-                            <div className="absolute -bottom-0.5 sm:-bottom-1 left-0 right-0 h-0.5 sm:h-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full" />
-                        </span>
-                    </h1>
-                    
-                    <p className="text-sm sm:text-base lg:text-lg xl:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-medium">
-                        Join a growing community of CS students from universities across Pakistan. 
-                        <span className="block mt-2 sm:inline sm:mt-0"> Learn together, share knowledge, and support each other's journey in tech.</span>
-                    </p>
                 </div>
             </section>
 
