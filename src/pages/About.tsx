@@ -173,42 +173,42 @@ const About: React.FC = () => {
                 <div className="absolute inset-0 bg-gradient-to-b from-gray-50/30 via-white to-white" />
                 <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
                 
-                <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-24 lg:pt-32 pb-12 sm:pb-16 lg:pb-20 text-center">
+                <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 sm:pt-28 lg:pt-32 pb-12 sm:pb-16 lg:pb-20 text-center">
                     {/* Smaller badge for mobile */}
-                    <div className="inline-flex items-center px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-gradient-to-r from-orange-50 to-amber-50 border border-orange-200/60 mb-6 sm:mb-8 shadow-sm">
+                    <div className="inline-flex items-center px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-gradient-to-r from-orange-50 to-amber-50 border border-orange-200/60 mb-4 sm:mb-6 shadow-sm">
                         <Heart className="w-3 h-3 sm:w-4 sm:h-4 text-orange-600 mr-2" />
                         <span className="text-xs sm:text-sm font-semibold text-orange-700 tracking-wide">Our Journey</span>
                     </div>
 
-                    {/* More proportional heading for mobile */}
-                    <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black mb-4 sm:mb-6 lg:mb-8 leading-tight text-gray-900">
+                    {/* Better proportioned heading for mobile */}
+                    <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black mb-4 sm:mb-6 lg:mb-8 leading-tight text-gray-900">
                         From a Simple Idea to
                         <br />
                         <span className="relative inline-block">
                             <span className="text-blue-600">Pakistan's Largest</span>
-                            <div className="absolute -bottom-1 sm:-bottom-1.5 left-0 right-0 h-1 sm:h-1.5 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full" />
+                            <div className="absolute -bottom-0.5 sm:-bottom-1 left-0 right-0 h-0.5 sm:h-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full" />
                         </span>
                         <span className="text-black"> CS Community</span>
                     </h1>
 
                     {/* Better mobile subtitle */}
-                    <p className="text-base sm:text-lg lg:text-xl text-gray-600 mb-8 sm:mb-12 lg:mb-16 leading-relaxed max-w-3xl mx-auto font-medium">
+                    <p className="text-sm sm:text-base lg:text-lg xl:text-xl text-gray-600 mb-6 sm:mb-8 lg:mb-12 leading-relaxed max-w-3xl mx-auto font-medium">
                         Connecting 2,000+ brilliant minds across 50+ universities to shape Pakistan's tech future.
                     </p>
 
                     {/* Optimized Quick Stats */}
-                    <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-4xl mx-auto">
+                    <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-6 max-w-4xl mx-auto">
                         <div className="text-center">
-                            <div className="text-2xl sm:text-3xl lg:text-4xl font-black text-gray-900 mb-1 sm:mb-2">2,000+</div>
-                            <div className="text-gray-700 font-semibold text-sm sm:text-base lg:text-lg">Active Students</div>
+                            <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-black text-gray-900 mb-1">2,000+</div>
+                            <div className="text-gray-700 font-semibold text-xs sm:text-sm lg:text-base">Active Students</div>
                         </div>
                         <div className="text-center">
-                            <div className="text-2xl sm:text-3xl lg:text-4xl font-black text-gray-900 mb-1 sm:mb-2">50+</div>
-                            <div className="text-gray-700 font-semibold text-sm sm:text-base lg:text-lg">Universities</div>
+                            <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-black text-gray-900 mb-1">50+</div>
+                            <div className="text-gray-700 font-semibold text-xs sm:text-sm lg:text-base">Universities</div>
                         </div>
                         <div className="col-span-2 lg:col-span-1 text-center">
-                            <div className="text-2xl sm:text-3xl lg:text-4xl font-black text-gray-900 mb-1 sm:mb-2">24/7</div>
-                            <div className="text-gray-700 font-semibold text-sm sm:text-base lg:text-lg">Community Support</div>
+                            <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-black text-gray-900 mb-1">24/7</div>
+                            <div className="text-gray-700 font-semibold text-xs sm:text-sm lg:text-base">Community Support</div>
                         </div>
                     </div>
                 </div>

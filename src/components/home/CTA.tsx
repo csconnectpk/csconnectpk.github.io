@@ -22,7 +22,7 @@ const CTA: React.FC = () => {
           </div>
           
           {/* Main Heading */}
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-black mb-3 sm:mb-4 lg:mb-6 leading-tight">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-black mb-6 sm:mb-8 lg:mb-10 leading-tight">
             Ready to Connect with
             <br />
             <span className="relative inline-block">
@@ -32,12 +32,6 @@ const CTA: React.FC = () => {
               <div className="absolute -bottom-0.5 sm:-bottom-1 left-0 right-0 h-0.5 sm:h-1 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full" />
             </span>
           </h2>
-          
-          {/* Subtitle */}
-          <p className="text-base sm:text-lg lg:text-xl text-gray-300 mb-6 sm:mb-8 lg:mb-12 leading-relaxed max-w-4xl mx-auto font-medium">
-            Join 2,000+ computer science students from across Pakistan's top universities. Share knowledge, 
-            build connections, find opportunities, and shape the future of tech together.
-          </p>
           
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-stretch sm:items-center mb-12 sm:mb-16 lg:mb-20 px-4 sm:px-0">

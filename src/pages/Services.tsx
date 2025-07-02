@@ -134,7 +134,7 @@ const Services: React.FC = () => {
   return (
     <div className="min-h-screen bg-white text-black pt-20">
       {/* Hero Section */}
-      <section className="py-20 md:py-32 bg-black text-white relative overflow-hidden">
+      <section className="py-16 sm:py-20 md:py-24 bg-black text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:50px_50px]" />
         </div>
@@ -145,10 +145,10 @@ const Services: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-6 md:mb-8 tracking-tight">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 md:mb-8 tracking-tight">
               Our <span className="text-gray-600">Services</span>
             </h1>
-            <p className="text-lg md:text-xl lg:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
               Comprehensive support, resources, and opportunities for CS/IT students across Pakistan
             </p>
           </motion.div>

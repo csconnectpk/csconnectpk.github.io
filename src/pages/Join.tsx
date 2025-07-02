@@ -69,21 +69,21 @@ const Join: React.FC = () => {
                 <div className="absolute inset-0 bg-gradient-to-b from-gray-50/30 via-white to-white" />
                 <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
                 
-                <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-24 lg:pt-32 pb-12 sm:pb-16 lg:pb-20 text-center">
-                    <div className="inline-flex items-center px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200/60 mb-6 sm:mb-8 shadow-sm">
+                <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 sm:pt-28 lg:pt-32 pb-12 sm:pb-16 lg:pb-20 text-center">
+                    <div className="inline-flex items-center px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200/60 mb-4 sm:mb-6 shadow-sm">
                         <Users className="w-3 h-3 sm:w-4 sm:h-4 text-green-600 mr-2" />
                         <span className="text-xs sm:text-sm font-semibold text-green-700 tracking-wide">Join Our Community</span>
                     </div>
                     
-                    <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black text-gray-900 mb-4 sm:mb-6 leading-tight tracking-tight">
+                    <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-gray-900 mb-4 sm:mb-6 leading-tight tracking-tight">
                         <span className="block mb-1 sm:mb-2">Connect with CS Students</span>
                         <span className="relative inline-block">
                             <span className="text-blue-600">Across Pakistan</span>
-                            <div className="absolute -bottom-1 sm:-bottom-1.5 left-0 right-0 h-1 sm:h-1.5 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full" />
+                            <div className="absolute -bottom-0.5 sm:-bottom-1 left-0 right-0 h-0.5 sm:h-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full" />
                         </span>
                     </h1>
                     
-                    <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-medium">
+                    <p className="text-sm sm:text-base lg:text-lg xl:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-medium">
                         Join a growing community of CS students from universities across Pakistan. 
                         <span className="block mt-2 sm:inline sm:mt-0"> Learn together, share knowledge, and support each other's journey in tech.</span>
                     </p>
