@@ -93,13 +93,13 @@ const Testimonials: React.FC = () => {
     }
   ]
 
-  // Continuous auto-play without interruption
+  // Faster auto-play - changed from 4 seconds to 2.5 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => 
         prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
       );
-    }, 4000); // Changed to 4 seconds for better pacing
+    }, 2500); // Much faster animation
 
     return () => clearInterval(interval);
   }, [testimonials.length]);
@@ -113,12 +113,12 @@ const Testimonials: React.FC = () => {
   };
 
   return (
-    <section className="py-12 sm:py-16 lg:py-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-8 sm:py-12 lg:py-16 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6">
         
-        {/* Section Header */}
-        <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-black text-gray-900 mb-3 sm:mb-4 lg:mb-6 leading-tight">
+        {/* Section Header - Better mobile optimization */}
+        <div className="text-center mb-6 sm:mb-8 lg:mb-12">
+          <h2 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-black text-gray-900 mb-2 sm:mb-3 lg:mb-4 leading-tight">
             What Pakistani Students
             <br />
             <span className="relative inline-block">
@@ -127,38 +127,38 @@ const Testimonials: React.FC = () => {
             </span>
           </h2>
           
-          <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed font-medium">
+          <p className="text-sm sm:text-base lg:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed font-medium">
             Real experiences from students across Pakistan's universities
           </p>
         </div>
 
-        {/* Testimonial Slider */}
+        {/* Testimonial Slider - Enhanced mobile responsiveness */}
         <div className="relative max-w-4xl mx-auto">
           {/* Testimonial Container */}
-          <div className="relative min-h-[250px] sm:min-h-[280px]">
+          <div className="relative min-h-[200px] sm:min-h-[240px] lg:min-h-[280px]">
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentIndex}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
-                className="absolute inset-0 flex items-center justify-center"
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -50 }}
+                transition={{ duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
+                className="absolute inset-0 flex items-center justify-center px-2 sm:px-4"
               >
-                {/* Simple Clean Box Design */}
-                <div className="w-full bg-white rounded-2xl p-6 sm:p-8 lg:p-10 shadow-lg border border-gray-100">
-                  <div className="text-center space-y-6">
+                {/* Simple Clean Box Design - Better mobile optimization */}
+                <div className="w-full bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 shadow-lg border border-gray-100">
+                  <div className="text-center space-y-3 sm:space-y-4 lg:space-y-6">
                     {/* Message */}
-                    <blockquote className="text-base sm:text-lg lg:text-xl text-gray-800 leading-relaxed font-medium">
+                    <blockquote className="text-sm sm:text-base lg:text-lg text-gray-800 leading-relaxed font-medium">
                       "{testimonials[currentIndex].content}"
                     </blockquote>
 
                     {/* Author Info */}
-                    <div className="pt-4 border-t border-gray-100">
-                      <div className="font-bold text-gray-900 text-lg sm:text-xl mb-1">
+                    <div className="pt-2 sm:pt-3 lg:pt-4 border-t border-gray-100">
+                      <div className="font-bold text-gray-900 text-base sm:text-lg lg:text-xl mb-0.5 sm:mb-1">
                         {testimonials[currentIndex].name}
                       </div>
-                      <div className="text-blue-600 font-medium text-base sm:text-lg">
+                      <div className="text-blue-600 font-medium text-sm sm:text-base lg:text-lg">
                         {testimonials[currentIndex].university}
                       </div>
                     </div>
@@ -168,30 +168,30 @@ const Testimonials: React.FC = () => {
             </AnimatePresence>
           </div>
 
-          {/* Navigation Arrows */}
+          {/* Navigation Arrows - Better mobile positioning */}
           <button
             onClick={goToPrevious}
-            className="absolute left-2 sm:left-4 lg:-left-6 top-1/2 transform -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 bg-white hover:bg-gray-50 border border-gray-200 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 group z-10"
+            className="absolute left-0 sm:left-2 lg:-left-4 top-1/2 transform -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-white hover:bg-gray-50 border border-gray-200 rounded-full flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-300 group z-10"
             aria-label="Previous testimonial"
           >
-            <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6 text-gray-600 group-hover:text-blue-600 transition-colors duration-300" />
+            <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-gray-600 group-hover:text-blue-600 transition-colors duration-300" />
           </button>
 
           <button
             onClick={goToNext}
-            className="absolute right-2 sm:right-4 lg:-right-6 top-1/2 transform -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 bg-white hover:bg-gray-50 border border-gray-200 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 group z-10"
+            className="absolute right-0 sm:right-2 lg:-right-4 top-1/2 transform -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-white hover:bg-gray-50 border border-gray-200 rounded-full flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-300 group z-10"
             aria-label="Next testimonial"
           >
-            <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 text-gray-600 group-hover:text-blue-600 transition-colors duration-300" />
+            <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-gray-600 group-hover:text-blue-600 transition-colors duration-300" />
           </button>
 
-          {/* Dots Indicator */}
-          <div className="flex justify-center space-x-2 mt-8 sm:mt-10 lg:mt-12">
+          {/* Dots Indicator - Mobile optimized */}
+          <div className="flex justify-center space-x-1.5 sm:space-x-2 mt-4 sm:mt-6 lg:mt-8">
             {testimonials.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentIndex(index)}
-                className={`w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
+                className={`w-2 h-2 sm:w-2.5 sm:h-2.5 lg:w-3 lg:h-3 rounded-full transition-all duration-300 ${
                   index === currentIndex
                     ? 'bg-blue-600 scale-125'
                     : 'bg-gray-300 hover:bg-gray-400'
