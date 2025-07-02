@@ -90,12 +90,12 @@ const TestimonialsSlider: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-semibold text-black mb-4 tracking-tight">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-semibold text-black mb-3 sm:mb-4 tracking-tight">
             What Our Clients Say
           </h2>
-          <p className="text-xl text-black/60 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg lg:text-xl text-black/60 max-w-3xl mx-auto">
             Trusted by businesses worldwide for quality, reliability, and exceptional value
           </p>
         </motion.div>
@@ -106,7 +106,7 @@ const TestimonialsSlider: React.FC = () => {
           onMouseLeave={() => setIsAutoPlaying(true)}
         >
           {/* Testimonial Cards */}
-          <div className="relative h-80 overflow-hidden">
+          <div className="relative min-h-[280px] sm:min-h-[320px] lg:min-h-[280px] overflow-hidden">
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentIndex}
@@ -114,9 +114,30 @@ const TestimonialsSlider: React.FC = () => {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -100 }}
                 transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
-                className="absolute inset-0 flex items-center justify-center"
+                className="absolute inset-0 flex items-center justify-center px-4 sm:px-6 lg:px-8"
               >
-                <div className="bg-white border border-black/10 rounded-2xl p-8 md:p-12 shadow-lg shadow-black/5 max-w-4xl mx-auto">
+                {/* Mobile Design - Clean layout */}
+                <div className="block sm:hidden w-full max-w-lg mx-auto">
+                  <div className="text-center space-y-4 px-2">
+                    {/* Quote */}
+                    <blockquote className="text-base leading-relaxed text-black/80 font-medium px-2">
+                      "{testimonials[currentIndex].text}"
+                    </blockquote>
+
+                    {/* Author Info */}
+                    <div className="text-center space-y-2 pt-2">
+                      <div className="font-semibold text-black text-lg">
+                        {testimonials[currentIndex].name}
+                      </div>
+                      <div className="text-black/60 text-base">
+                        {testimonials[currentIndex].company}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Desktop Design */}
+                <div className="hidden sm:block bg-white border border-black/10 rounded-2xl p-6 sm:p-8 lg:p-12 shadow-lg shadow-black/5 max-w-4xl mx-auto">
                   <div className="text-center">
                     {/* Stars */}
                     <div className="flex justify-center mb-6">
@@ -129,7 +150,7 @@ const TestimonialsSlider: React.FC = () => {
                     </div>
 
                     {/* Quote */}
-                    <blockquote className="text-xl md:text-2xl text-black/80 mb-8 leading-relaxed font-medium">
+                    <blockquote className="text-lg lg:text-xl text-black/80 mb-8 leading-relaxed font-medium">
                       "{testimonials[currentIndex].text}"
                     </blockquote>
 
@@ -156,28 +177,28 @@ const TestimonialsSlider: React.FC = () => {
           {/* Navigation Arrows */}
           <button
             onClick={goToPrevious}
-            className="absolute left-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white border border-black/10 rounded-full flex items-center justify-center hover:bg-black/5 transition-all duration-300 shadow-lg shadow-black/10"
+            className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 bg-white border border-black/10 rounded-full flex items-center justify-center hover:bg-black/5 transition-all duration-300 shadow-lg shadow-black/10"
             aria-label="Previous testimonial"
           >
-            <ChevronLeft className="w-6 h-6 text-black" />
+            <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6 text-black" />
           </button>
 
           <button
             onClick={goToNext}
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white border border-black/10 rounded-full flex items-center justify-center hover:bg-black/5 transition-all duration-300 shadow-lg shadow-black/10"
+            className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 bg-white border border-black/10 rounded-full flex items-center justify-center hover:bg-black/5 transition-all duration-300 shadow-lg shadow-black/10"
             aria-label="Next testimonial"
           >
-            <ChevronRight className="w-6 h-6 text-black" />
+            <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 text-black" />
           </button>
         </div>
 
         {/* Dots Indicator */}
-        <div className="flex justify-center mt-8 space-x-2">
+        <div className="flex justify-center mt-6 sm:mt-8 space-x-2">
           {testimonials.map((_, index) => (
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`w-2 h-2 rounded-full transition-all duration-300 ${
+              className={`w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
                 index === currentIndex
                   ? 'bg-black scale-125'
                   : 'bg-black/30 hover:bg-black/50'
