@@ -133,54 +133,78 @@ const FAQ: React.FC = () => {
             </section>
 
             {/* Contact Section */}
-            <section className="py-16 bg-gray-50">
-                <div className="max-w-4xl mx-auto px-6 sm:px-8 text-center">
-                    <div>
-                        <h2 className="text-4xl sm:text-4xl md:text-5xl font-bold mb-6 sm:mb-8 text-black">
-                            Still Have <span className="text-gray-600">Questions?</span>
+            <section className="py-16 bg-white">
+                <div className="max-w-6xl mx-auto px-6 sm:px-8">
+                    <div className="text-center mb-12 sm:mb-16">
+                        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 text-black">
+                            Still Have <span className="text-blue-600">Questions?</span>
                         </h2>
-                        <p className="text-xl sm:text-xl lg:text-2xl text-gray-600 mb-10 sm:mb-12 max-w-2xl mx-auto leading-relaxed">
+                        <p className="text-lg sm:text-xl text-gray-600 mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed">
                             Can't find the answer you're looking for? Feel free to reach out to us directly.
                         </p>
+                    </div>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-2xl mx-auto">
-                            <div className="bg-white p-6 sm:p-8 rounded-2xl border border-gray-200">
-                                <h3 className="text-xl sm:text-xl font-semibold text-black mb-3 sm:mb-4">Email Us</h3>
-                                <p className="text-gray-600 mb-4 sm:mb-6 text-base sm:text-base leading-relaxed">
-                                    Send us your question and we'll get back to you as soon as possible.
-                                </p>
-                                <div className="space-y-4">
-                                    <div className="flex justify-between items-center">
-                                        <span className="text-gray-700 text-base sm:text-base">Response Time</span>
-                                        <span className="font-bold text-black text-base sm:text-base">&lt; 2 hours</span>
-                                    </div>
-                                    <a
-                                        href="mailto:csconnectpakistan@gmail.com"
-                                        className="inline-block w-auto bg-black text-white px-6 py-4 sm:py-4 rounded-xl font-semibold text-lg sm:text-lg hover:bg-gray-800 transition-all duration-200"
-                                    >
-                                        Send Email
-                                    </a>
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 max-w-5xl mx-auto">
+                        {/* Email Option */}
+                        <div className="text-center lg:text-left group">
+                            <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-2xl flex items-center justify-center mx-auto lg:mx-0 mb-6 group-hover:scale-110 transition-transform duration-300">
+                                <svg className="w-8 h-8 sm:w-10 sm:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                </svg>
+                            </div>
+                            
+                            <h3 className="text-2xl sm:text-3xl font-bold text-black mb-4">Email Us</h3>
+                            <p className="text-gray-600 mb-6 sm:mb-8 text-base sm:text-lg leading-relaxed">
+                                Send us your question and we'll get back to you as soon as possible.
+                            </p>
+                            
+                            <div className="bg-gray-50 rounded-xl p-4 sm:p-6 mb-6 sm:mb-8">
+                                <div className="flex items-center justify-between text-sm sm:text-base">
+                                    <span className="text-gray-700 font-medium">Response Time</span>
+                                    <span className="font-bold text-green-600">&lt; 2 hours</span>
                                 </div>
                             </div>
+                            
+                            <a
+                                href="mailto:csconnectpakistan@gmail.com"
+                                className="inline-flex items-center justify-center bg-black text-white px-8 sm:px-10 py-4 sm:py-5 rounded-xl font-semibold text-base sm:text-lg hover:bg-gray-800 transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl"
+                            >
+                                Send Email
+                                <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                </svg>
+                            </a>
+                        </div>
 
-                            <div className="bg-white p-6 sm:p-8 rounded-2xl border border-gray-200">
-                                <h3 className="text-xl sm:text-xl font-semibold text-black mb-3 sm:mb-4">Join & Ask</h3>
-                                <p className="text-gray-600 mb-4 sm:mb-6 text-base sm:text-base leading-relaxed">
-                                    Join our community and ask questions directly to fellow students.
-                                </p>
-                                <div className="space-y-4">
-                                    <div className="flex justify-between items-center">
-                                        <span className="text-gray-700 text-base sm:text-base">Community Size</span>
-                                        <span className="font-bold text-black text-base sm:text-base">2,000+ Students</span>
-                                    </div>
-                                    <button
-                                        onClick={() => window.location.href = '/join'}
-                                        className="inline-block w-auto border border-gray-300 text-black px-6 py-4 sm:py-4 rounded-xl font-semibold text-lg sm:text-lg hover:bg-black hover:text-white transition-all duration-200"
-                                    >
-                                        Join Community
-                                    </button>
+                        {/* Join Community Option */}
+                        <div className="text-center lg:text-left group">
+                            <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mx-auto lg:mx-0 mb-6 group-hover:scale-110 transition-transform duration-300">
+                                <svg className="w-8 h-8 sm:w-10 sm:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                                </svg>
+                            </div>
+                            
+                            <h3 className="text-2xl sm:text-3xl font-bold text-black mb-4">Join & Ask</h3>
+                            <p className="text-gray-600 mb-6 sm:mb-8 text-base sm:text-lg leading-relaxed">
+                                Join our community and ask questions directly to fellow students.
+                            </p>
+                            
+                            <div className="bg-gray-50 rounded-xl p-4 sm:p-6 mb-6 sm:mb-8">
+                                <div className="flex items-center justify-between text-sm sm:text-base">
+                                    <span className="text-gray-700 font-medium">Community Size</span>
+                                    <span className="font-bold text-blue-600">2,000+ Students</span>
                                 </div>
                             </div>
+                            
+                            <button
+                                onClick={() => window.location.href = '/join'}
+                                className="inline-flex items-center justify-center border-2 border-blue-600 text-blue-600 px-8 sm:px-10 py-4 sm:py-5 rounded-xl font-semibold text-base sm:text-lg hover:bg-blue-600 hover:text-white transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl"
+                            >
+                                Join Community
+                                <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                </svg>
+                            </button>
                         </div>
                     </div>
                 </div>

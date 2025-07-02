@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Sparkles } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 interface SmartNavbarProps {
     className?: string;
@@ -75,7 +75,6 @@ const SmartNavbar: React.FC<SmartNavbarProps> = ({ className = "" }) => {
                         <div className="ml-3 lg:ml-6">
                             <Link to="/join" onClick={handleNavClick}>
                                 <button className="group inline-flex items-center bg-blue-600 text-white px-4 lg:px-6 py-2 lg:py-2.5 rounded-xl font-semibold hover:bg-blue-700 transition-all duration-300 text-sm lg:text-base shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
-                                    <Sparkles className="mr-1.5 lg:mr-2 w-3.5 h-3.5 lg:w-4 lg:h-4 group-hover:rotate-12 transition-transform duration-300" />
                                     Join Us
                                 </button>
                             </Link>
@@ -120,7 +119,6 @@ const SmartNavbar: React.FC<SmartNavbarProps> = ({ className = "" }) => {
                                     onClick={handleNavClick}
                                     className="group flex items-center justify-center w-full bg-blue-600 text-white px-3 sm:px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition-all duration-300 shadow-lg min-h-[44px]"
                                 >
-                                    <Sparkles className="mr-2 w-4 h-4 group-hover:rotate-12 transition-transform duration-300" />
                                     Join Our Community
                                 </Link>
                             </div>

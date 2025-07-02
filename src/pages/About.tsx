@@ -19,6 +19,7 @@ import {
     Trophy,
     CheckCircle
 } from "lucide-react";
+import { FaWhatsapp, FaDiscord, FaYoutube, FaInstagram } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const About: React.FC = () => {
@@ -80,21 +81,21 @@ const About: React.FC = () => {
 
     const initiatives = [
         {
-            icon: MessageCircle,
+            icon: FaWhatsapp,
             title: "WhatsApp Community",
             description: "Multiple focused groups for different topics - from algorithm discussions to career guidance",
             metric: "2,000+ active members",
             color: "from-green-50 to-emerald-50 border-green-200/60"
         },
         {
-            icon: Users,
+            icon: FaDiscord,
             title: "Discord Server", 
             description: "Voice study rooms, coding sessions, and real-time collaboration spaces for deeper engagement",
             metric: "400+ active members",
             color: "from-purple-50 to-violet-50 border-purple-200/60"
         },
         {
-            icon: Globe,
+            icon: FaInstagram,
             title: "Social Presence",
             description: "Instagram for community highlights and YouTube for educational content and expert interviews",
             metric: "300+ followers",
@@ -135,28 +136,32 @@ const About: React.FC = () => {
             metric: "2,000+ members",
             description: "Daily discussions, help, and networking among CS students",
             bgColor: "from-green-50 to-emerald-50",
-            iconColor: "text-green-600"
+            iconColor: "text-green-600",
+            icon: FaWhatsapp
         },
         {
             title: "Discord Server",
             metric: "400+ active users",
             description: "Technical discussions, study groups, and collaborative learning",
             bgColor: "from-blue-50 to-indigo-50",
-            iconColor: "text-blue-600"
+            iconColor: "text-blue-600",
+            icon: FaDiscord
         },
         {
             title: "YouTube Channel",
             metric: "300+ subscribers",
             description: "Educational content, tech talks, and career guidance videos",
             bgColor: "from-red-50 to-pink-50",
-            iconColor: "text-red-600"
+            iconColor: "text-red-600",
+            icon: FaYoutube
         },
         {
             title: "Cross-Platform Reach",
             metric: "Multiple platforms",
             description: "Instagram, LinkedIn, and website connecting Pakistani CS students",
             bgColor: "from-purple-50 to-violet-50",
-            iconColor: "text-purple-600"
+            iconColor: "text-purple-600",
+            icon: FaInstagram
         }
     ];
 
