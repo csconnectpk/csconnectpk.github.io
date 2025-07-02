@@ -135,7 +135,7 @@ const Testimonials: React.FC = () => {
         {/* Testimonial Slider */}
         <div className="relative max-w-5xl mx-auto px-2 sm:px-4">
           {/* Testimonial Cards Container */}
-          <div className="relative min-h-[400px] sm:min-h-[350px] lg:min-h-[320px] overflow-hidden">
+          <div className="relative min-h-[300px] sm:min-h-[350px] lg:min-h-[320px] overflow-hidden">
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentIndex}
@@ -145,11 +145,32 @@ const Testimonials: React.FC = () => {
                 transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
                 className="absolute inset-0 flex items-center justify-center px-4 sm:px-8 lg:px-12"
               >
-                <div className="w-full max-w-4xl bg-white rounded-2xl p-6 sm:p-8 lg:p-10 shadow-lg border border-gray-100">
-                  <div className="text-center space-y-4 sm:space-y-6">
+                {/* Mobile Design - Clean without bubbles/cards */}
+                <div className="block sm:hidden w-full max-w-sm">
+                  <div className="text-center space-y-4">
+                    {/* Quote */}
+                    <blockquote className="text-base text-gray-800 leading-relaxed font-medium">
+                      "{testimonials[currentIndex].content}"
+                    </blockquote>
+
+                    {/* Author Info */}
+                    <div className="text-center space-y-1">
+                      <div className="font-bold text-gray-900 text-lg">
+                        {testimonials[currentIndex].name}
+                      </div>
+                      <div className="text-blue-600 font-medium text-base">
+                        {testimonials[currentIndex].university}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Desktop Design - Keep the existing card design */}
+                <div className="hidden sm:block w-full max-w-4xl bg-white rounded-2xl p-8 lg:p-10 shadow-lg border border-gray-100">
+                  <div className="text-center space-y-6">
                     {/* Quote Icon */}
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-50 rounded-xl flex items-center justify-center mx-auto">
-                      <Quote className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600" />
+                    <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mx-auto">
+                      <Quote className="w-6 h-6 text-blue-600" />
                     </div>
 
                     {/* Stars */}
@@ -157,26 +178,26 @@ const Testimonials: React.FC = () => {
                       {[...Array(5)].map((_, i) => (
                         <Star
                           key={i}
-                          className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400 fill-current"
+                          className="w-5 h-5 text-yellow-400 fill-current"
                         />
                       ))}
                     </div>
 
                     {/* Quote */}
-                    <blockquote className="text-base sm:text-lg lg:text-xl xl:text-2xl text-gray-800 leading-relaxed font-medium max-w-3xl mx-auto">
+                    <blockquote className="text-lg lg:text-xl xl:text-2xl text-gray-800 leading-relaxed font-medium max-w-3xl mx-auto">
                       "{testimonials[currentIndex].content}"
                     </blockquote>
 
                     {/* Author */}
                     <div className="flex flex-col sm:flex-row items-center justify-center space-y-3 sm:space-y-0 sm:space-x-4 pt-2">
-                      <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-blue-600 to-indigo-600 text-white rounded-xl flex items-center justify-center font-bold text-sm sm:text-lg flex-shrink-0">
+                      <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-indigo-600 text-white rounded-xl flex items-center justify-center font-bold text-lg flex-shrink-0">
                         {testimonials[currentIndex].avatar}
                       </div>
                       <div className="text-center sm:text-left">
-                        <div className="font-bold text-gray-900 text-lg sm:text-xl">
+                        <div className="font-bold text-gray-900 text-xl">
                           {testimonials[currentIndex].name}
                         </div>
-                        <div className="text-blue-600 font-medium text-base sm:text-lg">
+                        <div className="text-blue-600 font-medium text-lg">
                           {testimonials[currentIndex].university}
                         </div>
                       </div>
@@ -187,7 +208,7 @@ const Testimonials: React.FC = () => {
             </AnimatePresence>
           </div>
 
-          {/* Navigation Arrows - Optional for manual control */}
+          {/* Navigation Arrows - Hidden on mobile */}
           <div className="hidden sm:block">
             <button
               onClick={goToPrevious}
@@ -205,19 +226,19 @@ const Testimonials: React.FC = () => {
               <ChevronRight className="w-5 h-5 lg:w-6 lg:h-6 text-gray-600" />
             </button>
           </div>
-        </div>
 
-        {/* Progress Indicator - Shows current position without clickable dots */}
-        <div className="flex justify-center mt-6 sm:mt-8">
-          <div className="flex space-x-2">
+          {/* Pagination Dots */}
+          <div className="flex justify-center space-x-2 mt-6 sm:mt-8">
             {testimonials.map((_, index) => (
-              <div
+              <button
                 key={index}
-                className={`w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full transition-all duration-300 ${
-                  index === currentIndex
-                    ? 'bg-blue-600 scale-125'
-                    : 'bg-gray-300'
+                onClick={() => setCurrentIndex(index)}
+                className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
+                  index === currentIndex 
+                    ? 'bg-blue-600 w-6 sm:w-8' 
+                    : 'bg-gray-300 hover:bg-gray-400'
                 }`}
+                aria-label={`Go to testimonial ${index + 1}`}
               />
             ))}
           </div>

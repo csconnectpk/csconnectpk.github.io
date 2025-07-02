@@ -17,10 +17,10 @@ const Footer: React.FC = () => {
                 {/* Social Media Section */}
                 <div className="flex flex-col items-center space-y-6 sm:space-y-8">
                     
-                    {/* Social Links */}
+                    {/* Social Links - Clean icons without boxes */}
                     <div className="flex flex-col items-center space-y-4">
                         <span className="text-gray-400 font-semibold text-sm sm:text-base">Follow Our Journey</span>
-                        <div className="flex items-center justify-center space-x-3 sm:space-x-4">
+                        <div className="flex items-center justify-center space-x-6 sm:space-x-8">
                             {platforms.map((platform) => {
                                 const IconComponent = platform.icon;
                                 return (
@@ -29,10 +29,10 @@ const Footer: React.FC = () => {
                                         href={platform.link}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="group w-10 h-10 sm:w-12 sm:h-12 bg-gray-800 hover:bg-blue-600 rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg border border-gray-700 hover:border-blue-500"
+                                        className="group transition-all duration-300 hover:scale-110"
                                         aria-label={`Follow us on ${platform.name}`}
                                     >
-                                        <IconComponent className="w-4 h-4 sm:w-5 sm:h-5 text-gray-300 group-hover:text-white transition-colors duration-300" />
+                                        <IconComponent className="w-6 h-6 sm:w-7 sm:h-7 text-gray-400 group-hover:text-white transition-colors duration-300" />
                                     </a>
                                 );
                             })}
