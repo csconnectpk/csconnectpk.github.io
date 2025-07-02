@@ -16,12 +16,12 @@ const About: React.FC = () => {
           
           {/* Content Side */}
           <div>
-            <div className="inline-flex items-center px-4 py-2 sm:px-5 sm:py-2.5 rounded-full bg-gradient-to-r from-orange-50 to-amber-50 border border-orange-200/60 mb-6 sm:mb-8 shadow-sm">
+            <div className="inline-flex items-center px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-gradient-to-r from-orange-50 to-amber-50 border border-orange-200/60 mb-6 sm:mb-8 shadow-sm">
               <Heart className="w-3 h-3 sm:w-4 sm:h-4 text-orange-600 mr-2" />
               <span className="text-xs sm:text-sm font-semibold text-orange-700 tracking-wide">Our Story</span>
             </div>
             
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 mb-4 sm:mb-6 lg:mb-8 leading-tight px-2 sm:px-0">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-black text-gray-900 mb-3 sm:mb-4 lg:mb-6 leading-tight">
               Connecting Pakistan's
               <br />
               <span className="relative inline-block">

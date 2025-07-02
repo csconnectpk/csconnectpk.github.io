@@ -20,7 +20,7 @@ const Footer: React.FC = () => {
                     {/* Social Links - Clean icons without boxes */}
                     <div className="flex flex-col items-center space-y-4">
                         <span className="text-gray-400 font-semibold text-sm sm:text-base">Follow Our Journey</span>
-                        <div className="flex items-center justify-center space-x-6 sm:space-x-8">
+                        <div className="flex items-center justify-center space-x-3 sm:space-x-4">
                             {platforms.map((platform) => {
                                 const IconComponent = platform.icon;
                                 return (

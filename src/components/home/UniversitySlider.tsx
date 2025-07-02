@@ -17,8 +17,8 @@ const UniversitySlider: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center mb-12 sm:mb-16 lg:mb-20">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black text-gray-900 mb-4 sm:mb-6 leading-tight">
+        <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-black text-gray-900 mb-3 sm:mb-4 lg:mb-6 leading-tight">
             Students from Pakistan's
             <br />
             <span className="relative inline-block">
@@ -27,7 +27,7 @@ const UniversitySlider: React.FC = () => {
             </span>
           </h2>
           
-          <p className="text-xl sm:text-xl lg:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed font-medium">
+          <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed font-medium">
             Connecting brilliant minds from 50+ universities across Pakistan
           </p>
         </div>

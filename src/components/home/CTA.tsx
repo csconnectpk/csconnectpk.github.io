@@ -16,13 +16,13 @@ const CTA: React.FC = () => {
         <div className="text-center max-w-5xl mx-auto">
           
           {/* Badge */}
-          <div className="inline-flex items-center px-4 py-2 sm:px-5 sm:py-2.5 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-6 sm:mb-8 lg:mb-10 shadow-lg">
+          <div className="inline-flex items-center px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-6 sm:mb-8 shadow-lg">
             <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 bg-green-400 rounded-full mr-2 sm:mr-3 animate-pulse" />
             <span className="text-xs sm:text-sm font-semibold text-gray-200 tracking-wide">Join the Movement</span>
           </div>
           
           {/* Main Heading */}
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black mb-4 sm:mb-6 lg:mb-8 leading-tight px-2 sm:px-0">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-black mb-3 sm:mb-4 lg:mb-6 leading-tight">
             Ready to Connect with
             <br />
             <span className="relative inline-block">
@@ -34,7 +34,7 @@ const CTA: React.FC = () => {
           </h2>
           
           {/* Subtitle */}
-          <p className="text-base sm:text-lg lg:text-xl xl:text-2xl text-gray-300 mb-8 sm:mb-12 lg:mb-16 leading-relaxed max-w-4xl mx-auto font-medium px-2 sm:px-4 lg:px-0">
+          <p className="text-base sm:text-lg lg:text-xl text-gray-300 mb-6 sm:mb-8 lg:mb-12 leading-relaxed max-w-4xl mx-auto font-medium">
             Join 2,000+ computer science students from across Pakistan's top universities. Share knowledge, 
             build connections, find opportunities, and shape the future of tech together.
           </p>
@@ -95,14 +95,7 @@ const CTA: React.FC = () => {
             </div>
           </div>
 
-          {/* Bottom Text */}
-          <div className="mt-8 sm:mt-12 lg:mt-16">
-            <div className="inline-flex items-center space-x-2 text-gray-400 px-4 sm:px-0">
-              <Star className="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current" />
-              <span className="text-xs sm:text-sm font-medium text-center">Trusted by students from FAST, NUST, LUMS, GIKI & 50+ universities</span>
-              <Star className="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current" />
-            </div>
-          </div>
+
         </div>
       </div>
     </section>
