@@ -114,6 +114,11 @@ const Testimonials: React.FC = () => {
 
   return (
     <section className="py-12 sm:py-16 lg:py-20 bg-gray-50 relative overflow-hidden">
+      {/* Top Decorative Quotation Mark */}
+      <div className="absolute top-8 left-1/2 transform -translate-x-1/2 opacity-10 pointer-events-none">
+        <Quote className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 text-blue-600" />
+      </div>
+      
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
@@ -132,10 +137,20 @@ const Testimonials: React.FC = () => {
           </p>
         </div>
 
-        {/* Testimonial Slider */}
+        {/* Testimonial Slider Container */}
         <div className="relative max-w-6xl mx-auto">
+          {/* Left Decorative Quote */}
+          <div className="hidden lg:block absolute -left-8 top-1/2 transform -translate-y-1/2 opacity-20 pointer-events-none">
+            <Quote className="w-12 h-12 text-blue-600 rotate-180" />
+          </div>
+          
+          {/* Right Decorative Quote */}
+          <div className="hidden lg:block absolute -right-8 top-1/2 transform -translate-y-1/2 opacity-20 pointer-events-none">
+            <Quote className="w-12 h-12 text-blue-600" />
+          </div>
+
           {/* Testimonial Cards Container */}
-          <div className="relative min-h-[280px] sm:min-h-[320px] lg:min-h-[280px] overflow-hidden">
+          <div className="relative min-h-[300px] sm:min-h-[340px] lg:min-h-[300px] bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden">
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentIndex}
@@ -143,18 +158,28 @@ const Testimonials: React.FC = () => {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -100 }}
                 transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
-                className="absolute inset-0 flex items-center justify-center px-4 sm:px-6 lg:px-8"
+                className="absolute inset-0 flex items-center justify-center px-6 sm:px-8 lg:px-12"
               >
-                {/* Mobile Design - Clean without bubbles/cards */}
+                {/* Mobile Design - Clean layout */}
                 <div className="block sm:hidden w-full max-w-lg mx-auto">
-                  <div className="text-center space-y-4 px-2">
+                  <div className="text-center space-y-6 py-8">
+                    {/* Opening Quote Mark */}
+                    <div className="flex justify-center">
+                      <Quote className="w-8 h-8 text-blue-600 opacity-30" />
+                    </div>
+
                     {/* Quote */}
-                    <blockquote className="text-base leading-relaxed text-gray-800 font-medium px-2">
-                      "{testimonials[currentIndex].content}"
+                    <blockquote className="text-base leading-relaxed text-gray-800 font-medium px-4">
+                      {testimonials[currentIndex].content}
                     </blockquote>
 
+                    {/* Closing Quote Mark */}
+                    <div className="flex justify-center">
+                      <Quote className="w-8 h-8 text-blue-600 opacity-30 rotate-180" />
+                    </div>
+
                     {/* Author Info */}
-                    <div className="text-center space-y-2 pt-2">
+                    <div className="text-center space-y-2 pt-4 border-t border-gray-100">
                       <div className="font-bold text-gray-900 text-lg">
                         {testimonials[currentIndex].name}
                       </div>
@@ -165,12 +190,12 @@ const Testimonials: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Desktop Design - Keep the existing card design */}
-                <div className="hidden sm:block w-full max-w-4xl bg-white rounded-2xl p-6 sm:p-8 lg:p-10 shadow-lg border border-gray-100">
-                  <div className="text-center space-y-6">
-                    {/* Quote Icon */}
-                    <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mx-auto">
-                      <Quote className="w-6 h-6 text-blue-600" />
+                {/* Desktop Design */}
+                <div className="hidden sm:block w-full max-w-4xl">
+                  <div className="text-center space-y-8 py-10">
+                    {/* Top Quote Mark */}
+                    <div className="flex justify-center">
+                      <Quote className="w-12 h-12 text-blue-600 opacity-30" />
                     </div>
 
                     {/* Stars */}
@@ -184,12 +209,17 @@ const Testimonials: React.FC = () => {
                     </div>
 
                     {/* Quote */}
-                    <blockquote className="text-lg lg:text-xl text-gray-800 leading-relaxed font-medium max-w-3xl mx-auto">
-                      "{testimonials[currentIndex].content}"
+                    <blockquote className="text-lg lg:text-xl text-gray-800 leading-relaxed font-medium max-w-3xl mx-auto px-4">
+                      {testimonials[currentIndex].content}
                     </blockquote>
 
+                    {/* Bottom Quote Mark */}
+                    <div className="flex justify-center">
+                      <Quote className="w-12 h-12 text-blue-600 opacity-30 rotate-180" />
+                    </div>
+
                     {/* Author */}
-                    <div className="flex flex-col sm:flex-row items-center justify-center space-y-3 sm:space-y-0 sm:space-x-4 pt-2">
+                    <div className="flex flex-col sm:flex-row items-center justify-center space-y-3 sm:space-y-0 sm:space-x-4 pt-6 border-t border-gray-100">
                       <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-indigo-600 text-white rounded-xl flex items-center justify-center font-bold text-lg flex-shrink-0">
                         {testimonials[currentIndex].avatar}
                       </div>
@@ -211,7 +241,7 @@ const Testimonials: React.FC = () => {
           {/* Navigation Arrows */}
           <button
             onClick={goToPrevious}
-            className="absolute left-2 sm:left-4 lg:left-0 top-1/2 transform -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 bg-white hover:bg-gray-50 border border-gray-200 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 group z-10"
+            className="absolute left-2 sm:left-4 lg:-left-6 top-1/2 transform -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 bg-white hover:bg-gray-50 border border-gray-200 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 group z-10"
             aria-label="Previous testimonial"
           >
             <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6 text-gray-600 group-hover:text-blue-600 transition-colors duration-300" />
@@ -219,7 +249,7 @@ const Testimonials: React.FC = () => {
 
           <button
             onClick={goToNext}
-            className="absolute right-2 sm:right-4 lg:right-0 top-1/2 transform -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 bg-white hover:bg-gray-50 border border-gray-200 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 group z-10"
+            className="absolute right-2 sm:right-4 lg:-right-6 top-1/2 transform -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 bg-white hover:bg-gray-50 border border-gray-200 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 group z-10"
             aria-label="Next testimonial"
           >
             <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 text-gray-600 group-hover:text-blue-600 transition-colors duration-300" />
@@ -241,6 +271,11 @@ const Testimonials: React.FC = () => {
             ))}
           </div>
         </div>
+      </div>
+      
+      {/* Bottom Decorative Quotation Mark */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 opacity-10 pointer-events-none">
+        <Quote className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 text-blue-600 rotate-180" />
       </div>
     </section>
   )
