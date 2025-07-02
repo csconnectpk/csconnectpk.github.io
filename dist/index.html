@@ -143,7 +143,7 @@
         <!-- Loading Screen -->
         <div id="loading-screen" class="loading-screen">
             <img
-                src="/ccweb/assets/logo-B1MrPNQF.png"
+                src="/ccweb/logo.png"
                 alt="CS Connect Pakistan"
                 class="loading-logo"
                 onerror="this.onerror=null; this.src='/logo.svg';"
@@ -153,8 +153,20 @@
         </div>
 
         <div id="root"></div>
-
+        
         <script>
+            // GitHub Pages SPA routing script
+            (function(l) {
+              if (l.search[1] === '/' ) {
+                var decoded = l.search.slice(1).split('&').map(function(s) { 
+                  return s.replace(/~and~/g, '&')
+                }).join('?');
+                window.history.replaceState(null, null,
+                    l.pathname.slice(0, -1) + decoded + l.hash
+                );
+              }
+            }(window.location))
+
             // Hide loading screen when React app loads
             window.addEventListener("load", function () {
                 const loadingScreen = document.getElementById("loading-screen");
@@ -183,4 +195,4 @@
             }, 5000);
         </script>
     </body>
-</html>
+</html> 
