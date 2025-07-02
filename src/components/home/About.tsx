@@ -12,10 +12,10 @@ const About: React.FC = () => {
   return (
     <section className="py-12 sm:py-16 lg:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 xl:gap-20 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 sm:gap-12 lg:gap-16 xl:gap-20 items-center">
           
-          {/* Content Side */}
-          <div>
+          {/* Content Side - Takes 3 columns */}
+          <div className="lg:col-span-3">
             <div className="inline-flex items-center px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-gradient-to-r from-orange-50 to-amber-50 border border-orange-200/60 mb-6 sm:mb-8 shadow-sm">
               <Heart className="w-3 h-3 sm:w-4 sm:h-4 text-orange-600 mr-2" />
               <span className="text-xs sm:text-sm font-semibold text-orange-700 tracking-wide">Our Story</span>
@@ -55,30 +55,32 @@ const About: React.FC = () => {
             </div>
           </div>
 
-          {/* Stats Side - Simple text layout without boxes */}
-          <div className="space-y-8 lg:space-y-12">
-            <div className="text-center lg:text-left">
-              <div className="text-4xl sm:text-5xl lg:text-6xl font-black text-gray-900 mb-2">
-                2,000+
+          {/* Stats Side - Takes 2 columns, positioned more to the right */}
+          <div className="lg:col-span-2 lg:pl-8 xl:pl-12">
+            <div className="space-y-8 lg:space-y-12">
+              <div className="text-center lg:text-right">
+                <div className="text-4xl sm:text-5xl lg:text-6xl font-black text-gray-900 mb-2">
+                  2,000+
+                </div>
+                <div className="text-gray-700 font-semibold text-lg lg:text-xl mb-1">Active CS Students</div>
+                <div className="text-gray-500 text-base">Growing daily across Pakistan</div>
               </div>
-              <div className="text-gray-700 font-semibold text-lg lg:text-xl mb-1">Active CS Students</div>
-              <div className="text-gray-500 text-base">Growing daily across Pakistan</div>
-            </div>
-            
-            <div className="text-center lg:text-left">
-              <div className="text-4xl sm:text-5xl lg:text-6xl font-black text-gray-900 mb-2">
-                50+
+              
+              <div className="text-center lg:text-right">
+                <div className="text-4xl sm:text-5xl lg:text-6xl font-black text-gray-900 mb-2">
+                  50+
+                </div>
+                <div className="text-gray-700 font-semibold text-lg lg:text-xl mb-1">Universities</div>
+                <div className="text-gray-500 text-base">Nationwide network</div>
               </div>
-              <div className="text-gray-700 font-semibold text-lg lg:text-xl mb-1">Universities</div>
-              <div className="text-gray-500 text-base">Nationwide network</div>
-            </div>
-            
-            <div className="text-center lg:text-left">
-              <div className="text-4xl sm:text-5xl lg:text-6xl font-black text-gray-900 mb-2">
-                24/7
+              
+              <div className="text-center lg:text-right">
+                <div className="text-4xl sm:text-5xl lg:text-6xl font-black text-gray-900 mb-2">
+                  24/7
+                </div>
+                <div className="text-gray-700 font-semibold text-lg lg:text-xl mb-1">Community Support</div>
+                <div className="text-gray-500 text-base">Always here to help</div>
               </div>
-              <div className="text-gray-700 font-semibold text-lg lg:text-xl mb-1">Community Support</div>
-              <div className="text-gray-500 text-base">Always here to help</div>
             </div>
           </div>
         </div>
