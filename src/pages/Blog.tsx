@@ -128,13 +128,13 @@ const Blog: React.FC = () => {
                 <div className="absolute inset-0 bg-gradient-to-b from-gray-50/30 via-white to-white" />
                 <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
                 
-                <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 sm:pt-32 lg:pt-40 pb-16 sm:pb-20 lg:pb-24 text-center">
-                    <div className="inline-flex items-center px-4 py-2 sm:px-5 sm:py-2.5 rounded-full bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200/60 mb-6 sm:mb-8 shadow-sm">
+                <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-24 lg:pt-32 pb-12 sm:pb-16 lg:pb-20 text-center">
+                    <div className="inline-flex items-center px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200/60 mb-6 sm:mb-8 shadow-sm">
                         <BookOpen className="w-3 h-3 sm:w-4 sm:h-4 text-blue-600 mr-2" />
                         <span className="text-xs sm:text-sm font-semibold text-blue-700 tracking-wide">Knowledge Hub</span>
                     </div>
                     
-                    <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black mb-4 sm:mb-6 leading-tight text-gray-900">
+                    <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black mb-4 sm:mb-6 leading-tight text-gray-900">
                         CS Connect
                         <br />
                         <span className="relative inline-block">
@@ -143,7 +143,7 @@ const Blog: React.FC = () => {
                         </span>
                     </h1>
                     
-                    <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-medium px-2 sm:px-4 lg:px-0">
+                    <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-medium">
                         Insights, tutorials, and success stories from Pakistan's brightest computer science students and industry professionals
                     </p>
                 </div>

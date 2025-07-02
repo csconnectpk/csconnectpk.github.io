@@ -50,22 +50,22 @@ const Podcasts: React.FC = () => {
                 <div className="absolute inset-0 bg-gradient-to-b from-gray-50/30 via-white to-white" />
                 <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
                 
-                <div className="relative max-w-6xl mx-auto px-6 sm:px-8 lg:px-8 pt-24 sm:pt-32 lg:pt-40 pb-16 sm:pb-20 lg:pb-24 text-center">
+                <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-24 lg:pt-32 pb-12 sm:pb-16 lg:pb-20 text-center">
                     <div>
-                        <div className="inline-flex items-center px-5 py-3 sm:px-6 sm:py-3 rounded-full bg-gradient-to-r from-red-50 to-pink-50 border border-red-200/60 mb-8 sm:mb-10 shadow-sm">
-                            <Mic className="w-5 h-5 sm:w-5 sm:h-5 text-red-600 mr-3" />
-                            <span className="text-lg sm:text-base font-semibold text-red-700 tracking-wide">CS Connect Podcasts</span>
+                        <div className="inline-flex items-center px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-gradient-to-r from-red-50 to-pink-50 border border-red-200/60 mb-6 sm:mb-8 shadow-sm">
+                            <Mic className="w-3 h-3 sm:w-4 sm:h-4 text-red-600 mr-2" />
+                            <span className="text-xs sm:text-sm font-semibold text-red-700 tracking-wide">CS Connect Podcasts</span>
                         </div>
                         
-                        <h1 className="text-5xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-gray-900 mb-6 sm:mb-8 leading-[1.1] sm:leading-[1.05] tracking-tight">
-                            <span className="block mb-2 sm:mb-1">Real Conversations with</span>
+                        <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black text-gray-900 mb-4 sm:mb-6 leading-tight tracking-tight">
+                            <span className="block mb-1 sm:mb-2">Real Conversations with</span>
                             <span className="relative inline-block">
                                 <span className="text-blue-600">Tech Leaders</span>
                                 <div className="absolute -bottom-1 sm:-bottom-1.5 left-0 right-0 h-1 sm:h-1.5 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full" />
                             </span>
                         </h1>
                         
-                        <p className="text-xl sm:text-xl lg:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-medium px-0">
+                        <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-medium">
                             Listen to inspiring stories from Pakistani professionals who've made their mark in tech
                         </p>
                     </div>
