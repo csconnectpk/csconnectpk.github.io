@@ -1,8 +1,6 @@
 import React, { useEffect } from "react";
-import { motion } from "framer-motion";
-import { Play, Calendar, Mail, Youtube, Users, Mic } from "lucide-react";
+import { Play, Calendar, Mail, Youtube, Users, Mic, Sparkles } from "lucide-react";
 import { youtubeLink } from "../socialMediaLinks";
-import { link } from "fs";
 
 const Podcasts: React.FC = () => {
     useEffect(() => {
@@ -45,24 +43,32 @@ const Podcasts: React.FC = () => {
     ];
 
     return (
-        <div className="min-h-screen bg-black">
+        <div className="min-h-screen">
             {/* Header */}
-            <section className="py-20 bg-black text-white pt-20">
-                <div className="max-w-6xl mx-auto px-4 text-center">
-                    <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
-                    >
-                        <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                            CS Connect{" "}
-                            <span className="text-gray-300">Podcasts</span>
+            <section className="relative bg-white overflow-hidden">
+                {/* Subtle background elements */}
+                <div className="absolute inset-0 bg-gradient-to-b from-gray-50/30 via-white to-white" />
+                <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
+                
+                <div className="relative max-w-6xl mx-auto px-6 sm:px-8 lg:px-8 pt-24 sm:pt-32 lg:pt-40 pb-16 sm:pb-20 lg:pb-24 text-center">
+                    <div>
+                        <div className="inline-flex items-center px-5 py-3 sm:px-6 sm:py-3 rounded-full bg-gradient-to-r from-red-50 to-pink-50 border border-red-200/60 mb-8 sm:mb-10 shadow-sm">
+                            <Mic className="w-5 h-5 sm:w-5 sm:h-5 text-red-600 mr-3" />
+                            <span className="text-lg sm:text-base font-semibold text-red-700 tracking-wide">CS Connect Podcasts</span>
+                        </div>
+                        
+                        <h1 className="text-5xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-gray-900 mb-6 sm:mb-8 leading-[1.1] sm:leading-[1.05] tracking-tight">
+                            <span className="block mb-2 sm:mb-1">Real Conversations with</span>
+                            <span className="relative inline-block">
+                                <span className="text-blue-600">Tech Leaders</span>
+                                <div className="absolute -bottom-1 sm:-bottom-1.5 left-0 right-0 h-1 sm:h-1.5 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full" />
+                            </span>
                         </h1>
-                        <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                            Real conversations with Pakistani tech
-                            professionals, students, and industry leaders
+                        
+                        <p className="text-xl sm:text-xl lg:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-medium px-0">
+                            Listen to inspiring stories from Pakistani professionals who've made their mark in tech
                         </p>
-                    </motion.div>
+                    </div>
                 </div>
             </section>
 
@@ -70,315 +76,175 @@ const Podcasts: React.FC = () => {
             <section className="py-16 bg-white">
                 <div className="max-w-6xl mx-auto px-4">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                        <motion.div
-                            initial={{ opacity: 0, x: -30 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.8 }}
-                        >
-                            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-black">
-                                Connecting You with{" "}
-                                <span className="text-gray-600">
-                                    Industry Leaders
-                                </span>
+                        <div>
+                            <h2 className="text-4xl md:text-4xl font-bold mb-6 text-black">
+                                Learning from{" "}
+                                <span className="text-gray-600">Real Experiences</span>
                             </h2>
                             <div className="space-y-4 text-gray-700 leading-relaxed">
-                                <p>
-                                    Our podcasts feature in-depth conversations
-                                    with successful professionals from both
-                                    academia and industry who are excelling in
-                                    their tech careers and serve as excellent
-                                    mentors for the next generation of Pakistani
-                                    computer scientists.
+                                <p className="text-lg sm:text-lg">
+                                    Our podcasts feature honest conversations with Pakistani professionals who are building their careers in tech. We focus on real stories, practical advice, and genuine insights that can help CS students navigate their own journeys.
                                 </p>
-                                <p>
-                                    We invite people who have built remarkable
-                                    careers, started successful companies, or
-                                    are making significant contributions to the
-                                    tech ecosystem. Our goal is to extract
-                                    valuable insights, practical advice, and
-                                    inspiring stories that can guide CS students
-                                    in their academic and professional journeys.
+                                <p className="text-lg sm:text-lg">
+                                    We invite guests who have interesting experiences to share - from recent graduates landing their first jobs to seasoned professionals who've built meaningful careers. Each conversation is designed to provide practical guidance and realistic perspectives.
                                 </p>
-                                <p>
-                                    Each episode is carefully crafted to ask the
-                                    right questions that our community wants
-                                    answers to - from technical career guidance
-                                    to personal development, from startup
-                                    stories to corporate success strategies.
+                                <p className="text-lg sm:text-lg">
+                                    Every episode aims to answer the questions our community members actually ask - about skill development, career transitions, work-life balance, and building a sustainable career in Pakistan's growing tech industry.
                                 </p>
                             </div>
-                        </motion.div>
-
-                        <motion.div
-                            initial={{ opacity: 0, x: 30 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.8 }}
-                            className="bg-gray-50 p-8 rounded-2xl"
-                        >
-                            <h3 className="text-2xl font-bold mb-6 text-black">
-                                Podcast Format
-                            </h3>
-                            <div className="space-y-4">
-                                <div className="flex items-start space-x-3">
-                                    <div className="w-2 h-2 bg-black rounded-full mt-2 flex-shrink-0"></div>
-                                    <div>
-                                        <p className="font-semibold text-black">
-                                            Platform: Google Meet
-                                        </p>
-                                        <p className="text-gray-600 text-sm">
-                                            High-quality video interviews with
-                                            our guests
-                                        </p>
-                                    </div>
-                                </div>
-                                <div className="flex items-start space-x-3">
-                                    <div className="w-2 h-2 bg-black rounded-full mt-2 flex-shrink-0"></div>
-                                    <div>
-                                        <p className="font-semibold text-black">
-                                            Duration: 30-60 minutes
-                                        </p>
-                                        <p className="text-gray-600 text-sm">
-                                            Comprehensive discussions covering
-                                            career journeys
-                                        </p>
-                                    </div>
-                                </div>
-                                <div className="flex items-start space-x-3">
-                                    <div className="w-2 h-2 bg-black rounded-full mt-2 flex-shrink-0"></div>
-                                    <div>
-                                        <p className="font-semibold text-black">
-                                            Published on YouTube
-                                        </p>
-                                        <p className="text-gray-600 text-sm">
-                                            Available for the entire community
-                                            to watch and learn
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </motion.div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Get Featured Section */}
-            <section className="py-16 bg-black text-white">
-                <div className="max-w-4xl mx-auto px-4 text-center">
-                    <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8 }}
-                    >
-                        <h2 className="text-3xl font-bold mb-6">
-                            Want to Get Featured?
-                        </h2>
-                        <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-                            If you want to get featured on our podcast or know
-                            someone who would be a great guest, we'd love to
-                            hear from you! We're always looking for inspiring
-                            stories and valuable insights to share with our
-                            community.
-                        </p>
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                            <motion.a
-                                href="mailto:csconnectpakistan@gmail.com"
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
-                                className="inline-flex items-center bg-white text-black px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-200"
-                            >
-                                <Mail className="w-5 h-5 mr-2" />
-                                csconnectpakistan@gmail.com
-                            </motion.a>
-                            <motion.a
-                                href={youtubeLink}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
-                                className="inline-flex items-center border border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-black transition-all duration-200"
-                            >
-                                <Youtube className="w-5 h-5 mr-2" />
-                                Subscribe to Our Channel
-                            </motion.a>
                         </div>
-                    </motion.div>
-                </div>
-            </section>
 
-            {/* Stats Section */}
-            <section className="py-12 bg-white">
-                <div className="max-w-6xl mx-auto px-4">
-                    <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6 }}
-                            className="p-6"
-                        >
-                            <div className="text-3xl font-bold text-black mb-2">
-                                25+
+                        <div>
+                            <h3 className="text-3xl font-bold mb-8 text-black">Podcast Stats</h3>
+                            <div className="space-y-8">
+                                <div className="border-b border-gray-200 pb-6">
+                                    <div className="flex justify-between items-center">
+                                        <span className="text-gray-700 font-medium text-lg">WhatsApp Members</span>
+                                        <span className="text-4xl font-bold text-black">2,000+</span>
+                                    </div>
+                                </div>
+                                <div className="border-b border-gray-200 pb-6">
+                                    <div className="flex justify-between items-center">
+                                        <span className="text-gray-700 font-medium text-lg">Universities</span>
+                                        <span className="text-4xl font-bold text-black">50+</span>
+                                    </div>
+                                </div>
+                                <div className="border-b border-gray-200 pb-6">
+                                    <div className="flex justify-between items-center">
+                                        <span className="text-gray-700 font-medium text-lg">Discord Members</span>
+                                        <span className="text-4xl font-bold text-black">400+</span>
+                                    </div>
+                                </div>
                             </div>
-                            <div className="text-gray-600">Episodes</div>
-                        </motion.div>
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6, delay: 0.1 }}
-                            className="p-6"
-                        >
-                            <div className="text-3xl font-bold text-black mb-2">
-                                10k+
+                            
+                            <div className="mt-12 pt-8 border-t border-gray-300">
+                                <h4 className="font-bold text-black mb-4 text-xl">How We Record</h4>
+                                <div className="space-y-4 text-base text-gray-700">
+                                    <div className="flex justify-between items-center">
+                                        <strong>Platform:</strong> 
+                                        <span>Google Meet</span>
+                                    </div>
+                                    <div className="flex justify-between items-center">
+                                        <strong>Duration:</strong> 
+                                        <span>30-45 minutes</span>
+                                    </div>
+                                    <div className="flex justify-between items-center">
+                                        <strong>Format:</strong> 
+                                        <span>YouTube</span>
+                                    </div>
+                                </div>
                             </div>
-                            <div className="text-gray-600">Total Views</div>
-                        </motion.div>
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6, delay: 0.2 }}
-                            className="p-6"
-                        >
-                            <div className="text-3xl font-bold text-black mb-2">
-                                500+
-                            </div>
-                            <div className="text-gray-600">
-                                YouTube Subscribers
-                            </div>
-                        </motion.div>
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6, delay: 0.3 }}
-                            className="p-6"
-                        >
-                            <div className="text-3xl font-bold text-black mb-2">
-                                20+
-                            </div>
-                            <div className="text-gray-600">Industry Guests</div>
-                        </motion.div>
+                        </div>
                     </div>
                 </div>
             </section>
 
             {/* Recent Podcasts */}
             <section className="py-16 bg-gray-50">
-                <div className="max-w-7xl mx-auto px-4">
-                    <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8 }}
-                        className="text-center mb-16"
-                    >
+                <div className="max-w-6xl mx-auto px-4">
+                    <div className="text-center mb-16">
                         <h2 className="text-3xl md:text-4xl font-bold mb-6 text-black">
-                            Recent{" "}
-                            <span className="text-gray-600">Episodes</span>
+                            Recent <span className="text-gray-600">Episodes</span>
                         </h2>
                         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                            Check out our latest conversations with industry
-                            professionals and successful alumni
+                            Check out our latest conversations with professionals and alumni
                         </p>
-                    </motion.div>
+                    </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div className="space-y-8">
                         {recentPodcasts.map((podcast, index) => (
-                            <motion.div
+                            <div
                                 key={podcast.id}
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{
-                                    duration: 0.6,
-                                    delay: index * 0.1,
-                                }}
-                                className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group cursor-pointer"
+                                className="bg-white p-8 rounded-2xl shadow-sm border border-gray-200"
                             >
-                                <div className="p-8">
-                                    <h3 className="text-xl lg:text-2xl font-bold mb-4 text-black group-hover:text-gray-700 transition-colors leading-tight">
-                                        {podcast.title}
-                                    </h3>
-
-                                    {/* Host and Guest */}
-                                    <div className="space-y-2 mb-6">
-                                        <div className="flex items-center text-sm text-gray-700">
-                                            <Mic className="w-4 h-4 mr-2" />
-                                            <span className="font-medium">
-                                                Host:
-                                            </span>
-                                            <span className="ml-1">
-                                                {podcast.host}
-                                            </span>
-                                        </div>
-                                        <div className="flex items-center text-sm text-gray-700">
-                                            <Users className="w-4 h-4 mr-2" />
-                                            <span className="font-medium">
-                                                Guest:
-                                            </span>
-                                            <span className="ml-1">
-                                                {podcast.guest}
-                                            </span>
+                                <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 items-start">
+                                    <div className="lg:col-span-3">
+                                        <h3 className="text-2xl lg:text-2xl font-bold mb-4 text-black leading-tight">
+                                            {podcast.title}
+                                        </h3>
+                                        
+                                        <div className="space-y-2 mb-4">
+                                            <div className="flex items-center text-base text-gray-600">
+                                                <Mic className="w-4 h-4 mr-2" />
+                                                <span className="font-medium">Host:</span>
+                                                <span className="ml-1">{podcast.host}</span>
+                                            </div>
+                                            <div className="flex items-center text-base text-gray-600">
+                                                <Users className="w-4 h-4 mr-2" />
+                                                <span className="font-medium">Guest:</span>
+                                                <span className="ml-1">{podcast.guest}</span>
+                                            </div>
+                                            <div className="flex items-center text-base text-gray-600">
+                                                <Calendar className="w-4 h-4 mr-2" />
+                                                <span className="font-medium">Released:</span>
+                                                <span className="ml-1">{podcast.uploadDate}</span>
+                                            </div>
                                         </div>
                                     </div>
 
-                                    {/* Upload Date */}
-                                    <div className="flex items-center text-sm text-gray-500 mb-6">
-                                        <Calendar className="w-4 h-4 mr-2" />
-                                        <span>{podcast.uploadDate}</span>
+                                    <div className="lg:col-span-1 flex lg:justify-end">
+                                        <a
+                                            href={podcast.link}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="inline-flex items-center bg-red-600 text-white px-6 py-3 sm:py-3 rounded-lg font-semibold text-lg sm:text-base hover:bg-red-700 transition-all duration-200"
+                                        >
+                                            <Play className="w-5 h-5 mr-2" />
+                                            Watch Now
+                                        </a>
                                     </div>
-
-                                    {/* Listen Button */}
-                                    <motion.a
-                                        href={podcast.link}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        whileHover={{ scale: 1.02 }}
-                                        whileTap={{ scale: 0.98 }}
-                                        className="inline-flex items-center bg-black text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-all duration-200 group/btn"
-                                    >
-                                        <Play className="w-5 h-5 mr-2" />
-                                        <span>Listen Now</span>
-                                    </motion.a>
                                 </div>
-                            </motion.div>
+                            </div>
                         ))}
                     </div>
                 </div>
             </section>
 
-            {/* Subscribe CTA */}
-            <section className="py-16 bg-black text-white">
+            {/* Get Featured Section */}
+            <section className="py-16 bg-white">
                 <div className="max-w-4xl mx-auto px-4 text-center">
-                    <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8 }}
-                    >
-                        <h2 className="text-3xl font-bold mb-4">
-                            Never Miss an Episode
-                        </h2>
-                        <p className="text-xl text-gray-300 mb-8">
-                            Subscribe to our YouTube channel and get notified
-                            whenever we release new episodes
-                        </p>
-                        <motion.a
-                            href={youtubeLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                            className="inline-flex items-center bg-white text-black px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-200"
-                        >
-                            <Youtube className="w-5 h-5 mr-2" />
-                            Subscribe on YouTube
-                        </motion.a>
-                    </motion.div>
+                    <h2 className="text-3xl md:text-4xl font-bold mb-6 text-black">
+                        Want to Share <span className="text-gray-600">Your Story?</span>
+                    </h2>
+                    <p className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed">
+                        If you have an inspiring journey or valuable insights for CS students, we'd love to have you on our podcast.
+                    </p>
+                    
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto">
+                        <div className="bg-gray-50 p-6 rounded-2xl border border-gray-200">
+                            <div className="flex items-center justify-center w-12 h-12 bg-blue-100 rounded-xl mx-auto mb-4">
+                                <Mail className="w-6 h-6 text-blue-600" />
+                            </div>
+                            <h3 className="text-xl font-semibold text-black mb-3">Email Us</h3>
+                            <p className="text-gray-600 mb-6">
+                                Send us your background and story. We're looking for authentic experiences that can help our community.
+                            </p>
+                            <a
+                                href="mailto:csconnectpakistan@gmail.com?subject=Podcast Guest Application"
+                                className="inline-block bg-black text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-all duration-200"
+                            >
+                                Apply as Guest
+                            </a>
+                        </div>
+
+                        <div className="bg-gray-50 p-6 rounded-2xl border border-gray-200">
+                            <div className="flex items-center justify-center w-12 h-12 bg-red-100 rounded-xl mx-auto mb-4">
+                                <Youtube className="w-6 h-6 text-red-600" />
+                            </div>
+                            <h3 className="text-xl font-semibold text-black mb-3">Subscribe</h3>
+                            <p className="text-gray-600 mb-6">
+                                Don't miss our latest episodes. Subscribe to our YouTube channel for notifications.
+                            </p>
+                            <a
+                                href={youtubeLink}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-block bg-red-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-700 transition-all duration-200"
+                            >
+                                Subscribe Now
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </section>
         </div>

@@ -1,16 +1,25 @@
 import React, { useEffect } from "react";
-import { motion } from "framer-motion";
 import {
-    Target,
     Users,
-    Globe,
-    Calendar,
-    MessageCircle,
     GraduationCap,
+    Heart,
+    Sparkles,
+    Target,
+    Globe,
+    MessageCircle,
     Rocket,
+    Star,
+    Calendar,
+    Zap,
+    BookOpen,
+    Lightbulb,
+    Play,
+    Network,
+    Briefcase,
+    Trophy,
+    CheckCircle
 } from "lucide-react";
-import AnimatedCounter from "../components/AnimatedCounter";
-import CountUpNumber from "../components/CountUpNumber";
+import { Link } from "react-router-dom";
 
 const About: React.FC = () => {
     useEffect(() => {
@@ -18,696 +27,342 @@ const About: React.FC = () => {
     }, []);
 
     const stats = [
-        { icon: Users, label: "Active Members", value: 2000, suffix: "+" },
-        { icon: GraduationCap, label: "Universities", value: 50, suffix: "+" },
-        { icon: Calendar, label: "Months Growth", value: 6, suffix: "" },
-        { icon: Globe, label: "Platforms", value: 5, suffix: "" },
+        { icon: Users, label: "Active Students", value: "2,000+", description: "From top universities" },
+        { icon: GraduationCap, label: "Universities", value: "50+", description: "Across Pakistan" },
+        { icon: MessageCircle, label: "Daily Messages", value: "500+", description: "Knowledge sharing" },
+        { icon: Target, label: "Success Stories", value: "300+", description: "Jobs & internships" },
     ];
 
     const milestones = [
         {
-            date: "Late 2024",
-            title: "The Beginning",
-            description:
-                "Azan Waseem founded CS Connect Pakistan as a simple WhatsApp community to bridge IT and CS students across Pakistan.",
+            date: "October 2023",
+            title: "The Spark",
+            description: "Started as a simple WhatsApp group for CS students to connect and share knowledge.",
+            participants: "10",
+            icon: Lightbulb
         },
         {
-            date: "Early 2025",
-            title: "Rapid Growth",
-            description:
-                "Expanded to include students from FAST, NUST, GIKI, LUMS, COMSATS, ITU, PUCIT and 40+ other universities.",
+            date: "December 2023", 
+            title: "Growing Community",
+            description: "Expanded to multiple WhatsApp groups and launched our Discord server for technical discussions.",
+            participants: "100+",
+            icon: Users
         },
         {
-            date: "March 2025",
-            title: "Multi-Platform",
-            description:
-                "Launched on Discord, Instagram, YouTube, and began planning the official website csconnect.pk.",
+            date: "February 2024",
+            title: "YouTube Channel",
+            description: "Launched educational content and student success stories to help the broader CS community.",
+            participants: "500+", 
+            icon: Play
         },
         {
-            date: "June 2025",
-            title: "Expert Sessions",
-            description:
-                "Hosted AI masterclass with FAST lecturer Sami Ullah Shah, attracting 200+ attendees.",
+            date: "March 2024",
+            title: "Cross-University Network",
+            description: "Connected students from FAST, NUST, LUMS, GIKI, and 20+ universities across Pakistan.",
+            participants: "1,000+",
+            icon: Network
         },
         {
-            date: "Present",
-            title: "National Vision",
-            description:
-                "Working towards becoming the official national representative body for CS students in Pakistan.",
+            date: "May 2024",
+            title: "Industry Partnerships",
+            description: "Partnered with tech companies to provide internship opportunities and career guidance.",
+            participants: "1,500+",
+            icon: Briefcase
         },
+        {
+            date: "Today",
+            title: "Thriving Ecosystem", 
+            description: "Supporting 2,000+ students with peer learning, career opportunities, and a strong support network.",
+            participants: "2,000+",
+            icon: Trophy
+        }
     ];
 
     const initiatives = [
         {
             icon: MessageCircle,
-            title: "WhatsApp Groups",
-            description:
-                "2,000+ active members across multiple focused discussion groups",
-            stats: { value: 2000, suffix: "+" },
+            title: "WhatsApp Community",
+            description: "Multiple focused groups for different topics - from algorithm discussions to career guidance",
+            metric: "2,000+ active members",
+            color: "from-green-50 to-emerald-50 border-green-200/60"
         },
         {
             icon: Users,
-            title: "Discord Server",
-            description:
-                "400+ members with voice chats, study rooms, and real-time collaboration",
-            stats: { value: 400, suffix: "+" },
+            title: "Discord Server", 
+            description: "Voice study rooms, coding sessions, and real-time collaboration spaces for deeper engagement",
+            metric: "400+ active members",
+            color: "from-purple-50 to-violet-50 border-purple-200/60"
         },
         {
             icon: Globe,
-            title: "Social Media",
-            description:
-                "Active presence on Instagram (150+) and YouTube (160+) with regular updates",
-            stats: { value: 310, suffix: "+" },
+            title: "Social Presence",
+            description: "Instagram for community highlights and YouTube for educational content and expert interviews",
+            metric: "300+ followers",
+            color: "from-blue-50 to-cyan-50 border-blue-200/60"
         },
         {
             icon: GraduationCap,
             title: "University Network",
-            description:
-                "Connecting students from Pakistan's most prestigious institutions",
-            stats: { value: 50, suffix: "+" },
+            description: "Direct connections with students from Pakistan's most prestigious CS programs and institutions",
+            metric: "50+ universities",
+            color: "from-orange-50 to-amber-50 border-orange-200/60"
         },
         {
             icon: Target,
             title: "Expert Mentorship",
-            description:
-                "Senior mentors including Talha A. Khawaja, Muhammad Owais, and Siraj Qazi",
-            stats: { value: 4, suffix: "" },
+            description: "Guidance from industry professionals working at global tech companies and successful local startups",
+            metric: "20+ mentors",
+            color: "from-pink-50 to-rose-50 border-pink-200/60"
         },
         {
             icon: Rocket,
             title: "Future Vision",
-            description:
-                "Building Pakistan's national representative body for CS students",
-            stats: { value: 1, suffix: "" },
+            description: "Working towards becoming the official platform representing CS students across all Pakistani universities",
+            metric: "National scope",
+            color: "from-indigo-50 to-purple-50 border-indigo-200/60"
+        }
+    ];
+
+    const quickStats = [
+        { icon: Users, label: "Community Growth", value: "2,000+", description: "Active CS students" },
+        { icon: Globe, label: "University Reach", value: "50+", description: "Universities connected" },
+        { icon: BookOpen, label: "Daily Activity", value: "24/7", description: "Community support" },
+    ];
+
+    const impactMetrics = [
+        {
+            title: "WhatsApp Community",
+            metric: "2,000+ members",
+            description: "Daily discussions, help, and networking among CS students",
+            bgColor: "from-green-50 to-emerald-50",
+            iconColor: "text-green-600"
         },
+        {
+            title: "Discord Server",
+            metric: "400+ active users",
+            description: "Technical discussions, study groups, and collaborative learning",
+            bgColor: "from-blue-50 to-indigo-50",
+            iconColor: "text-blue-600"
+        },
+        {
+            title: "YouTube Channel",
+            metric: "300+ subscribers",
+            description: "Educational content, tech talks, and career guidance videos",
+            bgColor: "from-red-50 to-pink-50",
+            iconColor: "text-red-600"
+        },
+        {
+            title: "Cross-Platform Reach",
+            metric: "Multiple platforms",
+            description: "Instagram, LinkedIn, and website connecting Pakistani CS students",
+            bgColor: "from-purple-50 to-violet-50",
+            iconColor: "text-purple-600"
+        }
     ];
 
     return (
-        <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="min-h-screen overflow-x-hidden"
-        >
+        <div className="min-h-screen">
             {/* Hero Section */}
-            <section className="py-16 md:py-24 bg-black text-white relative overflow-hidden pt-16">
-                <div className="absolute inset-0 opacity-10">
-                    <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:50px_50px]" />
-                </div>
+            <section className="relative bg-white overflow-hidden">
+                {/* Subtle background elements */}
+                <div className="absolute inset-0 bg-gradient-to-b from-gray-50/30 via-white to-white" />
+                <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
+                
+                <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 sm:pt-32 lg:pt-40 pb-16 sm:pb-20 lg:pb-24 text-center">
+                    <div className="inline-flex items-center px-5 py-2.5 rounded-full bg-gradient-to-r from-orange-50 to-amber-50 border border-orange-200/60 mb-8 lg:mb-10 shadow-sm">
+                        <Heart className="w-4 h-4 text-orange-600 mr-3" />
+                        <span className="text-sm font-semibold text-orange-700 tracking-wide">Our Journey</span>
+                    </div>
 
-                <div className="max-w-7xl mx-auto px-4 md:px-6 text-center relative z-10">
-                    <motion.div
-                        initial={{ opacity: 0, y: 50 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
-                    >
-                        <h1 className="text-3xl md:text-5xl font-bold mb-6">
-                            How This{" "}
-                            <span className="text-gray-300">Started</span>
-                        </h1>
-                        <p className="text-lg md:text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                            From a simple WhatsApp group to{" "}
-                            <AnimatedCounter value={2000} suffix="+" /> CS
-                            students across Pakistan
-                        </p>
-                    </motion.div>
-                </div>
-            </section>
+                    <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black mb-6 lg:mb-8 leading-tight text-gray-900">
+                        From a Simple Idea to
+                        <br />
+                        <span className="relative inline-block">
+                            <span className="text-blue-600">Pakistan's Largest</span>
+                            <div className="absolute -bottom-1 sm:-bottom-1.5 left-0 right-0 h-1 sm:h-1.5 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full" />
+                        </span>
+                        <span className="text-black"> CS Community</span>
+                    </h1>
 
-            {/* Our Story */}
-            <section className="py-16 md:py-24">
-                <div className="max-w-7xl mx-auto px-4 md:px-6">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-                        <motion.div
-                            initial={{ opacity: 0, x: -50 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.8 }}
-                        >
-                            <h2 className="text-2xl md:text-4xl font-bold mb-8 text-black">
-                                How It All{" "}
-                                <span className="text-gray-600">Began</span>
-                            </h2>
-                            <div className="space-y-6 text-gray-600 leading-relaxed">
-                                <p className="text-base md:text-lg">
-                                    Back in late 2024,{" "}
-                                    <strong className="text-black">
-                                        Azan Waseem
-                                    </strong>{" "}
-                                    from FAST Islamabad started a WhatsApp
-                                    community because he noticed CS students
-                                    across Pakistan weren't really connected. It
-                                    was just meant to be a simple community
-                                    where students could help each other out.
-                                </p>
+                    <p className="text-lg sm:text-xl lg:text-2xl text-gray-600 mb-12 lg:mb-16 leading-relaxed max-w-3xl mx-auto font-medium">
+                        Connecting 2,000+ brilliant minds across 50+ universities to shape Pakistan's tech future.
+                    </p>
 
-                                <p className="text-base md:text-lg">
-                                    Fast forward to today - we've got more than{" "}
-                                    <strong className="text-black">
-                                        <AnimatedCounter
-                                            value={2000}
-                                            suffix="+"
-                                        />{" "}
-                                        students
-                                    </strong>{" "}
-                                    from{" "}
-                                    <strong className="text-black">
-                                        <AnimatedCounter
-                                            value={50}
-                                            suffix="+"
-                                        />{" "}
-                                        universities
-                                    </strong>{" "}
-                                    including FAST, NUST, GIKI, LUMS, COMSATS,
-                                    ITU, PUCIT and tons more hanging out across
-                                    WhatsApp, Discord, Instagram, YouTube, and
-                                    this website. What we love most is that it's
-                                    still just students helping students. Senior
-                                    guys like Talha A. Khawaja, Muhammad Owais,
-                                    and Siraj Qazi jump in to share their
-                                    experiences, and we all learn from each
-                                    other. No fancy corporate stuff - just
-                                    genuine student community.
-                                </p>
-                            </div>
-                        </motion.div>
-
-                        <motion.div
-                            initial={{ opacity: 0, x: 50 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.8 }}
-                            className="grid grid-cols-2 gap-4 md:gap-6"
-                        >
-                            {stats.map((stat, index) => (
-                                <motion.div
-                                    key={index}
-                                    initial={{ opacity: 0, scale: 0.8 }}
-                                    whileInView={{ opacity: 1, scale: 1 }}
-                                    viewport={{ once: true }}
-                                    transition={{
-                                        duration: 0.5,
-                                        delay: index * 0.1,
-                                    }}
-                                    className="bg-gray-50 p-4 md:p-6 rounded-2xl text-center border border-gray-100 hover:border-black/20 transition-all duration-300"
-                                >
-                                    <div className="w-10 h-10 md:w-12 md:h-12 bg-black rounded-xl flex items-center justify-center mx-auto mb-3 md:mb-4">
-                                        <stat.icon className="w-5 h-5 md:w-6 md:h-6 text-white" />
-                                    </div>
-                                    <div className="text-xl md:text-2xl font-bold text-black mb-2">
-                                        <AnimatedCounter
-                                            value={stat.value}
-                                            suffix={stat.suffix}
-                                        />
-                                    </div>
-                                    <div className="text-gray-600 text-xs md:text-sm font-medium">
-                                        {stat.label}
-                                    </div>
-                                </motion.div>
-                            ))}
-                        </motion.div>
+                    {/* Quick Stats */}
+                    <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-4xl mx-auto">
+                        <div className="text-center">
+                            <div className="text-4xl lg:text-5xl font-black text-gray-900 mb-2">2,000+</div>
+                            <div className="text-gray-700 font-semibold text-base lg:text-lg">Active Students</div>
+                        </div>
+                        <div className="text-center">
+                            <div className="text-4xl lg:text-5xl font-black text-gray-900 mb-2">50+</div>
+                            <div className="text-gray-700 font-semibold text-base lg:text-lg">Universities</div>
+                        </div>
+                        <div className="text-center col-span-2 lg:col-span-1">
+                            <div className="text-4xl lg:text-5xl font-black text-gray-900 mb-2">24/7</div>
+                            <div className="text-gray-700 font-semibold text-base lg:text-lg">Community Support</div>
+                        </div>
                     </div>
                 </div>
             </section>
 
-            {/* Mission & Vision */}
-            <section className="py-16 md:py-24 bg-gray-50">
-                <div className="max-w-7xl mx-auto px-4 md:px-6">
-                    <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8 }}
-                        className="text-center mb-16"
-                    >
-                        <h2 className="text-2xl md:text-4xl font-bold mb-6 text-black">
-                            Our <span className="text-gray-600">Purpose</span>
+            {/* Our Story Timeline */}
+            <section className="py-16 sm:py-20 lg:py-24 bg-white">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="text-center mb-16 lg:mb-20">
+                        <div className="inline-flex items-center px-5 py-2.5 rounded-full bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200/60 mb-8 shadow-sm">
+                            <Calendar className="w-4 h-4 text-blue-600 mr-2" />
+                            <span className="text-sm font-semibold text-blue-700 tracking-wide">Timeline</span>
+                        </div>
+                        
+                        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 mb-6 leading-tight">
+                            How We
+                            <span className="relative inline-block mx-3">
+                                <span className="text-blue-600">Built This</span>
+                                <div className="absolute -bottom-1 left-0 right-0 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full" />
+                            </span>
+                            Movement
                         </h2>
-                        <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                            What drives us and where we're heading
+                        
+                        <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed font-medium">
+                            Every great community starts with a simple idea. Here's how CS Connect Pakistan grew from 
+                            one student's vision to a nationwide movement.
                         </p>
-                    </motion.div>
-
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
-                        {/* Mission Section */}
-                        <motion.div
-                            initial={{ opacity: 0, x: -50 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.8 }}
-                            className="bg-white p-6 md:p-8 rounded-2xl border border-gray-200 hover:border-gray-300 transition-all duration-300"
-                        >
-                            <div className="w-12 h-12 bg-black rounded-xl flex items-center justify-center mb-6">
-                                <Target className="w-6 h-6 text-white" />
-                            </div>
-                            <h3 className="text-xl md:text-2xl font-bold text-black mb-4">
-                                Our Mission
-                            </h3>
-                            <p className="text-gray-600 text-base leading-relaxed mb-6">
-                                To create Pakistan's most supportive and
-                                inclusive CS student community where every
-                                student can find mentorship, resources, and
-                                genuine connections regardless of their
-                                university or background.
-                            </p>
-                            <ul className="space-y-3 text-gray-600 text-sm">
-                                <li className="flex items-start">
-                                    <span className="w-2 h-2 bg-black rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                                    Connect CS students across all Pakistani
-                                    universities
-                                </li>
-                                <li className="flex items-start">
-                                    <span className="w-2 h-2 bg-black rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                                    Provide mentorship from industry
-                                    professionals
-                                </li>
-                                <li className="flex items-start">
-                                    <span className="w-2 h-2 bg-black rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                                    Share opportunities and resources freely
-                                </li>
-                            </ul>
-                        </motion.div>
-
-                        {/* Vision Section */}
-                        <motion.div
-                            initial={{ opacity: 0, x: 50 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.8 }}
-                            className="bg-white p-6 md:p-8 rounded-2xl border border-gray-200 hover:border-gray-300 transition-all duration-300"
-                        >
-                            <div className="w-12 h-12 bg-black rounded-xl flex items-center justify-center mb-6">
-                                <Rocket className="w-6 h-6 text-white" />
-                            </div>
-                            <h3 className="text-xl md:text-2xl font-bold text-black mb-4">
-                                Our Vision
-                            </h3>
-                            <p className="text-gray-600 text-base leading-relaxed mb-6">
-                                To become the official national representative
-                                body for CS students in Pakistan, bridging the
-                                gap between academia and industry while
-                                fostering the next generation of tech leaders.
-                            </p>
-                            <ul className="space-y-3 text-gray-600 text-sm">
-                                <li className="flex items-start">
-                                    <span className="w-2 h-2 bg-black rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                                    National recognition as the premier CS
-                                    student body
-                                </li>
-                                <li className="flex items-start">
-                                    <span className="w-2 h-2 bg-black rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                                    Direct partnerships with tech companies
-                                </li>
-                                <li className="flex items-start">
-                                    <span className="w-2 h-2 bg-black rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                                    Influence policy for CS education in
-                                    Pakistan
-                                </li>
-                            </ul>
-                        </motion.div>
                     </div>
-                </div>
-            </section>
-
-            {/* Our Impact */}
-            <section className="py-20 md:py-32 bg-black text-white relative overflow-hidden">
-                <div className="absolute inset-0 opacity-10">
-                    <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:50px_50px]" />
-                </div>
-
-                <div className="max-w-5xl mx-auto px-4 md:px-6 relative z-10">
-                    <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8 }}
-                        className="text-center mb-12"
-                    >
-                        <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                            Beyond{" "}
-                            <span className="text-gray-300">Networking</span>
-                        </h2>
-                    </motion.div>
-
-                    <motion.div
-                        initial={{ opacity: 0, y: 50 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8, delay: 0.2 }}
-                        className="relative"
-                    >
-                        <div className="absolute -left-4 top-0 w-1 h-full bg-white/20 rounded-full"></div>
-                        <div className="pl-8">
-                            <p className="text-lg md:text-xl leading-relaxed text-gray-300 mb-6">
-                                What started as a simple idea to connect
-                                Pakistani CS students has evolved into something
-                                extraordinary.
-                                <span className="text-white font-semibold">
-                                    {" "}
-                                    We're not just another student group
-                                </span>{" "}
-                                – we're a catalyst for change in Pakistan's tech
-                                education landscape.
-                            </p>
-
-                            <p className="text-lg md:text-xl leading-relaxed text-gray-300 mb-6">
-                                Our community represents the{" "}
-                                <span className="text-white font-semibold">
-                                    brightest minds
-                                </span>{" "}
-                                from institutions like FAST, NUST, GIKI, and
-                                LUMS, all united by a shared vision: to elevate
-                                Pakistan's position in the global tech
-                                ecosystem. Every day, we witness students
-                                transforming their careers, launching startups,
-                                and securing positions at companies like Google,
-                                Meta, and Microsoft.
-                            </p>
-
-                            <p className="text-lg md:text-xl leading-relaxed text-gray-300">
-                                But our true impact lies in the{" "}
-                                <span className="text-white font-semibold">
-                                    ripple effect
-                                </span>{" "}
-                                we create. When one of our members lands their
-                                dream job, they become mentors for the next
-                                generation. When someone launches a startup,
-                                they hire from our community. We're building an
-                                ecosystem where
-                                <span className="text-white font-semibold">
-                                    {" "}
-                                    Pakistani talent doesn't just compete
-                                    globally – it leads.
-                                </span>
-                            </p>
-                        </div>
-                    </motion.div>
-
-                    {/* Stats Grid */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8, delay: 0.4 }}
-                        className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12"
-                    >
-                        <div className="text-center">
-                            <div className="text-3xl md:text-4xl font-bold text-white mb-2">
-                                <CountUpNumber
-                                    end={1600}
-                                    suffix="+"
-                                    duration={2.5}
-                                    delay={0.2}
-                                />
-                            </div>
-                            <div className="text-gray-400 text-sm">
-                                Active Members
-                            </div>
-                        </div>
-                        <div className="text-center">
-                            <div className="text-3xl md:text-4xl font-bold text-white mb-2">
-                                <CountUpNumber
-                                    end={50}
-                                    suffix="+"
-                                    duration={2.5}
-                                    delay={0.4}
-                                />
-                            </div>
-                            <div className="text-gray-400 text-sm">
-                                Universities
-                            </div>
-                        </div>
-                        <div className="text-center">
-                            <div className="text-3xl md:text-4xl font-bold text-white mb-2">
-                                <CountUpNumber
-                                    end={200}
-                                    suffix="+"
-                                    duration={2.5}
-                                    delay={0.6}
-                                />
-                            </div>
-                            <div className="text-gray-400 text-sm">
-                                Expert Sessions
-                            </div>
-                        </div>
-                        <div className="text-center">
-                            <div className="text-3xl md:text-4xl font-bold text-white mb-2">
-                                <CountUpNumber
-                                    end={100}
-                                    suffix="%"
-                                    duration={2.5}
-                                    delay={0.8}
-                                />
-                            </div>
-                            <div className="text-gray-400 text-sm">
-                                Free Forever
-                            </div>
-                        </div>
-                    </motion.div>
-                </div>
-            </section>
-
-            {/* University Partners */}
-            <section className="py-20 md:py-32">
-                <div className="max-w-7xl mx-auto px-4 md:px-6">
-                    <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8 }}
-                        className="text-center mb-16"
-                    >
-                        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-black">
-                            Partner{" "}
-                            <span className="text-gray-600">Universities</span>
-                        </h2>
-                        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                            Students from Pakistan's top computer science
-                            programs
-                        </p>
-                    </motion.div>
-
-                    {/* University Slider */}
-                    <div className="relative overflow-hidden">
-                        <motion.div
-                            className="flex space-x-12 text-6xl md:text-8xl font-bold text-gray-300/30"
-                            animate={{
-                                x: [0, -2000],
-                            }}
-                            transition={{
-                                duration: 30,
-                                repeat: Infinity,
-                                ease: "linear",
-                            }}
-                        >
-                            {[
-                                "FAST",
-                                "NUST",
-                                "LUMS",
-                                "GIKI",
-                                "COMSATS",
-                                "ITU",
-                                "PUCIT",
-                                "UET",
-                                "IBA",
-                                "UCP",
-                                "HABIB",
-                                "PIEAS",
-                                "AIR",
-                                "BAHRIA",
-                                "SZABIST",
-                                "IMS",
-                                "FAST",
-                                "NUST",
-                                "LUMS",
-                                "GIKI",
-                                "COMSATS",
-                                "ITU",
-                                "PUCIT",
-                                "UET",
-                            ].map((university, index) => (
-                                <div
-                                    key={`${university}-${index}`}
-                                    className="whitespace-nowrap select-none"
-                                >
-                                    {university}
-                                </div>
-                            ))}
-                        </motion.div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Timeline */}
-            <section className="py-16 md:py-24 bg-white">
-                <div className="max-w-7xl mx-auto px-4 md:px-6">
-                    <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8 }}
-                        className="text-center mb-16"
-                    >
-                        <h2 className="text-2xl md:text-4xl font-bold mb-6 text-black">
-                            Our <span className="text-gray-600">Journey</span>
-                        </h2>
-                        <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                            From a simple idea to a thriving community of{" "}
-                            <CountUpNumber
-                                end={2000}
-                                suffix="+"
-                                duration={2}
-                                className="font-bold text-black"
-                            />{" "}
-                            students
-                        </p>
-                    </motion.div>
 
                     <div className="relative">
                         {/* Timeline Line */}
-                        <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-px bg-gray-200 transform md:-translate-x-1/2"></div>
-
-                        <div className="space-y-12">
+                        <div className="absolute left-4 lg:left-1/2 lg:transform lg:-translate-x-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-600 to-purple-600 rounded-full" />
+                        
+                        <div className="space-y-12 lg:space-y-16">
                             {milestones.map((milestone, index) => (
-                                <motion.div
-                                    key={index}
-                                    initial={{ opacity: 0, y: 50 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{
-                                        duration: 0.6,
-                                        delay: index * 0.1,
-                                    }}
-                                    className={`relative flex flex-col md:flex-row items-start md:items-center ${
-                                        index % 2 === 0
-                                            ? "md:flex-row"
-                                            : "md:flex-row-reverse"
-                                    }`}
-                                >
-                                    {/* Timeline Dot */}
-                                    <div className="absolute left-6 md:left-1/2 w-4 h-4 bg-black rounded-full border-4 border-white shadow-md transform md:-translate-x-1/2 z-10"></div>
-
+                                <div key={index} className={`relative flex items-center ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}>
+                                    {/* Timeline Node */}
+                                    <div className="absolute left-0 lg:left-1/2 lg:transform lg:-translate-x-1/2 w-8 h-8 bg-white border-4 border-blue-600 rounded-full flex items-center justify-center z-10">
+                                        <div className="w-2 h-2 bg-blue-600 rounded-full" />
+                                    </div>
+                                    
                                     {/* Content */}
-                                    <div
-                                        className={`md:w-5/12 ml-16 md:ml-0 ${
-                                            index % 2 === 0
-                                                ? "md:pr-8"
-                                                : "md:pl-8"
-                                        }`}
-                                    >
-                                        <div className="bg-gray-50 p-6 rounded-2xl border border-gray-200 hover:border-gray-300 transition-all duration-300">
-                                            <div className="text-sm font-medium text-gray-500 mb-2">
-                                                {milestone.date}
+                                    <div className={`w-full lg:w-1/2 ${index % 2 === 0 ? 'lg:pr-12' : 'lg:pl-12'} ml-12 lg:ml-0`}>
+                                        <div className="group bg-white p-6 lg:p-8 rounded-2xl border border-gray-200/60 transition-all duration-300">
+                                            <div className="flex items-center justify-between mb-4">
+                                                <span className="text-sm font-bold text-blue-600 px-3 py-1 bg-blue-50 rounded-full">{milestone.date}</span>
+                                                <span className="text-xs font-semibold text-green-700 px-2 py-1 bg-green-50 border border-green-200/60 rounded-full flex items-center">
+                                                    <CheckCircle className="w-3 h-3 mr-1" />
+                                                    {milestone.participants}
+                                                </span>
                                             </div>
-                                            <h3 className="text-lg md:text-xl font-bold text-black mb-3">
+                                            <h3 className="text-xl lg:text-2xl font-bold text-gray-900 mb-4">
                                                 {milestone.title}
                                             </h3>
-                                            <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+                                            <p className="text-gray-600 mb-4 leading-relaxed text-lg">
                                                 {milestone.description}
                                             </p>
                                         </div>
                                     </div>
-                                </motion.div>
+                                </div>
                             ))}
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* Initiatives */}
-            <section className="py-16 md:py-24 bg-gray-50">
-                <div className="max-w-7xl mx-auto px-4 md:px-6">
-                    <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8 }}
-                        className="text-center mb-16"
-                    >
-                        <h2 className="text-2xl md:text-4xl font-bold mb-6 text-black">
-                            What We <span className="text-gray-600">Do</span>
+            {/* What We've Built */}
+            <section className="py-16 sm:py-20 lg:py-24 bg-gray-50">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="text-center mb-16 lg:mb-20">
+                        <div className="inline-flex items-center px-5 py-2.5 rounded-full bg-gradient-to-r from-purple-50 to-pink-50 border border-purple-200/60 mb-8 shadow-sm">
+                            <Rocket className="w-4 h-4 text-purple-600 mr-2" />
+                            <span className="text-sm font-semibold text-purple-700 tracking-wide">Our Impact</span>
+                        </div>
+                        
+                        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 mb-6 leading-tight">
+                            What We've
+                            <span className="relative inline-block mx-3">
+                                <span className="text-blue-600">Accomplished</span>
+                                <div className="absolute -bottom-1 left-0 right-0 h-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full" />
+                            </span>
+                            Together
                         </h2>
-                        <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                            Our platforms and initiatives connecting CS students
-                            across Pakistan
+                        
+                        <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed font-medium">
+                            Key achievements and platforms transforming the CS student experience in Pakistan.
                         </p>
-                    </motion.div>
+                    </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-                        {initiatives.map((initiative, index) => (
-                            <motion.div
-                                key={index}
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{
-                                    duration: 0.6,
-                                    delay: index * 0.1,
-                                }}
-                                className="bg-white p-6 rounded-2xl border border-gray-200 hover:border-gray-300 transition-all duration-300 group"
-                            >
-                                <div className="w-12 h-12 bg-black rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                                    <initiative.icon className="w-6 h-6 text-white" />
-                                </div>
-                                <h3 className="text-lg md:text-xl font-bold text-black mb-3">
-                                    {initiative.title}
-                                </h3>
-                                <p className="text-gray-600 text-sm md:text-base leading-relaxed mb-4">
-                                    {initiative.description}
-                                </p>
-                                <div className="flex items-center justify-between">
-                                    <div className="text-2xl font-bold text-black">
-                                        <CountUpNumber
-                                            end={initiative.stats.value}
-                                            suffix={initiative.stats.suffix}
-                                            duration={2.5}
-                                        />
-                                    </div>
-                                    <div className="text-xs text-gray-500 uppercase tracking-wider">
-                                        Active
+                    <div className="space-y-8 lg:space-y-12">
+                        {initiatives.map((initiative, index) => {
+                            const IconComponent = initiative.icon;
+                            return (
+                                <div key={index} className="border-b border-gray-200 pb-8 lg:pb-12 last:border-b-0">
+                                    <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 lg:gap-8 items-start">
+                                        <div className="lg:col-span-1">
+                                            <div className="flex items-center mb-4">
+                                                <div className={`w-12 h-12 bg-gradient-to-br ${initiative.color} rounded-xl flex items-center justify-center mr-4`}>
+                                                    <IconComponent className="w-6 h-6 text-blue-600" />
+                                                </div>
+                                                <div>
+                                                    <h3 className="text-xl lg:text-2xl font-bold text-gray-900">
+                                                        {initiative.title}
+                                                    </h3>
+                                                    <span className="text-sm font-medium text-green-600">
+                                                        {initiative.metric}
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div className="lg:col-span-3">
+                                            <p className="text-gray-600 leading-relaxed text-base lg:text-lg">
+                                                {initiative.description}
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
-                            </motion.div>
-                        ))}
+                            );
+                        })}
                     </div>
                 </div>
             </section>
 
             {/* Call to Action */}
-            <section className="py-16 md:py-24 bg-black text-white">
-                <div className="max-w-7xl mx-auto px-4 md:px-6 text-center">
-                    <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8 }}
-                    >
-                        <h2 className="text-2xl md:text-4xl font-bold mb-6">
-                            Ready to{" "}
-                            <span className="text-gray-300">Join Us?</span>
+            <section className="py-16 sm:py-20 lg:py-24 bg-white">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                    <div className="max-w-3xl mx-auto">
+                        <div className="inline-flex items-center px-5 py-2.5 rounded-full bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200/60 mb-8 shadow-sm">
+                            <Sparkles className="w-4 h-4 text-green-600 mr-2" />
+                            <span className="text-sm font-semibold text-green-700 tracking-wide">Join the Movement</span>
+                        </div>
+                        
+                        <h2 className="text-3xl lg:text-4xl font-black text-gray-900 mb-6 leading-tight">
+                            Ready to Be Part of
+                            <span className="text-blue-600"> Pakistan's Tech Future?</span>
                         </h2>
-                        <p className="text-base md:text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed mb-8">
-                            Become part of Pakistan's largest CS student
-                            community and connect with{" "}
-                            <CountUpNumber
-                                end={2000}
-                                suffix="+"
-                                duration={2}
-                                className="font-bold text-white"
-                            />{" "}
-                            like-minded peers
+                        
+                        <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+                            Join 2,000+ brilliant CS students who are already shaping the future of technology in Pakistan. 
+                            Connect, learn, grow, and succeed together.
                         </p>
-                        <motion.button
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                            className="bg-white text-black px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-100 transition-all duration-300"
-                        >
-                            Join CS Connect Pakistan
-                        </motion.button>
-                    </motion.div>
+                        
+                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                            <Link 
+                                to="/join" 
+                                className="group inline-flex items-center justify-center px-8 lg:px-10 py-4 lg:py-5 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition-all duration-300 font-semibold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+                            >
+                                <Sparkles className="mr-3 w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
+                                Join Our Community
+                            </Link>
+                            <Link 
+                                to="/team" 
+                                className="group inline-flex items-center justify-center px-8 lg:px-10 py-4 lg:py-5 border-2 border-gray-300 text-gray-700 rounded-xl hover:border-gray-400 hover:text-gray-900 hover:bg-gray-50 transition-all duration-300 font-semibold text-lg"
+                            >
+                                Meet Our Team
+                            </Link>
+                        </div>
+                    </div>
                 </div>
             </section>
-        </motion.div>
+        </div>
     );
 };
 

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Brain, Menu, X } from "lucide-react";
+import { Menu, X, Sparkles } from "lucide-react";
 
 interface SmartNavbarProps {
     className?: string;
@@ -21,96 +21,109 @@ const SmartNavbar: React.FC<SmartNavbarProps> = ({ className = "" }) => {
 
     const isActive = (path: string) => location.pathname === path;
 
+    const handleNavClick = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        setIsMenuOpen(false);
+    };
+
     return (
-        <nav
-            className={`sticky top-0 left-0 right-0 z-50 bg-white border-b border-gray-200 shadow-sm ${className}`}
-        >
+        <nav className={`fixed top-0 left-0 right-0 z-[100] bg-white/95 backdrop-blur-md border-b border-gray-200/60 shadow-sm ${className}`}>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex items-center justify-between h-16">
+                <div className="flex items-center justify-between h-16 sm:h-17 lg:h-18">
                     <Link
                         to="/"
-                        className="flex items-center space-x-2 sm:space-x-3 flex-shrink-0"
+                        onClick={handleNavClick}
+                        className="group flex items-center space-x-2 sm:space-x-3 flex-shrink-0 hover:scale-105 transition-transform duration-300"
                     >
-                        <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-black to-gray-800 flex items-center justify-center">
-                          <img
-                            src="logo.png" // Update the path to the correct location of your image
-                            alt="Logo"
-                            className="w-9 h-9 sm:w-9 sm:h-9"
-                          />
+                        <div className="w-9 h-9 sm:w-10 sm:h-10 lg:w-11 lg:h-11 rounded-xl bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300">
+                            <img
+                                src="white_logo.png"
+                                alt="CS Connect Pakistan"
+                                className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7"
+                            />
                         </div>
                         <div className="flex flex-col">
-                            <span className="font-bold text-base sm:text-lg text-gray-900">
+                            <span className="font-black text-base sm:text-lg lg:text-xl text-gray-900 group-hover:text-blue-600 transition-colors duration-300">
                                 CS Connect
                             </span>
-                            <span className="text-xs sm:text-sm text-black-600 font-medium">
+                            <span className="text-xs sm:text-sm text-gray-600 font-semibold -mt-0.5 sm:-mt-1">
                                 Pakistan
                             </span>
                         </div>
                     </Link>
 
                     {/* Desktop Navigation */}
-                    <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
+                    <div className="hidden md:flex items-center space-x-1 lg:space-x-2">
                         {navItems.map((item) => (
                             <Link
                                 key={item.name}
                                 to={item.path}
-                                className={`px-3 py-2 text-sm font-medium transition-colors duration-200 ${
+                                onClick={handleNavClick}
+                                className={`relative px-3 lg:px-4 py-2 text-sm lg:text-base font-semibold transition-all duration-300 rounded-lg hover:bg-gray-50 ${
                                     isActive(item.path)
-                                        ? "text-green-600 border-b-2 border-green-600"
-                                        : "text-black-700 hover:text-gray-600"
+                                        ? "text-blue-600"
+                                        : "text-gray-700 hover:text-blue-600"
                                 }`}
                             >
                                 {item.name}
+                                {isActive(item.path) && (
+                                    <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-blue-600 rounded-full" />
+                                )}
                             </Link>
                         ))}
 
-                        {/* Join Us Button */}
-                        <Link to="/join">
-                            <button className="bg-black text-white px-4 lg:px-6 py-2 rounded-lg font-medium hover:bg-gray-700 transition-colors duration-200 text-sm">
-                                Join Us
-                            </button>
-                        </Link>
+                        <div className="ml-3 lg:ml-6">
+                            <Link to="/join" onClick={handleNavClick}>
+                                <button className="group inline-flex items-center bg-blue-600 text-white px-4 lg:px-6 py-2 lg:py-2.5 rounded-xl font-semibold hover:bg-blue-700 transition-all duration-300 text-sm lg:text-base shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                                    <Sparkles className="mr-1.5 lg:mr-2 w-3.5 h-3.5 lg:w-4 lg:h-4 group-hover:rotate-12 transition-transform duration-300" />
+                                    Join Us
+                                </button>
+                            </Link>
+                        </div>
                     </div>
 
                     {/* Mobile Menu Button */}
                     <button
                         onClick={() => setIsMenuOpen(!isMenuOpen)}
-                        className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200 flex-shrink-0"
+                        className="md:hidden p-2 sm:p-2.5 rounded-xl hover:bg-gray-100 transition-colors duration-300 group min-w-[44px] min-h-[44px] flex items-center justify-center"
                         aria-label="Toggle navigation menu"
                     >
                         {isMenuOpen ? (
-                            <X className="w-6 h-6" />
+                            <X className="w-5 h-5 sm:w-6 sm:h-6 text-gray-700 group-hover:text-blue-600 transition-colors duration-300" />
                         ) : (
-                            <Menu className="w-6 h-6" />
+                            <Menu className="w-5 h-5 sm:w-6 sm:h-6 text-gray-700 group-hover:text-blue-600 transition-colors duration-300" />
                         )}
                     </button>
                 </div>
 
                 {/* Mobile Navigation */}
                 {isMenuOpen && (
-                    <div className="md:hidden border-t border-gray-200 bg-white">
-                        <div className="px-2 pt-2 pb-3 space-y-1 max-h-screen overflow-y-auto">
+                    <div className="md:hidden border-t border-gray-200/60 bg-white/95 backdrop-blur-md">
+                        <div className="px-2 sm:px-4 pt-3 sm:pt-4 pb-4 sm:pb-6 space-y-1 sm:space-y-2">
                             {navItems.map((item) => (
                                 <Link
                                     key={item.name}
                                     to={item.path}
-                                    onClick={() => setIsMenuOpen(false)}
-                                    className={`block px-3 py-3 text-base font-medium rounded-lg transition-colors duration-200 ${
+                                    onClick={handleNavClick}
+                                    className={`block px-3 sm:px-4 py-3 text-base font-semibold rounded-xl transition-all duration-300 min-h-[44px] flex items-center ${
                                         isActive(item.path)
-                                            ? "text-green-600 bg-green-50"
-                                            : "text-gray-700 hover:text-green-600 hover:bg-gray-50"
+                                            ? "text-blue-600 bg-blue-50 border border-blue-200/60"
+                                            : "text-gray-700 hover:text-blue-600 hover:bg-gray-50"
                                     }`}
                                 >
                                     {item.name}
                                 </Link>
                             ))}
-                            <Link
-                                to="/join"
-                                onClick={() => setIsMenuOpen(false)}
-                                className="block w-full text-center bg-green-600 text-white px-3 py-3 rounded-lg font-medium hover:bg-green-700 transition-colors duration-200 mt-4"
-                            >
-                                Join Us
-                            </Link>
+                            <div className="pt-2 sm:pt-4">
+                                <Link
+                                    to="/join"
+                                    onClick={handleNavClick}
+                                    className="group flex items-center justify-center w-full bg-blue-600 text-white px-3 sm:px-4 py-3 rounded-xl font-bold hover:bg-blue-700 transition-all duration-300 shadow-lg min-h-[44px]"
+                                >
+                                    <Sparkles className="mr-2 w-4 h-4 group-hover:rotate-12 transition-transform duration-300" />
+                                    Join Our Community
+                                </Link>
+                            </div>
                         </div>
                     </div>
                 )}

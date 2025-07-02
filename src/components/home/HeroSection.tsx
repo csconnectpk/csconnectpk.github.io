@@ -1,228 +1,83 @@
 import React from 'react'
-import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { ArrowRight, CheckCircle } from 'lucide-react'
-// import Background3D from '../Background3D'
+import { ArrowRight, Users, Building, BookOpen, Sparkles } from 'lucide-react'
 
 const HeroSection: React.FC = () => {
-  const textVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.8,
-        staggerChildren: 0.2,
-        ease: [0.25, 0.46, 0.45, 0.94]
-      }
-    }
-  }
-
-  const wordVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }
-    }
-  }
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.3
-      }
-    }
-  }
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.5,
-        ease: "easeOut"
-      }
-    }
-  }
-
-  const features = [
-    "Quality-first development",
-    "Competitive pricing",
-    "On-time delivery"
-  ]
-
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-white to-gray-50">
-      {/* 3D Background */}
-      {/* <Background3D /> */}
-
+    <section className="relative bg-white overflow-hidden">
+      {/* Subtle background elements */}
+      <div className="absolute inset-0 bg-gradient-to-b from-gray-50/30 via-white to-white" />
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
+      
       {/* Content */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-24">
-        <motion.div 
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-          className="text-center"
-        >
-          {/* Badge */}
-          <motion.div
-            variants={itemVariants}
-            className="inline-flex items-center px-4 py-2 rounded-full bg-gray-100 border border-gray-200 mb-8 mx-auto"
-          >
-            <motion.div 
-              animate={{ 
-                scale: [1, 1.2, 1],
-                opacity: [1, 0.8, 1]
-              }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-              className="w-2 h-2 bg-green-500 rounded-full mr-3"
-            />
-            <span className="text-sm font-medium text-gray-700">Available for New Projects</span>
-          </motion.div>
+      <div className="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-8 pt-24 sm:pt-32 lg:pt-40 pb-16 sm:pb-20 lg:pb-24">
+        <div className="text-center max-w-5xl mx-auto">
+          
+          {/* Status Badge */}
+          <div className="inline-flex items-center px-5 py-3 sm:px-6 sm:py-3 rounded-full bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200/60 mb-8 sm:mb-10 lg:mb-12 shadow-sm hover:shadow-md transition-shadow duration-300">
+            <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-green-500 rounded-full mr-3 sm:mr-3 animate-pulse" />
+            <span className="text-lg sm:text-base font-semibold text-green-700 tracking-wide">Pakistan's Fastest Growing CS Community</span>
+          </div>
 
           {/* Main Heading */}
-          <motion.div
-            variants={textVariants}
-            className="mb-8 max-w-4xl mx-auto"
-          >
-            <motion.h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight tracking-tight">
-              <motion.span 
-                variants={wordVariants}
-                className="block"
-              >
-                Professional
-              </motion.span>
-              <motion.span 
-                variants={wordVariants}
-                className="block"
-              >
-                Software
-              </motion.span>
-              <motion.span 
-                variants={wordVariants}
-                className="block text-black"
-              >
-                Development
-              </motion.span>
-              <motion.span 
-                variants={wordVariants}
-                className="block text-gray-600"
-              >
-                in Pakistan
-              </motion.span>
-            </motion.h1>
-          </motion.div>
+          <h1 className="text-5xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-gray-900 mb-6 sm:mb-8 leading-[1.1] sm:leading-[1.05] tracking-tight px-0">
+            <span className="block mb-2 sm:mb-1">Where Pakistan's</span>
+            <span className="relative inline-block">
+              <span className="text-blue-600">Brightest Minds</span>
+              <div className="absolute -bottom-1 sm:-bottom-1.5 left-0 right-0 h-1 sm:h-1.5 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full" />
+            </span>
+            <span className="block mt-2 sm:mt-1">Connect & Create</span>
+          </h1>
 
           {/* Subtitle */}
-          <motion.div
-            variants={itemVariants}
-            className="max-w-2xl mx-auto mb-12"
-          >
-            <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
-              Quality web development, mobile apps, and digital solutions at competitive prices. 
-              We deliver what we promise, when we promise.
-            </p>
-          </motion.div>
-
-          {/* Features */}
-          <motion.div
-            variants={itemVariants}
-            className="flex flex-wrap justify-center gap-6 mb-12"
-          >
-            {features.map((feature, index) => (
-              <motion.div
-                key={index}
-                variants={itemVariants}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="flex items-center space-x-2"
-              >
-                <CheckCircle className="w-5 h-5 text-gray-500" />
-                <span className="text-gray-700 font-medium">{feature}</span>
-              </motion.div>
-            ))}
-          </motion.div>
+          <p className="text-xl sm:text-xl lg:text-2xl xl:text-2xl text-gray-600 mb-10 sm:mb-12 lg:mb-16 leading-relaxed max-w-4xl mx-auto font-medium px-6 sm:px-0">
+            <span className="block sm:inline">Join 2,000+ computer science students from</span>
+            <span className="block sm:inline"> FAST, NUST, LUMS, GIKI, and 50+ universities across Pakistan.</span>
+            <span className="block mt-2"> Share knowledge, build projects, find opportunities,</span>
+            <span className="block sm:inline"> and shape the future of tech in Pakistan.</span>
+          </p>
 
           {/* CTA Buttons */}
-          <motion.div
-            variants={itemVariants}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-          >
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 lg:gap-8 justify-center items-center mb-16 sm:mb-20 lg:mb-24 px-6 sm:px-0">
+            <Link
+              to="/join"
+              className="group inline-flex items-center justify-center w-auto px-8 sm:px-10 lg:px-12 py-5 sm:py-5 lg:py-6 bg-blue-600 text-white rounded-2xl hover:bg-blue-700 transition-all duration-300 font-semibold text-xl sm:text-xl shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
             >
-              <Link
-                to="/contact"
-                className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors duration-200 font-medium text-lg group"
-              >
-                <motion.span
-                  initial={{ x: 0 }}
-                  whileHover={{ x: 5 }}
-                  className="flex items-center"
-                >
-                  Start Your Project
-                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </motion.span>
-              </Link>
-            </motion.div>
+              <Sparkles className="mr-3 w-6 h-6 sm:w-6 sm:h-6 group-hover:rotate-12 transition-transform duration-300" />
+              Join Community Now
+              <ArrowRight className="ml-3 w-6 h-6 sm:w-6 sm:h-6 group-hover:translate-x-1 transition-transform duration-300" />
+            </Link>
             
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+            <Link
+              to="/about"
+              className="group inline-flex items-center justify-center w-auto px-8 sm:px-10 lg:px-12 py-5 sm:py-5 lg:py-6 border-2 border-gray-300 text-gray-700 rounded-2xl hover:border-gray-400 hover:text-gray-900 hover:bg-gray-50 transition-all duration-300 font-semibold text-xl sm:text-xl"
             >
-              <Link
-                to="/portfolio"
-                className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 border-2 border-gray-300 text-gray-700 rounded-lg hover:border-gray-400 hover:text-gray-900 transition-colors duration-200 font-medium text-lg"
-              >
-                View Our Work
-              </Link>
-            </motion.div>
-          </motion.div>
+              Learn Our Story
+              <ArrowRight className="ml-3 w-6 h-6 sm:w-6 sm:h-6 group-hover:translate-x-1 transition-transform duration-300" />
+            </Link>
+          </div>
 
-          {/* Stats */}
-          <motion.div
-            variants={containerVariants}
-            className="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-20 pt-16 border-t border-gray-200"
-          >
-            {[
-              { value: '50+', label: 'Projects Delivered' },
-              { value: '98%', label: 'Client Satisfaction' },
-              { value: '24/7', label: 'Support Available' }
-            ].map((stat, index) => (
-              <motion.div
-                key={index}
-                variants={itemVariants}
-                whileHover={{ y: -5 }}
-                className="text-center"
-              >
-                <motion.div
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{
-                    type: "spring",
-                    stiffness: 260,
-                    damping: 20,
-                    delay: 1.2 + index * 0.1
-                  }}
-                  className="text-3xl md:text-4xl font-bold text-black mb-2"
-                >
-                  {stat.value}
-                </motion.div>
-                <div className="text-gray-600 font-medium">{stat.label}</div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </motion.div>
+          {/* Stats Section */}
+          <div className="grid grid-cols-2 sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 max-w-2xl mx-auto px-6 sm:px-0">
+            <div className="text-center bg-white/50 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-white/20 shadow-lg">
+              <div className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 mb-1 sm:mb-2">
+                2,000+
+              </div>
+              <div className="text-gray-700 font-semibold text-xs sm:text-sm lg:text-base">
+                Active Students
+              </div>
+            </div>
+            
+            <div className="text-center bg-white/50 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-white/20 shadow-lg">
+              <div className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 mb-1 sm:mb-2">
+                50+
+              </div>
+              <div className="text-gray-700 font-semibold text-xs sm:text-sm lg:text-base">
+                Universities
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   )

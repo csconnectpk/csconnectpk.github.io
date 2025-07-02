@@ -94,6 +94,36 @@ const Pricing: React.FC = () => {
       icon: '📚',
       value: 'Free',
       details: 'AI/ML, DevOps, programming guides, and industry insights'
+    },
+    {
+      title: 'Instagram Community',
+      price: 'Free',
+      description: 'Updates and community highlights on our Instagram page',
+      features: [
+        'Daily community updates',
+        'Success story highlights',
+        'Event announcements',
+        'Visual content sharing',
+        'Student spotlights'
+      ],
+      popular: false,
+      members: '300+',
+      cta: 'Follow on Instagram'
+    },
+    {
+      title: 'YouTube Channel',
+      price: 'Free',
+      description: 'Educational videos and tech content for Pakistani CS students',
+      features: [
+        'Tech tutorial videos',
+        'Career guidance content',
+        'Podcast episodes',
+        'Student interviews',
+        'Coding sessions'
+      ],
+      popular: false,
+      members: '300+',
+      cta: 'Subscribe on YouTube'
     }
   ]
 

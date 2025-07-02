@@ -92,17 +92,19 @@ const Services: React.FC = () => {
     },
     {
       name: 'Instagram',
-      description: '1,500+ followers for updates and community highlights',
       icon: Instagram,
-      members: '1,500+',
-      color: 'bg-pink-500'
+      description: '300+ followers for updates and community highlights',
+      category: 'Social Media',
+      members: '300+',
+      color: 'from-pink-500 to-rose-500'
     },
     {
-      name: 'YouTube Channel',
-      description: '500+ subscribers for educational content and sessions',
+      name: 'YouTube',
       icon: Youtube,
-      members: '500+',
-      color: 'bg-red-500'
+      description: '300+ subscribers for educational content and sessions',
+      category: 'Educational',
+      members: '300+',
+      color: 'from-red-500 to-red-600'
     }
   ]
 
@@ -167,50 +169,51 @@ const Services: React.FC = () => {
               What We <span className="text-gray-600">Offer</span>
             </h2>
             <p className="text-lg md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              Everything you need to succeed in your CS journey
+              Simple, authentic community services for CS students
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          <div className="space-y-12 lg:space-y-16">
             {communityServices.map((service, index) => (
               <motion.div
                 key={service.id}
-                initial={{ opacity: 0, y: 50 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
-                whileHover={{ y: -10, scale: 1.02 }}
-                className="bg-gray-50 p-6 md:p-8 rounded-3xl hover:shadow-xl transition-all duration-500 group border border-gray-100 hover:border-black/20"
+                className="border-b border-gray-200 pb-8 lg:pb-12 last:border-b-0"
               >
-                <motion.div
-                  whileHover={{ scale: 1.2, rotate: 10 }}
-                  className="w-12 md:w-16 h-12 md:h-16 bg-black rounded-2xl flex items-center justify-center mb-4 md:mb-6 group-hover:bg-gray-800 transition-colors duration-300"
-                >
-                  <service.icon className="w-6 md:w-8 h-6 md:h-8 text-white" />
-                </motion.div>
-                
-                <h3 className="text-lg md:text-2xl font-bold mb-3 md:mb-4 group-hover:text-gray-700 transition-colors text-black">
-                  {service.title}
-                </h3>
-                
-                <p className="text-gray-600 leading-relaxed mb-4 md:mb-6 text-sm md:text-base">
-                  {service.description}
-                </p>
-
-                <ul className="space-y-1 md:space-y-2 mb-6 md:mb-8">
-                  {service.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="text-gray-600 text-xs md:text-sm flex items-center">
-                      <span className="w-1.5 md:w-2 h-1.5 md:h-2 bg-black rounded-full mr-2 md:mr-3"></span>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-
-                <div className="flex items-center justify-between">
-                  <span className="bg-black text-white px-3 py-1 rounded-full text-sm font-medium">
-                    {service.stats}
-                  </span>
-                  <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-black group-hover:translate-x-1 transition-all duration-300" />
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 items-start">
+                  <div className="lg:col-span-1">
+                    <div className="flex items-center mb-4">
+                      <div className="w-12 h-12 bg-black rounded-2xl flex items-center justify-center mr-4">
+                        <service.icon className="w-6 h-6 text-white" />
+                      </div>
+                      <div>
+                        <h3 className="text-xl lg:text-2xl font-bold text-black">
+                          {service.title}
+                        </h3>
+                        <span className="text-sm font-medium text-blue-600">
+                          {service.stats}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="lg:col-span-2">
+                    <p className="text-gray-600 leading-relaxed mb-4 text-base lg:text-lg">
+                      {service.description}
+                    </p>
+                    
+                    <ul className="space-y-2">
+                      {service.features.map((feature, featureIndex) => (
+                        <li key={featureIndex} className="text-gray-600 text-sm lg:text-base flex items-center">
+                          <span className="w-2 h-2 bg-black rounded-full mr-3"></span>
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               </motion.div>
             ))}
@@ -236,22 +239,30 @@ const Services: React.FC = () => {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="space-y-8 lg:space-y-12">
             {platforms.map((platform, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 50 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
-                className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-500 group border border-gray-100 hover:border-black/20"
+                className="border-b border-gray-200 pb-6 lg:pb-8 last:border-b-0"
               >
-                <div className={`w-12 h-12 ${platform.color} rounded-xl flex items-center justify-center mb-4`}>
-                  <platform.icon className="w-6 h-6 text-white" />
+                <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 lg:gap-6 items-center">
+                  <div className="flex items-center lg:col-span-1">
+                    <div className={`w-12 h-12 ${platform.color} rounded-xl flex items-center justify-center mr-4`}>
+                      <platform.icon className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold text-black">{platform.name}</h3>
+                      <div className="text-xl font-bold text-black">{platform.members}</div>
+                    </div>
+                  </div>
+                  <div className="lg:col-span-3">
+                    <p className="text-gray-600 text-base lg:text-lg leading-relaxed">{platform.description}</p>
+                  </div>
                 </div>
-                <h3 className="text-lg font-bold text-black mb-2">{platform.name}</h3>
-                <p className="text-gray-600 mb-4 text-sm leading-relaxed">{platform.description}</p>
-                <div className="text-2xl font-bold text-black">{platform.members}</div>
               </motion.div>
             ))}
           </div>
@@ -273,9 +284,8 @@ const Services: React.FC = () => {
                 <br />
                 <span className="text-gray-600">Our Community?</span>
               </h2>
-              <p className="text-lg md:text-2xl text-gray-600 mb-8 md:mb-12 leading-relaxed">
-                We provide the support, resources, and connections you need 
-                to excel in your CS journey and beyond.
+              <p className="text-lg md:text-xl text-gray-600 mb-8 md:mb-12 leading-relaxed">
+                Join a supportive community of CS students building their tech careers together.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-6">
@@ -305,7 +315,7 @@ const Services: React.FC = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="grid gap-6"
+              className="space-y-8 lg:space-y-10"
             >
               {benefits.map((benefit, index) => (
                 <motion.div
@@ -314,15 +324,15 @@ const Services: React.FC = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="bg-white p-6 rounded-2xl shadow-lg border border-gray-100 hover:border-black/20 transition-all duration-300"
+                  className="border-b border-gray-200 pb-6 lg:pb-8 last:border-b-0"
                 >
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 bg-black rounded-xl flex items-center justify-center flex-shrink-0">
                       <benefit.icon className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold text-black mb-2">{benefit.title}</h3>
-                      <p className="text-gray-600 text-sm leading-relaxed">{benefit.description}</p>
+                      <h3 className="text-lg lg:text-xl font-bold text-black mb-2">{benefit.title}</h3>
+                      <p className="text-gray-600 text-base lg:text-lg leading-relaxed">{benefit.description}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -350,58 +360,72 @@ const Services: React.FC = () => {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <motion.a
-              href="https://unicalc.vercel.app"
-              target="_blank"
-              rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 50 }}
+          <div className="space-y-8 lg:space-y-12 max-w-4xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              whileHover={{ y: -10, scale: 1.02 }}
-              className="bg-white p-8 rounded-3xl shadow-lg hover:shadow-xl transition-all duration-500 group border border-gray-100 hover:border-black/20"
+              className="border-b border-gray-200 pb-8 lg:pb-12 last:border-b-0"
             >
-              <div className="w-16 h-16 bg-blue-500 rounded-2xl flex items-center justify-center mb-6">
-                <Code className="w-8 h-8 text-white" />
+              <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 lg:gap-8 items-center">
+                <div className="flex items-center lg:col-span-1">
+                  <div className="w-12 h-12 bg-blue-500 rounded-2xl flex items-center justify-center mr-4">
+                    <Code className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-bold text-black">UniCalc Calculator</h3>
+                    <a
+                      href="https://unicalc.vercel.app"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-600 font-medium text-sm hover:text-blue-700 transition-colors flex items-center"
+                    >
+                      Visit UniCalc
+                      <ExternalLink className="ml-1 w-4 h-4" />
+                    </a>
+                  </div>
+                </div>
+                <div className="lg:col-span-3">
+                  <p className="text-gray-600 text-base lg:text-lg leading-relaxed">
+                    University grade calculator for different grading systems including CGPA, GPA, and percentage calculations. Built by our community for students.
+                  </p>
+                </div>
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-black group-hover:text-gray-700 transition-colors">
-                UniCalc Calculator
-              </h3>
-              <p className="text-gray-600 leading-relaxed mb-6">
-                University grade calculator for different grading systems including CGPA, GPA, and percentage calculations.
-              </p>
-              <div className="flex items-center text-blue-600 font-medium">
-                Visit UniCalc
-                <ExternalLink className="ml-2 w-5 h-5" />
-              </div>
-            </motion.a>
+            </motion.div>
 
-            <motion.a
-              href="https://fastmock.vercel.app"
-              target="_blank"
-              rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 50 }}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.1 }}
-              whileHover={{ y: -10, scale: 1.02 }}
-              className="bg-white p-8 rounded-3xl shadow-lg hover:shadow-xl transition-all duration-500 group border border-gray-100 hover:border-black/20"
+              className="border-b border-gray-200 pb-8 lg:pb-12 last:border-b-0"
             >
-              <div className="w-16 h-16 bg-green-500 rounded-2xl flex items-center justify-center mb-6">
-                <BookOpen className="w-8 h-8 text-white" />
+              <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 lg:gap-8 items-center">
+                <div className="flex items-center lg:col-span-1">
+                  <div className="w-12 h-12 bg-green-500 rounded-2xl flex items-center justify-center mr-4">
+                    <BookOpen className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-bold text-black">FastMock Tests</h3>
+                    <a
+                      href="https://fastmock.vercel.app"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-green-600 font-medium text-sm hover:text-green-700 transition-colors flex items-center"
+                    >
+                      Start Mock Test
+                      <ExternalLink className="ml-1 w-4 h-4" />
+                    </a>
+                  </div>
+                </div>
+                <div className="lg:col-span-3">
+                  <p className="text-gray-600 text-base lg:text-lg leading-relaxed">
+                    Practice mock tests for university entry tests including FAST NAT, NUST NET, and other admission tests. Developed by students for students.
+                  </p>
+                </div>
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-black group-hover:text-gray-700 transition-colors">
-                FastMock Tests
-              </h3>
-              <p className="text-gray-600 leading-relaxed mb-6">
-                Practice mock tests for university entry tests including FAST NAT, NUST NET, and other admission tests.
-              </p>
-              <div className="flex items-center text-green-600 font-medium">
-                Start Mock Test
-                <ExternalLink className="ml-2 w-5 h-5" />
-              </div>
-            </motion.a>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -410,7 +434,7 @@ const Services: React.FC = () => {
       <section className="py-20 md:py-32 bg-black text-white">
         <div className="max-w-7xl mx-auto px-4 md:px-6 text-center">
           <motion.div
-            initial={{ opacity: 0, y: 50 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
@@ -421,7 +445,7 @@ const Services: React.FC = () => {
             </h2>
           </motion.div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="space-y-8 lg:space-y-12 max-w-4xl mx-auto">
             {[
               { number: '1,600+', label: 'Active Members', icon: Users },
               { number: '50+', label: 'Universities', icon: GraduationCap },
@@ -430,17 +454,31 @@ const Services: React.FC = () => {
             ].map((stat, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="text-center"
+                className="border-b border-white/20 pb-6 lg:pb-8 last:border-b-0"
               >
-                <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-                  <stat.icon className="w-6 h-6 text-white" />
+                <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 lg:gap-6 items-center">
+                  <div className="flex items-center justify-center lg:justify-start lg:col-span-1">
+                    <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center mr-4">
+                      <stat.icon className="w-6 h-6 text-white" />
+                    </div>
+                    <div className="text-left">
+                      <div className="text-3xl font-bold">{stat.number}</div>
+                      <div className="text-gray-400 text-sm font-medium">{stat.label}</div>
+                    </div>
+                  </div>
+                  <div className="lg:col-span-3 text-center lg:text-left">
+                    <p className="text-gray-300 text-base lg:text-lg">
+                      {stat.label === 'Active Members' && 'Growing community of passionate CS students from across Pakistan'}
+                      {stat.label === 'Universities' && 'Connected students from top universities nationwide'}
+                      {stat.label === 'Expert Sessions' && 'Industry sessions by professionals from leading tech companies'}
+                      {stat.label === 'Months Growth' && 'Rapid growth building Pakistan\'s largest CS community'}
+                    </p>
+                  </div>
                 </div>
-                <div className="text-3xl font-bold mb-2">{stat.number}</div>
-                <div className="text-gray-400 text-sm font-medium">{stat.label}</div>
               </motion.div>
             ))}
           </div>
