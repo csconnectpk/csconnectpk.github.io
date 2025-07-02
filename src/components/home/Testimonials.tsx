@@ -118,7 +118,7 @@ const Testimonials: React.FC = () => {
         
         {/* Section Header */}
         <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black text-gray-900 mb-4 sm:mb-6 leading-tight px-2 sm:px-0">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-black text-gray-900 mb-3 sm:mb-4 lg:mb-6 leading-tight">
             What Pakistani Students
             <br />
             <span className="relative inline-block">
@@ -127,15 +127,15 @@ const Testimonials: React.FC = () => {
             </span>
           </h2>
           
-          <p className="text-lg sm:text-xl lg:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed font-medium px-2 sm:px-0">
+          <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed font-medium">
             Real experiences from students across Pakistan's universities
           </p>
         </div>
 
         {/* Testimonial Slider */}
-        <div className="relative max-w-5xl mx-auto px-2 sm:px-4">
+        <div className="relative max-w-6xl mx-auto">
           {/* Testimonial Cards Container */}
-          <div className="relative min-h-[300px] sm:min-h-[350px] lg:min-h-[320px] overflow-hidden">
+          <div className="relative min-h-[280px] sm:min-h-[320px] lg:min-h-[280px] overflow-hidden">
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentIndex}
@@ -143,18 +143,18 @@ const Testimonials: React.FC = () => {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -100 }}
                 transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
-                className="absolute inset-0 flex items-center justify-center px-4 sm:px-8 lg:px-12"
+                className="absolute inset-0 flex items-center justify-center px-4 sm:px-6 lg:px-8"
               >
                 {/* Mobile Design - Clean without bubbles/cards */}
-                <div className="block sm:hidden w-full max-w-sm">
-                  <div className="text-center space-y-4">
+                <div className="block sm:hidden w-full max-w-lg mx-auto">
+                  <div className="text-center space-y-4 px-2">
                     {/* Quote */}
-                    <blockquote className="text-base text-gray-800 leading-relaxed font-medium">
+                    <blockquote className="text-base leading-relaxed text-gray-800 font-medium px-2">
                       "{testimonials[currentIndex].content}"
                     </blockquote>
 
                     {/* Author Info */}
-                    <div className="text-center space-y-1">
+                    <div className="text-center space-y-2 pt-2">
                       <div className="font-bold text-gray-900 text-lg">
                         {testimonials[currentIndex].name}
                       </div>
@@ -166,7 +166,7 @@ const Testimonials: React.FC = () => {
                 </div>
 
                 {/* Desktop Design - Keep the existing card design */}
-                <div className="hidden sm:block w-full max-w-4xl bg-white rounded-2xl p-8 lg:p-10 shadow-lg border border-gray-100">
+                <div className="hidden sm:block w-full max-w-4xl bg-white rounded-2xl p-6 sm:p-8 lg:p-10 shadow-lg border border-gray-100">
                   <div className="text-center space-y-6">
                     {/* Quote Icon */}
                     <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mx-auto">
@@ -184,7 +184,7 @@ const Testimonials: React.FC = () => {
                     </div>
 
                     {/* Quote */}
-                    <blockquote className="text-lg lg:text-xl xl:text-2xl text-gray-800 leading-relaxed font-medium max-w-3xl mx-auto">
+                    <blockquote className="text-lg lg:text-xl text-gray-800 leading-relaxed font-medium max-w-3xl mx-auto">
                       "{testimonials[currentIndex].content}"
                     </blockquote>
 
@@ -208,34 +208,32 @@ const Testimonials: React.FC = () => {
             </AnimatePresence>
           </div>
 
-          {/* Navigation Arrows - Hidden on mobile */}
-          <div className="hidden sm:block">
-            <button
-              onClick={goToPrevious}
-              className="absolute left-0 lg:left-4 top-1/2 transform -translate-y-1/2 w-10 h-10 lg:w-12 lg:h-12 bg-white border border-gray-200 rounded-full flex items-center justify-center hover:bg-gray-50 transition-all duration-300 shadow-lg z-10 opacity-75 hover:opacity-100"
-              aria-label="Previous testimonial"
-            >
-              <ChevronLeft className="w-5 h-5 lg:w-6 lg:h-6 text-gray-600" />
-            </button>
+          {/* Navigation Arrows */}
+          <button
+            onClick={goToPrevious}
+            className="absolute left-2 sm:left-4 lg:left-0 top-1/2 transform -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 bg-white hover:bg-gray-50 border border-gray-200 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 group z-10"
+            aria-label="Previous testimonial"
+          >
+            <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6 text-gray-600 group-hover:text-blue-600 transition-colors duration-300" />
+          </button>
 
-            <button
-              onClick={goToNext}
-              className="absolute right-0 lg:right-4 top-1/2 transform -translate-y-1/2 w-10 h-10 lg:w-12 lg:h-12 bg-white border border-gray-200 rounded-full flex items-center justify-center hover:bg-gray-50 transition-all duration-300 shadow-lg z-10 opacity-75 hover:opacity-100"
-              aria-label="Next testimonial"
-            >
-              <ChevronRight className="w-5 h-5 lg:w-6 lg:h-6 text-gray-600" />
-            </button>
-          </div>
+          <button
+            onClick={goToNext}
+            className="absolute right-2 sm:right-4 lg:right-0 top-1/2 transform -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 bg-white hover:bg-gray-50 border border-gray-200 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 group z-10"
+            aria-label="Next testimonial"
+          >
+            <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 text-gray-600 group-hover:text-blue-600 transition-colors duration-300" />
+          </button>
 
-          {/* Pagination Dots */}
-          <div className="flex justify-center space-x-2 mt-6 sm:mt-8">
+          {/* Dots Indicator */}
+          <div className="flex justify-center space-x-2 mt-8 sm:mt-10 lg:mt-12">
             {testimonials.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentIndex(index)}
-                className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
-                  index === currentIndex 
-                    ? 'bg-blue-600 w-6 sm:w-8' 
+                className={`w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
+                  index === currentIndex
+                    ? 'bg-blue-600 scale-125'
                     : 'bg-gray-300 hover:bg-gray-400'
                 }`}
                 aria-label={`Go to testimonial ${index + 1}`}
