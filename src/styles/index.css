@@ -184,6 +184,21 @@ a {
     margin-left: auto !important;
     margin-right: auto !important;
   }
+  
+  /* Perfect button centering on mobile */
+  .flex {
+    justify-content: center !important;
+    align-items: center !important;
+  }
+  
+  /* Button container perfect center */
+  div:has(> a > button),
+  div:has(> button) {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+  }
 }
 
 /* Responsive animations */
@@ -380,14 +395,7 @@ a {
   .btn-primary,
   .btn-secondary {
     min-height: 44px !important; /* Apple/Google recommended touch target */
-    font-size: 1rem !important; /* 16px for button text */
-    padding: 0.75rem 1rem !important; /* Compact padding */
-    width: auto !important; /* Fit content width */
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    white-space: nowrap !important;
-    text-align: center !important;
+    font-size: 16px !important; /* Prevent zoom on mobile */
   }
   
   /* Better form inputs on mobile */

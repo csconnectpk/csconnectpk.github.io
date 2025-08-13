@@ -35,20 +35,24 @@ const HeroSection: React.FC = () => {
           </p>
 
           {/* Buttons - Perfect Mobile Center Alignment */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 sm:mb-16 w-full px-4">
-            <Link to="/join" className="w-full max-w-xs sm:w-auto sm:max-w-none">
-              <button className="group flex items-center justify-center bg-blue-600 text-white px-6 py-3 rounded-xl font-semibold text-base hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 active:scale-95 w-full min-h-[48px] touch-manipulation">
-                <Users className="mr-2 w-5 h-5 group-hover:scale-110 transition-transform duration-300 flex-shrink-0" />
-                <span>Join Community</span>
-              </button>
-            </Link>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 sm:mb-16 w-full">
+            <div className="flex justify-center w-full">
+              <Link to="/join">
+                <button className="group flex items-center justify-center bg-blue-600 text-white px-6 py-3 rounded-xl font-semibold text-base hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 active:scale-95 min-h-[48px] touch-manipulation">
+                  <Users className="mr-2 w-5 h-5 group-hover:scale-110 transition-transform duration-300 flex-shrink-0" />
+                  <span>Join Community</span>
+                </button>
+              </Link>
+            </div>
             
-            <Link to="/about" className="w-full max-w-xs sm:w-auto sm:max-w-none">
-              <button className="group flex items-center justify-center border-2 border-gray-300 text-gray-700 px-6 py-3 rounded-xl font-semibold text-base hover:border-blue-600 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 active:scale-95 w-full min-h-[48px] touch-manipulation">
-                <BookOpen className="mr-2 w-5 h-5 group-hover:scale-110 transition-transform duration-300 flex-shrink-0" />
-                <span>Our Story</span>
-              </button>
-            </Link>
+            <div className="flex justify-center w-full">
+              <Link to="/about">
+                <button className="group flex items-center justify-center border-2 border-gray-300 text-gray-700 px-6 py-3 rounded-xl font-semibold text-base hover:border-blue-600 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 active:scale-95 min-h-[48px] touch-manipulation">
+                  <BookOpen className="mr-2 w-5 h-5 group-hover:scale-110 transition-transform duration-300 flex-shrink-0" />
+                  <span>Our Story</span>
+                </button>
+              </Link>
+            </div>
           </div>
 
           {/* Simple Action Cards - Perfect Mobile Alignment */}
