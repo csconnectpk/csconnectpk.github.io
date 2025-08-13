@@ -22,7 +22,7 @@ const CTA: React.FC = () => {
           </div>
           
           {/* Main Heading */}
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-black mb-6 sm:mb-8 lg:mb-10 leading-tight">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-black mb-10 sm:mb-12 lg:mb-16 leading-tight">
             Ready to Connect with
             <br />
             <span className="relative inline-block">
@@ -33,10 +33,8 @@ const CTA: React.FC = () => {
             </span>
           </h2>
           
-
-          
-          {/* Stats Cards */}
-          <div className="space-y-4 max-w-sm mx-auto px-4">
+          {/* Stats Cards - Extra Mobile Spacing */}
+          <div className="space-y-6 max-w-sm mx-auto px-4 mt-8 sm:mt-0">
             
             <div className="group relative p-4 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500">
               {/* Glow Effect */}
