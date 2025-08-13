@@ -102,9 +102,9 @@ const App: React.FC = () => {
     return (
         <ErrorBoundary>
             <Router>
-                <div className="min-h-screen text-black">
+                <div className="min-h-screen text-black w-full overflow-x-hidden">
                     <SmartNavbar />
-                    <main>
+                    <main className="w-full overflow-x-hidden">
                         <React.Suspense fallback={<LoadingPage />}>
                             <Routes>
                                 <Route

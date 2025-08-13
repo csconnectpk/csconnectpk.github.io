@@ -34,54 +34,53 @@ const CTA: React.FC = () => {
           </h2>
           
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-stretch sm:items-center mb-12 sm:mb-16 lg:mb-20 px-4 sm:px-0">
+          <div className="flex flex-col gap-4 justify-center items-center mb-12 sm:mb-16 lg:mb-20 px-4 max-w-md mx-auto">
             <Link 
               to="/join" 
-              className="group inline-flex items-center justify-center px-6 py-3 sm:px-7 sm:py-3.5 bg-white text-gray-900 rounded-xl hover:bg-gray-100 transition-all duration-300 font-bold text-base shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
+              className="group inline-flex items-center justify-center px-4 py-3 sm:px-6 sm:py-3.5 bg-white text-gray-900 rounded-xl hover:bg-gray-100 transition-all duration-300 font-bold text-sm sm:text-base shadow-xl hover:shadow-2xl transform hover:-translate-y-1 w-full"
             >
-              <Sparkles className="mr-2 sm:mr-3 w-4 h-4 sm:w-5 sm:h-5 group-hover:rotate-12 transition-transform duration-300" />
-              Join WhatsApp Community
-              <ArrowRight className="ml-2 sm:ml-3 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-300" />
+              <Sparkles className="mr-2 w-4 h-4 group-hover:rotate-12 transition-transform duration-300" />
+              <span className="truncate">Join WhatsApp Community</span>
             </Link>
             
             <Link 
               to="/about" 
-              className="group inline-flex items-center justify-center px-6 py-3 sm:px-7 sm:py-3.5 border-2 border-white/30 text-white rounded-xl hover:border-white/50 hover:bg-white/5 backdrop-blur-sm transition-all duration-300 font-semibold text-base"
+              className="group inline-flex items-center justify-center px-4 py-3 sm:px-6 sm:py-3.5 border-2 border-white/30 text-white rounded-xl hover:border-white/50 hover:bg-white/5 backdrop-blur-sm transition-all duration-300 font-semibold text-sm sm:text-base w-full"
             >
-              Discover Our Story
-              <ArrowRight className="ml-2 sm:ml-3 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-300" />
+              <span className="truncate">Discover Our Story</span>
+              <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
             </Link>
           </div>
           
           {/* Stats Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 max-w-3xl mx-auto">
+          <div className="space-y-4 max-w-sm mx-auto px-4">
             
-            <div className="group relative p-4 sm:p-6 lg:p-8 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500">
+            <div className="group relative p-4 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500">
               {/* Glow Effect */}
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-blue-400/20 via-transparent to-purple-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl" />
               
-              <div className="relative flex items-center justify-center space-x-3 sm:space-x-4">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-lg sm:rounded-xl flex items-center justify-center group-hover:from-blue-400/30 group-hover:to-cyan-400/30 transition-all duration-300">
-                  <Users className="w-4 h-4 sm:w-5 sm:h-5 lg:w-7 lg:h-7 text-blue-400 group-hover:scale-110 transition-transform duration-300" />
+              <div className="relative flex items-center justify-center space-x-3">
+                <div className="w-10 h-10 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-lg flex items-center justify-center group-hover:from-blue-400/30 group-hover:to-cyan-400/30 transition-all duration-300 flex-shrink-0">
+                  <Users className="w-5 h-5 text-blue-400 group-hover:scale-110 transition-transform duration-300" />
                 </div>
-                <div className="text-left">
-                  <div className="text-xl sm:text-2xl lg:text-3xl font-black text-white mb-1">Connect</div>
+                <div className="text-left min-w-0 flex-1">
+                  <div className="text-lg sm:text-xl font-black text-white mb-1">Connect</div>
                   <div className="text-xs sm:text-sm text-gray-300 font-semibold">Active Community</div>
                   <div className="text-xs text-gray-400">Students helping students</div>
                 </div>
               </div>
             </div>
             
-            <div className="group relative p-4 sm:p-6 lg:p-8 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500">
+            <div className="group relative p-4 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-500">
               {/* Glow Effect */}
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-purple-400/20 via-transparent to-pink-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl" />
               
-              <div className="relative flex items-center justify-center space-x-3 sm:space-x-4">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-lg sm:rounded-xl flex items-center justify-center group-hover:from-purple-400/30 group-hover:to-pink-400/30 transition-all duration-300">
-                  <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5 lg:w-7 lg:h-7 text-purple-400 group-hover:scale-110 transition-transform duration-300" />
+              <div className="relative flex items-center justify-center space-x-3">
+                <div className="w-10 h-10 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-lg flex items-center justify-center group-hover:from-purple-400/30 group-hover:to-pink-400/30 transition-all duration-300 flex-shrink-0">
+                  <MessageCircle className="w-5 h-5 text-purple-400 group-hover:scale-110 transition-transform duration-300" />
                 </div>
-                <div className="text-left">
-                  <div className="text-xl sm:text-2xl lg:text-3xl font-black text-white mb-1">Support</div>
+                <div className="text-left min-w-0 flex-1">
+                  <div className="text-lg sm:text-xl font-black text-white mb-1">Support</div>
                   <div className="text-xs sm:text-sm text-gray-300 font-semibold">Always Available</div>
                   <div className="text-xs text-gray-400">Peer-to-peer help</div>
                 </div>
