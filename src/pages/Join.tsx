@@ -236,8 +236,7 @@ const Join: React.FC = () => {
                                                 {platform.description}
                                             </p>
                                             <div className="flex items-center space-x-4">
-                                                <span className="text-2xl font-bold text-black">{platform.members}</span>
-                                                <span className="text-gray-500">members</span>
+                                                <span className="text-lg font-medium text-blue-600">Active Community</span>
                                             </div>
                                         </div>
                                         <div className="flex-shrink-0">
@@ -302,13 +301,14 @@ const Join: React.FC = () => {
                             </div>
                         </div>
 
-                        <div className="bg-gray-50 p-6 sm:p-8 rounded-2xl">
-                            <h3 className="text-2xl sm:text-3xl font-bold mb-6 text-black">Send us a Message</h3>
-                            <form onSubmit={handleSubmit} className="space-y-6">
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div className="bg-gray-50 p-4 sm:p-6 lg:p-8 rounded-2xl">
+                            <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-4 sm:mb-6 text-black">Send us a Message</h3>
+                            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+                                {/* Mobile-first: Stack on mobile, grid on larger screens */}
+                                <div className="space-y-4 sm:space-y-6 lg:grid lg:grid-cols-2 lg:gap-6 lg:space-y-0">
                                     <div>
-                                        <label htmlFor="name" className="block text-lg font-medium text-gray-700 mb-2">
-                                            <User className="w-5 h-5 inline mr-2" />
+                                        <label htmlFor="name" className="block text-sm sm:text-base lg:text-lg font-medium text-gray-700 mb-2 sm:mb-3">
+                                            <User className="w-4 h-4 sm:w-5 sm:h-5 inline mr-2 align-text-bottom" />
                                             Full Name
                                         </label>
                                         <input
@@ -316,14 +316,15 @@ const Join: React.FC = () => {
                                             id="name"
                                             name="name"
                                             required
-                                            className="w-full px-4 py-4 rounded-xl border border-gray-300 focus:ring-2 focus:ring-black focus:border-transparent transition-all duration-200 text-lg min-h-[48px]"
+                                            autoComplete="name"
+                                            className="w-full px-3 py-3 sm:px-4 sm:py-4 rounded-xl border-2 border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 text-base sm:text-lg min-h-[48px] sm:min-h-[56px] touch-manipulation bg-white"
                                             placeholder="Enter your full name"
                                         />
                                     </div>
 
                                     <div>
-                                        <label htmlFor="email" className="block text-lg font-medium text-gray-700 mb-2">
-                                            <Mail className="w-5 h-5 inline mr-2" />
+                                        <label htmlFor="email" className="block text-sm sm:text-base lg:text-lg font-medium text-gray-700 mb-2 sm:mb-3">
+                                            <Mail className="w-4 h-4 sm:w-5 sm:h-5 inline mr-2 align-text-bottom" />
                                             Email Address
                                         </label>
                                         <input
@@ -331,15 +332,16 @@ const Join: React.FC = () => {
                                             id="email"
                                             name="email"
                                             required
-                                            className="w-full px-4 py-4 rounded-xl border border-gray-300 focus:ring-2 focus:ring-black focus:border-transparent transition-all duration-200 text-lg min-h-[48px]"
+                                            autoComplete="email"
+                                            className="w-full px-3 py-3 sm:px-4 sm:py-4 rounded-xl border-2 border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 text-base sm:text-lg min-h-[48px] sm:min-h-[56px] touch-manipulation bg-white"
                                             placeholder="Enter your email"
                                         />
                                     </div>
                                 </div>
 
                                 <div>
-                                    <label htmlFor="university" className="block text-lg font-medium text-gray-700 mb-2">
-                                        <GraduationCap className="w-5 h-5 inline mr-2" />
+                                    <label htmlFor="university" className="block text-sm sm:text-base lg:text-lg font-medium text-gray-700 mb-2 sm:mb-3">
+                                        <GraduationCap className="w-4 h-4 sm:w-5 sm:h-5 inline mr-2 align-text-bottom" />
                                         University/Institution
                                     </label>
                                     <input
@@ -347,21 +349,22 @@ const Join: React.FC = () => {
                                         id="university"
                                         name="university"
                                         required
-                                        className="w-full px-4 py-4 rounded-xl border border-gray-300 focus:ring-2 focus:ring-black focus:border-transparent transition-all duration-200 text-lg min-h-[48px]"
+                                        autoComplete="organization"
+                                        className="w-full px-3 py-3 sm:px-4 sm:py-4 rounded-xl border-2 border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 text-base sm:text-lg min-h-[48px] sm:min-h-[56px] touch-manipulation bg-white"
                                         placeholder="e.g., FAST NUCES, NUST, LUMS, GIKI"
                                     />
                                 </div>
 
                                 <div>
-                                    <label htmlFor="year" className="block text-lg font-medium text-gray-700 mb-2">
-                                        <Hash className="w-5 h-5 inline mr-2" />
+                                    <label htmlFor="year" className="block text-sm sm:text-base lg:text-lg font-medium text-gray-700 mb-2 sm:mb-3">
+                                        <Hash className="w-4 h-4 sm:w-5 sm:h-5 inline mr-2 align-text-bottom" />
                                         Current Year of Study
                                     </label>
                                     <select
                                         id="year"
                                         name="year"
                                         required
-                                        className="w-full px-4 py-4 rounded-xl border border-gray-300 focus:ring-2 focus:ring-black focus:border-transparent transition-all duration-200 text-lg min-h-[48px]"
+                                        className="w-full px-3 py-3 sm:px-4 sm:py-4 rounded-xl border-2 border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 text-base sm:text-lg min-h-[48px] sm:min-h-[56px] touch-manipulation appearance-none bg-white text-gray-900"
                                     >
                                         <option value="">Select your year</option>
                                         <option value="1st">1st Year</option>
@@ -375,34 +378,35 @@ const Join: React.FC = () => {
                                 </div>
 
                                 <div>
-                                    <label htmlFor="message" className="block text-lg font-medium text-gray-700 mb-2">
-                                        <MessageSquare className="w-5 h-5 inline mr-2" />
+                                    <label htmlFor="message" className="block text-sm sm:text-base lg:text-lg font-medium text-gray-700 mb-2 sm:mb-3">
+                                        <MessageSquare className="w-4 h-4 sm:w-5 sm:h-5 inline mr-2 align-text-bottom" />
                                         Message
                                     </label>
                                     <textarea
                                         id="message"
                                         name="message"
-                                        rows={5}
+                                        rows={4}
                                         required
-                                        className="w-full px-4 py-4 rounded-xl border border-gray-300 focus:ring-2 focus:ring-black focus:border-transparent transition-all duration-200 resize-none text-lg min-h-[120px]"
+                                        className="w-full px-3 py-3 sm:px-4 sm:py-4 rounded-xl border-2 border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 resize-y text-base sm:text-lg min-h-[120px] sm:min-h-[140px] touch-manipulation bg-white"
                                         placeholder="Tell us about yourself and how we can help you..."
                                     ></textarea>
                                 </div>
 
+                                {/* Enhanced submit button for mobile */}
                                 <button
                                     type="submit"
                                     disabled={isSubmitting}
-                                    className="w-full bg-black text-white px-8 py-4 rounded-xl font-semibold hover:bg-gray-800 transition-all duration-300 text-lg min-h-[56px] flex items-center justify-center"
+                                    className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 disabled:from-gray-400 disabled:to-gray-500 text-white px-4 py-4 sm:px-8 sm:py-4 rounded-xl font-semibold transition-all duration-300 text-base sm:text-lg min-h-[56px] sm:min-h-[64px] flex items-center justify-center shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 disabled:transform-none disabled:shadow-none touch-manipulation"
                                 >
                                     {isSubmitting ? (
                                         <>
                                             <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
-                                            Sending...
+                                            <span>Sending...</span>
                                         </>
                                     ) : (
                                         <>
-                                            <Send className="w-5 h-5 mr-2" />
-                                            Send Message
+                                            <Send className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+                                            <span>Send Message</span>
                                         </>
                                     )}
                                 </button>

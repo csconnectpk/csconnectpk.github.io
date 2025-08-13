@@ -738,8 +738,8 @@ const ProfessionalHomepage: React.FC = () => {
                 className="bg-white border border-gray-100 p-6 rounded-2xl hover:border-black/20 hover:shadow-lg transition-all duration-300 text-center group"
               >
                 <div className="relative mb-4">
-                  <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto group-hover:bg-gray-200 transition-colors duration-300">
-                    <User className="w-8 h-8 text-gray-600" />
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto group-hover:bg-gray-200 transition-colors duration-300">
+                    <User className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-gray-600" />
                   </div>
                 </div>
                 <h3 className="text-lg font-bold text-black mb-1">{member.name}</h3>

@@ -1,46 +1,11 @@
 import React, { useEffect } from "react";
-import { Play, Calendar, Mail, Youtube, Users, Mic, Sparkles } from "lucide-react";
+import { Mail, Youtube, Users, Mic, Sparkles } from "lucide-react";
 import { youtubeLink } from "../socialMediaLinks";
 
 const Podcasts: React.FC = () => {
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
-
-    const recentPodcasts = [
-        {
-            id: 1,
-            title: "How to Do CS Without Losing Inner Peace in a Fast-Paced World",
-            host: "Azan Waseem",
-            guest: "Sami Ullah Shah",
-            uploadDate: "June 15, 2025",
-            link: "https://youtu.be/NhPQtc92lus?si=y1E1C_r6k71WV1q1",
-        },
-        {
-            id: 2,
-            title: "Nauman Anwar: FAST, Telecom, Harvard, Business & Energy",
-            host: "Azan Waseem",
-            guest: "Nauman Anwar",
-            uploadDate: "May 20, 2025",
-            link: "https://youtu.be/iSq15mG1hTc?si=p3zLTGVoPaqMxMBn",
-        },
-        {
-            id: 3,
-            title: "From Pakistan to Ireland: The Journey of a Senior SWE",
-            host: "Azan Waseem",
-            guest: "Kashif Umair Liaqat",
-            uploadDate: "April 28, 2025",
-            link: "https://youtu.be/Uy6LhfnALzw?si=LSYpgdgUZZOLyKF5",
-        },
-        {
-            id: 4,
-            title: "Should CS Undergrads Pursue a Master's?",
-            host: "Talha Asghar",
-            guest: "Hamza Azhar",
-            uploadDate: "March 10, 2025",
-            link: "https://youtu.be/X1G7GZIz-ag?si=S11gBP9P7wUPU3hH",
-        },
-    ];
 
     return (
         <div className="min-h-screen">
@@ -92,33 +57,15 @@ const Podcasts: React.FC = () => {
                             </a>
                         </div>
 
-                        {/* Stats Section */}
-                        <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-2xl mx-auto">
-                            <div className="text-center p-3 sm:p-4 lg:p-6">
-                                <div className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-black text-gray-900 mb-1 sm:mb-2">
-                                    10+
-                                </div>
-                                <div className="text-gray-700 font-semibold text-xs sm:text-sm lg:text-base">
-                                    Episodes
-                                </div>
-                            </div>
-                            
-                            <div className="text-center p-3 sm:p-4 lg:p-6">
-                                <div className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-black text-gray-900 mb-1 sm:mb-2">
-                                    300+
-                                </div>
-                                <div className="text-gray-700 font-semibold text-xs sm:text-sm lg:text-base">
-                                    Subscribers
-                                </div>
-                            </div>
-
-                            <div className="col-span-2 lg:col-span-1 text-center p-3 sm:p-4 lg:p-6">
-                                <div className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-black text-gray-900 mb-1 sm:mb-2">
-                                    100%
-                                </div>
-                                <div className="text-gray-700 font-semibold text-xs sm:text-sm lg:text-base">
-                                    Free Content
-                                </div>
+                        {/* Mission Statement */}
+                        <div className="max-w-4xl mx-auto">
+                            <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-6 sm:p-8 border border-blue-100">
+                                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 text-center">
+                                    Our Mission
+                                </h3>
+                                <p className="text-base sm:text-lg text-gray-700 text-center leading-relaxed">
+                                    We create authentic conversations that inspire and guide CS students through real experiences, practical advice, and genuine insights from Pakistani tech professionals.
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -148,43 +95,27 @@ const Podcasts: React.FC = () => {
                         </div>
 
                         <div>
-                            <h3 className="text-3xl font-bold mb-8 text-black">Podcast Stats</h3>
-                            <div className="space-y-8">
-                                <div className="border-b border-gray-200 pb-6">
-                                    <div className="flex justify-between items-center">
-                                        <span className="text-gray-700 font-medium text-lg">WhatsApp Members</span>
-                                        <span className="text-4xl font-bold text-black">2,000+</span>
-                                    </div>
+                            <h3 className="text-3xl font-bold mb-8 text-black">Why We Do This</h3>
+                            <div className="space-y-6">
+                                <div className="bg-gray-50 p-6 rounded-xl">
+                                    <h4 className="font-bold text-black mb-3 text-lg">Bridge the Gap</h4>
+                                    <p className="text-gray-700 leading-relaxed">
+                                        We connect students with professionals who've walked similar paths, sharing real experiences that textbooks can't teach.
+                                    </p>
                                 </div>
-                                <div className="border-b border-gray-200 pb-6">
-                                    <div className="flex justify-between items-center">
-                                        <span className="text-gray-700 font-medium text-lg">Universities</span>
-                                        <span className="text-4xl font-bold text-black">50+</span>
-                                    </div>
+                                
+                                <div className="bg-gray-50 p-6 rounded-xl">
+                                    <h4 className="font-bold text-black mb-3 text-lg">Practical Guidance</h4>
+                                    <p className="text-gray-700 leading-relaxed">
+                                        Every conversation focuses on actionable advice - from technical skills to career decisions that actually matter.
+                                    </p>
                                 </div>
-                                <div className="border-b border-gray-200 pb-6">
-                                    <div className="flex justify-between items-center">
-                                        <span className="text-gray-700 font-medium text-lg">Discord Members</span>
-                                        <span className="text-4xl font-bold text-black">400+</span>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div className="mt-12 pt-8 border-t border-gray-300">
-                                <h4 className="font-bold text-black mb-4 text-xl">How We Record</h4>
-                                <div className="space-y-4 text-base text-gray-700">
-                                    <div className="flex justify-between items-center">
-                                        <strong>Platform:</strong> 
-                                        <span>Google Meet</span>
-                                    </div>
-                                    <div className="flex justify-between items-center">
-                                        <strong>Duration:</strong> 
-                                        <span>30-45 minutes</span>
-                                    </div>
-                                    <div className="flex justify-between items-center">
-                                        <strong>Format:</strong> 
-                                        <span>YouTube</span>
-                                    </div>
+                                
+                                <div className="bg-gray-50 p-6 rounded-xl">
+                                    <h4 className="font-bold text-black mb-3 text-lg">Community Building</h4>
+                                    <p className="text-gray-700 leading-relaxed">
+                                        Each episode strengthens our community by sharing diverse perspectives and fostering genuine connections.
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -192,63 +123,48 @@ const Podcasts: React.FC = () => {
                 </div>
             </section>
 
-            {/* Recent Podcasts */}
+            {/* What to Expect */}
             <section className="py-16 bg-gray-50">
                 <div className="max-w-6xl mx-auto px-4">
                     <div className="text-center mb-16">
                         <h2 className="text-3xl md:text-4xl font-bold mb-6 text-black">
-                            Recent <span className="text-gray-600">Episodes</span>
+                            What to <span className="text-gray-600">Expect</span>
                         </h2>
                         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                            Check out our latest conversations with professionals and alumni
+                            Our conversations cover the topics that matter most to CS students in Pakistan
                         </p>
                     </div>
 
-                    <div className="space-y-8">
-                        {recentPodcasts.map((podcast, index) => (
-                            <div
-                                key={podcast.id}
-                                className="bg-white p-8 rounded-2xl shadow-sm border border-gray-200"
-                            >
-                                <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 items-start">
-                                    <div className="lg:col-span-3">
-                                        <h3 className="text-2xl lg:text-2xl font-bold mb-4 text-black leading-tight">
-                                            {podcast.title}
-                                        </h3>
-                                        
-                                        <div className="space-y-2 mb-4">
-                                            <div className="flex items-center text-base text-gray-600">
-                                                <Mic className="w-4 h-4 mr-2" />
-                                                <span className="font-medium">Host:</span>
-                                                <span className="ml-1">{podcast.host}</span>
-                                            </div>
-                                            <div className="flex items-center text-base text-gray-600">
-                                                <Users className="w-4 h-4 mr-2" />
-                                                <span className="font-medium">Guest:</span>
-                                                <span className="ml-1">{podcast.guest}</span>
-                                            </div>
-                                            <div className="flex items-center text-base text-gray-600">
-                                                <Calendar className="w-4 h-4 mr-2" />
-                                                <span className="font-medium">Released:</span>
-                                                <span className="ml-1">{podcast.uploadDate}</span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div className="lg:col-span-1 flex lg:justify-end">
-                                        <a
-                                            href={podcast.link}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="inline-flex items-center bg-red-600 text-white px-6 py-3 sm:py-3 rounded-lg font-semibold text-lg sm:text-base hover:bg-red-700 transition-all duration-200"
-                                        >
-                                            <Play className="w-5 h-5 mr-2" />
-                                            Watch Now
-                                        </a>
-                                    </div>
-                                </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-200 text-center">
+                            <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-6">
+                                <Users className="w-6 h-6 text-blue-600" />
                             </div>
-                        ))}
+                            <h3 className="text-xl font-bold text-black mb-4">Career Journeys</h3>
+                            <p className="text-gray-600 leading-relaxed">
+                                Real stories from professionals who started where you are now - their challenges, decisions, and lessons learned.
+                            </p>
+                        </div>
+
+                        <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-200 text-center">
+                            <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mx-auto mb-6">
+                                <Sparkles className="w-6 h-6 text-green-600" />
+                            </div>
+                            <h3 className="text-xl font-bold text-black mb-4">Skill Development</h3>
+                            <p className="text-gray-600 leading-relaxed">
+                                Practical advice on building technical skills, choosing specializations, and staying current with technology.
+                            </p>
+                        </div>
+
+                        <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-200 text-center">
+                            <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mx-auto mb-6">
+                                <Mic className="w-6 h-6 text-purple-600" />
+                            </div>
+                            <h3 className="text-xl font-bold text-black mb-4">Industry Insights</h3>
+                            <p className="text-gray-600 leading-relaxed">
+                                Understanding Pakistan's tech landscape, opportunities, and how to navigate your career effectively.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </section>

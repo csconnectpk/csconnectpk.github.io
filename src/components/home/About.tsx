@@ -59,19 +59,19 @@ const About: React.FC = () => {
           <div className="lg:col-span-2 lg:pl-8 xl:pl-12">
             <div className="space-y-8 lg:space-y-12">
               <div className="text-center lg:text-right">
-                <div className="text-4xl sm:text-5xl lg:text-6xl font-black text-gray-900 mb-2">
-                  2,000+
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-black text-gray-900 mb-2">
+                  Connect
                 </div>
-                <div className="text-gray-700 font-semibold text-lg lg:text-xl mb-1">Active CS Students</div>
-                <div className="text-gray-500 text-base">Growing daily across Pakistan</div>
+                <div className="text-gray-700 font-semibold text-lg lg:text-xl mb-1">CS Students</div>
+                <div className="text-gray-500 text-base">From across Pakistan</div>
               </div>
               
               <div className="text-center lg:text-right">
-                <div className="text-4xl sm:text-5xl lg:text-6xl font-black text-gray-900 mb-2">
-                  50+
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-black text-gray-900 mb-2">
+                  Learn
                 </div>
-                <div className="text-gray-700 font-semibold text-lg lg:text-xl mb-1">Universities</div>
-                <div className="text-gray-500 text-base">Nationwide network</div>
+                <div className="text-gray-700 font-semibold text-lg lg:text-xl mb-1">Together</div>
+                <div className="text-gray-500 text-base">Share knowledge</div>
               </div>
               
               <div className="text-center lg:text-right">

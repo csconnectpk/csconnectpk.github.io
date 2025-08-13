@@ -24,7 +24,7 @@ const FAQ: React.FC = () => {
         },
         {
             question: "Which universities are represented?",
-            answer: "Our community includes students from 50+ universities across Pakistan including FAST, NUST, LUMS, GIKI, UET, COMSATS, and many others. We welcome students from all universities and colleges offering computer science programs.",
+            answer: "Our community includes students from universities across Pakistan including FAST, NUST, LUMS, GIKI, UET, COMSATS, and many others. We welcome students from all universities and colleges offering computer science programs.",
         },
         {
             question: "What kind of support can I get?",
@@ -36,7 +36,7 @@ const FAQ: React.FC = () => {
         },
         {
             question: "How active is the community?",
-            answer: "Our WhatsApp groups have daily active discussions with 2000+ members. Discord sees regular technical conversations among 400+ members. We publish podcast episodes and educational content regularly, creating multiple touchpoints for community engagement throughout the week.",
+            answer: "Our WhatsApp groups have daily active discussions. Discord sees regular technical conversations. We host regular sessions and create educational content for community engagement.",
         },
         {
             question: "Can recent graduates join?",
@@ -200,8 +200,8 @@ const FAQ: React.FC = () => {
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 max-w-5xl mx-auto">
                         {/* Email Option */}
                         <div className="text-center lg:text-left group">
-                            <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-2xl flex items-center justify-center mx-auto lg:mx-0 mb-6 group-hover:scale-110 transition-transform duration-300">
-                                <svg className="w-8 h-8 sm:w-10 sm:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <div className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-2xl flex items-center justify-center mx-auto lg:mx-0 mb-6 group-hover:scale-110 transition-transform duration-300">
+                                <svg className="w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                                 </svg>
                             </div>
@@ -220,7 +220,7 @@ const FAQ: React.FC = () => {
                             
                             <a
                                 href="mailto:csconnectpakistan@gmail.com"
-                                className="inline-flex items-center justify-center bg-black text-white px-8 sm:px-10 py-4 sm:py-5 rounded-xl font-semibold text-base sm:text-lg hover:bg-gray-800 transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl"
+                                className="inline-flex items-center justify-center bg-black text-white px-6 py-3 sm:px-7 sm:py-3.5 rounded-xl font-semibold text-base hover:bg-gray-800 transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl"
                             >
                                 Send Email
                                 <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -231,8 +231,8 @@ const FAQ: React.FC = () => {
 
                         {/* Join Community Option */}
                         <div className="text-center lg:text-left group">
-                            <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mx-auto lg:mx-0 mb-6 group-hover:scale-110 transition-transform duration-300">
-                                <svg className="w-8 h-8 sm:w-10 sm:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <div className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mx-auto lg:mx-0 mb-6 group-hover:scale-110 transition-transform duration-300">
+                                <svg className="w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                                 </svg>
                             </div>
@@ -251,7 +251,7 @@ const FAQ: React.FC = () => {
                             
                             <button
                                 onClick={() => window.location.href = '/join'}
-                                className="inline-flex items-center justify-center border-2 border-blue-600 text-blue-600 px-8 sm:px-10 py-4 sm:py-5 rounded-xl font-semibold text-base sm:text-lg hover:bg-blue-600 hover:text-white transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl"
+                                className="inline-flex items-center justify-center border-2 border-blue-600 text-blue-600 px-6 py-3 sm:px-7 sm:py-3.5 rounded-xl font-semibold text-base hover:bg-blue-600 hover:text-white transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl"
                             >
                                 Join Community
                                 <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

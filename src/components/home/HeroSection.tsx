@@ -4,71 +4,74 @@ import { ArrowRight, Users, Building, BookOpen, Sparkles } from 'lucide-react'
 
 const HeroSection: React.FC = () => {
   return (
-    <section className="relative bg-white overflow-hidden">
+    <section className="relative bg-white overflow-hidden min-h-[90vh] sm:min-h-screen flex items-center">
       {/* Subtle background elements */}
       <div className="absolute inset-0 bg-gradient-to-b from-gray-50/30 via-white to-white" />
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
       
       {/* Content */}
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 sm:pt-28 lg:pt-36 pb-12 sm:pb-16 lg:pb-20">
+      <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
         <div className="text-center max-w-6xl mx-auto">
           
-          {/* Smaller, refined badge for mobile */}
+          {/* Badge */}
           <div className="inline-flex items-center px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-gradient-to-r from-emerald-50 to-green-50 border border-emerald-200/60 mb-6 sm:mb-8 shadow-sm">
-            <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-emerald-600 mr-2" />
-            <span className="text-xs sm:text-sm font-bold text-emerald-700 tracking-wide">Pakistan's Fastest Growing CS Community</span>
+            <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-emerald-600 mr-2 flex-shrink-0" />
+            <span className="text-xs sm:text-sm font-bold text-emerald-700 tracking-wide">CS Student Community in Pakistan</span>
           </div>
 
-          {/* MUCH LARGER main heading - this is the primary text */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black mb-6 sm:mb-8 lg:mb-10 leading-tight text-gray-900 tracking-tight">
-            Connect Pakistan's
-            <br />
-            Brightest
-            <span className="relative inline-block ml-3">
-              <span className="text-blue-600">Minds</span>
-              <div className="absolute -bottom-1 sm:-bottom-1.5 left-0 right-0 h-1 sm:h-1.5 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full" />
+          {/* Main Heading - Fixed Text Wrapping */}
+          <h1 className="font-black mb-6 sm:mb-8 lg:mb-10 leading-[1.1] text-gray-900 tracking-tight">
+            <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
+              Connect Pakistan's
+            </span>
+            <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mt-2 sm:mt-3">
+              Brightest 
+              <span className="relative inline-block ml-2 sm:ml-3">
+                <span className="text-blue-600">Minds</span>
+                <div className="absolute -bottom-1 sm:-bottom-2 left-0 right-0 h-1 sm:h-1.5 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full" />
+              </span>
             </span>
           </h1>
 
-          {/* Better mobile subtitle */}
+          {/* Subtitle */}
           <p className="text-base sm:text-lg lg:text-xl text-gray-600 mb-8 sm:mb-10 lg:mb-12 leading-relaxed max-w-4xl mx-auto font-medium">
-            Join 2,000+ CS students from 50+ universities building Pakistan's largest tech community
+            Join CS students from universities across Pakistan
           </p>
 
-          {/* Buttons with smaller "Join Community Now" */}
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-8 sm:mb-10 lg:mb-12">
-            <Link to="/about">
-              <button className="group flex items-center bg-blue-600 text-white px-6 py-3 sm:px-7 sm:py-4 lg:px-8 lg:py-4 rounded-xl font-semibold text-sm sm:text-base lg:text-lg hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 w-full sm:w-auto min-w-[200px] sm:min-w-0">
-                <BookOpen className="mr-2 w-4 h-4 sm:w-4 sm:h-4 lg:w-5 lg:h-5 group-hover:scale-110 transition-transform duration-300" />
-                Learn Our Story
+          {/* Buttons - Improved Layout */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 sm:mb-16 max-w-md sm:max-w-none mx-auto">
+            <Link to="/join" className="w-full sm:w-auto">
+              <button className="group flex items-center justify-center bg-blue-600 text-white px-8 py-4 rounded-xl font-semibold text-base hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 active:scale-95 w-full sm:w-auto min-h-[56px] touch-manipulation">
+                <Users className="mr-2 w-5 h-5 group-hover:scale-110 transition-transform duration-300 flex-shrink-0" />
+                <span>Join Community Now</span>
               </button>
             </Link>
             
-            <Link to="/join">
-              <button className="group flex items-center border-2 border-gray-300 text-gray-700 px-4 py-2 sm:px-5 sm:py-3 rounded-lg font-semibold text-xs sm:text-sm hover:border-blue-600 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 w-full sm:w-auto max-w-[180px] sm:max-w-none">
-                <Users className="mr-1.5 w-3 h-3 sm:w-4 sm:h-4 group-hover:scale-110 transition-transform duration-300" />
-                Join Community Now
+            <Link to="/about" className="w-full sm:w-auto">
+              <button className="group flex items-center justify-center border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-xl font-semibold text-base hover:border-blue-600 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 active:scale-95 w-full sm:w-auto min-h-[56px] touch-manipulation">
+                <BookOpen className="mr-2 w-5 h-5 group-hover:scale-110 transition-transform duration-300 flex-shrink-0" />
+                <span>Learn Our Story</span>
               </button>
             </Link>
           </div>
 
-          {/* Stats Section - Clean without bubbles on mobile */}
-          <div className="grid grid-cols-2 gap-4 sm:gap-6 lg:gap-8 max-w-lg sm:max-w-2xl mx-auto">
-            <div className="text-center p-3 sm:p-4 lg:p-6">
-              <div className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-black text-gray-900 mb-1 sm:mb-2">
-                2,000+
+          {/* Simple Action Cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-lg mx-auto">
+            <div className="text-center p-4 sm:p-6 bg-white/60 backdrop-blur-sm rounded-xl border border-gray-100 hover:bg-white/80 transition-all duration-300">
+              <div className="text-lg sm:text-xl font-bold text-gray-900 mb-2">
+                Connect & Learn
               </div>
-              <div className="text-gray-700 font-semibold text-xs sm:text-sm lg:text-base">
-                Active Students
+              <div className="text-gray-700 font-medium text-sm sm:text-base">
+                With fellow students
               </div>
             </div>
             
-            <div className="text-center p-3 sm:p-4 lg:p-6">
-              <div className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-black text-gray-900 mb-1 sm:mb-2">
-                50+
+            <div className="text-center p-4 sm:p-6 bg-white/60 backdrop-blur-sm rounded-xl border border-gray-100 hover:bg-white/80 transition-all duration-300">
+              <div className="text-lg sm:text-xl font-bold text-gray-900 mb-2">
+                Share & Grow
               </div>
-              <div className="text-gray-700 font-semibold text-xs sm:text-sm lg:text-base">
-                Universities
+              <div className="text-gray-700 font-medium text-sm sm:text-base">
+                Your knowledge
               </div>
             </div>
           </div>

@@ -266,14 +266,14 @@ const Team: React.FC = () => {
                         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                             <a
                                 href="mailto:csconnectpakistan@gmail.com"
-                                className="inline-flex items-center bg-blue-600 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-xl font-semibold text-base sm:text-lg hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+                                className="inline-flex items-center bg-blue-600 text-white px-6 py-3 sm:px-7 sm:py-3.5 rounded-xl font-semibold text-base hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
                             >
                                 <Mail className="mr-2 w-4 h-4 sm:w-5 sm:h-5" />
                                 Get in Touch
                             </a>
                             <a
                                 href="/join"
-                                className="inline-flex items-center border-2 border-gray-300 text-gray-700 px-6 py-3 sm:px-8 sm:py-4 rounded-xl font-semibold text-base sm:text-lg hover:border-gray-400 hover:text-gray-900 hover:bg-gray-50 transition-all duration-300"
+                                className="inline-flex items-center border-2 border-gray-300 text-gray-700 px-6 py-3 sm:px-7 sm:py-3.5 rounded-xl font-semibold text-base hover:border-gray-400 hover:text-gray-900 hover:bg-gray-50 transition-all duration-300"
                             >
                                 Join Community First
                             </a>

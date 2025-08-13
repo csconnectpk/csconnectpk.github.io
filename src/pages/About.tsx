@@ -28,7 +28,7 @@ const About: React.FC = () => {
     }, []);
 
     const stats = [
-        { icon: Users, label: "Active Students", value: "2,000+", description: "From top universities" },
+        { icon: Users, label: "Active Students", value: "3,000+", description: "From top universities" },
         { icon: GraduationCap, label: "Universities", value: "50+", description: "Across Pakistan" },
         { icon: MessageCircle, label: "Daily Messages", value: "500+", description: "Knowledge sharing" },
         { icon: Target, label: "Success Stories", value: "300+", description: "Jobs & internships" },
@@ -73,8 +73,8 @@ const About: React.FC = () => {
         {
             date: "Today",
             title: "Thriving Ecosystem", 
-            description: "Supporting 2,000+ students with peer learning, career opportunities, and a strong support network.",
-            participants: "2,000+",
+            description: "Supporting 3,000+ students with peer learning, career opportunities, and a strong support network.",
+            participants: "3,000+",
             icon: Trophy
         }
     ];
@@ -196,22 +196,22 @@ const About: React.FC = () => {
 
                         {/* Better mobile subtitle - matching home page style */}
                         <p className="text-base sm:text-lg lg:text-xl text-gray-600 mb-8 sm:mb-10 lg:mb-12 leading-relaxed max-w-4xl mx-auto font-medium">
-                            Connecting 2,000+ brilliant minds across 50+ universities to shape Pakistan's tech future.
+                            Connecting 3,000+ CS students across 50+ universities in Pakistan.
                         </p>
 
                         {/* Buttons - matching home page */}
                         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-8 sm:mb-10 lg:mb-12">
                             <Link to="/join">
-                                <button className="group flex items-center bg-blue-600 text-white px-6 py-3 sm:px-7 sm:py-4 lg:px-8 lg:py-4 rounded-xl font-semibold text-sm sm:text-base lg:text-lg hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 w-full sm:w-auto min-w-[200px] sm:min-w-0">
+                                <button className="group flex items-center bg-blue-600 text-white px-6 py-3 sm:px-7 sm:py-3.5 rounded-xl font-semibold text-base hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 w-full sm:w-auto min-w-[200px] sm:min-w-0">
                                     <Users className="mr-2 w-4 h-4 sm:w-4 sm:h-4 lg:w-5 lg:h-5 group-hover:scale-110 transition-transform duration-300" />
                                     Join Community Now
                                 </button>
                             </Link>
                             
-                            <Link to="/services">
+                            <Link to="/team">
                                 <button className="group flex items-center border-2 border-gray-300 text-gray-700 px-4 py-2 sm:px-5 sm:py-3 rounded-lg font-semibold text-xs sm:text-sm hover:border-blue-600 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 w-full sm:w-auto max-w-[180px] sm:max-w-none">
-                                    <BookOpen className="mr-1.5 w-3 h-3 sm:w-4 sm:h-4 group-hover:scale-110 transition-transform duration-300" />
-                                    Our Services
+                                    <Users className="mr-1.5 w-3 h-3 sm:w-4 sm:h-4 group-hover:scale-110 transition-transform duration-300" />
+                                    Meet Our Team
                                 </button>
                             </Link>
                         </div>
@@ -220,7 +220,7 @@ const About: React.FC = () => {
                         <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-2xl mx-auto">
                             <div className="text-center p-3 sm:p-4 lg:p-6">
                                 <div className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-black text-gray-900 mb-1 sm:mb-2">
-                                    2,000+
+                                    3,000+
                                 </div>
                                 <div className="text-gray-700 font-semibold text-xs sm:text-sm lg:text-base">
                                     Active Students
@@ -256,7 +256,7 @@ const About: React.FC = () => {
                         <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-black text-gray-900 mb-2 sm:mb-3 lg:mb-4 leading-tight">
                             Our <span className="text-blue-600">Vision</span>
                         </h2>
-                        <p className="text-sm sm:text-base lg:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                        <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
                             Building Pakistan's largest student-driven tech community where brilliant minds connect, learn, and create together.
                         </p>
                     </div>
@@ -266,11 +266,11 @@ const About: React.FC = () => {
                             <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-3 sm:mb-4 lg:mb-6 text-gray-900">
                                 From Students, For Students
                             </h3>
-                            <div className="space-y-3 sm:space-y-4 text-gray-700 leading-relaxed">
-                                <p className="text-xs sm:text-sm md:text-base lg:text-lg">
+                            <div className="space-y-4 sm:space-y-5 text-gray-700 leading-relaxed">
+                                <p className="text-base sm:text-lg lg:text-xl">
                                     CS Connect Pakistan started with a simple realization: Pakistani CS students needed a platform to connect, learn, and grow together. What began as a small WhatsApp group has evolved into a community serving students across the nation.
                                 </p>
-                                <p className="text-xs sm:text-sm md:text-base lg:text-lg">
+                                <p className="text-base sm:text-lg lg:text-xl">
                                     We believe in the power of peer-to-peer learning and the strength that comes from a united community. Every initiative we launch comes from our genuine desire to make the journey easier for fellow students.
                                 </p>
                             </div>
@@ -304,8 +304,8 @@ const About: React.FC = () => {
                         <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-black text-gray-900 mb-2 sm:mb-3 lg:mb-4 leading-tight">
                             Our <span className="text-blue-600">Journey</span>
                         </h2>
-                        <p className="text-sm sm:text-base lg:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
-                            From 10 students to 2,000+ - here's how we built Pakistan's largest CS community
+                        <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                            From 10 students to 3,000+ - here's how we built our CS community
                         </p>
                     </div>
 
@@ -315,22 +315,21 @@ const About: React.FC = () => {
                             return (
                                 <div key={index} className="flex gap-3 sm:gap-4 lg:gap-6">
                                     <div className="flex flex-col items-center">
-                                        <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-lg sm:rounded-xl flex items-center justify-center text-white flex-shrink-0">
-                                            <IconComponent className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6" />
+                                        <div className="w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-md sm:rounded-lg lg:rounded-xl flex items-center justify-center text-white flex-shrink-0">
+                                            <IconComponent className="w-3 h-3 sm:w-4 sm:h-4 lg:w-5 lg:h-5" />
                                         </div>
                                         {index < milestones.length - 1 && (
-                                            <div className="w-0.5 h-6 sm:h-8 lg:h-12 bg-gray-300 mt-2"></div>
+                                            <div className="w-0.5 h-4 sm:h-6 lg:h-8 bg-gray-300 mt-1.5 sm:mt-2"></div>
                                         )}
                                     </div>
                                     <div className="flex-1 pb-4 sm:pb-6 lg:pb-8">
                                         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-1 sm:mb-2">
-                                            <h3 className="text-sm sm:text-base lg:text-lg font-bold text-gray-900">{milestone.title}</h3>
-                                            <div className="flex items-center space-x-2 sm:space-x-3 mt-0.5 sm:mt-0">
-                                                <span className="text-xs sm:text-sm text-gray-500 font-medium">{milestone.date}</span>
-                                                <span className="px-1.5 py-0.5 sm:px-2 sm:py-1 bg-blue-50 text-blue-700 text-xs font-semibold rounded-full">{milestone.participants}</span>
+                                            <h3 className="text-base sm:text-lg lg:text-xl font-bold text-gray-900">{milestone.title}</h3>
+                                            <div className="flex items-center mt-0.5 sm:mt-0">
+                                                <span className="text-sm sm:text-base text-gray-500 font-medium">{milestone.date}</span>
                                             </div>
                                         </div>
-                                        <p className="text-xs sm:text-sm lg:text-base text-gray-600 leading-relaxed">{milestone.description}</p>
+                                        <p className="text-sm sm:text-base lg:text-lg text-gray-600 leading-relaxed">{milestone.description}</p>
                                     </div>
                                 </div>
                             );
@@ -387,14 +386,14 @@ const About: React.FC = () => {
                     <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
                         <Link
                             to="/join"
-                            className="inline-flex items-center bg-blue-600 text-white px-4 py-2.5 sm:px-6 sm:py-3 lg:px-8 lg:py-4 rounded-lg sm:rounded-xl font-semibold text-sm sm:text-base lg:text-lg hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+                            className="inline-flex items-center bg-blue-600 text-white px-6 py-3 sm:px-7 sm:py-3.5 rounded-xl font-semibold text-base hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
                         >
                             <Sparkles className="mr-1.5 sm:mr-2 w-3 h-3 sm:w-4 sm:h-4 lg:w-5 lg:h-5" />
                             Join Community
                         </Link>
                         <Link
                             to="/team"
-                            className="inline-flex items-center border-2 border-gray-300 text-gray-700 px-4 py-2.5 sm:px-6 sm:py-3 lg:px-8 lg:py-4 rounded-lg sm:rounded-xl font-semibold text-sm sm:text-base lg:text-lg hover:border-gray-400 hover:text-gray-900 hover:bg-gray-50 transition-all duration-300"
+                            className="inline-flex items-center border-2 border-gray-300 text-gray-700 px-6 py-3 sm:px-7 sm:py-3.5 rounded-xl font-semibold text-base hover:border-gray-400 hover:text-gray-900 hover:bg-gray-50 transition-all duration-300"
                         >
                             Meet Our Team
                         </Link>

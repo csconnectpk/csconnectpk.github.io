@@ -282,8 +282,8 @@ const Pricing: React.FC = () => {
                 )}
                 
                 <div className="text-center mb-8">
-                  <div className="w-16 h-16 bg-black rounded-xl flex items-center justify-center mx-auto mb-4">
-                    <tier.icon className="w-8 h-8 text-white" />
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-black rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <tier.icon className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-white" />
                   </div>
                   <h3 className="text-2xl font-bold mb-2 text-black">{tier.name}</h3>
                   <p className="text-gray-600 mb-4">{tier.description}</p>
@@ -415,7 +415,7 @@ const Pricing: React.FC = () => {
             transition={{ duration: 0.8 }}
             className="text-center max-w-4xl mx-auto"
           >
-            <Gift className="w-16 h-16 text-black mx-auto mb-6" />
+            <Gift className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 text-black mx-auto mb-6" />
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-black">
               Why Everything is <span className="text-gray-600">Free?</span>
             </h2>

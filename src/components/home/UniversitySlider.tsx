@@ -28,7 +28,7 @@ const UniversitySlider: React.FC = () => {
           </h2>
           
           <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed font-medium">
-            Connecting brilliant minds from 50+ universities across Pakistan
+            Connecting brilliant minds from universities across Pakistan
           </p>
         </div>
 

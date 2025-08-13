@@ -8,7 +8,7 @@ import {
 const platforms = [
     {
         name: "WhatsApp",
-        members: "2000+",
+        members: "3000+",
         description: "Main community hub",
         icon: FaWhatsapp,
         color: "bg-green-500",
