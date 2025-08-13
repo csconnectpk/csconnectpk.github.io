@@ -33,24 +33,7 @@ const CTA: React.FC = () => {
             </span>
           </h2>
           
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 sm:mb-16 lg:mb-20 px-4">
-            <Link 
-              to="/join" 
-              className="group inline-flex items-center justify-center px-3 py-2 sm:px-4 sm:py-3 bg-white text-gray-900 rounded-xl hover:bg-gray-100 transition-all duration-300 font-bold text-sm shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
-            >
-              <Sparkles className="mr-2 w-4 h-4 group-hover:rotate-12 transition-transform duration-300" />
-              <span>Join Community</span>
-            </Link>
-            
-            <Link 
-              to="/about" 
-              className="group inline-flex items-center justify-center px-3 py-2 sm:px-4 sm:py-3 border-2 border-white/30 text-white rounded-xl hover:border-white/50 hover:bg-white/5 backdrop-blur-sm transition-all duration-300 font-semibold text-sm"
-            >
-              <span>Our Story</span>
-              <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-            </Link>
-          </div>
+
           
           {/* Stats Cards */}
           <div className="space-y-4 max-w-sm mx-auto px-4">
