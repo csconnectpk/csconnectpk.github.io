@@ -13,11 +13,7 @@ const HeroSection: React.FC = () => {
       <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
         <div className="text-center max-w-6xl mx-auto">
           
-          {/* Badge */}
-          <div className="inline-flex items-center px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-gradient-to-r from-emerald-50 to-green-50 border border-emerald-200/60 mb-6 sm:mb-8 shadow-sm">
-            <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-emerald-600 mr-2 flex-shrink-0" />
-            <span className="text-xs sm:text-sm font-bold text-emerald-700 tracking-wide">CS Student Community in Pakistan</span>
-          </div>
+
 
           {/* Main Heading - Fixed Text Wrapping */}
           <h1 className="font-black mb-6 sm:mb-8 lg:mb-10 leading-[1.1] text-gray-900 tracking-tight">

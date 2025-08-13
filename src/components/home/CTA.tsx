@@ -34,20 +34,20 @@ const CTA: React.FC = () => {
           </h2>
           
           {/* CTA Buttons */}
-          <div className="flex flex-col gap-4 justify-center items-center mb-12 sm:mb-16 lg:mb-20 px-4 max-w-md mx-auto">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 sm:mb-16 lg:mb-20 px-4">
             <Link 
               to="/join" 
-              className="group inline-flex items-center justify-center px-4 py-3 sm:px-6 sm:py-3.5 bg-white text-gray-900 rounded-xl hover:bg-gray-100 transition-all duration-300 font-bold text-sm sm:text-base shadow-xl hover:shadow-2xl transform hover:-translate-y-1 w-full"
+              className="group inline-flex items-center justify-center px-3 py-2 sm:px-4 sm:py-3 bg-white text-gray-900 rounded-xl hover:bg-gray-100 transition-all duration-300 font-bold text-sm shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
             >
               <Sparkles className="mr-2 w-4 h-4 group-hover:rotate-12 transition-transform duration-300" />
-              <span className="truncate">Join WhatsApp Community</span>
+              <span>Join Community</span>
             </Link>
             
             <Link 
               to="/about" 
-              className="group inline-flex items-center justify-center px-4 py-3 sm:px-6 sm:py-3.5 border-2 border-white/30 text-white rounded-xl hover:border-white/50 hover:bg-white/5 backdrop-blur-sm transition-all duration-300 font-semibold text-sm sm:text-base w-full"
+              className="group inline-flex items-center justify-center px-3 py-2 sm:px-4 sm:py-3 border-2 border-white/30 text-white rounded-xl hover:border-white/50 hover:bg-white/5 backdrop-blur-sm transition-all duration-300 font-semibold text-sm"
             >
-              <span className="truncate">Discover Our Story</span>
+              <span>Our Story</span>
               <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
             </Link>
           </div>

@@ -65,11 +65,7 @@ const Team: React.FC = () => {
                 <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 sm:pt-28 lg:pt-36 pb-12 sm:pb-16 lg:pb-20">
                     <div className="text-center max-w-6xl mx-auto">
                         
-                        {/* Badge */}
-                        <div className="inline-flex items-center px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200/60 mb-6 sm:mb-8 shadow-sm">
-                            <Users className="w-3 h-3 sm:w-4 sm:h-4 text-blue-600 mr-2" />
-                            <span className="text-xs sm:text-sm font-bold text-blue-700 tracking-wide">Meet the Team</span>
-                        </div>
+
 
                         {/* MUCH LARGER main heading */}
                         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black mb-6 sm:mb-8 lg:mb-10 leading-tight text-gray-900 tracking-tight">
@@ -86,52 +82,9 @@ const Team: React.FC = () => {
                             What happens when a few Pakistani CS students decide to stop waiting and start building the community our country needed
                         </p>
 
-                        {/* Buttons */}
-                        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-8 sm:mb-10 lg:mb-12">
-                            <a href="#team">
-                                <button className="group flex items-center bg-blue-600 text-white px-6 py-3 sm:px-7 sm:py-4 lg:px-8 lg:py-4 rounded-xl font-semibold text-sm sm:text-base lg:text-lg hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 w-full sm:w-auto min-w-[200px] sm:min-w-0">
-                                    <Users className="mr-2 w-4 h-4 sm:w-4 sm:h-4 lg:w-5 lg:h-5 group-hover:scale-110 transition-transform duration-300" />
-                                    Meet the Team
-                                </button>
-                            </a>
-                            
-                            <a href="/join">
-                                <button className="group flex items-center border-2 border-gray-300 text-gray-700 px-4 py-2 sm:px-5 sm:py-3 rounded-lg font-semibold text-xs sm:text-sm hover:border-blue-600 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 w-full sm:w-auto max-w-[180px] sm:max-w-none">
-                                    <Heart className="mr-1.5 w-3 h-3 sm:w-4 sm:h-4 group-hover:scale-110 transition-transform duration-300" />
-                                    Join Us
-                                </button>
-                            </a>
-                        </div>
 
-                        {/* Stats Section */}
-                        <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-2xl mx-auto">
-                            <div className="text-center p-3 sm:p-4 lg:p-6">
-                                <div className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-black text-gray-900 mb-1 sm:mb-2">
-                                    5
-                                </div>
-                                <div className="text-gray-700 font-semibold text-xs sm:text-sm lg:text-base">
-                                    Core Members
-                                </div>
-                            </div>
-                            
-                            <div className="text-center p-3 sm:p-4 lg:p-6">
-                                <div className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-black text-gray-900 mb-1 sm:mb-2">
-                                    100%
-                                </div>
-                                <div className="text-gray-700 font-semibold text-xs sm:text-sm lg:text-base">
-                                    Students
-                                </div>
-                            </div>
 
-                            <div className="col-span-2 lg:col-span-1 text-center p-3 sm:p-4 lg:p-6">
-                                <div className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-black text-gray-900 mb-1 sm:mb-2">
-                                    24/7
-                                </div>
-                                <div className="text-gray-700 font-semibold text-xs sm:text-sm lg:text-base">
-                                    Dedication
-                                </div>
-                            </div>
-                        </div>
+
                     </div>
                 </div>
             </section>
@@ -260,19 +213,13 @@ const Team: React.FC = () => {
                         <p className="text-sm sm:text-base lg:text-lg text-gray-600 mb-6 sm:mb-8 leading-relaxed max-w-2xl mx-auto">
                             We're always looking for passionate students who want to help build and grow our community. Whether you're interested in content creation, technical development, design, or community management, there's a place for you.
                         </p>
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                        <div className="flex justify-center items-center">
                             <a
                                 href="mailto:csconnectpakistan@gmail.com"
                                 className="inline-flex items-center bg-blue-600 text-white px-6 py-3 sm:px-7 sm:py-3.5 rounded-xl font-semibold text-base hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
                             >
                                 <Mail className="mr-2 w-4 h-4 sm:w-5 sm:h-5" />
                                 Get in Touch
-                            </a>
-                            <a
-                                href="/join"
-                                className="inline-flex items-center border-2 border-gray-300 text-gray-700 px-6 py-3 sm:px-7 sm:py-3.5 rounded-xl font-semibold text-base hover:border-gray-400 hover:text-gray-900 hover:bg-gray-50 transition-all duration-300"
-                            >
-                                Join Community First
                             </a>
                         </div>
                     </div>

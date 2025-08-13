@@ -125,8 +125,8 @@ const Portfolio: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.8 }}
           className="text-center"
         >
-          <Link to="/portfolio" className="btn-primary px-8 py-4 text-lg">
-            View All Projects
+          <Link to="/about" className="btn-primary px-8 py-4 text-lg">
+            Learn More About Us
           </Link>
         </motion.div>
       </div>

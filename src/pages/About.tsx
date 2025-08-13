@@ -31,7 +31,6 @@ const About: React.FC = () => {
         { icon: Users, label: "Active Students", value: "3,000+", description: "From top universities" },
         { icon: GraduationCap, label: "Universities", value: "50+", description: "Across Pakistan" },
         { icon: MessageCircle, label: "Daily Messages", value: "500+", description: "Knowledge sharing" },
-        { icon: Target, label: "Success Stories", value: "300+", description: "Jobs & internships" },
     ];
 
     const milestones = [
