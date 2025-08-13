@@ -25,11 +25,8 @@ const CTA: React.FC = () => {
           <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-black mb-10 sm:mb-12 lg:mb-16 leading-tight">
             Ready to Connect with
             <br />
-            <span className="relative inline-block">
-              <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
-                Pakistan's Brightest Minds?
-              </span>
-              <div className="absolute -bottom-0.5 sm:-bottom-1 left-0 right-0 h-0.5 sm:h-1 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full" />
+            <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
+              Pakistan's Brightest Minds?
             </span>
           </h2>
           
