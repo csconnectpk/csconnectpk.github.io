@@ -110,12 +110,12 @@ const Testimonials: React.FC = () => {
           ))}
         </div>
 
-        {/* Show More Button */}
+        {/* Show More Button - Perfect Mobile Center */}
         {testimonials.length > 3 && (
-          <div className="text-center mt-8 lg:mt-12">
+          <div className="flex justify-center mt-8 lg:mt-12 px-4">
             <button
               onClick={() => setShowMore(!showMore)}
-              className="inline-flex items-center px-6 py-3 bg-white text-gray-700 rounded-xl border border-gray-200 hover:bg-gray-50 hover:border-gray-300 transition-all duration-300 font-medium"
+              className="inline-flex items-center justify-center px-4 py-3 bg-white text-gray-700 rounded-xl border border-gray-200 hover:bg-gray-50 hover:border-gray-300 transition-all duration-300 font-medium min-h-[44px] touch-manipulation"
             >
               {showMore ? 'Show Less' : 'Show More Reviews'}
               <ChevronDown className={`ml-2 w-4 h-4 transition-transform duration-300 ${showMore ? 'rotate-180' : ''}`} />

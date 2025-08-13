@@ -2,11 +2,19 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-/* Global Styles */
+/* Global Styles - Performance Optimized */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+/* Performance Optimizations */
+* {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Prevent any element from causing horizontal overflow */
@@ -365,7 +373,7 @@ a {
     font-weight: 600;
   }
   
-  /* Enhanced button targets for mobile - fit content */
+  /* Enhanced button targets for mobile - perfect alignment */
   button, 
   a[role="button"], 
   input[type="submit"],
@@ -379,6 +387,7 @@ a {
     align-items: center !important;
     justify-content: center !important;
     white-space: nowrap !important;
+    text-align: center !important;
   }
   
   /* Better form inputs on mobile */
@@ -487,6 +496,10 @@ a {
     
     /* Smooth scrolling for mobile */
     scroll-behavior: smooth;
+    
+    /* Performance optimizations */
+    will-change: scroll-position;
+    contain: layout style paint;
   }
 
   body {

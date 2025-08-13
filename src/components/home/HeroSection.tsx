@@ -34,26 +34,26 @@ const HeroSection: React.FC = () => {
             Join CS students from universities across Pakistan
           </p>
 
-          {/* Buttons - Improved Layout */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 sm:mb-16 max-w-md sm:max-w-none mx-auto">
-            <Link to="/join" className="w-full sm:w-auto">
-              <button className="group flex items-center justify-center bg-blue-600 text-white px-8 py-4 rounded-xl font-semibold text-base hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 active:scale-95 w-full sm:w-auto min-h-[56px] touch-manipulation">
+          {/* Buttons - Perfect Mobile Center Alignment */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 sm:mb-16 w-full px-4">
+            <Link to="/join" className="w-full max-w-xs sm:w-auto sm:max-w-none">
+              <button className="group flex items-center justify-center bg-blue-600 text-white px-6 py-3 rounded-xl font-semibold text-base hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 active:scale-95 w-full min-h-[48px] touch-manipulation">
                 <Users className="mr-2 w-5 h-5 group-hover:scale-110 transition-transform duration-300 flex-shrink-0" />
-                <span>Join Community Now</span>
+                <span>Join Community</span>
               </button>
             </Link>
             
-            <Link to="/about" className="w-full sm:w-auto">
-              <button className="group flex items-center justify-center border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-xl font-semibold text-base hover:border-blue-600 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 active:scale-95 w-full sm:w-auto min-h-[56px] touch-manipulation">
+            <Link to="/about" className="w-full max-w-xs sm:w-auto sm:max-w-none">
+              <button className="group flex items-center justify-center border-2 border-gray-300 text-gray-700 px-6 py-3 rounded-xl font-semibold text-base hover:border-blue-600 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 active:scale-95 w-full min-h-[48px] touch-manipulation">
                 <BookOpen className="mr-2 w-5 h-5 group-hover:scale-110 transition-transform duration-300 flex-shrink-0" />
-                <span>Learn Our Story</span>
+                <span>Our Story</span>
               </button>
             </Link>
           </div>
 
-          {/* Simple Action Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-lg mx-auto">
-            <div className="text-center p-4 sm:p-6 bg-white/60 backdrop-blur-sm rounded-xl border border-gray-100 hover:bg-white/80 transition-all duration-300">
+          {/* Simple Action Cards - Perfect Mobile Alignment */}
+          <div className="flex flex-col sm:grid sm:grid-cols-2 gap-4 max-w-lg mx-auto px-4">
+            <div className="text-center p-4 sm:p-6 bg-white/60 backdrop-blur-sm rounded-xl border border-gray-100 hover:bg-white/80 transition-all duration-300 w-full">
               <div className="text-lg sm:text-xl font-bold text-gray-900 mb-2">
                 Connect & Learn
               </div>
@@ -62,7 +62,7 @@ const HeroSection: React.FC = () => {
               </div>
             </div>
             
-            <div className="text-center p-4 sm:p-6 bg-white/60 backdrop-blur-sm rounded-xl border border-gray-100 hover:bg-white/80 transition-all duration-300">
+            <div className="text-center p-4 sm:p-6 bg-white/60 backdrop-blur-sm rounded-xl border border-gray-100 hover:bg-white/80 transition-all duration-300 w-full">
               <div className="text-lg sm:text-xl font-bold text-gray-900 mb-2">
                 Share & Grow
               </div>
