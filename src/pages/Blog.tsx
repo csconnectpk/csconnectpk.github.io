@@ -197,6 +197,71 @@ The road is not easy, but it is clear. Stay consistent. Practice with purpose. U
             readTime: "10 min read",
             linkedin: "fatima-khan-tech",
         },
+        {
+            id: 5,
+            title: "Why Piracy Should Be Avoided?",
+            excerpt:
+                "A thoughtful exploration of the ethical and religious implications of software and content piracy. This article examines Islamic perspectives on intellectual property, discusses what constitutes stealing in the digital age, and provides practical alternatives to piracy through free and open-source software.",
+            content: `I have been wondering about this question since early 2020. I never encouraged piracy (may be I did unintentionally and I seek Allah's forgiveness) even before 2020 but I used to pirate books and software prior to that myself (May Allah forgive me for this as well). But once I got familiarised with open source and linux world I started to question my past.
+
+In fact, I reached out to my teachers as well because I was in this congnitive dissonance. I could not digest the fact that whatever I am learning is by stealing the works (books) of other humans and whether any earning based on this knowledge can be classified as halal rizq or not.
+
+Today, If you are feeling the same and want to learn more about this issue then you should continue reading this article. I would like to add a disclaimer here that I am not an expert on the subject of Islamic Jurisprudence so take my opinions with a pinch of salt.
+
+## Is piracy stealing?
+
+Yes, Piracy is stealing. What's stealing? In my view, stealing is to take or use any possession (material or immaterial) of a person without his / her explicit permission. Material possessions can be things like books or software written by someone and immaterial posessions can be things like ideas of a person.
+
+So, when you are downloading some software or book which is an intellectual property of that person; are you doing so with his / her explicit permission? If the answer to this question is NO then my friend you have been doing stealing intentionally or unintentionallly.
+
+**→ Recognize** that what you were doing was wrong
+**→ Don't do it again** and if you can then undo the damage
+**→ A firm resolution** with yourself that you will not get back to it again
+
+## What does Muslim scholars say about piracy?
+
+Almost all Ulema would agree that a person should not mass distribute material or immaterial possesion of a person without his / her explicit permission irrespective of that fact whether you acquired that possesion by purchase or not with one exception; that is if they agreed upon this during purchase.
+
+## The Contract
+
+If during purchase it was agreed upon by both parties a) buyer and b) seller that the buyer has the right to mass produce it then obviously its fine to share it (again depending on the exact contract terms). Buying something from someone is basically a form of a contract. So the terms of the contract must be respected and if there is an ambiguity then it should be rectified by discussion rather than exploiting that ambiguity for your advantage.
+
+## Personal non-commercial use of pirated stuff
+
+The trickier part where Muslim scholars are divided is whether or not can you download something that is available for free publicly on internet for non-commercial personal use?
+
+Some Muslim Scholars that allow downloading books and software from internet for personal use argue that you were not the one who stole those books and published them on internet. So as long as you are not mass distributing them the proof of burden on the Judgement Day will not be on you but instead on the person who put them on internet at the first place.
+
+"It is to be noted that these scholars allow only non-commercial personal use with the condition that you will not be mass distributing or sharing them in any shape or form."
+
+There are Muslim Scholars which discourage downloading pirated books and software from internet even for personal use. They argue that your downloading of such material encourages the person running such piracy sites to publish more of such material and content because he is getting attraction and traffic on his site which he can then monetize.
+
+## Why pirate stuff when there are free alternatives available?
+
+Why at the first place you need to pirate something that has a free legitimate alternative available that you can download for free? Why go down the wrong path? Ask yourself this next time when you are about to pirate something.
+
+## Don't sail the black ship
+
+Here are some tips that can help you live a life that is free of piracy:
+
+**→ Use Linux instead of Windows** - Linux is a free and open source operating system and by switching to it you will be saving yourself from a lot of trouble of pirating stuff
+
+**→ Switch to open source software** - Pirated software most of the times have malwares in them that can cause harm to your system. Open source alternatives are safer and perform better
+
+**→ Find Creative Commons books** - These are books that authors have explicitly given permission to use for free. Learn about these licenses
+
+**→ Use MOOCs and YouTube** - There are tons of free quality educational content available through Massive Open Online Courses and YouTube
+
+**→ Ask before purchasing** - When purchasing digital items, ask explicitly from the author whether ownership rights are being transferred to you
+
+*Remember: If someone asks for a resource, point them to legitimate sources and let them decide. Don't share pirated links - you might get questioned about this on the Day of Judgement.*`,
+            category: "Ethics & Tech",
+            author: "Talha Asghar",
+            date: "February 23, 2025",
+            readTime: "12 min read",
+            featured: true,
+            linkedin: "talha-asghar-dev",
+        },
     ];
 
     const openArticle = (article: BlogPost) => {
@@ -447,94 +512,104 @@ The road is not easy, but it is clear. Stay consistent. Practice with purpose. U
                 </div>
             </section>
 
-            {/* Article Modal */}
+            {/* Enhanced Article Modal */}
             {selectedArticle && (
-                <div className="fixed inset-0 bg-black bg-opacity-50 z-[110] flex items-start justify-center p-1 sm:p-4 lg:p-6 pt-20 sm:pt-20 pb-4">
-                    <div className="bg-white rounded-lg sm:rounded-xl lg:rounded-2xl w-full max-w-4xl max-h-[calc(100vh-6rem)] sm:max-h-[85vh] overflow-hidden shadow-2xl relative mx-1 sm:mx-0">
-                        {/* Modal Header */}
-                        <div className="p-3 sm:p-4 lg:p-6 border-b border-gray-200 flex-shrink-0">
+                <div className="fixed inset-0 bg-black bg-opacity-60 z-[110] flex items-center justify-center p-2 sm:p-4 lg:p-8 backdrop-blur-sm">
+                    <div className="bg-white rounded-xl sm:rounded-2xl w-full max-w-5xl max-h-[95vh] overflow-hidden shadow-2xl relative mx-2 sm:mx-0 flex flex-col">
+                        {/* Enhanced Modal Header */}
+                        <div className="p-4 sm:p-6 lg:p-8 border-b border-gray-100 flex-shrink-0 bg-gradient-to-r from-gray-50 to-white">
                             <div className="flex items-start justify-between">
-                                <div className="flex-1 mr-2 sm:mr-3 lg:mr-4">
-                                    <span className="inline-block px-2 py-1 sm:px-3 sm:py-1 bg-blue-600 text-white rounded-full text-xs sm:text-sm font-semibold mb-2 sm:mb-3">
-                                        {selectedArticle.category}
-                                    </span>
-                                    <h2 className="text-base sm:text-lg lg:text-xl xl:text-2xl font-bold text-gray-900 leading-tight mb-2 sm:mb-3">
+                                <div className="flex-1 mr-3 sm:mr-4">
+                                    <div className="flex items-center gap-3 mb-3">
+                                        <span className="inline-block px-3 py-1.5 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-full text-xs sm:text-sm font-semibold shadow-sm">
+                                            {selectedArticle.category}
+                                        </span>
+                                        <div className="flex items-center text-xs sm:text-sm text-gray-500">
+                                            <Clock className="w-3 h-3 sm:w-4 sm:h-4 mr-1" />
+                                            <span>{selectedArticle.readTime}</span>
+                                        </div>
+                                    </div>
+                                    <h2 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-black text-gray-900 leading-tight mb-3 sm:mb-4">
                                         {selectedArticle.title}
                                     </h2>
-                                    <div className="flex flex-wrap items-center gap-2 sm:gap-3 text-xs sm:text-sm text-gray-500">
+                                    <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-sm text-gray-600">
                                         <div className="flex items-center">
-                                            <User className="w-3 h-3 sm:w-4 sm:h-4 mr-1" />
-                                            <span>{selectedArticle.author}</span>
+                                            <User className="w-4 h-4 mr-2" />
+                                            <span className="font-medium">{selectedArticle.author}</span>
+                                        </div>
+                                        <div className="flex items-center">
+                                            <Calendar className="w-4 h-4 mr-2" />
+                                            <span>{selectedArticle.date}</span>
                                         </div>
                                         {selectedArticle.linkedin && (
                                             <a
                                                 href={`https://linkedin.com/in/${selectedArticle.linkedin}`}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                className="text-blue-600 hover:text-blue-700 flex items-center transition-colors duration-300"
+                                                className="text-blue-600 hover:text-blue-700 flex items-center transition-colors duration-300 font-medium"
                                             >
-                                                <ExternalLink className="w-3 h-3 mr-1" />
-                                                LinkedIn
+                                                <ExternalLink className="w-4 h-4 mr-1" />
+                                                Connect
                                             </a>
                                         )}
                                     </div>
                                 </div>
                                 <button
                                     onClick={closeArticle}
-                                    className="p-1.5 sm:p-2 hover:bg-gray-100 rounded-lg transition-colors duration-300 min-w-[32px] min-h-[32px] sm:min-w-[40px] sm:min-h-[40px] flex items-center justify-center flex-shrink-0"
+                                    className="p-2 sm:p-3 hover:bg-gray-100 rounded-xl transition-colors duration-300 min-w-[44px] min-h-[44px] flex items-center justify-center flex-shrink-0 group"
                                     aria-label="Close article"
                                 >
-                                    <X className="w-4 h-4 sm:w-5 sm:h-5 text-gray-500" />
+                                    <X className="w-5 h-5 sm:w-6 sm:h-6 text-gray-500 group-hover:text-gray-700" />
                                 </button>
                             </div>
                         </div>
 
-                        {/* Modal Content */}
-                        <div className="flex-1 overflow-y-auto" style={{ maxHeight: 'calc(100vh - 200px)' }}>
-                            <div className="p-3 sm:p-4 lg:p-6">
-                                <div className="max-w-none">
-                                    {/* Full Article Content */}
-                                    <div className="prose prose-sm sm:prose-base lg:prose-lg max-w-none text-gray-800 leading-relaxed">
+                        {/* Enhanced Modal Content */}
+                        <div className="flex-1 overflow-y-auto custom-scrollbar">
+                            <div className="p-4 sm:p-6 lg:p-8">
+                                <article className="max-w-none">
+                                    {/* Enhanced Article Content */}
+                                    <div className="prose prose-lg max-w-none">
                                         {selectedArticle.content.split('\n\n').map((paragraph, index) => {
                                             if (paragraph.startsWith('## ')) {
                                                 return (
-                                                    <h2 key={index} className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 mt-6 sm:mt-8 mb-3 sm:mb-4 first:mt-0">
+                                                    <h2 key={index} className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mt-8 sm:mt-10 mb-4 sm:mb-6 first:mt-0 leading-tight">
                                                         {paragraph.replace('## ', '')}
                                                     </h2>
                                                 );
                                             } else if (paragraph.startsWith('**→')) {
                                                 return (
-                                                    <div key={index} className="bg-gray-50 p-3 sm:p-4 rounded-lg mb-3 sm:mb-4">
-                                                        <p className="text-sm sm:text-base lg:text-lg font-medium text-gray-800">
+                                                    <div key={index} className="bg-gradient-to-r from-blue-50 to-indigo-50 border-l-4 border-blue-500 p-4 sm:p-6 rounded-r-xl mb-4 sm:mb-6 shadow-sm">
+                                                        <p className="text-base sm:text-lg font-semibold text-gray-800 leading-relaxed">
                                                             {paragraph.replace(/\*\*/g, '')}
                                                         </p>
                                                     </div>
                                                 );
                                             } else if (paragraph.startsWith('*') && paragraph.endsWith('*')) {
                                                 return (
-                                                    <div key={index} className="text-center italic text-gray-600 text-sm sm:text-base mb-4 sm:mb-6">
+                                                    <div key={index} className="text-center italic text-gray-600 text-base sm:text-lg mb-6 sm:mb-8 px-4 py-2 bg-gray-50 rounded-lg">
                                                         {paragraph.replace(/\*/g, '')}
                                                     </div>
                                                 );
                                             } else if (paragraph.includes('→') && paragraph.includes('**')) {
                                                 return (
-                                                    <div key={index} className="mb-2">
-                                                        <p className="text-sm sm:text-base lg:text-lg text-gray-700 leading-relaxed">
+                                                    <div key={index} className="mb-3 sm:mb-4 bg-white border-l-2 border-gray-300 pl-4">
+                                                        <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
                                                             {paragraph.split('**').map((part, i) => 
-                                                                i % 2 === 1 ? <strong key={i}>{part}</strong> : part
+                                                                i % 2 === 1 ? <strong key={i} className="text-gray-900 font-semibold">{part}</strong> : part
                                                             )}
                                                         </p>
                                                     </div>
                                                 );
                                             } else if (paragraph.startsWith('"') && paragraph.endsWith('"')) {
                                                 return (
-                                                    <blockquote key={index} className="border-l-4 border-blue-500 pl-4 sm:pl-6 italic text-gray-700 my-4 sm:my-6 text-sm sm:text-base lg:text-lg">
+                                                    <blockquote key={index} className="border-l-4 border-amber-500 bg-amber-50 pl-6 sm:pl-8 pr-4 py-4 italic text-gray-700 my-6 sm:my-8 text-base sm:text-lg rounded-r-lg">
                                                         {paragraph}
                                                     </blockquote>
                                                 );
                                             } else if (paragraph.trim()) {
                                                 return (
-                                                    <p key={index} className="text-sm sm:text-base lg:text-lg text-gray-700 leading-relaxed mb-3 sm:mb-4">
+                                                    <p key={index} className="text-base sm:text-lg text-gray-700 leading-relaxed mb-4 sm:mb-6 text-justify">
                                                         {paragraph}
                                                     </p>
                                                 );
@@ -556,7 +631,7 @@ The road is not easy, but it is clear. Stay consistent. Practice with purpose. U
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </article>
                             </div>
                         </div>
 
