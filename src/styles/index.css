@@ -55,6 +55,95 @@ a {
   text-decoration: none;
 }
 
+/* Consistent Typography System */
+/* H1 Headings - Hero/Main Titles */
+h1, .h1, .hero-title {
+  font-size: 2.5rem !important; /* 40px */
+  line-height: 1.2 !important;
+  font-weight: 900 !important;
+  margin-bottom: 1.5rem !important;
+}
+
+@media (min-width: 640px) {
+  h1, .h1, .hero-title {
+    font-size: 3rem !important; /* 48px */
+  }
+}
+
+@media (min-width: 1024px) {
+  h1, .h1, .hero-title {
+    font-size: 4rem !important; /* 64px */
+  }
+}
+
+/* H2 Headings - Section Titles */
+h2, .h2, .section-title {
+  font-size: 1.875rem !important; /* 30px */
+  line-height: 1.3 !important;
+  font-weight: 700 !important;
+  margin-bottom: 1rem !important;
+}
+
+@media (min-width: 640px) {
+  h2, .h2, .section-title {
+    font-size: 2.25rem !important; /* 36px */
+  }
+}
+
+@media (min-width: 1024px) {
+  h2, .h2, .section-title {
+    font-size: 3rem !important; /* 48px */
+  }
+}
+
+/* H3 Headings - Subsection Titles */
+h3, .h3 {
+  font-size: 1.5rem !important; /* 24px */
+  line-height: 1.4 !important;
+  font-weight: 600 !important;
+  margin-bottom: 0.75rem !important;
+}
+
+@media (min-width: 640px) {
+  h3, .h3 {
+    font-size: 1.75rem !important; /* 28px */
+  }
+}
+
+/* Paragraphs - Consistent Body Text */
+p, .paragraph, .body-text {
+  font-size: 1rem !important; /* 16px */
+  line-height: 1.6 !important;
+  margin-bottom: 1rem !important;
+  font-weight: 400 !important;
+}
+
+@media (min-width: 640px) {
+  p, .paragraph, .body-text {
+    font-size: 1.125rem !important; /* 18px */
+    line-height: 1.7 !important;
+  }
+}
+
+/* Buttons - Consistent Sizing */
+button, .button, a[role="button"], input[type="submit"], .btn-primary, .btn-secondary {
+  font-size: 1rem !important; /* 16px */
+  font-weight: 600 !important;
+  padding: 0.75rem 1.5rem !important;
+  min-height: 44px !important;
+  line-height: 1.2 !important;
+  border-radius: 0.75rem !important;
+  transition: all 0.3s ease !important;
+}
+
+@media (min-width: 640px) {
+  button, .button, a[role="button"], input[type="submit"], .btn-primary, .btn-secondary {
+    font-size: 1.125rem !important; /* 18px */
+    padding: 0.875rem 1.75rem !important;
+    min-height: 48px !important;
+  }
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 6px;

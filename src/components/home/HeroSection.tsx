@@ -15,14 +15,14 @@ const HeroSection: React.FC = () => {
           
 
 
-          {/* Main Heading - Fixed Text Wrapping */}
-          <h1 className="font-black mb-6 sm:mb-8 lg:mb-10 leading-[1.1] text-gray-900 tracking-tight">
-            <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
+          {/* Main Heading - Consistent Typography */}
+          <h1 className="hero-title text-gray-900 tracking-tight text-center">
+            <span className="block">
               Connect Pakistan's
             </span>
-            <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mt-2 sm:mt-3">
+            <span className="block mt-2">
               Brightest 
-              <span className="relative inline-block ml-2 sm:ml-3">
+              <span className="relative inline-block ml-2">
                 <span className="text-blue-600">Minds</span>
                 <div className="absolute -bottom-1 sm:-bottom-2 left-0 right-0 h-1 sm:h-1.5 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full" />
               </span>
@@ -30,7 +30,7 @@ const HeroSection: React.FC = () => {
           </h1>
 
           {/* Subtitle */}
-          <p className="text-base sm:text-lg lg:text-xl text-gray-600 mb-8 sm:mb-10 lg:mb-12 leading-relaxed max-w-4xl mx-auto font-medium">
+          <p className="body-text text-gray-600 text-center max-w-4xl mx-auto font-medium">
             Join CS students from universities across Pakistan
           </p>
 
@@ -55,22 +55,22 @@ const HeroSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Simple Action Cards - Perfect Mobile Alignment */}
-          <div className="flex flex-col sm:grid sm:grid-cols-2 gap-4 max-w-lg mx-auto px-4">
-            <div className="text-center p-4 sm:p-6 bg-white/60 backdrop-blur-sm rounded-xl border border-gray-100 hover:bg-white/80 transition-all duration-300 w-full">
-              <div className="text-lg sm:text-xl font-bold text-gray-900 mb-2">
+          {/* Simple Action Cards - No Overlap Mobile Fix */}
+          <div className="flex flex-col sm:grid sm:grid-cols-2 gap-6 max-w-2xl mx-auto px-6">
+            <div className="text-center p-6 sm:p-6 bg-white/60 backdrop-blur-sm rounded-xl border border-gray-100 hover:bg-white/80 transition-all duration-300 w-full min-h-[120px] flex flex-col justify-center">
+              <div className="text-lg sm:text-xl font-bold text-gray-900 mb-3">
                 Connect & Learn
               </div>
-              <div className="text-gray-700 font-medium text-sm sm:text-base">
+              <div className="text-gray-700 font-medium text-base">
                 With fellow students
               </div>
             </div>
             
-            <div className="text-center p-4 sm:p-6 bg-white/60 backdrop-blur-sm rounded-xl border border-gray-100 hover:bg-white/80 transition-all duration-300 w-full">
-              <div className="text-lg sm:text-xl font-bold text-gray-900 mb-2">
+            <div className="text-center p-6 sm:p-6 bg-white/60 backdrop-blur-sm rounded-xl border border-gray-100 hover:bg-white/80 transition-all duration-300 w-full min-h-[120px] flex flex-col justify-center">
+              <div className="text-lg sm:text-xl font-bold text-gray-900 mb-3">
                 Share & Grow
               </div>
-              <div className="text-gray-700 font-medium text-sm sm:text-base">
+              <div className="text-gray-700 font-medium text-base">
                 Your knowledge
               </div>
             </div>

@@ -76,10 +76,7 @@ const SmartNavbar: React.FC<SmartNavbarProps> = ({ className = "" }) => {
                             </div>
                             <div className="flex flex-col">
                                 <span className="font-black text-sm sm:text-base lg:text-lg text-gray-900 group-hover:text-blue-600 transition-colors duration-300">
-                                    CS Connect
-                                </span>
-                                <span className="text-xs text-gray-600 font-semibold -mt-0.5 sm:-mt-1 hidden sm:block">
-                                    Pakistan
+                                    CS Connect Pakistan
                                 </span>
                             </div>
                         </Link>
