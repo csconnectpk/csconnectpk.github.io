@@ -21,13 +21,13 @@ const Team: React.FC = () => {
             role: "Design Lead",
             bio: "The creative force behind CS Connect Pakistan who leads all designing initiatives and handles graphics for our community. A crucial person who brings visual identity to our brand.",
             linkedin: "maryam-a-24114733a",
-            university: "FAST Islamabad",
+            university: "ITU Lahore",
             focus: "Visual Design & Branding"
         },
         {
             name: "Siraj Qazi",
             role: "Technical Mentor",
-            bio: "EE graduate from NUST working as a Data Scientist with Seeloz. Serves as technical mentor and advisor for the community, helping students navigate career transitions.",
+            bio: "EE graduate from NUST working as a Data Scientist. Serves as technical mentor and advisor for the community, helping students navigate career transitions.",
             github: "qazi0",
             linkedin: "siraj-qazi",
             university: "NUST Islamabad",
