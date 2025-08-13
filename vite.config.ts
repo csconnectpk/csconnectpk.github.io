@@ -9,7 +9,7 @@ const __dirname = path.dirname(__filename);
 
 export default defineConfig({
   // Base path for GitHub Pages deployment
-  base: '/ccweb/',
+  base: '/',
   plugins: [react()],
   publicDir: 'public', // Ensures public directory is used for static assets
   resolve: {
