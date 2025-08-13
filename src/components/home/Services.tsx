@@ -7,28 +7,28 @@ const Services: React.FC = () => {
     {
       icon: Users,
       title: 'Student Community',
-      description: 'Connect with CS students from FAST, NUST, LUMS, GIKI, and other universities. Share experiences, ask questions, and build genuine friendships with people who get your struggles.',
+      description: 'Connect with CS students from top Pakistani universities. Share experiences and build genuine connections.',
       highlight: 'Active Community',
       link: '/join'
     },
     {
       icon: MessageCircle,
-      title: 'Daily Help & Discussions',
-      description: 'Get stuck on an assignment? Need help choosing electives? Our WhatsApp groups are active 24/7 with students helping each other out - no question is too basic.',
+      title: 'Daily Discussions',
+      description: 'Get help with assignments and career questions. Active WhatsApp groups with peer support 24/7.',
       highlight: 'Always Active',
       link: '/join'
     },
     {
       icon: BookOpen,
-      title: 'Student Resources',
-      description: 'Access notes, past papers, project ideas, and study guides shared by fellow students. Real resources from real students who actually used them.',
+      title: 'Study Resources',
+      description: 'Access notes, past papers, and project ideas shared by fellow students.',
       highlight: 'Peer Shared',
       link: '/blog'
     },
     {
       icon: Podcast,
       title: 'Learning Sessions',
-      description: 'Join informal tech talks, coding sessions, and career discussions. Learn from seniors who landed internships or hear about new opportunities in the community.',
+      description: 'Join tech talks, coding sessions, and career discussions with seniors and professionals.',
       highlight: 'Weekly Sessions',
       link: '/podcasts'
     }

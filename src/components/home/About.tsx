@@ -3,10 +3,10 @@ import { CheckCircle, Users, Award, Globe, Target, Sparkles, Heart, Zap } from '
 
 const About: React.FC = () => {
   const features = [
-    { icon: Users, text: 'Peer-to-peer learning from top universities' },
-    { icon: Award, text: 'Mentorship from industry professionals' },
-    { icon: Target, text: 'Career guidance for Pakistani students' },
-    { icon: Globe, text: 'Bridge between academia and industry' }
+    { icon: Users, text: 'Connect with top university students' },
+    { icon: Award, text: 'Industry professional mentorship' },
+    { icon: Target, text: 'Career guidance & opportunities' },
+    { icon: Globe, text: 'Bridge academia and industry' }
   ]
 
   return (
@@ -31,12 +31,8 @@ const About: React.FC = () => {
             </h2>
             
             <div className="prose prose-lg max-w-none text-gray-600 mb-6 sm:mb-8 lg:mb-10">
-              <p className="text-base sm:text-lg leading-relaxed mb-4 sm:mb-6 px-2 sm:px-0">
-                CS Connect Pakistan started as a simple vision: connect brilliant CS minds across our nation's universities. 
-                What began as a small WhatsApp group has grown into Pakistan's largest student-driven tech community.
-              </p>
               <p className="text-base sm:text-lg leading-relaxed px-2 sm:px-0">
-                From FAST to NUST, from LUMS to GIKI – we're bringing together students passionate about technology and building Pakistan's digital future.
+                Pakistan's largest student-driven CS community. Connecting minds from FAST, NUST, LUMS, GIKI and beyond.
               </p>
             </div>
             
@@ -92,8 +88,7 @@ const About: React.FC = () => {
             <span className="text-blue-600"> For Students</span>
           </h3>
           <p className="text-gray-600 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto px-2 sm:px-0">
-            Built by Pakistani CS students who understand the unique challenges and opportunities in our country. 
-            Join us in shaping Pakistan's tech landscape.
+            Built by Pakistani CS students. Join us in shaping Pakistan's tech future.
           </p>
         </div>
       </div>

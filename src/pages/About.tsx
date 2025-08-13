@@ -257,7 +257,7 @@ const About: React.FC = () => {
                             Our <span className="text-blue-600">Vision</span>
                         </h2>
                         <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-                            Building Pakistan's largest student-driven tech community where brilliant minds connect, learn, and create together.
+                            Pakistan's largest student-driven tech community.
                         </p>
                     </div>
 
@@ -268,10 +268,10 @@ const About: React.FC = () => {
                             </h3>
                             <div className="space-y-4 sm:space-y-5 text-gray-700 leading-relaxed">
                                 <p className="text-base sm:text-lg lg:text-xl">
-                                    CS Connect Pakistan started with a simple realization: Pakistani CS students needed a platform to connect, learn, and grow together. What began as a small WhatsApp group has evolved into a community serving students across the nation.
+                                    What began as a small WhatsApp group has evolved into Pakistan's largest CS student community.
                                 </p>
                                 <p className="text-base sm:text-lg lg:text-xl">
-                                    We believe in the power of peer-to-peer learning and the strength that comes from a united community. Every initiative we launch comes from our genuine desire to make the journey easier for fellow students.
+                                    Built by students, for students. Making CS education easier through peer connection.
                                 </p>
                             </div>
                         </div>

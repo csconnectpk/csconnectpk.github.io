@@ -146,13 +146,10 @@ const Team: React.FC = () => {
                             </h2>
                             <div className="space-y-3 sm:space-y-4 text-gray-700 leading-relaxed">
                                 <p className="text-sm sm:text-base lg:text-lg">
-                                    CS Connect Pakistan started with a simple realization: Pakistani CS students needed a platform to connect, learn, and grow together. What began as a small WhatsApp group has evolved into a community serving students across the nation.
+                                    What began as a small WhatsApp group has evolved into Pakistan's largest student CS community.
                                 </p>
                                 <p className="text-sm sm:text-base lg:text-lg">
-                                    Our team consists entirely of students and recent graduates who understand the unique challenges of pursuing computer science education in Pakistan. We've experienced the same struggles with finding internships, navigating career paths, and building technical skills while balancing academic demands.
-                                </p>
-                                <p className="text-sm sm:text-base lg:text-lg">
-                                    Every initiative we launch, every resource we share, and every connection we facilitate comes from our genuine desire to make the journey easier for fellow students. We believe in the power of peer-to-peer learning and the strength that comes from a united community.
+                                    Built by students who understand the real challenges of CS education in Pakistan.
                                 </p>
                             </div>
                         </div>

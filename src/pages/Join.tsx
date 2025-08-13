@@ -268,13 +268,10 @@ const Join: React.FC = () => {
                             </h2>
                             <div className="space-y-4 text-gray-700 leading-relaxed">
                                 <p>
-                                    Have questions about joining our community? Want to collaborate with us or need guidance about your CS journey? We're here to help and support you.
+                                    Questions about joining? Need guidance on your CS journey? We're here to help.
                                 </p>
                                 <p>
-                                    Whether you're a current student looking for study partners, someone interested in contributing to the community, or just want to learn more about what we do, feel free to reach out.
-                                </p>
-                                <p>
-                                    Our community is built on helping each other succeed. We're always happy to connect with fellow CS students and answer any questions you might have.
+                                    Connect with fellow CS students and get the support you need to succeed.
                                 </p>
                             </div>
 
@@ -283,19 +280,19 @@ const Join: React.FC = () => {
                                 <div className="space-y-3">
                                     <div className="flex items-start space-x-3">
                                         <Check className="w-5 h-5 text-green-600 mt-1 flex-shrink-0" />
-                                        <span className="text-gray-700">Authentic peer connections from universities across Pakistan</span>
+                                        <span className="text-gray-700">Connect with top university students</span>
                                     </div>
                                     <div className="flex items-start space-x-3">
                                         <Check className="w-5 h-5 text-green-600 mt-1 flex-shrink-0" />
-                                        <span className="text-gray-700">Honest sharing of internship and learning opportunities</span>
+                                        <span className="text-gray-700">Access internship opportunities</span>
                                     </div>
                                     <div className="flex items-start space-x-3">
                                         <Check className="w-5 h-5 text-green-600 mt-1 flex-shrink-0" />
-                                        <span className="text-gray-700">Supportive environment for academic and career questions</span>
+                                        <span className="text-gray-700">Get academic and career support</span>
                                     </div>
                                     <div className="flex items-start space-x-3">
                                         <Check className="w-5 h-5 text-green-600 mt-1 flex-shrink-0" />
-                                        <span className="text-gray-700">Community-driven learning and knowledge sharing</span>
+                                        <span className="text-gray-700">Share knowledge and learn together</span>
                                     </div>
                                 </div>
                             </div>
