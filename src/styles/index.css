@@ -185,15 +185,14 @@ a {
     margin-right: auto !important;
   }
   
-  /* Perfect button centering on mobile */
-  .flex {
+  /* Perfect button centering on mobile only */
+  .flex.flex-col {
     justify-content: center !important;
     align-items: center !important;
   }
   
-  /* Button container perfect center */
-  div:has(> a > button),
-  div:has(> button) {
+  /* Button container perfect center on mobile only */
+  .flex.flex-col > div {
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;

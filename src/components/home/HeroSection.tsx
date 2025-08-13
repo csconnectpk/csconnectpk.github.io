@@ -34,9 +34,9 @@ const HeroSection: React.FC = () => {
             Join CS students from universities across Pakistan
           </p>
 
-          {/* Buttons - Perfect Mobile Center Alignment */}
+          {/* Buttons - Perfect Mobile & Desktop Layout */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 sm:mb-16 w-full">
-            <div className="flex justify-center w-full">
+            <div className="flex justify-center w-full sm:w-auto">
               <Link to="/join">
                 <button className="group flex items-center justify-center bg-blue-600 text-white px-6 py-3 rounded-xl font-semibold text-base hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 active:scale-95 min-h-[48px] touch-manipulation">
                   <Users className="mr-2 w-5 h-5 group-hover:scale-110 transition-transform duration-300 flex-shrink-0" />
@@ -45,7 +45,7 @@ const HeroSection: React.FC = () => {
               </Link>
             </div>
             
-            <div className="flex justify-center w-full">
+            <div className="flex justify-center w-full sm:w-auto">
               <Link to="/about">
                 <button className="group flex items-center justify-center border-2 border-gray-300 text-gray-700 px-6 py-3 rounded-xl font-semibold text-base hover:border-blue-600 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 active:scale-95 min-h-[48px] touch-manipulation">
                   <BookOpen className="mr-2 w-5 h-5 group-hover:scale-110 transition-transform duration-300 flex-shrink-0" />
