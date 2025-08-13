@@ -49,7 +49,7 @@ const platforms = [
         description: "Professional networking",
         icon: FaLinkedin,
         color: "bg-blue-700",
-        HoverColor: 'hover:text-blue-400',
+        Hovercolor: 'hover:text-blue-400',
         link: "https://www.linkedin.com/company/csconnectpk/",
     },
 ];

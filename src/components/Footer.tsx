@@ -21,7 +21,7 @@ const Footer: React.FC = () => {
                                     href={platform.link}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className={`text-gray-400 transition-all duration-300 touch-manipulation hover:scale-110 ${platform.Hovercolor || platform.HoverColor || 'hover:text-white'}`}
+                                    className={`text-gray-400 transition-all duration-300 touch-manipulation hover:scale-110 ${platform.Hovercolor || 'hover:text-white'}`}
                                     aria-label={`Follow us on ${platform.name}`}
                                 >
                                     <IconComponent className="w-7 h-7 sm:w-8 sm:h-8 lg:w-9 lg:h-9" />
