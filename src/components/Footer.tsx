@@ -32,19 +32,19 @@ const Footer: React.FC = () => {
 
                     {/* Larger Page Links */}
                     <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-8 text-base sm:text-lg">
-                        <a href="/about" className="text-gray-400 hover:text-white transition-colors duration-300 font-medium">
+                        <a href="/#/about" className="text-gray-400 hover:text-white transition-colors duration-300 font-medium">
                             About
                         </a>
-                        <a href="/blog" className="text-gray-400 hover:text-white transition-colors duration-300 font-medium">
+                        <a href="/#/blog" className="text-gray-400 hover:text-white transition-colors duration-300 font-medium">
                             Blog
                         </a>
-                        <a href="/join" className="text-gray-400 hover:text-white transition-colors duration-300 font-medium">
+                        <a href="/#/join" className="text-gray-400 hover:text-white transition-colors duration-300 font-medium">
                             Join Us
                         </a>
-                        <a href="/podcasts" className="text-gray-400 hover:text-white transition-colors duration-300 font-medium">
+                        <a href="/#/podcasts" className="text-gray-400 hover:text-white transition-colors duration-300 font-medium">
                             Podcasts
                         </a>
-                        <a href="/team" className="text-gray-400 hover:text-white transition-colors duration-300 font-medium">
+                        <a href="/#/team" className="text-gray-400 hover:text-white transition-colors duration-300 font-medium">
                             Team
                         </a>
                     </div>
