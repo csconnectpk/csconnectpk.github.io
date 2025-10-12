@@ -104,7 +104,7 @@ const Join: React.FC = () => {
                                 </button>
                             </a>
                             
-                            <a href="/about">
+                            <a href="/#/about">
                                 <button className="group flex items-center border-2 border-gray-300 text-gray-700 px-4 py-2 sm:px-5 sm:py-3 rounded-lg font-semibold text-xs sm:text-sm hover:border-blue-600 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 w-full sm:w-auto max-w-[180px] sm:max-w-none">
                                     <BookOpen className="mr-1.5 w-3 h-3 sm:w-4 sm:h-4 group-hover:scale-110 transition-transform duration-300" />
                                     Our Story
