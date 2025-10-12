@@ -12,7 +12,7 @@ const SmartNavbar: React.FC<SmartNavbarProps> = ({ className = "" }) => {
     const location = useLocation();
 
     const navItems = [
-        { name: "Home", path: "/" },
+        { name: "Home", path: "/home" },
         { name: "About", path: "/about" },
         { name: "Team", path: "/team" },
         { name: "Podcasts", path: "/podcasts" },
