@@ -2029,46 +2029,58 @@ p {
 /* ----------------------------------------
    24. Join Page
    ---------------------------------------- */
-.benefits-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-sm);
+.benefits-list {
+  display: flex;
+  flex-direction: column;
 }
 
-.benefit-block {
+.benefit-item {
   display: flex;
+  align-items: center;
   gap: var(--space-md);
-  padding: var(--space-lg);
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--color-border);
   transition: all 0.3s ease;
 }
 
-.benefit-block:hover {
-  border-color: var(--color-border-hover);
+.benefit-item:last-child {
+  border-bottom: none;
 }
 
-.benefit-block__icon {
+.benefit-item__number {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  -webkit-text-stroke: 1px var(--color-accent);
+  color: transparent;
+  flex-shrink: 0;
+  width: 80px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.benefit-item__icon {
   width: 48px;
   height: 48px;
-  border-radius: var(--radius-md);
-  background: var(--color-accent-dim);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
   color: var(--color-accent);
+  margin-right: 0.5rem;
 }
 
-.benefit-block__title {
+.benefit-item__content {
+  flex: 1;
+}
+
+.benefit-item__title {
+  font-size: 1.25rem;
   font-weight: 600;
-  margin-bottom: var(--space-xs);
-  font-size: 1.05rem;
+  margin-bottom: 0.25rem;
 }
 
-.benefit-block__text {
-  font-size: 0.9rem;
+.benefit-item__text {
+  font-size: 0.95rem;
   color: var(--color-text-secondary);
   line-height: 1.7;
 }
@@ -2348,7 +2360,7 @@ p {
   bottom: -4%;
   left: 50%;
   transform: translateX(-50%);
-  font-size: clamp(5rem, 14vw, 14rem);
+  font-size: clamp(3rem, 14vw, 14rem);
   font-weight: 800;
   white-space: nowrap;
   color: rgba(255, 255, 255, 0.012);
@@ -2484,10 +2496,6 @@ p {
    28. Responsive — 480px
    ---------------------------------------- */
 @media (min-width: 480px) {
-  .benefits-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
   .episodes-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -2789,16 +2797,60 @@ p {
   .testimonials-column__inner {
     --scroll-duration: 50s;
   }
+
+  /* Benefits list: wrap on small phones */
+  .benefit-item {
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    padding: 1.5rem 0;
+  }
+
+  .benefit-item__number {
+    font-size: 2rem;
+    width: auto;
+  }
+
+  .benefit-item__icon {
+    margin-right: 0;
+  }
+
+  .benefit-item__content {
+    width: 100%;
+    flex-basis: 100%;
+  }
+
+  /* Resource cards: prevent overflow */
+  .card--resource {
+    padding: var(--space-md);
+  }
+
+  .card--resource .card__title {
+    word-break: break-word;
+  }
+
+  .resources-grid {
+    overflow: hidden;
+  }
+
+  /* Footer watermark: smaller on small phones */
+  .footer__watermark {
+    font-size: clamp(2.5rem, 12vw, 5rem);
+  }
+
+  /* Feature row text: bump size for readability */
+  .feature-row__title {
+    font-size: 1.65rem;
+  }
+
+  .feature-row__desc {
+    font-size: 1.05rem;
+    line-height: 1.6;
+  }
 }
 
 /* ------ Phones & small tablets (max 767px) ------ */
 @media (max-width: 767px) {
 
-
-  /* Benefit blocks: more padding on mobile */
-  .benefit-block {
-    padding: var(--space-lg);
-  }
 
   /* Guest card: more padding */
   .guest-card {
