@@ -146,8 +146,8 @@
     const members = [
       {
         name: 'Azan Waseem',
-        role: 'Founder & Community Lead',
-        bio: 'Founded CS Connect Pakistan and leads the community. Drives the vision of making CS education accessible for every student across Pakistan.',
+        role: 'Founder & Podcast Host',
+        bio: 'Founded CS Connect Pakistan and hosts the community podcast. Drives the vision of making CS education accessible for every student across Pakistan.',
         linkedin: '#'
       },
       {
@@ -164,8 +164,8 @@
       },
       {
         name: 'Khawaja Owais',
-        role: 'Podcast Host & Co-Lead',
-        bio: 'Hosts the CS Connect podcast, bringing real stories from professionals and students to the community through engaging conversations.',
+        role: 'Mentor & Co-Lead',
+        bio: 'Co-leads CS Connect with a focus on mentorship, guiding students through university choices and career decisions with hands-on support.',
         linkedin: '#'
       },
       {
