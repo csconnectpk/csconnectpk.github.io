@@ -264,6 +264,70 @@
 
 
 
+  // ── FAQ Accordion with Smooth Animation ──
+  const faqContainer = document.querySelector('.faq');
+
+  if (faqContainer) {
+    const allDetails = faqContainer.querySelectorAll('details');
+
+    allDetails.forEach(details => {
+      // Wrap content after summary in .faq__answer for animation
+      const summary = details.querySelector('summary');
+      const children = Array.from(details.children).filter(c => c !== summary);
+      const wrapper = document.createElement('div');
+      wrapper.classList.add('faq__answer');
+      children.forEach(c => wrapper.appendChild(c));
+      details.appendChild(wrapper);
+
+      summary.addEventListener('click', e => {
+        e.preventDefault();
+        const isOpen = details.hasAttribute('open');
+
+        if (isOpen) {
+          // Close this one
+          closeDetails(details, wrapper);
+        } else {
+          // Close any other open details first
+          allDetails.forEach(other => {
+            if (other !== details && other.hasAttribute('open')) {
+              const otherWrapper = other.querySelector('.faq__answer');
+              closeDetails(other, otherWrapper);
+            }
+          });
+          // Open this one
+          openDetails(details, wrapper);
+        }
+      });
+    });
+
+    function openDetails(details, wrapper) {
+      details.setAttribute('open', '');
+      const height = wrapper.scrollHeight;
+      wrapper.style.height = '0px';
+      requestAnimationFrame(() => {
+        wrapper.style.height = height + 'px';
+      });
+      wrapper.addEventListener('transitionend', function handler() {
+        wrapper.style.height = '';
+        wrapper.removeEventListener('transitionend', handler);
+      });
+    }
+
+    function closeDetails(details, wrapper) {
+      const height = wrapper.scrollHeight;
+      wrapper.style.height = height + 'px';
+      requestAnimationFrame(() => {
+        wrapper.style.height = '0px';
+      });
+      wrapper.addEventListener('transitionend', function handler() {
+        details.removeAttribute('open');
+        wrapper.style.height = '';
+        wrapper.removeEventListener('transitionend', handler);
+      });
+    }
+  }
+
+
   // ── Shutter Text Effect ──
   document.querySelectorAll('[data-shutter]').forEach(el => {
     const text = el.textContent;

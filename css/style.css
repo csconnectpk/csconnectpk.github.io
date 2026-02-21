@@ -2193,11 +2193,17 @@ p {
   font-weight: 400;
   color: var(--color-text-secondary);
   flex-shrink: 0;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .faq details[open] summary::after {
   content: '\2212';
   color: var(--color-accent);
+}
+
+.faq__answer {
+  overflow: hidden;
+  transition: height 0.3s ease;
 }
 
 .faq details p {
