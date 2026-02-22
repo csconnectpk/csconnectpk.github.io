@@ -21,6 +21,27 @@
   });
 
 
+  // ── Theme Toggle ──
+  const sunIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>';
+  const moonIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+
+  const savedTheme = localStorage.getItem('theme') || 'dark';
+  document.documentElement.setAttribute('data-theme', savedTheme);
+
+  document.querySelectorAll('.nav__theme-toggle').forEach(btn => {
+    btn.innerHTML = savedTheme === 'dark' ? sunIcon : moonIcon;
+    btn.addEventListener('click', () => {
+      const current = document.documentElement.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      document.querySelectorAll('.nav__theme-toggle').forEach(b => {
+        b.innerHTML = next === 'dark' ? sunIcon : moonIcon;
+      });
+    });
+  });
+
+
   // ── Mobile Nav Toggle ──
   const hamburger = document.querySelector('.nav__hamburger');
   const overlay = document.querySelector('.nav__overlay');
@@ -64,15 +85,17 @@
 
 
   // ── Active Nav Link Detection ──
-  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  const rawPage = window.location.pathname.split('/').pop() || '';
+  const currentPage = rawPage.replace('.html', '') || 'index';
 
   document.querySelectorAll('.nav__link, .nav__overlay-link').forEach(link => {
     const href = link.getAttribute('href');
     if (!href) return;
-    const linkPage = href.split('/').pop();
+    const linkPage = href.split('/').pop().replace('.html', '') || 'index';
     const isActive = linkPage === currentPage ||
-      (currentPage === '' && linkPage === 'index.html') ||
-      (currentPage === 'index.html' && linkPage === 'index.html');
+      (currentPage === '' && linkPage === 'index') ||
+      (currentPage === 'index' && linkPage === 'index') ||
+      (currentPage === '/' && (linkPage === '' || linkPage === 'index'));
 
     if (isActive) {
       link.classList.add('active');
@@ -151,33 +174,27 @@
         linkedin: '#'
       },
       {
-        name: 'Maryam Ahmed',
-        role: 'Design Lead',
-        bio: 'Leads the design and creative direction of CS Connect. Ensures every touchpoint of the community looks and feels professional and welcoming.',
-        linkedin: '#'
-      },
-      {
         name: 'Siraj Qazi',
-        role: 'Mentor',
-        bio: 'Guides students through their CS journey with hands-on mentorship. Helps community members navigate university choices and career decisions.',
+        role: 'Senior Advisor',
+        bio: 'Brings deep industry perspective to CS Connect, guiding the community\'s direction with strategic insight and hands-on leadership support.',
         linkedin: '#'
       },
       {
         name: 'Khawaja Owais',
-        role: 'Mentor & Co-Lead',
-        bio: 'Co-leads CS Connect with a focus on mentorship, guiding students through university choices and career decisions with hands-on support.',
+        role: 'Co-Lead & Senior Advisor',
+        bio: 'Co-leads CS Connect with a focus on strategic growth and mentorship, helping shape the community\'s impact across Pakistan.',
         linkedin: '#'
       },
       {
         name: 'Talha Asghar',
-        role: 'Mentor',
-        bio: 'Supports students with technical guidance and career advice. Active in community sessions and workshops focused on practical skills.',
+        role: 'Senior Advisor',
+        bio: 'Provides strategic guidance and technical expertise, actively supporting community initiatives and workshops with practical industry knowledge.',
         linkedin: '#'
       },
       {
         name: 'Kashif Umair Liaqat',
-        role: 'Mentor',
-        bio: 'Senior software engineer bringing industry experience to the community. Mentors students on real-world development practices and career growth.',
+        role: 'Senior Advisor',
+        bio: 'Senior software engineer bringing years of industry experience to the community. Advises on real-world development practices and career strategy.',
         linkedin: '#'
       }
     ];

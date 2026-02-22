@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/style.css">
+  <script>document.documentElement.setAttribute('data-theme',localStorage.getItem('theme')||'dark')</script>
 </head>
 <body class="loading">
 
@@ -30,11 +31,14 @@
       <a href="resources.html" class="nav__link">Resources</a>
       <a href="join.html" class="nav__link">Join</a>
     </div>
-    <button class="nav__hamburger" aria-label="Toggle menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+    <div class="nav__right">
+      <button class="nav__theme-toggle" aria-label="Toggle theme"></button>
+      <button class="nav__hamburger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
   </nav>
 
   <!-- Mobile Overlay -->
@@ -44,6 +48,7 @@
     <a href="podcasts.html" class="nav__overlay-link">Podcasts</a>
     <a href="resources.html" class="nav__overlay-link">Resources</a>
     <a href="join.html" class="nav__overlay-link">Join</a>
+    <button class="nav__theme-toggle" aria-label="Toggle theme"></button>
   </div>
 
   <!-- Hero -->
@@ -207,48 +212,25 @@
         <p class="section-header__subtitle">Conversations with CS students and professionals sharing their unfiltered journeys.</p>
       </div>
 
-      <!-- Featured Episode -->
-      <a href="https://www.youtube.com/watch?v=CnQpEVoCIso" target="_blank" rel="noopener" class="podcast-spotlight__featured" data-reveal>
-        <div class="podcast-spotlight__featured-thumbnail">
-          <img src="https://img.youtube.com/vi/CnQpEVoCIso/hqdefault.jpg" alt="Open Source Intelligence | Ft. Ashar Khalil" loading="lazy">
-          <div class="podcast-spotlight__play-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="#000" stroke="none"><polygon points="6,3 20,12 6,21"/></svg>
+      <!-- Featured Episode (auto-updated from YouTube when API is configured) -->
+      <div data-yt-featured>
+        <a href="https://www.youtube.com/watch?v=CnQpEVoCIso" target="_blank" rel="noopener" class="podcast-spotlight__featured" data-reveal>
+          <div class="podcast-spotlight__featured-thumbnail">
+            <img src="https://img.youtube.com/vi/CnQpEVoCIso/hqdefault.jpg" alt="Open Source Intelligence | Ft. Ashar Khalil" loading="lazy">
+            <div class="podcast-spotlight__play-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="#000" stroke="none"><polygon points="6,3 20,12 6,21"/></svg>
+            </div>
           </div>
-        </div>
-        <div class="podcast-spotlight__featured-content">
-          <span class="podcast-spotlight__featured-label">Latest Episode</span>
-          <h3 class="podcast-spotlight__featured-title">Open Source Intelligence</h3>
-          <p class="podcast-spotlight__featured-desc">A deep dive into the world of OSINT with Ashar Khalil, exploring how open-source intelligence is reshaping cybersecurity and career opportunities in Pakistan.</p>
-          <div class="podcast-spotlight__featured-meta">
-            <span>Ft. Ashar Khalil</span>
-            <span>1h 12m</span>
+          <div class="podcast-spotlight__featured-content">
+            <span class="podcast-spotlight__featured-label">Latest Episode</span>
+            <h3 class="podcast-spotlight__featured-title">Open Source Intelligence</h3>
+            <p class="podcast-spotlight__featured-desc">A deep dive into the world of OSINT with Ashar Khalil, exploring how open-source intelligence is reshaping cybersecurity and career opportunities in Pakistan.</p>
+            <div class="podcast-spotlight__featured-meta">
+              <span>Ft. Ashar Khalil</span>
+              <span>1h 12m</span>
+            </div>
           </div>
-        </div>
-      </a>
-
-      <!-- Recent Guests -->
-      <div class="podcast-spotlight__guests">
-        <div class="guest-card" data-reveal>
-          <div class="guest-card__avatar">HK</div>
-          <div class="guest-card__info">
-            <div class="guest-card__name">Huzaifa Khan</div>
-            <div class="guest-card__role">Tech, Startups & Google Solution Challenge</div>
-          </div>
-        </div>
-        <div class="guest-card" data-reveal="delay-1">
-          <div class="guest-card__avatar">UM</div>
-          <div class="guest-card__info">
-            <div class="guest-card__name">Usman Muhammad</div>
-            <div class="guest-card__role">FAST, Microsoft & Self-Driving Cars</div>
-          </div>
-        </div>
-        <div class="guest-card" data-reveal="delay-2">
-          <div class="guest-card__avatar">AR</div>
-          <div class="guest-card__info">
-            <div class="guest-card__name">Ahson Raza</div>
-            <div class="guest-card__role">From Telenor to Meta, Google & Amazon</div>
-          </div>
-        </div>
+        </a>
       </div>
 
       <div class="mt-xl" data-reveal>
@@ -560,8 +542,8 @@
       <h2 class="community-cta__title" data-reveal>Ready to Connect?</h2>
       <p class="community-cta__text" data-reveal>Join 3000+ CS students building their future together. Free, open, and student-led.</p>
       <div class="community-cta__buttons" data-reveal>
-        <a href="join.html" class="btn-primary btn-lg">Join via WhatsApp</a>
-        <a href="join.html" class="btn-secondary btn-lg">Join Discord Server</a>
+        <a href="https://chat.whatsapp.com/LuIYRO2ZzhG6zcMshGQADx" target="_blank" rel="noopener" class="btn-primary btn-lg">Join via WhatsApp</a>
+        <a href="https://discord.gg/uUUHvmse" target="_blank" rel="noopener" class="btn-secondary btn-lg">Join Discord Server</a>
       </div>
       <p class="community-cta__note" data-reveal>No spam. No fees. Just a community of students helping students.</p>
     </div>
@@ -609,6 +591,11 @@
             <a href="https://www.youtube.com/@csconnectpk" target="_blank" rel="noopener" class="footer__link">YouTube</a>
             <a href="https://www.instagram.com/csconnectpk" target="_blank" rel="noopener" class="footer__link">Instagram</a>
           </div>
+          <div class="footer__col">
+            <h4 class="footer__col-title">Contact</h4>
+            <a href="https://wa.me/923226221622" target="_blank" rel="noopener" class="footer__link">+92 322 6221622</a>
+            <a href="mailto:csconnectpakistan@gmail.com" class="footer__link">csconnectpakistan@gmail.com</a>
+          </div>
         </div>
       </div>
       <div class="footer__bottom">
@@ -619,5 +606,6 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="js/youtube.js"></script>
 </body>
 </html>

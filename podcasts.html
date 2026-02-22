@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/style.css">
+  <script>document.documentElement.setAttribute('data-theme',localStorage.getItem('theme')||'dark')</script>
 </head>
 <body class="loading">
 
@@ -30,11 +31,14 @@
       <a href="resources.html" class="nav__link">Resources</a>
       <a href="join.html" class="nav__link">Join</a>
     </div>
-    <button class="nav__hamburger" aria-label="Toggle menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+    <div class="nav__right">
+      <button class="nav__theme-toggle" aria-label="Toggle theme"></button>
+      <button class="nav__hamburger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
   </nav>
 
   <!-- Mobile Overlay -->
@@ -44,6 +48,7 @@
     <a href="podcasts.html" class="nav__overlay-link active">Podcasts</a>
     <a href="resources.html" class="nav__overlay-link">Resources</a>
     <a href="join.html" class="nav__overlay-link">Join</a>
+    <button class="nav__theme-toggle" aria-label="Toggle theme"></button>
   </div>
 
   <!-- Page Hero -->
@@ -54,9 +59,9 @@
     </div>
   </section>
 
-  <!-- Featured Episode -->
+  <!-- Featured Episode (auto-updated from YouTube when API is configured) -->
   <section class="section">
-    <div class="container">
+    <div class="container" data-yt-podcast-featured>
       <a href="https://www.youtube.com/watch?v=CnQpEVoCIso" target="_blank" rel="noopener" class="featured-episode" data-reveal>
         <div class="featured-episode__thumbnail">
           <img src="https://img.youtube.com/vi/CnQpEVoCIso/hqdefault.jpg" alt="Open Source Intelligence | Ft. Ashar Khalil" loading="lazy">
@@ -86,7 +91,7 @@
         <h2 class="section-header__title">Browse All Episodes</h2>
       </div>
 
-      <div class="episodes-grid">
+      <div class="episodes-grid" data-yt-episodes-grid>
 
         <a href="https://www.youtube.com/watch?v=CnQpEVoCIso" target="_blank" rel="noopener" class="episode-card" data-reveal>
           <div class="episode-card__thumbnail">
@@ -120,23 +125,7 @@
           </div>
         </a>
 
-        <a href="https://www.youtube.com/watch?v=X4D6fH11jIs" target="_blank" rel="noopener" class="episode-card" data-reveal="delay-2">
-          <div class="episode-card__thumbnail">
-            <img src="https://img.youtube.com/vi/X4D6fH11jIs/hqdefault.jpg" alt="The Brutal and Controversial University Guide | Azan Waseem" loading="lazy">
-            <div class="episode-card__play"><svg viewBox="0 0 24 24" fill="#000" stroke="none"><polygon points="6,3 20,12 6,21"/></svg></div>
-          </div>
-          <div class="episode-card__body">
-            <span class="episode-card__number">EP 09</span>
-            <h3 class="episode-card__title">The Brutal and Controversial University Guide</h3>
-            <p class="episode-card__guest">Ft. Azan Waseem</p>
-            <div class="episode-card__meta">
-              <span>2h 43m</span>
-              <span>Aug 2025</span>
-            </div>
-          </div>
-        </a>
-
-        <a href="https://www.youtube.com/watch?v=nbiz4O1sJX4" target="_blank" rel="noopener" class="episode-card" data-reveal>
+        <a href="https://www.youtube.com/watch?v=nbiz4O1sJX4" target="_blank" rel="noopener" class="episode-card" data-reveal="delay-2">
           <div class="episode-card__thumbnail">
             <img src="https://img.youtube.com/vi/nbiz4O1sJX4/hqdefault.jpg" alt="FAST, Microsoft and Self-Driving Cars | Ft. Usman Muhammad" loading="lazy">
             <div class="episode-card__play"><svg viewBox="0 0 24 24" fill="#000" stroke="none"><polygon points="6,3 20,12 6,21"/></svg></div>
@@ -152,23 +141,7 @@
           </div>
         </a>
 
-        <a href="https://www.youtube.com/watch?v=RJsri_8P--Q" target="_blank" rel="noopener" class="episode-card" data-reveal="delay-1">
-          <div class="episode-card__thumbnail">
-            <img src="https://img.youtube.com/vi/RJsri_8P--Q/hqdefault.jpg" alt="Prompt Engineering for Medical Students | RMU Webinar" loading="lazy">
-            <div class="episode-card__play"><svg viewBox="0 0 24 24" fill="#000" stroke="none"><polygon points="6,3 20,12 6,21"/></svg></div>
-          </div>
-          <div class="episode-card__body">
-            <span class="episode-card__number">EP 07</span>
-            <h3 class="episode-card__title">Prompt Engineering for Medical Students</h3>
-            <p class="episode-card__guest">RMU Webinar</p>
-            <div class="episode-card__meta">
-              <span>1h 18m</span>
-              <span>Jul 2025</span>
-            </div>
-          </div>
-        </a>
-
-        <a href="https://www.youtube.com/watch?v=MTZrtD1DhbY" target="_blank" rel="noopener" class="episode-card" data-reveal="delay-2">
+        <a href="https://www.youtube.com/watch?v=MTZrtD1DhbY" target="_blank" rel="noopener" class="episode-card" data-reveal="delay-1">
           <div class="episode-card__thumbnail">
             <img src="https://img.youtube.com/vi/MTZrtD1DhbY/hqdefault.jpg" alt="FAST, Business, and Life in Canada | Ft. Rafaeel Chaudhry" loading="lazy">
             <div class="episode-card__play"><svg viewBox="0 0 24 24" fill="#000" stroke="none"><polygon points="6,3 20,12 6,21"/></svg></div>
@@ -395,6 +368,11 @@
             <a href="https://www.youtube.com/@csconnectpk" target="_blank" rel="noopener" class="footer__link">YouTube</a>
             <a href="https://www.instagram.com/csconnectpk" target="_blank" rel="noopener" class="footer__link">Instagram</a>
           </div>
+          <div class="footer__col">
+            <h4 class="footer__col-title">Contact</h4>
+            <a href="https://wa.me/923226221622" target="_blank" rel="noopener" class="footer__link">+92 322 6221622</a>
+            <a href="mailto:csconnectpakistan@gmail.com" class="footer__link">csconnectpakistan@gmail.com</a>
+          </div>
         </div>
       </div>
       <div class="footer__bottom">
@@ -405,5 +383,6 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="js/youtube.js"></script>
 </body>
 </html>

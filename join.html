@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/style.css">
+  <script>document.documentElement.setAttribute('data-theme',localStorage.getItem('theme')||'dark')</script>
 </head>
 <body class="loading">
 
@@ -30,11 +31,14 @@
       <a href="resources.html" class="nav__link">Resources</a>
       <a href="join.html" class="nav__link">Join</a>
     </div>
-    <button class="nav__hamburger" aria-label="Toggle menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+    <div class="nav__right">
+      <button class="nav__theme-toggle" aria-label="Toggle theme"></button>
+      <button class="nav__hamburger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
   </nav>
 
   <!-- Mobile Overlay -->
@@ -44,6 +48,7 @@
     <a href="podcasts.html" class="nav__overlay-link">Podcasts</a>
     <a href="resources.html" class="nav__overlay-link">Resources</a>
     <a href="join.html" class="nav__overlay-link">Join</a>
+    <button class="nav__theme-toggle" aria-label="Toggle theme"></button>
   </div>
 
   <!-- Page Hero -->
@@ -193,18 +198,6 @@
     </div>
   </section>
 
-  <!-- 003 / Join the Team -->
-  <section class="section section--surface" data-reveal>
-    <div class="container">
-      <div class="join-team-cta" data-reveal>
-        <span class="section-header__number">003 / Volunteer</span>
-        <h2 class="join-team-cta__title">Want to Join the Team?</h2>
-        <p class="join-team-cta__text">We're always looking for passionate students — content creators, mentors, designers, developers, and more.</p>
-        <a href="mailto:csconnectpakistan@gmail.com" class="btn-primary btn-lg">Email Us to Apply</a>
-      </div>
-    </div>
-  </section>
-
   <!-- Footer -->
   <footer class="footer">
     <div class="footer__glow"></div>
@@ -246,6 +239,11 @@
             <a href="https://discord.gg/uUUHvmse" target="_blank" rel="noopener" class="footer__link">Discord</a>
             <a href="https://www.youtube.com/@csconnectpk" target="_blank" rel="noopener" class="footer__link">YouTube</a>
             <a href="https://www.instagram.com/csconnectpk" target="_blank" rel="noopener" class="footer__link">Instagram</a>
+          </div>
+          <div class="footer__col">
+            <h4 class="footer__col-title">Contact</h4>
+            <a href="https://wa.me/923226221622" target="_blank" rel="noopener" class="footer__link">+92 322 6221622</a>
+            <a href="mailto:csconnectpakistan@gmail.com" class="footer__link">csconnectpakistan@gmail.com</a>
           </div>
         </div>
       </div>

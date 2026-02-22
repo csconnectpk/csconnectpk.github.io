@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,9 +8,10 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/style.css">
+  <script>document.documentElement.setAttribute('data-theme',localStorage.getItem('theme')||'dark')</script>
 </head>
 <body class="loading">
 
@@ -30,11 +31,14 @@
       <a href="resources.html" class="nav__link">Resources</a>
       <a href="join.html" class="nav__link">Join</a>
     </div>
-    <button class="nav__hamburger" aria-label="Toggle menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+    <div class="nav__right">
+      <button class="nav__theme-toggle" aria-label="Toggle theme"></button>
+      <button class="nav__hamburger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
   </nav>
 
   <!-- Mobile Overlay -->
@@ -44,6 +48,7 @@
     <a href="podcasts.html" class="nav__overlay-link">Podcasts</a>
     <a href="resources.html" class="nav__overlay-link">Resources</a>
     <a href="join.html" class="nav__overlay-link">Join</a>
+    <button class="nav__theme-toggle" aria-label="Toggle theme"></button>
   </div>
 
   <!-- Page Hero -->
@@ -106,36 +111,36 @@
   </section>
 
   <!-- University Showcase -->
-  <section class="universities">
+  <section class="universities universities--bold">
     <div class="container">
       <p class="universities__label" data-reveal>Students from <span class="accent">100+ universities</span> across Pakistan</p>
     </div>
     <div class="universities__ticker" data-reveal>
       <div class="universities__track">
-        <span class="universities__name">FAST NUCES</span>
+        <span class="universities__name">FAST</span>
         <span class="universities__name">NUST</span>
-        <span class="universities__name">UET</span>
         <span class="universities__name">GIKI</span>
         <span class="universities__name">COMSATS</span>
+        <span class="universities__name">AIR</span>
         <span class="universities__name">LUMS</span>
         <span class="universities__name">IBA</span>
-        <span class="universities__name">Habib University</span>
-        <span class="universities__name">Air University</span>
-        <span class="universities__name">Bahria University</span>
+        <span class="universities__name">UET</span>
+        <span class="universities__name">HABIB</span>
+        <span class="universities__name">BAHRIA</span>
         <span class="universities__name">ITU</span>
         <span class="universities__name">PIEAS</span>
         <span class="universities__name">QAU</span>
         <span class="universities__name">NED</span>
-        <span class="universities__name">FAST NUCES</span>
+        <span class="universities__name">FAST</span>
         <span class="universities__name">NUST</span>
-        <span class="universities__name">UET</span>
         <span class="universities__name">GIKI</span>
         <span class="universities__name">COMSATS</span>
+        <span class="universities__name">AIR</span>
         <span class="universities__name">LUMS</span>
         <span class="universities__name">IBA</span>
-        <span class="universities__name">Habib University</span>
-        <span class="universities__name">Air University</span>
-        <span class="universities__name">Bahria University</span>
+        <span class="universities__name">UET</span>
+        <span class="universities__name">HABIB</span>
+        <span class="universities__name">BAHRIA</span>
         <span class="universities__name">ITU</span>
         <span class="universities__name">PIEAS</span>
         <span class="universities__name">QAU</span>
@@ -144,27 +149,27 @@
     </div>
     <div class="universities__ticker universities__ticker--reverse" data-reveal>
       <div class="universities__track">
-        <span class="universities__name">Punjab University</span>
-        <span class="universities__name">Peshawar University</span>
+        <span class="universities__name">PUNJAB</span>
+        <span class="universities__name">PESHAWAR</span>
         <span class="universities__name">MUET</span>
-        <span class="universities__name">Karachi University</span>
+        <span class="universities__name">KARACHI</span>
         <span class="universities__name">RMU</span>
         <span class="universities__name">CUST</span>
-        <span class="universities__name">Islamia University</span>
+        <span class="universities__name">ISLAMIA</span>
         <span class="universities__name">UMT</span>
-        <span class="universities__name">Iqra University</span>
+        <span class="universities__name">IQRA</span>
         <span class="universities__name">SZABIST</span>
         <span class="universities__name">BUITEMS</span>
         <span class="universities__name">IST</span>
-        <span class="universities__name">Punjab University</span>
-        <span class="universities__name">Peshawar University</span>
+        <span class="universities__name">PUNJAB</span>
+        <span class="universities__name">PESHAWAR</span>
         <span class="universities__name">MUET</span>
-        <span class="universities__name">Karachi University</span>
+        <span class="universities__name">KARACHI</span>
         <span class="universities__name">RMU</span>
         <span class="universities__name">CUST</span>
-        <span class="universities__name">Islamia University</span>
+        <span class="universities__name">ISLAMIA</span>
         <span class="universities__name">UMT</span>
-        <span class="universities__name">Iqra University</span>
+        <span class="universities__name">IQRA</span>
         <span class="universities__name">SZABIST</span>
         <span class="universities__name">BUITEMS</span>
         <span class="universities__name">IST</span>
@@ -172,7 +177,7 @@
     </div>
   </section>
 
-  <!-- 003 / Team -->
+  <!-- 003 / Core Team -->
   <section class="section">
     <div class="container">
       <div class="section-header" data-reveal>
@@ -181,24 +186,23 @@
         <p class="section-header__subtitle">A dedicated team of students working to make CS education accessible for everyone.</p>
       </div>
 
+      <h3 class="resources-sub-header" data-reveal>Founding Team</h3>
+
       <div class="animated-team" data-reveal>
         <div class="animated-team__stack">
           <div class="animated-team__image" data-member="0" data-pos="active">
             <img src="images/azan_waseem.jpeg" alt="Azan Waseem" loading="lazy">
           </div>
           <div class="animated-team__image" data-member="1" data-pos="next">
-            <img src="images/maryam_ahmed.webp" alt="Maryam Ahmed" loading="lazy">
-          </div>
-          <div class="animated-team__image" data-member="2" data-pos="prev">
             <img src="images/siraj_qazi.jpeg" alt="Siraj Qazi" loading="lazy">
           </div>
-          <div class="animated-team__image" data-member="3" data-pos="hidden">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          <div class="animated-team__image" data-member="2" data-pos="hidden">
+            <img src="images/khawaja_owais.jpeg" alt="Khawaja Owais" loading="lazy">
           </div>
-          <div class="animated-team__image" data-member="4" data-pos="hidden">
+          <div class="animated-team__image" data-member="3" data-pos="hidden">
             <img src="images/talha_asghar.jpeg" alt="Talha Asghar" loading="lazy">
           </div>
-          <div class="animated-team__image" data-member="5" data-pos="hidden">
+          <div class="animated-team__image" data-member="4" data-pos="prev">
             <img src="images/kashif_umair.jpeg" alt="Kashif Umair Liaqat" loading="lazy">
           </div>
         </div>
@@ -222,6 +226,77 @@
           </div>
         </div>
       </div>
+
+      <!-- Operations Team -->
+      <h3 class="resources-sub-header" style="margin-top: 4rem;" data-reveal>Operations & Community</h3>
+
+      <div class="team-card-grid" data-reveal>
+        <div class="team-profile" data-reveal>
+          <div class="team-profile__photo">
+            <img src="images/maryam_ahmed.webp" alt="Maryam Ahmed" loading="lazy">
+          </div>
+          <div class="team-profile__body">
+            <h4 class="team-profile__name">Maryam Ahmed</h4>
+            <span class="team-profile__role">Design Lead</span>
+            <p class="team-profile__desc">Leads the design and creative direction of CS Connect, ensuring every touchpoint looks professional and welcoming.</p>
+            <a href="#" class="team-profile__linkedin" target="_blank" rel="noopener">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              LinkedIn
+            </a>
+          </div>
+        </div>
+
+        <div class="team-profile" data-reveal="delay-1">
+          <div class="team-profile__photo team-profile__photo--placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <div class="team-profile__body">
+            <h4 class="team-profile__name">Daniyal</h4>
+            <span class="team-profile__role">Mod & Mentor</span>
+            <p class="team-profile__desc">Keeps the community engaged and organized, moderating discussions and helping members connect with each other.</p>
+            <a href="#" class="team-profile__linkedin" target="_blank" rel="noopener">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              LinkedIn
+            </a>
+          </div>
+        </div>
+
+        <div class="team-profile" data-reveal="delay-2">
+          <div class="team-profile__photo team-profile__photo--placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <div class="team-profile__body">
+            <h4 class="team-profile__name">Hassan Murad</h4>
+            <span class="team-profile__role">Community Moderator</span>
+            <p class="team-profile__desc">Ensures smooth community operations and helps new members feel welcome from day one.</p>
+            <a href="#" class="team-profile__linkedin" target="_blank" rel="noopener">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              LinkedIn
+            </a>
+          </div>
+        </div>
+
+        <div class="team-profile" data-reveal>
+          <div class="team-profile__photo team-profile__photo--placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <div class="team-profile__body">
+            <h4 class="team-profile__name">Asad Ali</h4>
+            <span class="team-profile__role">Mod & Mentor</span>
+            <p class="team-profile__desc">Active moderator who supports community events and maintains a positive, inclusive environment.</p>
+            <a href="#" class="team-profile__linkedin" target="_blank" rel="noopener">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              LinkedIn
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Join the Team CTA -->
+      <div class="inline-cta" data-reveal>
+        <h3 class="inline-cta__title">Want to Join the Team?</h3>
+        <p class="inline-cta__text">We're always looking for passionate students to contribute as mentors, moderators, designers, developers, and more. Reach out at <a href="mailto:csconnectpakistan@gmail.com">csconnectpakistan@gmail.com</a></p>
+      </div>
     </div>
   </section>
 
@@ -244,7 +319,6 @@
       <p class="community-cta__text" data-reveal>Whether you're a student looking for guidance or a professional wanting to give back, there's a place for you here.</p>
       <div class="community-cta__buttons" data-reveal>
         <a href="join.html" class="btn-primary btn-lg">Join the Community</a>
-        <a href="podcasts.html" class="btn-secondary btn-lg">Listen to Our Podcast</a>
       </div>
     </div>
   </section>
@@ -290,6 +364,11 @@
             <a href="https://discord.gg/uUUHvmse" target="_blank" rel="noopener" class="footer__link">Discord</a>
             <a href="https://www.youtube.com/@csconnectpk" target="_blank" rel="noopener" class="footer__link">YouTube</a>
             <a href="https://www.instagram.com/csconnectpk" target="_blank" rel="noopener" class="footer__link">Instagram</a>
+          </div>
+          <div class="footer__col">
+            <h4 class="footer__col-title">Contact</h4>
+            <a href="https://wa.me/923226221622" target="_blank" rel="noopener" class="footer__link">+92 322 6221622</a>
+            <a href="mailto:csconnectpakistan@gmail.com" class="footer__link">csconnectpakistan@gmail.com</a>
           </div>
         </div>
       </div>

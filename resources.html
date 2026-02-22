@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/style.css">
+  <script>document.documentElement.setAttribute('data-theme',localStorage.getItem('theme')||'dark')</script>
 </head>
 <body class="loading">
 
@@ -30,11 +31,14 @@
       <a href="resources.html" class="nav__link active">Resources</a>
       <a href="join.html" class="nav__link">Join</a>
     </div>
-    <button class="nav__hamburger" aria-label="Toggle menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+    <div class="nav__right">
+      <button class="nav__theme-toggle" aria-label="Toggle theme"></button>
+      <button class="nav__hamburger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
   </nav>
 
   <!-- Mobile Overlay -->
@@ -44,6 +48,7 @@
     <a href="podcasts.html" class="nav__overlay-link">Podcasts</a>
     <a href="resources.html" class="nav__overlay-link active">Resources</a>
     <a href="join.html" class="nav__overlay-link">Join</a>
+    <button class="nav__theme-toggle" aria-label="Toggle theme"></button>
   </div>
 
   <!-- Page Hero -->
@@ -54,132 +59,140 @@
     </div>
   </section>
 
-  <!-- 001 / Entry Test Prep -->
-  <section class="section" data-reveal>
-    <div class="container">
-      <div class="section-header" data-reveal>
-        <span class="section-header__number">001 / Entry Test Prep</span>
-        <h2 class="section-header__title">University Entry Tests</h2>
-      </div>
-
-      <div class="resource-list">
-        <a href="#" class="resource-item" data-reveal>
-          <span class="resource-item__tag">FAST</span>
-          <div class="resource-item__content">
-            <h4 class="resource-item__title">FAST NUCES Entry Test Guide</h4>
-            <p class="resource-item__text">Test pattern breakdown, past papers, and prep strategy from students who scored 80+.</p>
-          </div>
-          <span class="resource-item__arrow">&rarr;</span>
-        </a>
-
-        <a href="#" class="resource-item" data-reveal>
-          <span class="resource-item__tag">NUST</span>
-          <div class="resource-item__content">
-            <h4 class="resource-item__title">NUST NET Preparation Kit</h4>
-            <p class="resource-item__text">Subject-wise guide covering math, physics, and English with practice problems.</p>
-          </div>
-          <span class="resource-item__arrow">&rarr;</span>
-        </a>
-
-        <a href="#" class="resource-item" data-reveal>
-          <span class="resource-item__tag">COMSATS</span>
-          <div class="resource-item__content">
-            <h4 class="resource-item__title">COMSATS NTS Guide</h4>
-            <p class="resource-item__text">Admission process, test format, and scoring criteria explained.</p>
-          </div>
-          <span class="resource-item__arrow">&rarr;</span>
-        </a>
-
-        <a href="#" class="resource-item" data-reveal>
-          <span class="resource-item__tag">GIKI</span>
-          <div class="resource-item__content">
-            <h4 class="resource-item__title">GIKI Admission Guide</h4>
-            <p class="resource-item__text">Admission test walkthrough, interview tips, and merit criteria from past applicants.</p>
-          </div>
-          <span class="resource-item__arrow">&rarr;</span>
-        </a>
-
-        <a href="#" class="resource-item" data-reveal>
-          <span class="resource-item__tag">LUMS</span>
-          <div class="resource-item__content">
-            <h4 class="resource-item__title">LUMS SBASSE Prep</h4>
-            <p class="resource-item__text">SBASSE sample questions and recommended study materials.</p>
-          </div>
-          <span class="resource-item__arrow">&rarr;</span>
-        </a>
-
-        <a href="#" class="resource-item" data-reveal>
-          <span class="resource-item__tag">GENERAL</span>
-          <div class="resource-item__content">
-            <h4 class="resource-item__title">University Comparison Guide</h4>
-            <p class="resource-item__text">Curriculum, faculty, placements, and student life compared across universities.</p>
-          </div>
-          <span class="resource-item__arrow">&rarr;</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- 002 / Sessions & Workshops -->
+  <!-- 001 / Sessions & Workshops -->
   <section class="section section--surface" data-reveal>
     <div class="container">
       <div class="section-header" data-reveal>
-        <span class="section-header__number">002 / Sessions & Workshops</span>
+        <span class="section-header__number">001 / Sessions & Workshops</span>
         <h2 class="section-header__title">Learn From the Community</h2>
       </div>
 
       <h3 class="resources-sub-header" data-reveal>Past Sessions</h3>
       <div class="resources-grid">
-        <div class="card card--resource" data-reveal>
+        <a href="https://www.youtube.com/watch?v=X4D6fH11jIs" target="_blank" rel="noopener" class="card card--resource card--has-thumb" data-reveal>
+          <div class="card__thumbnail">
+            <img src="https://img.youtube.com/vi/X4D6fH11jIs/hqdefault.jpg" alt="The Brutal and Controversial University Guide" loading="lazy">
+            <div class="card__play"><svg viewBox="0 0 24 24" fill="#000" stroke="none"><polygon points="6,3 20,12 6,21"/></svg></div>
+          </div>
+          <span class="card__tag">VIDEO</span>
+          <h4 class="card__title">The Brutal and Controversial University Guide</h4>
+          <p class="card__text">Ft. Azan Waseem. An honest, no-holds-barred look at Pakistani CS universities — rankings, pros, cons, and what students actually experience.</p>
+          <span class="btn-ghost mt-md">Watch on YouTube &rarr;</span>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=RJsri_8P--Q" target="_blank" rel="noopener" class="card card--resource card--has-thumb" data-reveal="delay-1">
+          <div class="card__thumbnail">
+            <img src="https://img.youtube.com/vi/RJsri_8P--Q/hqdefault.jpg" alt="Prompt Engineering for Medical Students | AI Webinar" loading="lazy">
+            <div class="card__play"><svg viewBox="0 0 24 24" fill="#000" stroke="none"><polygon points="6,3 20,12 6,21"/></svg></div>
+          </div>
+          <span class="card__tag">WEBINAR</span>
+          <h4 class="card__title">Prompt Engineering for Medical Students</h4>
+          <p class="card__text">RMU Webinar. Learn how AI and prompt engineering are changing the medical field, with practical tips for students in any discipline.</p>
+          <span class="btn-ghost mt-md">Watch on YouTube &rarr;</span>
+        </a>
+
+        <div class="card card--resource" data-reveal="delay-2">
           <span class="card__tag">RECORDING</span>
           <h4 class="card__title">Intro to Web Development</h4>
           <p class="card__text">HTML, CSS, and JavaScript fundamentals with hands-on exercises.</p>
           <a href="#" class="btn-ghost mt-md">Watch Recording &rarr;</a>
         </div>
 
-        <div class="card card--resource" data-reveal="delay-1">
+        <div class="card card--resource" data-reveal>
           <span class="card__tag">RECORDING</span>
           <h4 class="card__title">DSA for Interviews</h4>
           <p class="card__text">Crash course on the DSA patterns that come up most in technical interviews.</p>
           <a href="#" class="btn-ghost mt-md">Watch Recording &rarr;</a>
         </div>
 
-        <div class="card card--resource" data-reveal="delay-2">
+        <div class="card card--resource" data-reveal="delay-1">
           <span class="card__tag">RECORDING</span>
           <h4 class="card__title">Git & GitHub for Beginners</h4>
           <p class="card__text">Version control, branching, pull requests, and open source collaboration.</p>
           <a href="#" class="btn-ghost mt-md">Watch Recording &rarr;</a>
         </div>
       </div>
+    </div>
+  </section>
 
-      <h3 class="resources-sub-header" data-reveal>Upcoming Workshops</h3>
-      <div class="resource-list">
-        <a href="#" class="resource-item" data-reveal>
-          <span class="resource-item__tag">UPCOMING</span>
-          <div class="resource-item__content">
-            <h4 class="resource-item__title">Machine Learning Basics</h4>
-            <p class="resource-item__text">ML concepts, Python libraries, and building your first model. No prerequisites.</p>
+  <!-- 002 / Entry Test Prep -->
+  <section class="section" data-reveal>
+    <div class="container">
+      <div class="section-header" data-reveal>
+        <span class="section-header__number">002 / Entry Test Prep</span>
+        <h2 class="section-header__title">University Entry Tests</h2>
+      </div>
+
+      <div class="entry-test-grid">
+        <a href="#" class="entry-test-card" data-reveal>
+          <div class="entry-test-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
           </div>
-          <span class="resource-item__arrow">&rarr;</span>
+          <span class="entry-test-card__tag">FAST</span>
+          <h4 class="entry-test-card__title">FAST NUCES Entry Test Guide</h4>
+          <p class="entry-test-card__text">Test pattern breakdown, past papers, and prep strategy from students who scored 80+.</p>
+          <span class="entry-test-card__link">View Guide &rarr;</span>
         </a>
 
-        <a href="#" class="resource-item" data-reveal>
-          <span class="resource-item__tag">UPCOMING</span>
-          <div class="resource-item__content">
-            <h4 class="resource-item__title">Resume Building Workshop</h4>
-            <p class="resource-item__text">Real examples, common mistakes, and ATS optimization tips.</p>
+        <a href="#" class="entry-test-card" data-reveal="delay-1">
+          <div class="entry-test-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
           </div>
-          <span class="resource-item__arrow">&rarr;</span>
+          <span class="entry-test-card__tag">NUST</span>
+          <h4 class="entry-test-card__title">NUST NET Preparation Kit</h4>
+          <p class="entry-test-card__text">Subject-wise guide covering math, physics, and English with practice problems.</p>
+          <span class="entry-test-card__link">View Guide &rarr;</span>
         </a>
 
-        <a href="#" class="resource-item" data-reveal>
-          <span class="resource-item__tag">UPCOMING</span>
-          <div class="resource-item__content">
-            <h4 class="resource-item__title">System Design 101</h4>
-            <p class="resource-item__text">Load balancers, databases, caching, and real-world architecture patterns.</p>
+        <a href="#" class="entry-test-card" data-reveal="delay-2">
+          <div class="entry-test-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
           </div>
-          <span class="resource-item__arrow">&rarr;</span>
+          <span class="entry-test-card__tag">COMSATS</span>
+          <h4 class="entry-test-card__title">COMSATS NTS Guide</h4>
+          <p class="entry-test-card__text">Admission process, test format, and scoring criteria explained.</p>
+          <span class="entry-test-card__link">View Guide &rarr;</span>
         </a>
+
+        <a href="#" class="entry-test-card" data-reveal>
+          <div class="entry-test-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          </div>
+          <span class="entry-test-card__tag">GIKI</span>
+          <h4 class="entry-test-card__title">GIKI Admission Guide</h4>
+          <p class="entry-test-card__text">Admission test walkthrough, interview tips, and merit criteria from past applicants.</p>
+          <span class="entry-test-card__link">View Guide &rarr;</span>
+        </a>
+
+        <a href="#" class="entry-test-card" data-reveal="delay-1">
+          <div class="entry-test-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          </div>
+          <span class="entry-test-card__tag">LUMS</span>
+          <h4 class="entry-test-card__title">LUMS SBASSE Prep</h4>
+          <p class="entry-test-card__text">SBASSE sample questions and recommended study materials.</p>
+          <span class="entry-test-card__link">View Guide &rarr;</span>
+        </a>
+
+        <a href="#" class="entry-test-card" data-reveal="delay-2">
+          <div class="entry-test-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <span class="entry-test-card__tag">GENERAL</span>
+          <h4 class="entry-test-card__title">University Comparison Guide</h4>
+          <p class="entry-test-card__text">Curriculum, faculty, placements, and student life compared across universities.</p>
+          <span class="entry-test-card__link">View Guide &rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contribute CTA -->
+  <section class="section" data-reveal>
+    <div class="container">
+      <div class="inline-cta" data-reveal>
+        <h3 class="inline-cta__title">Have Resources to Share?</h3>
+        <p class="inline-cta__text">Got past papers, study guides, notes, or workshop recordings? Help fellow students by contributing your materials — email us at <a href="mailto:csconnectpakistan@gmail.com?subject=Resource%20Contribution">csconnectpakistan@gmail.com</a></p>
       </div>
     </div>
   </section>
@@ -191,7 +204,6 @@
       <p class="community-cta__text" data-reveal>Prepare with hundreds of students. Share tips, ask questions, and access past papers together.</p>
       <div class="community-cta__buttons" data-reveal>
         <a href="https://chat.whatsapp.com/LuIYRO2ZzhG6zcMshGQADx" target="_blank" rel="noopener" class="btn-primary btn-lg">Join WhatsApp Group</a>
-        <a href="join.html" class="btn-secondary btn-lg">Learn More</a>
       </div>
     </div>
   </section>
@@ -237,6 +249,11 @@
             <a href="https://discord.gg/uUUHvmse" target="_blank" rel="noopener" class="footer__link">Discord</a>
             <a href="https://www.youtube.com/@csconnectpk" target="_blank" rel="noopener" class="footer__link">YouTube</a>
             <a href="https://www.instagram.com/csconnectpk" target="_blank" rel="noopener" class="footer__link">Instagram</a>
+          </div>
+          <div class="footer__col">
+            <h4 class="footer__col-title">Contact</h4>
+            <a href="https://wa.me/923226221622" target="_blank" rel="noopener" class="footer__link">+92 322 6221622</a>
+            <a href="mailto:csconnectpakistan@gmail.com" class="footer__link">csconnectpakistan@gmail.com</a>
           </div>
         </div>
       </div>
