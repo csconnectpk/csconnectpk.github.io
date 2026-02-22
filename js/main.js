@@ -168,33 +168,27 @@
   if (teamContainer) {
     const members = [
       {
-        name: 'Azan Waseem',
-        role: 'Founder & Podcast Host',
-        bio: 'Founded CS Connect Pakistan and hosts the community podcast. Drives the vision of making CS education accessible for every student across Pakistan.',
+        name: 'Maryam Ahmed',
+        role: 'Design Lead',
+        bio: 'Leads the design and creative direction of CS Connect, ensuring every touchpoint looks professional and welcoming.',
         linkedin: '#'
       },
       {
-        name: 'Siraj Qazi',
-        role: 'Senior Advisor',
-        bio: 'Brings deep industry perspective to CS Connect, guiding the community\'s direction with strategic insight and hands-on leadership support.',
+        name: 'Daniyal',
+        role: 'Mod & Mentor',
+        bio: 'Keeps the community engaged and organized, moderating discussions and helping members connect with each other.',
         linkedin: '#'
       },
       {
-        name: 'Khawaja Owais',
-        role: 'Co-Lead & Senior Advisor',
-        bio: 'Co-leads CS Connect with a focus on strategic growth and mentorship, helping shape the community\'s impact across Pakistan.',
+        name: 'Hassan Murad',
+        role: 'Community Moderator',
+        bio: 'Ensures smooth community operations and helps new members feel welcome from day one.',
         linkedin: '#'
       },
       {
-        name: 'Talha Asghar',
-        role: 'Senior Advisor',
-        bio: 'Provides strategic guidance and technical expertise, actively supporting community initiatives and workshops with practical industry knowledge.',
-        linkedin: '#'
-      },
-      {
-        name: 'Kashif Umair Liaqat',
-        role: 'Senior Advisor',
-        bio: 'Senior software engineer bringing years of industry experience to the community. Advises on real-world development practices and career strategy.',
+        name: 'Asad Ali',
+        role: 'Mod & Mentor',
+        bio: 'Active moderator who supports community events and maintains a positive, inclusive environment.',
         linkedin: '#'
       }
     ];
