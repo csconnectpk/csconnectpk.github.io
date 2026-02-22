@@ -42,24 +42,24 @@
   });
 
 
-  // ── Mobile Nav Toggle ──
-  const hamburger = document.querySelector('.nav__hamburger');
+  // ── Mobile Nav Toggle (checkbox-driven) ──
+  const navCheck = document.getElementById('nav-check');
   const overlay = document.querySelector('.nav__overlay');
 
-  if (hamburger && overlay) {
-    hamburger.addEventListener('click', () => {
-      const isOpen = hamburger.classList.toggle('active');
-      overlay.classList.toggle('active');
-      if (isOpen) {
+  if (navCheck && overlay) {
+    navCheck.addEventListener('change', () => {
+      if (navCheck.checked) {
+        overlay.classList.add('active');
         document.body.style.overflow = 'hidden';
       } else {
+        overlay.classList.remove('active');
         document.body.style.overflow = '';
       }
     });
 
     overlay.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
-        hamburger.classList.remove('active');
+        navCheck.checked = false;
         overlay.classList.remove('active');
         document.body.style.overflow = '';
       });
@@ -180,9 +180,9 @@
         linkedin: '#'
       },
       {
-        name: 'Hassan Murad',
-        role: 'Community Moderator',
-        bio: 'Ensures smooth community operations and helps new members feel welcome from day one.',
+        name: 'Talat Faheem',
+        role: 'Mod & Mentor',
+        bio: 'Dedicated moderator and mentor who guides members through their CS journey and fosters a supportive learning environment.',
         linkedin: '#'
       },
       {
@@ -336,6 +336,85 @@
         wrapper.removeEventListener('transitionend', handler);
       });
     }
+  }
+
+
+  // ── Gooey Text Morphing ──
+  const gooeyContainer = document.querySelector('.gooey-morph');
+
+  if (gooeyContainer) {
+    const gText1 = gooeyContainer.querySelector('.gooey-morph__text1');
+    const gText2 = gooeyContainer.querySelector('.gooey-morph__text2');
+    const morphWords = ['CS Student', 'Developer', 'Innovator', 'Tech Leader'];
+    const gMorphTime = 1.5;
+    const gCooldownTime = 2;
+
+    let morphIndex = morphWords.length - 1;
+    let morphClock = new Date();
+    let morphProgress = 0;
+    let morphCooldown = gCooldownTime;
+
+    // Set container width to widest word
+    var maxW = 0;
+    morphWords.forEach(function (w) {
+      gText1.textContent = w;
+      maxW = Math.max(maxW, gText1.offsetWidth);
+    });
+    gooeyContainer.style.width = (maxW + 4) + 'px';
+
+    // Initialize
+    gText1.textContent = morphWords[0];
+    gText2.textContent = morphWords[1];
+    gText2.style.opacity = '0%';
+
+    function setGooeyMorph(fraction) {
+      gText2.style.filter = 'blur(' + Math.min(8 / fraction - 8, 100) + 'px)';
+      gText2.style.opacity = (Math.pow(fraction, 0.4) * 100) + '%';
+      var f = 1 - fraction;
+      gText1.style.filter = 'blur(' + Math.min(8 / f - 8, 100) + 'px)';
+      gText1.style.opacity = (Math.pow(f, 0.4) * 100) + '%';
+    }
+
+    function gooeyDoCooldown() {
+      morphProgress = 0;
+      gText2.style.filter = '';
+      gText2.style.opacity = '100%';
+      gText1.style.filter = '';
+      gText1.style.opacity = '0%';
+    }
+
+    function gooeyDoMorph() {
+      morphProgress -= morphCooldown;
+      morphCooldown = 0;
+      var fraction = morphProgress / gMorphTime;
+      if (fraction > 1) {
+        morphCooldown = gCooldownTime;
+        fraction = 1;
+      }
+      setGooeyMorph(fraction);
+    }
+
+    function animateGooey() {
+      requestAnimationFrame(animateGooey);
+      var now = new Date();
+      var shouldIncrement = morphCooldown > 0;
+      var dt = (now.getTime() - morphClock.getTime()) / 1000;
+      morphClock = now;
+      morphCooldown -= dt;
+
+      if (morphCooldown <= 0) {
+        if (shouldIncrement) {
+          morphIndex = (morphIndex + 1) % morphWords.length;
+          gText1.textContent = morphWords[morphIndex % morphWords.length];
+          gText2.textContent = morphWords[(morphIndex + 1) % morphWords.length];
+        }
+        gooeyDoMorph();
+      } else {
+        gooeyDoCooldown();
+      }
+    }
+
+    animateGooey();
   }
 
 
