@@ -3667,6 +3667,25 @@ a.feature-row {
     font-size: clamp(5rem, 22vw, 8rem);
   }
 
+  /* Gooey morph: constrain to viewport */
+  .gooey-morph {
+    max-width: 100% !important;
+    width: auto !important;
+  }
+
+  /* Hero CTA: smaller on phone */
+  .hero-cta {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.875rem;
+  }
+
+  /* Uiverse buttons: compact on phone */
+  .uiverse-btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.875rem;
+    min-height: 44px;
+  }
+
   /* Testimonials: single column, more visible height */
   .testimonials-columns {
     grid-template-columns: 1fr;
@@ -3986,6 +4005,22 @@ a.feature-row {
 
 /* ------ Phones & small tablets (max 767px) ------ */
 @media (max-width: 767px) {
+
+  /* Gooey morph: prevent overflow on tablets */
+  .gooey-morph {
+    max-width: 100% !important;
+  }
+
+  /* Founder images: cap for tablet range */
+  .founder-row__image {
+    max-width: 220px;
+  }
+
+  /* Testimonial cards: reset constraints */
+  .card--testimonial {
+    min-width: 0;
+    max-width: none;
+  }
 
   /* Footer: center copyright + watermark on phones */
   .footer__bottom {
