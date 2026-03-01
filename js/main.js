@@ -170,26 +170,32 @@
       {
         name: 'Maryam Ahmed',
         role: 'Design Lead',
-        bio: 'Leads the design and creative direction of CS Connect, ensuring every touchpoint looks professional and welcoming.',
-        linkedin: '#'
+        bio: 'Handles all the design work for CS Connect.',
+        linkedin: 'https://linkedin.com/in/maryamahmd'
       },
       {
         name: 'Daniyal',
         role: 'Mod & Mentor',
-        bio: 'Keeps the community engaged and organized, moderating discussions and helping members connect with each other.',
+        bio: 'Moderates the community and helps members out.',
         linkedin: '#'
       },
       {
         name: 'Talat Faheem',
         role: 'Mod & Mentor',
-        bio: 'Dedicated moderator and mentor who guides members through their CS journey and fosters a supportive learning environment.',
-        linkedin: '#'
+        bio: 'Helps moderate discussions and mentors students.',
+        linkedin: 'https://linkedin.com/in/talat-fm'
       },
       {
         name: 'Asad Ali',
         role: 'Mod & Mentor',
-        bio: 'Active moderator who supports community events and maintains a positive, inclusive environment.',
-        linkedin: '#'
+        bio: 'Keeps things running smooth in the community.',
+        linkedin: 'https://linkedin.com/in/asad04'
+      },
+      {
+        name: 'Wasiq Mansoor',
+        role: 'Linux Space Mentor',
+        bio: 'Runs the Linux space and helps members get into open source.',
+        linkedin: 'https://linkedin.com/in/muhammad-wasiq-mansoor-35332927a'
       }
     ];
 

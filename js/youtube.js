@@ -148,6 +148,7 @@
 
   function renderHomepageFeatured(container, episode) {
     container.innerHTML = `
+      <span class="featured-episode__label" data-reveal>Latest Episode</span>
       <a href="${episode.url}" target="_blank" rel="noopener" class="featured-episode" data-reveal>
         <div class="featured-episode__thumbnail">
           <img src="${episode.thumbnail}" alt="${episode.title}" loading="lazy">
@@ -156,7 +157,6 @@
           </div>
         </div>
         <div class="featured-episode__content">
-          <span class="featured-episode__label">Latest Episode</span>
           <h2 class="featured-episode__title">${episode.title}</h2>
           <p class="featured-episode__desc">${episode.description}</p>
           <div class="featured-episode__meta">

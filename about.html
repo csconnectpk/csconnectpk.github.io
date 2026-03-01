@@ -4,12 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About | CS Connect Pakistan</title>
-  <meta name="description" content="Learn about CS Connect Pakistan, founded in 2024 in Islamabad, now connecting 3000+ CS students across 100+ universities nationwide.">
+  <meta name="description" content="Learn about CS Connect Pakistan, founded in 2024 in Islamabad, now connecting 3000+ CS students across 60+ universities nationwide.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
+  <link rel="icon" type="image/png" href="favicon.png">
   <link rel="stylesheet" href="css/style.css">
   <script>document.documentElement.setAttribute('data-theme',localStorage.getItem('theme')||'dark')</script>
 </head>
@@ -60,52 +61,19 @@
   </section>
 
   <!-- 001 / Origin Story -->
-  <section class="section">
-    <div class="container">
+  <section class="section origin-hero">
+    <div class="origin-hero__bg">
+      <img src="images/team.png" alt="" loading="lazy" aria-hidden="true">
+    </div>
+    <div class="container origin-hero__content">
       <div class="section-header" data-reveal>
         <span class="section-header__number">001 / Our Story</span>
         <h2 class="section-header__title">How It All Started</h2>
       </div>
-
-      <div class="origin-story">
-        <div class="origin-story__content" data-reveal>
-          <p>CS Connect started in 2024 because CS students across Pakistan were pretty isolated. Same story whether you were at FAST Islamabad or a uni in a smaller city: hardly any mentorship, little exposure to industry, and no one to ask the real questions.</p>
-          <p>A few students in Islamabad decided to fix that. It began as a WhatsApp group of about 30 friends sharing entry test tips. Within months it grew to 3000+ members from over 50 universities.</p>
-          <p>Today we're a registered nonprofit. We run a podcast, host workshops, share free entry test resources, and connect students with mentors and peers who actually show up.</p>
-        </div>
-        <div class="origin-story__image" data-reveal>
-          <!-- REPLACE: Team photo or community event photo -->
-          <img src="images/team.png" alt="CS Connect Pakistan core team" loading="lazy">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 002 / Impact Numbers -->
-  <section class="section section--surface">
-    <div class="container">
-      <div class="section-header" data-reveal>
-        <span class="section-header__number">002 / Our Impact</span>
-        <h2 class="section-header__title">By the Numbers</h2>
-      </div>
-
-      <div class="impact-numbers">
-        <div class="impact-numbers__item" data-reveal>
-          <div class="impact-numbers__value">3000+</div>
-          <div class="impact-numbers__label">Active Members</div>
-        </div>
-        <div class="impact-numbers__item" data-reveal="delay-1">
-          <div class="impact-numbers__value">100+</div>
-          <div class="impact-numbers__label">Universities</div>
-        </div>
-        <div class="impact-numbers__item" data-reveal="delay-2">
-          <div class="impact-numbers__value">11+</div>
-          <div class="impact-numbers__label">Podcast Episodes</div>
-        </div>
-        <div class="impact-numbers__item" data-reveal="delay-3">
-          <div class="impact-numbers__value">15+</div>
-          <div class="impact-numbers__label">Cities Reached</div>
-        </div>
+      <div class="origin-hero__text" data-reveal>
+        <p>It started at FAST Islamabad. A few CS students noticed something that bothered them: students at well-known universities had access to seniors in FAANG, alumni networks, career guidance, and a culture of building things. Students at most other universities across Pakistan had none of that. Same degree, completely different experience.</p>
+        <p>So a group of us started a WhatsApp group. Just 30 people sharing entry test tips and career advice. No grand plan. But it grew fast because the need was real. Within months, we had students from 50+ universities joining, asking questions, helping each other prep for tests, sharing internship leads, and actually building a community that worked.</p>
+        <p>Today CS Connect is a registered nonprofit with 3000+ members across 60+ universities. We run a podcast, organize workshops, and maintain free resources. But the core idea hasn't changed: every CS student in Pakistan should have access to the same mentorship and opportunities, regardless of which university they ended up at.</p>
       </div>
     </div>
   </section>
@@ -113,7 +81,7 @@
   <!-- University Showcase -->
   <section class="universities universities--bold">
     <div class="container">
-      <p class="universities__label" data-reveal>Students from <span class="accent">100+ universities</span> across Pakistan</p>
+      <p class="universities__label" data-reveal>Students from <span class="accent">60+ universities</span> across Pakistan</p>
     </div>
     <div class="universities__ticker" data-reveal>
       <div class="universities__track">
@@ -181,7 +149,7 @@
   <section class="section">
     <div class="container">
       <div class="section-header" data-reveal>
-        <span class="section-header__number">003 / Our Team</span>
+        <span class="section-header__number">002 / Our Team</span>
         <h2 class="section-header__title">The People Behind CS Connect</h2>
         <p class="section-header__subtitle">Students and advisors who run the community and keep it going.</p>
       </div>
@@ -194,8 +162,8 @@
             <div class="founder-row__number">01</div>
             <h3 class="founder-row__name">Azan Waseem</h3>
             <div class="founder-row__role">Founder & Podcast Host</div>
-            <p class="founder-row__bio">Started CS Connect and hosts the podcast. Wants every CS student in Pakistan to have access to real mentorship and community.</p>
-            <a href="#" class="animated-team__linkedin" target="_blank" rel="noopener">
+            <p class="founder-row__bio">CS student at FAST Islamabad who started CS Connect because he saw how different the experience was for students at well-resourced universities versus everyone else. Hosts the podcast and keeps the community running day to day.</p>
+            <a href="https://linkedin.com/in/azanw" class="animated-team__linkedin" target="_blank" rel="noopener">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
               LinkedIn
             </a>
@@ -212,8 +180,8 @@
             <div class="founder-row__number">02</div>
             <h3 class="founder-row__name">Siraj Qazi</h3>
             <div class="founder-row__role">Mentor & Advisor</div>
-            <p class="founder-row__bio">Brings industry experience to the table. Mentors students and helps steer the community.</p>
-            <a href="#" class="animated-team__linkedin" target="_blank" rel="noopener">
+            <p class="founder-row__bio">Data scientist and NUST grad. Works in the industry and advises CS Connect on direction. One of the first people to believe in what the community could become and has been mentoring students since the early days.</p>
+            <a href="https://linkedin.com/in/siraj-qazi" class="animated-team__linkedin" target="_blank" rel="noopener">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
               LinkedIn
             </a>
@@ -230,8 +198,8 @@
             <div class="founder-row__number">03</div>
             <h3 class="founder-row__name">Khawaja Owais</h3>
             <div class="founder-row__role">Dev Lead & Advisor</div>
-            <p class="founder-row__bio">Handles the tech side: development, infrastructure, and whatever the community needs to run smoothly.</p>
-            <a href="#" class="animated-team__linkedin" target="_blank" rel="noopener">
+            <p class="founder-row__bio">Data scientist and FAST grad. Built and maintains the technical side of CS Connect. From the website to the infrastructure that keeps things running, if it involves code, he's probably behind it.</p>
+            <a href="https://linkedin.com/in/the-mohammad-owais" class="animated-team__linkedin" target="_blank" rel="noopener">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
               LinkedIn
             </a>
@@ -248,8 +216,8 @@
             <div class="founder-row__number">04</div>
             <h3 class="founder-row__name">Talha Asghar</h3>
             <div class="founder-row__role">Mentor & Advisor</div>
-            <p class="founder-row__bio">Mentors students and supports community initiatives with practical advice from the industry.</p>
-            <a href="#" class="animated-team__linkedin" target="_blank" rel="noopener">
+            <p class="founder-row__bio">Senior software engineer who's been in the industry long enough to know what actually matters versus what doesn't. Mentors students on building real skills and navigating careers in tech.</p>
+            <a href="https://linkedin.com/in/iamtalhaasghar" class="animated-team__linkedin" target="_blank" rel="noopener">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
               LinkedIn
             </a>
@@ -264,10 +232,10 @@
         <div class="founder-row" data-reveal>
           <div class="founder-row__text">
             <div class="founder-row__number">05</div>
-            <h3 class="founder-row__name">Kashif Umair</h3>
+            <h3 class="founder-row__name">Kashif Umair Liaqat</h3>
             <div class="founder-row__role">Mentor & Advisor</div>
-            <p class="founder-row__bio">Senior software engineer. Mentors students on real-world dev and how to think about their career.</p>
-            <a href="#" class="animated-team__linkedin" target="_blank" rel="noopener">
+            <p class="founder-row__bio">Senior software engineer based in Ireland. Made the move from Pakistan and now helps CS Connect students understand what it takes to build a career abroad. Was also a guest on the podcast.</p>
+            <a href="https://linkedin.com/in/kulking" class="animated-team__linkedin" target="_blank" rel="noopener">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
               LinkedIn
             </a>
@@ -297,13 +265,16 @@
           <div class="animated-team__image" data-member="3" data-pos="prev">
             <img src="images/asad-ali.jpeg" alt="Asad Ali" loading="lazy">
           </div>
+          <div class="animated-team__image" data-member="4" data-pos="hidden">
+            <img src="images/wasiq-mansoor.jpeg" alt="Wasiq Mansoor" loading="lazy">
+          </div>
         </div>
 
         <div class="animated-team__info">
           <h3 class="animated-team__name" data-team-name>Maryam Ahmed</h3>
           <div class="animated-team__role" data-team-role>Design Lead</div>
-          <p class="animated-team__bio" data-team-bio>Handles design and creative direction so the community looks and feels like a place you'd want to be.</p>
-          <a class="animated-team__linkedin" data-team-linkedin href="#" target="_blank" rel="noopener">
+          <p class="animated-team__bio" data-team-bio>Handles all the design work for CS Connect.</p>
+          <a class="animated-team__linkedin" data-team-linkedin href="https://linkedin.com/in/maryamahmd" target="_blank" rel="noopener">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
             LinkedIn
           </a>
@@ -325,7 +296,7 @@
   <section class="section about-vision">
     <div class="container">
       <div class="section-header" data-reveal>
-        <span class="section-header__number">004 / Our Vision</span>
+        <span class="section-header__number">003 / Our Vision</span>
       </div>
       <blockquote class="about-vision__quote" data-reveal>
         <p>We want a Pakistan where <span class="accent">every CS student</span>, no matter which city or university, can get mentorship, resources, and a community that actually helps.</p>

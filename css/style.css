@@ -1835,34 +1835,44 @@ p {
 /* ----------------------------------------
    21. About Page
    ---------------------------------------- */
-.origin-story {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-2xl);
-  align-items: center;
-}
-
-.origin-story__content p {
-  margin-bottom: var(--space-md);
-}
-
-.origin-story__image {
-  aspect-ratio: 4 / 3;
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
+.origin-hero {
   position: relative;
+  overflow: hidden;
 }
 
-.origin-story__image::before {
+.origin-hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.origin-hero__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  opacity: 0.15;
+}
+
+.origin-hero__bg::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, var(--color-accent-dim) 0%, transparent 60%);
+  background: linear-gradient(to bottom, var(--color-bg) 0%, transparent 30%, transparent 70%, var(--color-bg) 100%);
+}
+
+.origin-hero__content {
+  position: relative;
+  z-index: 1;
+}
+
+.origin-hero__text {
+  max-width: 720px;
+}
+
+.origin-hero__text p {
+  margin-bottom: var(--space-md);
+  line-height: 1.8;
 }
 
 .impact-numbers {
@@ -2360,18 +2370,13 @@ p {
 }
 
 .featured-episode__label {
-  display: inline-block;
-  font-size: 0.75rem;
+  display: block;
+  font-size: 0.8rem;
   font-weight: 700;
   color: var(--color-accent);
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  margin-bottom: var(--space-sm);
-  padding: 0.3rem 0.75rem;
-  border: 1px solid rgba(0, 200, 83, 0.25);
-  border-radius: 100px;
-  background: var(--color-accent-dim);
-  width: fit-content;
+  margin-bottom: var(--space-md);
 }
 
 .featured-episode__title {
@@ -2767,14 +2772,36 @@ a.feature-row {
 }
 
 .entry-test-cta__abbr {
-  font-size: clamp(5rem, 18vw, 10rem);
-  font-weight: 800;
+  position: relative;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(4rem, 14vw, 10rem);
+  font-weight: 400;
   line-height: 1;
-  letter-spacing: -0.04em;
-  color: transparent;
-  -webkit-text-stroke: 2px var(--color-accent);
+  letter-spacing: 0.02em;
+  color: var(--color-bg);
+  -webkit-text-stroke: 1.5px var(--color-accent);
+  paint-order: stroke fill;
   user-select: none;
-  filter: drop-shadow(0 0 24px var(--color-accent-dim));
+  overflow: hidden;
+}
+
+.entry-test-cta__abbr::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: transparent;
+  -webkit-text-stroke: 5px var(--color-accent);
+  z-index: -1;
+  overflow: hidden;
+}
+
+[data-theme="light"] .entry-test-cta__abbr {
+  color: var(--color-bg);
+}
+
+[data-theme="light"] .origin-hero__bg img {
+  opacity: 0.08;
 }
 
 .entry-test-cta__desc {
@@ -2831,10 +2858,11 @@ a.feature-row {
 }
 
 .roadmap-card__number {
+  font-family: 'Bebas Neue', sans-serif;
   font-size: clamp(2rem, 5vw, 3rem);
-  font-weight: 800;
+  font-weight: 400;
   line-height: 0.85;
-  letter-spacing: -0.06em;
+  letter-spacing: 0.02em;
   color: transparent;
   -webkit-text-stroke: 1px var(--color-accent);
   margin-bottom: var(--space-xs);
@@ -2941,6 +2969,52 @@ a.feature-row {
   font-weight: 600;
 }
 
+/* Roadmaps: show-more toggle */
+.roadmaps-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  width: 100%;
+  padding: var(--space-md) var(--space-lg);
+  margin-top: var(--space-md);
+  background: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  color: var(--color-text-secondary);
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.roadmaps-toggle:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.roadmaps-toggle__icon {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.3s ease;
+}
+
+.roadmaps-toggle--open .roadmaps-toggle__icon {
+  transform: rotate(180deg);
+}
+
+
+.roadmaps-more {
+  display: none;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.roadmaps-more--visible {
+  display: flex;
+  margin-top: var(--space-xl);
+}
+
 
 /* ----------------------------------------
    24. Join Page
@@ -3001,73 +3075,122 @@ a.feature-row {
   line-height: 1.7;
 }
 
-.join-cards {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-lg);
+/* Community Spaces — List */
+.spaces-list {
+  display: flex;
+  flex-direction: column;
 }
 
-.join-card {
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  padding: var(--space-2xl) var(--space-lg);
-  text-align: center;
-  transition: all 0.3s ease;
+.space-item {
+  --item-accent: var(--color-accent);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  padding: var(--space-xl) 0;
+  border-bottom: 1px solid var(--color-border);
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.3s ease;
+}
+
+.space-item:first-child {
+  padding-top: 0;
+}
+
+.space-item:last-child {
+  border-bottom: none;
+}
+
+.space-item:hover {
+  border-color: var(--item-accent);
+}
+
+.space-item__name {
   position: relative;
-  overflow: hidden;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(3rem, 12vw, 5.5rem);
+  line-height: 0.9;
+  letter-spacing: 0.02em;
+  color: var(--color-surface);
+  -webkit-text-stroke: 1.5px var(--item-accent);
+  paint-order: stroke fill;
+  user-select: none;
+  transition: filter 0.3s ease;
 }
 
-.join-card::before {
-  content: '';
+.space-item__name::before {
+  content: attr(data-text);
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  height: 3px;
-  background: var(--color-accent);
-  opacity: 0;
-  transition: opacity 0.3s ease;
+  color: transparent;
+  -webkit-text-stroke: 4px var(--item-accent);
+  z-index: -1;
 }
 
-.join-card:hover {
-  border-color: var(--color-border-hover);
-  transform: translateY(-2px);
+.space-item:hover .space-item__name {
+  filter: drop-shadow(0 0 16px rgba(0, 200, 83, 0.12));
 }
 
-.join-card:hover::before {
-  opacity: 1;
-}
-
-.join-card__icon {
-  width: 56px;
-  height: 56px;
-  border-radius: var(--radius-md);
-  background: var(--color-accent-dim);
+.space-item__info {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto var(--space-md);
-  color: var(--color-accent);
+  align-items: baseline;
+  gap: var(--space-lg);
+  flex-wrap: wrap;
 }
 
-.join-card__title {
-  font-size: 1.35rem;
-  font-weight: 700;
-  margin-bottom: var(--space-xs);
-}
-
-.join-card__text {
+.space-item__desc {
   color: var(--color-text-secondary);
-  margin-bottom: var(--space-lg);
-  font-size: 0.95rem;
+  font-size: clamp(1rem, 1.5vw, 1.1rem);
   line-height: 1.7;
+  flex: 1;
+  min-width: 200px;
+  max-width: 520px;
 }
 
-.join-card__members {
+.space-item__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--item-accent);
+  font-weight: 600;
   font-size: 0.85rem;
-  color: var(--color-text-secondary);
-  margin-top: var(--space-md);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: gap 0.2s ease;
+}
+
+.space-item:hover .space-item__cta {
+  gap: 0.6rem;
+}
+
+/* Platform variants */
+.space-item--whatsapp { --item-accent: #25D366; }
+.space-item--discord { --item-accent: #5865F2; }
+
+.space-item--whatsapp:hover .space-item__name {
+  filter: drop-shadow(0 0 16px rgba(37, 211, 102, 0.12));
+}
+.space-item--discord:hover .space-item__name {
+  filter: drop-shadow(0 0 16px rgba(88, 101, 242, 0.12));
+}
+
+[data-theme="light"] .space-item__name {
+  color: var(--color-surface);
+}
+
+@media (min-width: 768px) {
+  .space-item {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-xl);
+  }
+
+  .space-item__name {
+    min-width: 280px;
+    font-size: clamp(3rem, 5vw, 4.5rem);
+  }
 }
 
 /* FAQ */
@@ -3518,8 +3641,8 @@ a.feature-row {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  .origin-story {
-    grid-template-columns: 1fr 1fr;
+  .origin-hero__text {
+    max-width: 680px;
   }
 
   .founder-row {
@@ -3552,10 +3675,6 @@ a.feature-row {
 
   .featured-episode {
     grid-template-columns: 1fr 1fr;
-  }
-
-  .join-cards {
-    grid-template-columns: repeat(2, 1fr);
   }
 
   .feature-row {
@@ -3841,19 +3960,6 @@ a.feature-row {
     font-size: clamp(1.85rem, 8vw, 2.5rem);
   }
 
-  /* Join cards: more padding */
-  .join-card {
-    padding: var(--space-xl) var(--space-lg);
-  }
-
-  .join-card__title {
-    font-size: 1.15rem;
-  }
-
-  .join-card__text {
-    font-size: 0.95rem;
-  }
-
   /* Podcast play icon: smaller on mobile */
   .podcast-spotlight__play-icon {
     width: 48px;
@@ -4090,8 +4196,13 @@ a.feature-row {
     padding: clamp(3rem, 8vh, var(--section-py)) 0;
   }
 
-  /* Origin story text: readable */
-  .origin-story__content p {
+  /* Origin story: bump bg opacity on mobile so image is more visible */
+  .origin-hero__bg img {
+    opacity: 0.18;
+    object-position: center 20%;
+  }
+
+  .origin-hero__text p {
     font-size: 1rem;
     line-height: 1.75;
   }
