@@ -1187,6 +1187,28 @@ p {
   pointer-events: none;
 }
 
+/* Wave Background */
+.hero__waves {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.hero__waves svg {
+  display: block;
+}
+
+.hero__waves svg path {
+  stroke: rgba(0, 200, 83, 0.15);
+  fill: none;
+  stroke-width: 1;
+}
+
+[data-theme="light"] .hero__waves svg path {
+  stroke: rgba(0, 168, 68, 0.1);
+}
+
 /* Page hero (for secondary pages) */
 .page-hero {
   padding: calc(80px + var(--space-2xl)) 0 var(--space-2xl);
@@ -3384,6 +3406,12 @@ a.feature-row {
   to { transform: translateY(-50%); }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .hero__waves {
+    display: none;
+  }
+}
+
 
 /* ----------------------------------------
    28. Responsive — 480px
@@ -3985,9 +4013,19 @@ a.feature-row {
 /* ------ Phones & small tablets (max 767px) ------ */
 @media (max-width: 767px) {
 
-  /* Gooey morph: prevent overflow on tablets */
+  /* Gooey morph: left-align on mobile so text doesn't clip offscreen */
   .gooey-morph {
     max-width: 100% !important;
+  }
+
+  .gooey-morph__text {
+    left: 0 !important;
+    transform: none !important;
+  }
+
+  /* Wave background: disable on phones for performance */
+  .hero__waves {
+    display: none;
   }
 
   /* Founder images: cap for tablet range */
