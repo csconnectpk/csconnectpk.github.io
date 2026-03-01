@@ -174,7 +174,7 @@
         linkedin: 'https://linkedin.com/in/maryamahmd'
       },
       {
-        name: 'Daniyal',
+        name: 'Daniyal Salman',
         role: 'Mod & Mentor',
         bio: 'Moderates the community and helps members out.',
         linkedin: '#'

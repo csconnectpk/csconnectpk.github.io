@@ -1059,10 +1059,10 @@ p {
 
 .guests-showcase__label {
   text-align: center;
-  font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+  font-size: clamp(0.85rem, 1.3vw, 0.95rem);
   color: var(--color-text-secondary);
   margin-bottom: 2rem;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   font-weight: 500;
 }
@@ -1073,43 +1073,22 @@ p {
 
 .guests-showcase__track {
   display: flex;
-  gap: clamp(1.5rem, 3vw, 3rem);
-  width: max-content;
-  animation: ticker-scroll 25s linear infinite;
-}
-
-.guests-showcase__logo {
-  display: flex;
   align-items: center;
-  gap: 0.75rem;
-  padding: 0.75rem 1.5rem;
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: 100px;
-  white-space: nowrap;
-  transition: all 0.3s ease;
+  gap: clamp(2rem, 5vw, 4rem);
+  width: max-content;
+  animation: ticker-scroll 30s linear infinite;
 }
 
-.guests-showcase__logo span {
-  font-size: 0.95rem;
+.guests-showcase__name {
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
   font-weight: 600;
   color: var(--color-text-secondary);
+  white-space: nowrap;
   letter-spacing: 0.02em;
+  transition: color 0.3s ease;
 }
 
-.guests-showcase__text-logo {
-  font-size: 1rem !important;
-  font-weight: 700 !important;
-  color: var(--color-text-secondary);
-  letter-spacing: 0.04em;
-}
-
-.guests-showcase__logo:hover {
-  border-color: var(--color-accent);
-  background: rgba(0, 200, 83, 0.05);
-}
-
-.guests-showcase__logo:hover span {
+.guests-showcase__name:hover {
   color: var(--color-text);
 }
 
@@ -1850,15 +1829,15 @@ p {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top;
-  opacity: 0.15;
+  object-position: center 25%;
+  opacity: 0.2;
 }
 
 .origin-hero__bg::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, var(--color-bg) 0%, transparent 30%, transparent 70%, var(--color-bg) 100%);
+  background: linear-gradient(to bottom, var(--color-bg) 0%, transparent 30%, transparent 75%, var(--color-bg) 100%);
 }
 
 .origin-hero__content {
@@ -2772,36 +2751,18 @@ a.feature-row {
 }
 
 .entry-test-cta__abbr {
-  position: relative;
   font-family: 'Bebas Neue', sans-serif;
-  font-size: clamp(4rem, 14vw, 10rem);
+  font-size: clamp(5rem, 18vw, 12rem);
   font-weight: 400;
-  line-height: 1;
-  letter-spacing: 0.02em;
-  color: var(--color-bg);
-  -webkit-text-stroke: 1.5px var(--color-accent);
-  paint-order: stroke fill;
-  user-select: none;
-  overflow: hidden;
-}
-
-.entry-test-cta__abbr::before {
-  content: attr(data-text);
-  position: absolute;
-  top: 0;
-  left: 0;
+  line-height: 0.85;
+  letter-spacing: 0.05em;
   color: transparent;
-  -webkit-text-stroke: 5px var(--color-accent);
-  z-index: -1;
-  overflow: hidden;
-}
-
-[data-theme="light"] .entry-test-cta__abbr {
-  color: var(--color-bg);
+  -webkit-text-stroke: 2px var(--color-accent);
+  user-select: none;
 }
 
 [data-theme="light"] .origin-hero__bg img {
-  opacity: 0.08;
+  opacity: 0.12;
 }
 
 .entry-test-cta__desc {
@@ -4196,9 +4157,9 @@ a.feature-row {
     padding: clamp(3rem, 8vh, var(--section-py)) 0;
   }
 
-  /* Origin story: bump bg opacity on mobile so image is more visible */
+  /* Origin story: adjust bg for mobile */
   .origin-hero__bg img {
-    opacity: 0.18;
+    opacity: 0.25;
     object-position: center 20%;
   }
 
