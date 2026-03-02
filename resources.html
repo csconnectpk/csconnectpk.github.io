@@ -6,6 +6,20 @@
   <title>Resources | CS Connect Pakistan</title>
   <meta name="description" content="Free entry test preparation resources for FAST, NUST, COMSATS, GIKI, LUMS and more. Past papers, study guides, and tips from students who cracked it.">
 
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Resources | CS Connect Pakistan">
+  <meta property="og:description" content="Free entry test prep, tech roadmaps, and study resources. Past papers, guides, and tips from students who cracked it.">
+  <meta property="og:image" content="https://csconnect.pk/favicon.png">
+  <meta property="og:url" content="https://csconnect.pk/resources">
+  <meta property="og:site_name" content="CS Connect Pakistan">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Resources | CS Connect Pakistan">
+  <meta name="twitter:description" content="Free entry test prep, tech roadmaps, and study resources for Pakistani students.">
+  <meta name="twitter:image" content="https://csconnect.pk/favicon.png">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -135,7 +149,7 @@
       <div class="roadmaps" data-reveal>
 
         <!-- 01: Web Development -->
-        <div class="roadmap-card" data-reveal>
+        <div class="roadmap-card" id="web-dev" data-reveal>
           <div class="roadmap-card__header" onclick="this.parentElement.classList.toggle('roadmap-card--open')">
             <div class="roadmap-card__header-text">
               <span class="roadmap-card__number">01</span>
@@ -176,7 +190,7 @@
         </div>
 
         <!-- 02: ML/CV/DL/RL -->
-        <div class="roadmap-card" data-reveal>
+        <div class="roadmap-card" id="ml-dl-cv" data-reveal>
           <div class="roadmap-card__header" onclick="this.parentElement.classList.toggle('roadmap-card--open')">
             <div class="roadmap-card__header-text">
               <span class="roadmap-card__number">02</span>
@@ -217,7 +231,7 @@
         </div>
 
         <!-- 03: Hardware & Embedded -->
-        <div class="roadmap-card" data-reveal>
+        <div class="roadmap-card" id="hardware-embedded" data-reveal>
           <div class="roadmap-card__header" onclick="this.parentElement.classList.toggle('roadmap-card--open')">
             <div class="roadmap-card__header-text">
               <span class="roadmap-card__number">03</span>
@@ -265,7 +279,7 @@
         <div class="roadmaps-more" id="roadmaps-more">
 
         <!-- 04: Robotics -->
-        <div class="roadmap-card" data-reveal>
+        <div class="roadmap-card" id="robotics" data-reveal>
           <div class="roadmap-card__header" onclick="this.parentElement.classList.toggle('roadmap-card--open')">
             <div class="roadmap-card__header-text">
               <span class="roadmap-card__number">04</span>
@@ -306,7 +320,7 @@
         </div>
 
         <!-- 05: Generative AI -->
-        <div class="roadmap-card" data-reveal>
+        <div class="roadmap-card" id="gen-ai" data-reveal>
           <div class="roadmap-card__header" onclick="this.parentElement.classList.toggle('roadmap-card--open')">
             <div class="roadmap-card__header-text">
               <span class="roadmap-card__number">05</span>
@@ -347,7 +361,7 @@
         </div>
 
         <!-- 06: MLOps & DevOps -->
-        <div class="roadmap-card" data-reveal>
+        <div class="roadmap-card" id="mlops-devops" data-reveal>
           <div class="roadmap-card__header" onclick="this.parentElement.classList.toggle('roadmap-card--open')">
             <div class="roadmap-card__header-text">
               <span class="roadmap-card__number">06</span>
@@ -388,7 +402,7 @@
         </div>
 
         <!-- 07: System Administration -->
-        <div class="roadmap-card" data-reveal>
+        <div class="roadmap-card" id="sysadmin" data-reveal>
           <div class="roadmap-card__header" onclick="this.parentElement.classList.toggle('roadmap-card--open')">
             <div class="roadmap-card__header-text">
               <span class="roadmap-card__number">07</span>
@@ -504,6 +518,30 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script>
+    // Auto-open and scroll to a roadmap when linked via hash (e.g. #gen-ai)
+    (function() {
+      var hash = window.location.hash.slice(1);
+      if (!hash) return;
+      var card = document.getElementById(hash);
+      if (!card || !card.classList.contains('roadmap-card')) return;
+      // If inside the hidden "more" section, reveal it first
+      var more = document.getElementById('roadmaps-more');
+      if (more && more.contains(card)) {
+        more.classList.add('roadmaps-more--visible');
+        var tog = document.getElementById('roadmaps-toggle');
+        if (tog) {
+          tog.classList.add('roadmaps-toggle--open');
+          var txt = tog.querySelector('.roadmaps-toggle__text');
+          if (txt) txt.textContent = 'Show fewer roadmaps';
+        }
+      }
+      // Open the roadmap card
+      card.classList.add('roadmap-card--open');
+      // Scroll to it after a brief delay for layout
+      setTimeout(function() { card.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 300);
+    })();
+  </script>
 </body>
 </html>
 
