@@ -85,17 +85,13 @@
 
 
   // ── Active Nav Link Detection ──
-  const rawPage = window.location.pathname.split('/').pop() || '';
-  const currentPage = rawPage.replace('.html', '') || 'index';
+  const currentPage = window.location.pathname.split('/').pop() || 'index';
 
   document.querySelectorAll('.nav__link, .nav__overlay-link').forEach(link => {
     const href = link.getAttribute('href');
     if (!href) return;
-    const linkPage = href.split('/').pop().replace('.html', '') || 'index';
-    const isActive = linkPage === currentPage ||
-      (currentPage === '' && linkPage === 'index') ||
-      (currentPage === 'index' && linkPage === 'index') ||
-      (currentPage === '/' && (linkPage === '' || linkPage === 'index'));
+    const linkPage = href.split('/').pop() || 'index';
+    const isActive = linkPage === currentPage;
 
     if (isActive) {
       link.classList.add('active');
