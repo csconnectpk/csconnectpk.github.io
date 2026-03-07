@@ -201,15 +201,192 @@
         <h2 class="section-header__title">Learning Roadmaps</h2>
       </div>
 
+      <div class="roadmap-filters" data-reveal>
+        <button class="roadmap-filter roadmap-filter--active" data-filter="all">All Roadmaps</button>
+        <button class="roadmap-filter" data-filter="entry-test">Entry Test Prep</button>
+        <button class="roadmap-filter" data-filter="university">University &amp; Career</button>
+      </div>
+
       <div class="roadmaps" data-reveal>
 
-        <!-- 01: Web Development -->
-        <div class="roadmap-card" id="web-dev" data-reveal>
+        <!-- 01: Entry Test Preparation Tips -->
+        <div class="roadmap-card" data-category="entry-test" id="entry-test-tips" data-reveal>
           <div class="roadmap-card__header" onclick="this.parentElement.classList.toggle('roadmap-card--open')">
             <div class="roadmap-card__header-text">
               <span class="roadmap-card__number">01</span>
-              <h3 class="roadmap-card__title">Web Development <span class="accent">Roadmap</span></h3>
-              <p class="roadmap-card__subtitle">From your first HTML tag to deploying full-stack apps. The most in-demand skill for Pakistani tech jobs and freelancing.</p>
+              <h3 class="roadmap-card__title">Entry Test Preparation <span class="accent">Tips</span></h3>
+              <p class="roadmap-card__subtitle">Universal tips that work for every entry test. ECAT, NET, NU Test, MDCAT, and beyond. Build the right habits before you start grinding.</p>
+            </div>
+            <button class="roadmap-card__share" onclick="event.stopPropagation();shareRoadmap('entry-test-tips')" aria-label="Copy link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            </button>
+            <span class="roadmap-card__toggle"></span>
+          </div>
+          <div class="roadmap-card__body">
+            <div class="roadmap-card__content">
+              <div class="roadmap-step">
+                <span class="roadmap-step__marker">Phase 1</span>
+                <h4 class="roadmap-step__title">Know Your Exam</h4>
+                <p class="roadmap-step__text">Get to know what the syllabus and pattern of your exam is. How many questions are there? Which subjects? What's the marks distribution? Is there negative marking? Figure all of this out before you start anything.</p>
+              </div>
+              <div class="roadmap-step">
+                <span class="roadmap-step__marker">Phase 2</span>
+                <h4 class="roadmap-step__title">Create Your Schedule</h4>
+                <p class="roadmap-step__text">Create your timetable of what hours to study each day. Make a schedule of <strong>6 days</strong> and keep one day, say an <strong>"Extra Day"</strong> (most likely Sunday) to catch up on what you missed, because maybe you get sick or make a plan, etc.</p>
+              </div>
+              <div class="roadmap-step">
+                <span class="roadmap-step__marker">Phase 3</span>
+                <h4 class="roadmap-step__title">Start with the Highest Weightage</h4>
+                <p class="roadmap-step__text">Start with the subject that has the most weightage. Practice and learn it every day and then slowly add other subjects in your routine.</p>
+              </div>
+              <div class="roadmap-step">
+                <span class="roadmap-step__marker">Phase 4</span>
+                <h4 class="roadmap-step__title">Use Effective Study Methods</h4>
+                <p class="roadmap-step__text">Use study methods like <strong>Active Recall</strong>, <strong>Spaced Repetition</strong>, <strong>Feynman Technique</strong>, and the <strong>Blurting Method</strong> to keep track of what you learned previously and move it into long-term memory.</p>
+              </div>
+              <div class="roadmap-step">
+                <span class="roadmap-step__marker">Phase 5</span>
+                <h4 class="roadmap-step__title">Track Your Mistakes</h4>
+                <p class="roadmap-step__text">Keep track on a <strong>diary or spreadsheet</strong> of what topics you have missed or questions you got wrong to practice them on your Extra Day.</p>
+              </div>
+              <div class="roadmap-step">
+                <span class="roadmap-step__marker">Phase 6</span>
+                <h4 class="roadmap-step__title">Revise &amp; Take Mock Tests</h4>
+                <p class="roadmap-step__text">In the last 2 to 3 weeks, practice topics that you find hard and do an overall revision by taking mock tests to find your weak points. For example, if you forget formulas, could not keep up with time, you just did not know that concept (like a new topic), or you made some silly mistakes.</p>
+              </div>
+              <div class="roadmap-step">
+                <span class="roadmap-step__marker">Phase 7</span>
+                <h4 class="roadmap-step__title">Simulate Real Exam Conditions</h4>
+                <p class="roadmap-step__text">If your exam is 3 hours long, sit for 3 hours straight. No phone, no snacks, no music and do it at the exact time of day as the actual exam. For example, if the exam is at 9:00 AM, practice your test at 9:00 AM.</p>
+              </div>
+              <div class="roadmap-step">
+                <span class="roadmap-step__marker">Phase 8</span>
+                <h4 class="roadmap-step__title">Final Days</h4>
+                <p class="roadmap-step__text">In the last 2 to 3 days, <strong>do not panic</strong> and trust yourself. <strong>Do not learn new topics.</strong> Only study the summary of every formula or shortcut from a cheat sheet.</p>
+              </div>
+              <div class="roadmap-step">
+                <span class="roadmap-step__marker">Pro Tips</span>
+                <h4 class="roadmap-step__title">Important Reminders</h4>
+                <p class="roadmap-step__text">Do not pull all-nighters by blasting yourself with a high amount of caffeine. Try to fix your sleep schedule instead. Do not fall for the quantity trap. <strong>Quality matters more!</strong> Like collecting 10 different PDFs and 5 different YouTube playlists for one subject. Information overload is the fastest way to feel overwhelmed.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 02: ECAT (UET) Preparation -->
+        <div class="roadmap-card" data-category="entry-test" id="ecat-uet" data-reveal>
+          <div class="roadmap-card__header" onclick="this.parentElement.classList.toggle('roadmap-card--open')">
+            <div class="roadmap-card__header-text">
+              <span class="roadmap-card__number">02</span>
+              <h3 class="roadmap-card__title">ECAT (UET) Preparation <span class="accent">Roadmap</span></h3>
+              <p class="roadmap-card__subtitle">Subject by subject strategy for cracking the UET Engineering College Admission Test. Prioritized by weightage and difficulty.</p>
+            </div>
+            <button class="roadmap-card__share" onclick="event.stopPropagation();shareRoadmap('ecat-uet')" aria-label="Copy link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            </button>
+            <span class="roadmap-card__toggle"></span>
+          </div>
+          <div class="roadmap-card__body">
+            <div class="roadmap-card__content">
+              <div class="roadmap-step">
+                <span class="roadmap-step__marker">Phase 1</span>
+                <h4 class="roadmap-step__title">Priority Order</h4>
+                <p class="roadmap-step__text">We should prepare subjects in this order: <strong>Mathematics</strong>, <strong>Physics</strong>, <strong>Computer Science</strong>, and <strong>English</strong>. Mathematics and Physics need the most time, while English needs the least.</p>
+              </div>
+              <div class="roadmap-step">
+                <span class="roadmap-step__marker">Phase 2</span>
+                <h4 class="roadmap-step__title">Mathematics (Top Priority)</h4>
+                <p class="roadmap-step__text">Mathematics is one of the most important subjects in ECAT. Your 1st year and 2nd year concepts must be clear. Focus especially on <strong>Trigonometry</strong>, <strong>Algebra</strong>, <strong>Probability</strong>, <strong>Conic Sections</strong>, <strong>Derivatives</strong>, and <strong>Integration</strong>. Understand concepts and formulas properly, solve textbook examples, practice MCQs from entry test books, and solve past ECAT papers. The more MCQs you practice, the faster you will solve questions in the test.</p>
+              </div>
+              <div class="roadmap-step">
+                <span class="roadmap-step__marker">Phase 3</span>
+                <h4 class="roadmap-step__title">Physics (Second Priority)</h4>
+                <p class="roadmap-step__text">Physics is also very important because many questions are concept based. Make sure your 1st year and 2nd year concepts are clear. Understand formulas and when to use them, practice MCQs regularly, solve past ECAT papers, and watch revision marathons before the exam.</p>
+              </div>
+              <div class="roadmap-step">
+                <span class="roadmap-step__marker">Phase 4</span>
+                <h4 class="roadmap-step__title">Computer Science (Third Priority)</h4>
+                <p class="roadmap-step__text">Computer Science mainly depends on ICS syllabus, especially C++. Focus on <strong>data types and variables</strong>, <strong>operators</strong>, <strong>if else and switch statements</strong>, <strong>loops</strong>, <strong>arrays</strong>, and <strong>functions</strong>. Many MCQs are based on C++ code logic or output, so understanding how code works is important. Practice MCQs and past ECAT questions.</p>
+              </div>
+              <div class="roadmap-step">
+                <span class="roadmap-step__marker">Phase 5</span>
+                <h4 class="roadmap-step__title">English (Lowest Priority)</h4>
+                <p class="roadmap-step__text">English does not require much time. Most questions are comprehension based, so you just need basic grammar knowledge. Learn basic grammar rules, practice reading comprehension passages, and solve past MCQs. Even 10 to 15 minutes of daily practice is enough.</p>
+              </div>
+              <div class="roadmap-step">
+                <span class="roadmap-step__marker">Phase 6</span>
+                <h4 class="roadmap-step__title">Important Tips</h4>
+                <p class="roadmap-step__text">ECAT currently has <strong>no negative marking</strong>, so try to attempt every question. Try to appear in both <strong>ECAT attempts (ECAT-1 and ECAT-2)</strong> to get the highest possible score.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 03: FAST NU Test -->
+        <div class="roadmap-card" data-category="entry-test" id="fast-nu" data-reveal>
+          <div class="roadmap-card__header" onclick="this.parentElement.classList.toggle('roadmap-card--open')">
+            <div class="roadmap-card__header-text">
+              <span class="roadmap-card__number">03</span>
+              <h3 class="roadmap-card__title">FAST NU Test <span class="accent">Roadmap</span></h3>
+              <p class="roadmap-card__subtitle">Complete strategy to ace the FAST National University entrance exam. Covers paper pattern, subject priorities, and mock test practice.</p>
+            </div>
+            <button class="roadmap-card__share" onclick="event.stopPropagation();shareRoadmap('fast-nu')" aria-label="Copy link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            </button>
+            <span class="roadmap-card__toggle"></span>
+          </div>
+          <div class="roadmap-card__body">
+            <div class="roadmap-card__content">
+              <div class="roadmap-step">
+                <span class="roadmap-step__marker">Phase 1</span>
+                <h4 class="roadmap-step__title">Understand the NU Test and Its Requirements</h4>
+                <p class="roadmap-step__text">Gather all your information on the NU Test like what are its dates, what is the paper pattern, and its syllabus. NU Test is conducted once each year, usually around July. It has a total of <strong>120 MCQs</strong>. The paper pattern is: <strong>Advanced Mathematics</strong> has 50 MCQs (1 mark each), <strong>Basic Mathematics</strong> has 20 (1 mark each), <strong>IQ</strong> has 20 (1 mark each), and <strong>English</strong> has 30 (0.33 marks each). Total marks are 100. The syllabus of Advanced Mathematics is from Punjab Textbooks of intermediate. <strong>FAST has negative marking too, with ¼ deduction for each wrong answer.</strong></p>
+              </div>
+              <div class="roadmap-step">
+                <span class="roadmap-step__marker">Phase 2</span>
+                <h4 class="roadmap-step__title">Create a Realistic Study Timetable</h4>
+                <p class="roadmap-step__text">Create a study schedule that clearly defines at what time and how many hours you will study each day. Plan your schedule for six days of the week and keep one day (most likely Sunday) as an <strong>"Extra Day"</strong>. Use this day to catch up on missed topics or whatever you could not complete because of illness or unexpected plans. This keeps your preparation consistent.</p>
+              </div>
+              <div class="roadmap-step">
+                <span class="roadmap-step__marker">Phase 3</span>
+                <h4 class="roadmap-step__title">Smart Prioritization</h4>
+                <p class="roadmap-step__text">As seen in the paper pattern, your advanced maths carries more weightage. If you have scored 80+ in NET, consider it done for the NU Test too, otherwise watch short tricks of <strong>Sir Hashim Zia</strong> and practice from <strong>KETS (KIPS Books)</strong>. Keep practicing and topics like <strong>Sequences</strong>, <strong>Trigonometry</strong>, <strong>Differentiation</strong>, <strong>Integration</strong>, and <strong>Conics</strong> matter more. Basic maths is usually matric level maths which can be practiced from the Quantitative and Analytical Reasoning section of KETS. IQ can also be covered from the KETS IQ portion and past paper practice questions.</p>
+              </div>
+              <div class="roadmap-step">
+                <span class="roadmap-step__marker">Phase 4</span>
+                <h4 class="roadmap-step__title">Use Effective Study Techniques</h4>
+                <p class="roadmap-step__text">Use study methods such as <strong>Active Recall</strong>, <strong>Spaced Repetition</strong>, <strong>the Feynman Technique</strong>, and <strong>the Blurting Method</strong> to reinforce your understanding. These techniques help ensure that what you study stays in your long-term memory.</p>
+              </div>
+              <div class="roadmap-step">
+                <span class="roadmap-step__marker">Phase 5</span>
+                <h4 class="roadmap-step__title">Track Your Mistakes</h4>
+                <p class="roadmap-step__text">Keep track of the topics you missed or the questions you answered incorrectly in a diary or spreadsheet. This record will help you identify weak areas and revisit them on your Extra Day, ensuring that mistakes are corrected and important concepts are strengthened.</p>
+              </div>
+              <div class="roadmap-step">
+                <span class="roadmap-step__marker">Phase 6</span>
+                <h4 class="roadmap-step__title">Plan the Last 2 to 3 Weeks Strategically</h4>
+                <p class="roadmap-step__text">In the final 2 to 3 weeks before the FAST admission test, focus on improving weaker topics and your problem solving speed. Take regular mock tests to see where you stand and find issues like time pressure, forgotten formulas, unfamiliar concepts, or silly mistakes. Use these insights to adjust your preparation accordingly.</p>
+              </div>
+              <div class="roadmap-step">
+                <span class="roadmap-step__marker">Phase 7</span>
+                <h4 class="roadmap-step__title">Practice with Mock Tests</h4>
+                <p class="roadmap-step__text">When practicing mock tests, try to make it like the real exam. The NU Test lasts two hours, so sit and attempt the test for the full two hours without distractions. No phone, no snacks, no music. Also try to take the mock test at the same time as your actual exam. Like if your exam is at 9:00 AM, practice your test at 9:00 AM as well. If a laptop is available, take your mock test at <strong>fastmock.vercel.app</strong> to get a better grip on the computerized test system. If you do not know the answer, leave the question blank because there is negative marking in the NU Test.</p>
+              </div>
+              <div class="roadmap-step">
+                <span class="roadmap-step__marker">Phase 8</span>
+                <h4 class="roadmap-step__title">Final 2 to 3 Days: Revise Only</h4>
+                <p class="roadmap-step__text">In the final 2 to 3 days before the exam, stay calm and trust your preparation. <strong>Do not attempt to learn new topics.</strong> Focus only on revising summaries, formulas, and shortcuts from your cheat sheet and practice those to boost confidence.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 04: Web Development -->
+        <div class="roadmap-card" data-category="university" id="web-dev" data-reveal>
+          <div class="roadmap-card__header" onclick="this.parentElement.classList.toggle('roadmap-card--open')">
+            <div class="roadmap-card__header-text">
+              <span class="roadmap-card__number">04</span>
+              <h3 class="roadmap-card__title">Web Development <span class="accent">Roadmap</span></h3>              <p class="roadmap-card__subtitle">From your first HTML tag to deploying full-stack apps. The most in-demand skill for Pakistani tech jobs and freelancing.</p>
             </div>
             <button class="roadmap-card__share" onclick="event.stopPropagation();shareRoadmap('web-dev')" aria-label="Copy link">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
@@ -247,13 +424,12 @@
           </div>
         </div>
 
-        <!-- 02: ML/CV/DL/RL -->
-        <div class="roadmap-card" id="ml-dl-cv" data-reveal>
+        <!-- 05: ML/CV/DL/RL -->
+        <div class="roadmap-card" data-category="university" id="ml-dl-cv" data-reveal>
           <div class="roadmap-card__header" onclick="this.parentElement.classList.toggle('roadmap-card--open')">
             <div class="roadmap-card__header-text">
-              <span class="roadmap-card__number">02</span>
-              <h3 class="roadmap-card__title">Machine Learning, Deep Learning &amp; CV <span class="accent">Roadmap</span></h3>
-              <p class="roadmap-card__subtitle">The path from Python basics to training your own models. Covers classical ML, deep learning, computer vision, and reinforcement learning.</p>
+              <span class="roadmap-card__number">05</span>
+              <h3 class="roadmap-card__title">Machine Learning, Deep Learning &amp; CV <span class="accent">Roadmap</span></h3>              <p class="roadmap-card__subtitle">The path from Python basics to training your own models. Covers classical ML, deep learning, computer vision, and reinforcement learning.</p>
             </div>
             <button class="roadmap-card__share" onclick="event.stopPropagation();shareRoadmap('ml-dl-cv')" aria-label="Copy link">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
@@ -291,13 +467,12 @@
           </div>
         </div>
 
-        <!-- 03: Hardware & Embedded -->
-        <div class="roadmap-card" id="hardware-embedded" data-reveal>
+        <!-- 06: Hardware & Embedded -->
+        <div class="roadmap-card" data-category="university" id="hardware-embedded" data-reveal>
           <div class="roadmap-card__header" onclick="this.parentElement.classList.toggle('roadmap-card--open')">
             <div class="roadmap-card__header-text">
-              <span class="roadmap-card__number">03</span>
-              <h3 class="roadmap-card__title">Hardware &amp; Embedded Programming <span class="accent">Roadmap</span></h3>
-              <p class="roadmap-card__subtitle">Programming the physical world. From blinking an LED to building real embedded systems with microcontrollers and FPGAs.</p>
+              <span class="roadmap-card__number">06</span>
+              <h3 class="roadmap-card__title">Hardware &amp; Embedded Programming <span class="accent">Roadmap</span></h3>              <p class="roadmap-card__subtitle">Programming the physical world. From blinking an LED to building real embedded systems with microcontrollers and FPGAs.</p>
             </div>
             <button class="roadmap-card__share" onclick="event.stopPropagation();shareRoadmap('hardware-embedded')" aria-label="Copy link">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
@@ -335,20 +510,13 @@
           </div>
         </div>
 
-        <button class="roadmaps-toggle" id="roadmaps-toggle" onclick="var m=document.getElementById('roadmaps-more'),t=this.querySelector('.roadmaps-toggle__text');m.classList.toggle('roadmaps-more--visible');this.classList.toggle('roadmaps-toggle--open');t.textContent=m.classList.contains('roadmaps-more--visible')?'Show fewer roadmaps':'Show 4 more roadmaps';">
-          <span class="roadmaps-toggle__text">Show 4 more roadmaps</span>
-          <svg class="roadmaps-toggle__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
 
-        <div class="roadmaps-more" id="roadmaps-more">
-
-        <!-- 04: Robotics -->
-        <div class="roadmap-card" id="robotics" data-reveal>
+        <!-- 07: Robotics -->
+        <div class="roadmap-card" data-category="university" id="robotics" data-reveal>
           <div class="roadmap-card__header" onclick="this.parentElement.classList.toggle('roadmap-card--open')">
             <div class="roadmap-card__header-text">
-              <span class="roadmap-card__number">04</span>
-              <h3 class="roadmap-card__title">Robotics <span class="accent">Roadmap</span></h3>
-              <p class="roadmap-card__subtitle">Where software meets the real world. Control systems, perception, planning, and building robots that actually do things.</p>
+              <span class="roadmap-card__number">07</span>
+              <h3 class="roadmap-card__title">Robotics <span class="accent">Roadmap</span></h3>              <p class="roadmap-card__subtitle">Where software meets the real world. Control systems, perception, planning, and building robots that actually do things.</p>
             </div>
             <button class="roadmap-card__share" onclick="event.stopPropagation();shareRoadmap('robotics')" aria-label="Copy link">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
@@ -386,13 +554,12 @@
           </div>
         </div>
 
-        <!-- 05: Generative AI -->
-        <div class="roadmap-card" id="gen-ai" data-reveal>
+        <!-- 08: Generative AI -->
+        <div class="roadmap-card" data-category="university" id="gen-ai" data-reveal>
           <div class="roadmap-card__header" onclick="this.parentElement.classList.toggle('roadmap-card--open')">
             <div class="roadmap-card__header-text">
-              <span class="roadmap-card__number">05</span>
-              <h3 class="roadmap-card__title">Generative AI <span class="accent">Roadmap</span></h3>
-              <p class="roadmap-card__subtitle">LLMs, image generation, RAG, fine-tuning, and building AI-powered products. The fastest-growing field in tech right now.</p>
+              <span class="roadmap-card__number">08</span>
+              <h3 class="roadmap-card__title">Generative AI <span class="accent">Roadmap</span></h3>              <p class="roadmap-card__subtitle">LLMs, image generation, RAG, fine-tuning, and building AI-powered products. The fastest-growing field in tech right now.</p>
             </div>
             <button class="roadmap-card__share" onclick="event.stopPropagation();shareRoadmap('gen-ai')" aria-label="Copy link">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
@@ -430,13 +597,12 @@
           </div>
         </div>
 
-        <!-- 06: MLOps & DevOps -->
-        <div class="roadmap-card" id="mlops-devops" data-reveal>
+        <!-- 09: MLOps & DevOps -->
+        <div class="roadmap-card" data-category="university" id="mlops-devops" data-reveal>
           <div class="roadmap-card__header" onclick="this.parentElement.classList.toggle('roadmap-card--open')">
             <div class="roadmap-card__header-text">
-              <span class="roadmap-card__number">06</span>
-              <h3 class="roadmap-card__title">MLOps &amp; DevOps <span class="accent">Roadmap</span></h3>
-              <p class="roadmap-card__subtitle">The infrastructure side. How code gets from a laptop to production, and how ML models get deployed and monitored at scale.</p>
+              <span class="roadmap-card__number">09</span>
+              <h3 class="roadmap-card__title">MLOps &amp; DevOps <span class="accent">Roadmap</span></h3>              <p class="roadmap-card__subtitle">The infrastructure side. How code gets from a laptop to production, and how ML models get deployed and monitored at scale.</p>
             </div>
             <button class="roadmap-card__share" onclick="event.stopPropagation();shareRoadmap('mlops-devops')" aria-label="Copy link">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
@@ -474,13 +640,12 @@
           </div>
         </div>
 
-        <!-- 07: System Administration -->
-        <div class="roadmap-card" id="sysadmin" data-reveal>
+        <!-- 10: System Administration -->
+        <div class="roadmap-card" data-category="university" id="sysadmin" data-reveal>
           <div class="roadmap-card__header" onclick="this.parentElement.classList.toggle('roadmap-card--open')">
             <div class="roadmap-card__header-text">
-              <span class="roadmap-card__number">07</span>
-              <h3 class="roadmap-card__title">System Administration <span class="accent">Roadmap</span></h3>
-              <p class="roadmap-card__subtitle">Keeping servers alive, networks running, and systems secure. The backbone of every tech organization.</p>
+              <span class="roadmap-card__number">10</span>
+              <h3 class="roadmap-card__title">System Administration <span class="accent">Roadmap</span></h3>              <p class="roadmap-card__subtitle">Keeping servers alive, networks running, and systems secure. The backbone of every tech organization.</p>
             </div>
             <button class="roadmap-card__share" onclick="event.stopPropagation();shareRoadmap('sysadmin')" aria-label="Copy link">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
@@ -518,7 +683,6 @@
           </div>
         </div>
 
-        </div><!-- /.roadmaps-more -->
 
       </div>
     </div>
@@ -597,21 +761,38 @@
   <script src="js/config.js"></script>
   <script src="js/youtube.js"></script>
   <script>
+    // Roadmap filter functionality
+    (function() {
+      var filters = document.querySelectorAll('.roadmap-filter');
+      var cards = document.querySelectorAll('.roadmap-card');
+      filters.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          filters.forEach(function(f) { f.classList.remove('roadmap-filter--active'); });
+          btn.classList.add('roadmap-filter--active');
+          var filter = btn.getAttribute('data-filter');
+          cards.forEach(function(card) {
+            if (filter === 'all' || card.getAttribute('data-category') === filter) {
+              card.classList.remove('roadmap-card--hidden');
+            } else {
+              card.classList.add('roadmap-card--hidden');
+              card.classList.remove('roadmap-card--open');
+            }
+          });
+        });
+      });
+    })();
+
     // Auto-open and scroll to a roadmap when linked via hash (e.g. #gen-ai)
     (function() {
       var hash = window.location.hash.slice(1);
       if (!hash) return;
       var card = document.getElementById(hash);
       if (!card || !card.classList.contains('roadmap-card')) return;
-      var more = document.getElementById('roadmaps-more');
-      if (more && more.contains(card)) {
-        more.classList.add('roadmaps-more--visible');
-        var tog = document.getElementById('roadmaps-toggle');
-        if (tog) {
-          tog.classList.add('roadmaps-toggle--open');
-          var txt = tog.querySelector('.roadmaps-toggle__text');
-          if (txt) txt.textContent = 'Show fewer roadmaps';
-        }
+      // Activate correct filter so the card is visible
+      var category = card.getAttribute('data-category');
+      if (category) {
+        var filterBtn = document.querySelector('.roadmap-filter[data-filter="' + category + '"]');
+        if (filterBtn) filterBtn.click();
       }
       card.classList.add('roadmap-card--open');
       setTimeout(function() { card.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 300);
