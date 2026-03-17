@@ -305,13 +305,7 @@
         }
       }
 
-      var sessionsContainer = document.querySelector('[data-yt-sessions]');
-      if (sessionsContainer) {
-        var sessions = await getPlaylistVideos(CONFIG.SESSIONS_PLAYLIST, 'csconnect_yt_sessions');
-        if (sessions.length > 0) {
-          renderSessions(sessionsContainer, sessions);
-        }
-      }
+      // Sessions are now hardcoded in resources.html with a link to the full playlist
 
       reobserveReveals();
     } catch (err) {
