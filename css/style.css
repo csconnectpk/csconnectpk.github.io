@@ -3371,6 +3371,63 @@ a.feature-row {
 
 
 /* ----------------------------------------
+   25a. Community Rules Page
+   ---------------------------------------- */
+.rules-doc {
+  max-width: 740px;
+}
+
+.rules-doc__intro {
+  font-size: 1.05rem;
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+  margin-bottom: var(--space-2xl);
+}
+
+.rules-doc__section {
+  margin-bottom: var(--space-xl);
+}
+
+.rules-doc__heading {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.01em;
+}
+
+.rules-doc__section p {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+  margin-bottom: 0.75rem;
+}
+
+.rules-doc__section p:last-child {
+  margin-bottom: 0;
+}
+
+.rules-doc__section a {
+  color: var(--color-accent);
+  transition: opacity 0.2s ease;
+}
+
+.rules-doc__section a:hover {
+  opacity: 0.8;
+}
+
+.rules-doc__section strong {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.rules-doc__divider {
+  height: 1px;
+  background: var(--color-border);
+  margin: var(--space-2xl) 0;
+}
+
+
+/* ----------------------------------------
    25. Footer
    ---------------------------------------- */
 .footer {
