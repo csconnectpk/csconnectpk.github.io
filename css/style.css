@@ -3373,6 +3373,10 @@ a.feature-row {
 /* ----------------------------------------
    25a. Community Rules Page
    ---------------------------------------- */
+section.rules-doc__body {
+  padding-top: var(--space-sm);
+}
+
 .rules-doc {
   max-width: 740px;
 }
