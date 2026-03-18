@@ -4375,6 +4375,15 @@ section.rules-doc__body {
     max-width: none;
   }
 
+  /* Footer: hide Connect col on mobile (social icons already in brand) */
+  .footer__links {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer__links .footer__col:nth-child(2) {
+    display: none;
+  }
+
   /* Footer: center copyright + watermark on phones */
   .footer__bottom {
     align-items: center;
