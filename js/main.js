@@ -176,12 +176,6 @@
         linkedin: '#'
       },
       {
-        name: 'Talat Faheem',
-        role: 'Mod & Mentor',
-        bio: 'Helps moderate discussions and mentors students.',
-        linkedin: 'https://linkedin.com/in/talat-fm'
-      },
-      {
         name: 'Asad Ali',
         role: 'Mod & Mentor',
         bio: 'Keeps things running smooth in the community.',
