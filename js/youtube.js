@@ -142,7 +142,7 @@
   function renderPodcastFeatured(container, ep) {
     var title = escapeHtml(ep.title);
     container.innerHTML =
-      '<span class="featured-episode__label" data-reveal>Latest Episode</span>' +
+      '<span class="featured-episode__label" data-reveal>Featured Episode</span>' +
       '<a href="' + ep.url + '" target="_blank" rel="noopener" class="featured-episode" data-reveal>' +
         '<div class="featured-episode__thumbnail">' +
           '<img src="' + ep.thumbnail + '" alt="' + title + '" loading="lazy">' +
@@ -173,7 +173,7 @@
           '</div>' +
         '</div>' +
         '<div class="podcast-spotlight__featured-content">' +
-          '<span class="podcast-spotlight__featured-label">Latest Episode</span>' +
+          '<span class="podcast-spotlight__featured-label">Featured Episode</span>' +
           '<h3 class="podcast-spotlight__featured-title">' + title + '</h3>' +
           '<p class="podcast-spotlight__featured-desc">' + escapeHtml(ep.description) + '</p>' +
           '<div class="podcast-spotlight__featured-meta">' +

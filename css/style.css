@@ -127,10 +127,6 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-body.loading {
-  overflow: hidden;
-}
-
 img, svg {
   display: block;
   max-width: 100%;
@@ -247,52 +243,6 @@ p {
 
 .section--surface {
   background: var(--color-surface);
-}
-
-
-/* ----------------------------------------
-   06. Preloader
-   ---------------------------------------- */
-.preloader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: var(--color-bg);
-  z-index: 10000;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  transition: transform 0.8s var(--ease-in-out);
-}
-
-.preloader.loaded {
-  transform: translateY(-100%);
-}
-
-.preloader__text {
-  font-weight: 700;
-  font-size: 1.5rem;
-  letter-spacing: 0.15em;
-  margin-bottom: var(--space-sm);
-  color: var(--color-accent);
-}
-
-.preloader__bar {
-  width: clamp(150px, 50vw, 200px);
-  height: 2px;
-  background: var(--color-border);
-  overflow: hidden;
-  border-radius: 1px;
-}
-
-.preloader__fill {
-  width: 0%;
-  height: 100%;
-  background: var(--color-accent);
-  transition: width 0.5s ease;
 }
 
 
